@@ -1,0 +1,109 @@
+@(item: persistence.Item)(implicit sessionInfo: controllers.SessionInfo)
+
+@main("brand 13") {
+
+    <div class="clearfix template-product" id="product-content" itemscope="" itemtype="http://schema.org/Product">
+        <meta itemprop="url" content="http://brand14.myshopify.com/products/shirt">
+        <meta itemprop="image" content="@item.mainPicture">
+
+
+        <form action="/cart/add" method="post" enctype="multipart/form-data">
+            <ul id="product-details">
+                <li id="product-title">
+                    <h1 itemprop="name">@item.title</h1>
+                </li>
+
+                <li id="product-prices" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+
+                    <p id="product-price" class="smooth">
+                        <span class="product-price" itemprop="price">цена: @util.Calculator.calculateFinalPrice(item.price) руб.</span>
+                    </p>
+                </li>
+
+                @if(!item.variations.variations.keys.isEmpty) {
+                        @for((variation, index) <- item.variations.variations.keys.zipWithIndex) {
+
+                        <label for="variations[@index].value">@variation</label>
+
+                        <input type="hidden" id="variations[@index].name" name="variations[@index].name" value="@variation">
+
+                        <select name="variations[@index].value" id="variations[@index].value" class="special-select coll-filter">
+
+                        @for(value <- persistence.Util.listU("" + item.variations.variations(variation))) {
+
+                            <option value = "@value">@value</option>
+                        }
+                        </select>
+
+                    }
+                }
+
+                <input type="hidden" name="price" value="@util.Calculator.calculateFinalPrice(item.price)">
+                <input type="hidden" name="itemId" value="@item.itemId">
+
+
+                <li id="product-add">
+                    <div id="product-add-wrap">
+                        <div id="product-add-medallion" class=""></div> <!-- #product-add-medallion -->
+                        <input type="submit" name="add" id="add" value="в корзину" class="smooth">
+                    </div> <!-- #product-add-wrap -->
+                </li>
+
+
+                <li id="product-description" class="below">
+                    <h2>описание</h2>
+                    <div id="full_description" class="rte" itemprop="description">
+                        <p>&nbsp;....</p>
+
+                  @for(key <- item.specifics.keys){
+                      <b>@key </b> @item.specifics(key)<br>
+                  }
+
+                    </div> <!-- #full_description rte -->
+                </li>
+            </ul> <!-- #product-description -->
+        </form>
+
+
+        <div id="product-photos">
+
+
+
+            <div id="product-photo-container" style="height: 52px;">
+
+
+                @if(item.variations.pictures.isEmpty){
+                    <a class="gallery cboxElement" href="@item.mainPicture" rel="gallery" style="height: 0px; width: 0px;">
+                        <img src="@item.mainPicture" alt="shirt" class="active" >
+                    </a>
+                }
+
+                @for(picture <- item.variations.pictures){
+                    <a class="gallery cboxElement" href="@item.mainPicture" rel="gallery" style="height: 0px; width: 0px;">
+                        <img src="@picture" alt="shirt" class="" style="display: none;">
+                    </a>
+
+                }
+
+
+
+            </div><!-- #product-photo-container -->
+
+
+            <ul id="product-photo-thumbs" class="clearfix">
+
+
+                @for(picture <- item.variations.pictures){
+                    <li class="product-photo-thumb">
+                        <img src="@picture" alt="shirt" style="margin-top: 0px; opacity: 1;">
+                    </li>
+                }
+
+
+            </ul>
+
+
+        </div>
+    </div>
+
+}

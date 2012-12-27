@@ -1,0 +1,144 @@
+@(title: String)(content: Html)(implicit sessionInfo: controllers.SessionInfo)
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>@title</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <script src="@routes.Assets.at("javascripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+        <script>
+           var product_image_w_to_h_ratio = 1;
+        </script>
+    </head>
+    <body>
+        <div id="container">
+            <header id="header" class="clearfix">
+                <div id="cart-summary" class="accent-text">
+                    <h1 id="title" class="smooth" role="banner" style="visibility: visible;">
+                        <a href="/"><img src="/assets/images/b13-logo.png"/></a>
+                    </h1>
+                    <p class="cart-elem" id="cart-count">
+                        <a class="no-underline" href="/cart">  @sessionInfo.itemCount
+                            @if(sessionInfo.itemCount == 0) { покупок }
+                            @if(sessionInfo.itemCount == 1) { покупка  }
+                            @if(sessionInfo.itemCount == 2) { покупки  }
+                            @if(sessionInfo.itemCount == 3) { покупки  }
+                            @if(sessionInfo.itemCount == 4) { покупки  }
+                            @if(sessionInfo.itemCount > 4)  { покупок  }
+
+
+                        </a> ·
+                        <a href="/cart">оплатить</a>
+                    </p>
+
+                    <form action="/search" method="get" id="search-form" role="search">
+                        <input name="q" type="text" id="search-field" placeholder="поиск..." class="hint">
+                        <input type="submit" value="" name="submit" id="search-submit">
+                    </form>
+
+                    <a href="/cart" class="cart-elem smooth roundify-total round" id="cart-total">
+                        <span id="cart-price" style="opacity: 1;">@sessionInfo.total</span>
+                    </a>
+                </div> <!-- #cart-summary -->
+
+
+                <nav role="navigation">
+                    <ul id="nav" style="visibility: visible;">
+                        <li class="nav-item first">
+                            <a class="nav-item-link smooth" href="/">
+                                каталог
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-item-link smooth" href="/blogs/news">
+                                отзывы
+                            </a>
+                        </li>
+                        <li class="nav-item last">
+                            <a class="nav-item-link smooth" href="/pages/about-us">
+                                о нас
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </header> <!-- #header -->
+
+            @content
+
+
+            <!-- #content -->
+
+            <footer id="footer" class="has-twitter">
+                <ul class="clearfix" id="footer-modules">
+                    <li class="ft-module one-third" id="about-module">
+                    <h3>о нас</h3>
+                    <div id="about-description" class="clearfix">
+                        настоящие брэндовие товары прямо с американских распродаж
+                    </div>
+
+
+
+                    <li class="ft-module one-third" id="twitter-module">
+                        <h3>условия</h3>
+                        <div id="terms" class="clearfix">
+                            условия оплат и доставок
+                        </div>
+                    </li>
+
+
+
+                    <li class="ft-module one-third" id="mailing-list-module" style="margin-right: 0px;">
+                        <h3>рассылка</h3>
+                        <p>подпишитесь на еженедельные рассылки новинок</p>
+
+                        <form method="post" action="/contact" class="contact-form">
+                            <input name="contact[form_type]" type="hidden" value="customer">
+
+                            <input type="hidden" id="contact_tags" name="contact[tags]" value="prospect,newsletter">
+                            <input type="hidden" id="newsletter-first-name" name="contact[first_name]" value="Subscriber">
+                            <input type="hidden" id="newsletter-last-name" name="contact[last_name]" value="Newsletter">
+                            <input type="email" placeholder="ваш @@ email.com" name="contact[email]" id="email-input" class="hint">
+                            <input type="submit" class="btn styled-submit" value="OK" name="subscribe" id="email-submit">
+                        </form>
+                    </li>
+                </ul>
+            </footer> <!-- #footer -->
+            <div id="sub-footer" class="clearfix">
+                <div class="footer-left-content">
+                    <div class="footer-nav accent-text" role="navigation">
+                        <a href="/search" title="поиск">поиск</a>
+
+                        <a href="/pages/about-us" title="о нас">о нас</a>
+                    </div>
+
+                    <p id="shopify-attr" class="accent-text" role="contentinfo">Copyright © 2012 brand13.</p>
+                </div> <!-- #footer-left-content -->
+
+
+                <ul id="payment-options" class="clearfix">
+                    @*<li class="payment-option" id="pay-paypal">PayPal</li>*@
+                    <li class="payment-option" id="pay-visa">Visa</li>
+                    <li class="payment-option" id="pay-mastercard">Mastercard</li>
+                </ul>
+            </div>
+        </div>
+
+        <script src="http://cdn.shopify.com/s/files/1/0200/9030/t/1/assets/jquery.colorbox-min.js?2" type="text/javascript"></script>
+        <script src="@routes.Assets.at("javascripts/shop.js")" type="text/javascript"></script>
+
+        <div id="cboxOverlay" style="opacity: 1; cursor: auto; display: none;"></div>
+        <div id="colorbox" class="" style="padding-bottom: 32px; padding-right: 0px; top: 270px; left: 603px; position: absolute; width: 302px; height: 402px; opacity: 1; cursor: auto; display: none;">
+            <div id="cboxWrapper" style="height: 434px; width: 302px;">
+                <div><div id="cboxTopLeft" style="float: left;"></div> <div id="cboxTopCenter" style="float: left; width: 302px;"></div> <div id="cboxTopRight" style="float: left;"></div></div> <div style="clear: left;">
+                <div id="cboxMiddleLeft" style="float: left; height: 402px;"></div> <div id="cboxContent" style="float: left; width: 302px; height: 402px;">
+                <div id="cboxLoadingOverlay" style="float: left; display: none;"></div> <div id="cboxLoadingGraphic" style="float: left; display: none;"></div> <div id="cboxTitle" style="float: left; display: block;"></div> <div id="cboxCurrent" style="float: left; display: none;"></div> <div id="cboxNext" style="float: left; display: none;"></div> <div id="cboxPrevious" style="float: left; display: none;"></div> <div id="cboxSlideshow" style="float: left; display: none;"></div> <div id="cboxClose" style="float: left;">
+                close
+            </div>
+            </div> <div id="cboxMiddleRight" style="float: left; height: 402px;"></div>
+            </div> <div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div> <div id="cboxBottomCenter" style="float: left; width: 302px;"></div> <div id="cboxBottomRight" style="float: left;"></div></div>
+            </div> <div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div>
+        </div>
+    </body>
+</html>
