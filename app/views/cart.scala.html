@@ -25,20 +25,18 @@
                             @for((item, index) <- cartItems.zipWithIndex) {
                                 <tr class="cart-row">
                                     <td class="cart-item">
-                                        <a href="/item/@item.itemId">
-                                        <img src="@(new persistence.CollectionM(item.collection).Item.getItem(item.itemId)).mainPicture"/>
+                                        <a href="/collection/@item.collection/item/@item.itemId">
+                                        <img src="@(new persistence.CollectionM(item.collection).Item.getItem(item.itemId).mainPicture)"/>
                                         </a>
                                     </td>
                                     <td class="cart-detail">
-                                        <h2><a href="/item/@item.itemId">@(new persistence.CollectionM(item.collection).Item.getItem(item.itemId)).title</a></h2>
+                                        <h2><a href="/collection/@item.collection/item/@item.itemId">@(new persistence.CollectionM(item.collection).Item.getItem(item.itemId).title)</a></h2>
 
-                                        @for((variation,indexVariation) <- item.variations.zipWithIndex){
+                                        @for((variation, indexVariation) <- item.variations.zipWithIndex){
                                             <input type="hidden" id="items[@index].variations[@indexVariation].name" name="items[@index].variations[@indexVariation].name" value="@variation.variationName">
                                             <input type="hidden" id="items[@index].variations[@indexVariation].value" name="items[@index].variations[@indexVariation].value" value="@variation.variationValue">
-                                            @variation.variationName :  @variation.variationValue <br>
+                                            @variation.variationName : @variation.variationValue <br>
                                         }
-
-
                                     </td>
                                     <td class="cart-price">@(item.price)
                                     <input type="hidden" id="items[@index].hash" name="items[@index].hash" value="@item.toHash">

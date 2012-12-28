@@ -27,13 +27,21 @@ case class SessionInfo(
  */
 trait SessionHelper {
 
+
+  def sessionN[A](request: Request[A]) =  request.session.get("uuid") match {
+    case Some(uuid) => uuid
+    case None => java.util.UUID.randomUUID().toString
+  }
+
   implicit def sessionInfo[A](implicit request: Request[A]): SessionInfo = {
     request.session.get("uuid") match {
       case Some(uuid) => getCartInfo(uuid)
       case None => {
+        println(request.session)
         val newSession = java.util.UUID.randomUUID().toString
         request.session + ("uuid" -> newSession)
-        println(request.session.get("uuid"))
+
+        println("session is set to : " + request.session.get("uuid"))
         getCartInfo(newSession)
       }
     }
@@ -44,7 +52,7 @@ trait SessionHelper {
       case Some(cart) => {
         SessionInfo(
           sessionId,
-          cart.cartItems.map(item => item.quantity).sum ,
+          cart.cartItems.map(item => item.quantity).sum,
           cart.cartItems.map(item => item.price * item.quantity).sum
         )
       }

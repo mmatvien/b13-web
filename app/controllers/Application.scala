@@ -13,7 +13,7 @@ object Application extends Controller with SessionHelper {
 
   def index = Action {
     implicit request =>
-      Ok(views.html.index("Your new application is ready."))
+      Ok(views.html.index("Your new application is ready.")).withSession("uuid" -> sessionN(request))
   }
 
 
@@ -24,16 +24,15 @@ object Application extends Controller with SessionHelper {
       val size = if (request.queryString.contains("size")) request.queryString("size").head else ""
       val cat = if (request.queryString.contains("cat")) request.queryString("cat").head else ""
 
-
       val items = (new CollectionM(collection)).Item.findItems(cat, filter, size)
-      println(items.size)
-      Ok(views.html.collection(collection, items))
+
+      Ok(views.html.collection(collection, items)).withSession("uuid" -> sessionN(request))
   }
 
 
   def item(collection: String, itemId: String) = Action {
     implicit request =>
-      Ok(views.html.item(new CollectionM(collection).Item.getItem(itemId)))
+      Ok(views.html.item(new CollectionM(collection).Item.getItem(itemId))).withSession("uuid" -> sessionN(request))
   }
 
 
@@ -83,12 +82,10 @@ object Application extends Controller with SessionHelper {
   def remove(cartItemHash: String) = Action {
     implicit request =>
 
-      println(request.queryString)
       Cart.removeItem(sessionInfo.sessionId, cartItemHash)
 
       Redirect("/cart").flashing("success" -> "cart item removed")
   }
-
 
   case class CartItemZ(itemId: String, quantity: String, variations: List[CartItemVariationX])
 

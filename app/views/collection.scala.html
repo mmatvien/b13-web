@@ -4,95 +4,84 @@
 
 
     <div class="clearfix" id="content" role="main">
+        <ul class="clearfix" id="collection-header">
+            <li id="collection-title">
+                <h3 class="page-title">GUESS @sessionInfo.sessionId</h3>
+            </li>
 
-    <ul class="clearfix" id="collection-header">
-        <li id="collection-title">
-            <h3 class="page-title">GUESS</h3>
-        </li>
-
-        <li class="clearfix filter">
-
-            <p>размер</p>
+            <li class="clearfix filter">
+                <p>размер</p>
 
 
 
-            <select onchange="sizeFilter();" class="special-select coll-filter" id="size-filter" name="size-filter1" size="1" style="position: absolute; opacity: 0; font-size: 14px; width: 135px; height: 28px;">
+                <select class="special-select coll-filter" id="size-filter" name="size-filter" size="1" style="position: absolute; opacity: 0; font-size: 14px; width: 135px; height: 28px;">
                 @for(size <- util.Reference.size) {
                     <option value="">@size</option>
                 }
-            </select>
+                </select>
 
-            <p>цвет</p>
+                <p>цвет</p>
 
-            <select class="special-select coll-filter" name="color-filter2" id="color-filter" size="1" style="position: absolute; opacity: 0; font-size: 14px; width: 135px; height: 28px;">
-            @for(color <- util.Reference.color) {
-                <option value="">@color</option>
-            }
-            </select>
-        </li>
-    </ul>
-
-    <div style="float:left; height: 500px; width: 200px;">
-
-
-    <b>WOMEN</b> <br>
-    @for(women <- util.Reference.women) {
-        <span style="padding-left: 20px;"><a href="?cat=Women&filter=@women">@women</a></span> <br>
-    }
-        <b>MEN</b> <br>
-        @for(men <- util.Reference.men) {
-            <span style="padding-left: 20px;"><a href="?cat=Men&filter=@men">@men</a></span> <br>
-        }
-</div>
-
-
-
-    <div style="float:left;width: 680px;display: block;">
-        <ul id="coll-product-list" class="clearfix">
-        @for(item <- items) {
-
-            <li class="four-per-row default clearfix" style="height: 251px;">
-                <div class="coll-image-wrap">
-                    <a href="/collection/  @collection /item/ @item.itemId">
-                        <img src="@item.mainPicture" alt="shirt" style="height:191px; width: auto; opacity: 1;">
-                    </a>
-                </div> <!-- .coll-image-wrap -->
-                <div class="coll-prod-caption">
-                    <div class="coll-prod-meta ">
-                        <a href="/collection/  @collection /item/ @item.itemId" class="coll-prod-title">
-                        @item.title
-                        </a>
-
-                        <p class="coll-prod-price accent-text">
-                            цена: <span style="color:green;">@util.Calculator.calculateFinalPrice(item.price)</span>
-                            @if(item.originalPrice > 0) {
-                                <span style="text-decoration: line-through; color:red;">@util.Calculator.calculateFinalPrice(item.originalPrice)</span>
-                            }
-
-                        <a href="@item.itemUrl">[ @item.itemId ]</a>
-                        </p>
-                    </div> <!-- .coll-prod-meta -->
-
-                    @*<a class="coll-prod-buy styled-small-button" href="/item/@item.itemId">купить</a>*@
-                </div>
+                <select class="special-select coll-filter" name="color-filter2" id="color-filter" size="1" style="position: absolute; opacity: 0; font-size: 14px; width: 135px; height: 28px;">
+                @for(color <- util.Reference.color) {
+                    <option value="">@color</option>
+                }
+                </select>
             </li>
-
-
-        }
         </ul>
+
+        <div style="float:left; height: 500px; width: 200px;">
+            <b>WOMEN</b> <br>
+            @for(women <- util.Reference.women) {
+                <span style="padding-left: 20px;"> <a href="?cat=Women&filter=@women">@women</a></span> <br>
+            }
+            <b>MEN</b> <br>
+            @for(men <- util.Reference.men) {
+                <span style="padding-left: 20px;"> <a href="?cat=Men&filter=@men">@men</a></span> <br>
+            }
+        </div>
+
+
+
+        <div style="float:left;width: 680px;display: block;">
+            <ul id="coll-product-list" class="clearfix">
+            @for(item <- items) {
+
+                <li class="four-per-row default clearfix" style="height: 251px;">
+                    <div class="coll-image-wrap">
+                        <a href="/collection/@collection/item/@item.itemId">
+                            <img src="@item.mainPicture" alt="shirt" style="height:191px; width: auto; opacity: 1;">
+                        </a>
+                    </div> <!-- .coll-image-wrap -->
+                    <div class="coll-prod-caption">
+                        <div class="coll-prod-meta ">
+                            <a href="/collection/@collection/item/@item.itemId" class="coll-prod-title">
+                            @item.title
+                            </a>
+
+                            <p class="coll-prod-price accent-text">
+                                цена: <span style="color:green;">@util.Calculator.calculateFinalPrice(item.price)</span>
+                                @if(item.originalPrice > 0) {
+                                    <span style="text-decoration: line-through; color:red;">@util.Calculator.calculateFinalPrice(item.originalPrice)</span>
+                                }
+
+                            <a href="@item.itemUrl">[@item.itemId]</a>
+                            </p>
+                        </div> <!-- .coll-prod-meta -->
+
+                        @*<a class="coll-prod-buy styled-small-button" href="/item/@item.itemId">купить</a>*@
+                    </div>
+                </li>
+
+
+            }
+            </ul>
+        </div>
+        <div class="accent-text" id="breadcrumbs">
+            <span class="sep">/</span> <span><a href="/collections">коллекции</a></span>
+            <span class="sep">/</span> <span>GUESS</span>
+        </div>
     </div>
-    <div class="accent-text" id="breadcrumbs">
-        <span class="sep">/</span> <span><a href="/collections">коллекции</a></span>
-        <span class="sep">/</span> <span>GUESS</span>
-    </div>
-</div>
 
-
-    <script lang="javascript">
-
-        $("select").change(function () {
-            alert("changed");
-            });
-    </script>
-
+    <script type="text/javascript" src="/assets/coffee/collection.js">
 }

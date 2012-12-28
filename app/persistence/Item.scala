@@ -19,6 +19,7 @@ case class Variation(
                       variations: Map[String, List[String]])
 
 case class Item(
+                 collection:String,
                  itemId: String,
                  itemUrl: String,
                  title: String,
@@ -41,11 +42,33 @@ class CollectionM(collection: String) {
     // -- Queries
     def findItems(cat: String, filter: String, size: String): List[Item] = {
       val unfiltered = dao.find(MongoDBObject()).toList
-      unfiltered.filter {
-        item =>
-          item.categoryName.contains(cat) && item.categoryName.toUpperCase.contains(filter.toUpperCase)
-      }
 
+      val filtered = if (filter != "") {
+        unfiltered.filter {
+          item =>
+            item.categoryName.contains(cat) && item.categoryName.toUpperCase.contains(filter.toUpperCase)
+        }
+      } else unfiltered
+
+      val sized = if (size != "") {
+        filtered.filter {
+          item =>
+            val sizes = for (
+              key <- item.variations.variations.keys
+              if (key.contains("Size"))
+            ) yield {
+              val x1 = "" + item.variations.variations(key)
+              Util.listU(x1).exists(x => x == size)
+            }
+
+            // println(item.itemId + " : " +sizes.headOption.getOrElse(false) )
+
+            sizes.headOption.getOrElse(false)
+
+        }
+      } else filtered
+
+      sized
       //   unfiltered
     }
 

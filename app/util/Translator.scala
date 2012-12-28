@@ -15,8 +15,9 @@ import io.Source
 object Translator {
   def translate(original: String): String = {
 
-    val res = for (v <- Source.fromFile("conf/dictionary.txt").getLines().toList
-                   if (v.toString.split('=')(0) == original)
+    val res = for (
+      v <- Source.fromFile("conf/dictionary.txt").getLines().toList
+      if (v.toString.split('=')(0) == original)
     ) yield v.toString.split('=')(1).toString
 
     if (res.isEmpty) original
