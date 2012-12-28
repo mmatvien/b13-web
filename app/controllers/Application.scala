@@ -1,6 +1,6 @@
 package controllers
 
-import persistence.{CartItemVariation, Cart, Item, CartItem}
+import persistence.{CartItemVariation, Cart, CartItem, CollectionM}
 
 import play.api.mvc._
 import play.api.data._
@@ -17,18 +17,23 @@ object Application extends Controller with SessionHelper {
   }
 
 
-  def guess = Action {
+  def collection(collection: String) = Action {
     implicit request =>
 
-      val items = Item.findItems()
-           println(items.size)
-      Ok(views.html.guess(items))
+      val filter = if (request.queryString.contains("filter")) request.queryString("filter").head else ""
+      val size = if (request.queryString.contains("size")) request.queryString("size").head else ""
+      val cat = if (request.queryString.contains("cat")) request.queryString("cat").head else ""
+
+
+      val items = (new CollectionM(collection)).Item.findItems(cat, filter, size)
+      println(items.size)
+      Ok(views.html.collection(collection, items))
   }
 
 
-  def item(itemId: String) = Action {
+  def item(collection: String, itemId: String) = Action {
     implicit request =>
-      Ok(views.html.item(Item.getItem(itemId)))
+      Ok(views.html.item(new CollectionM(collection).Item.getItem(itemId)))
   }
 
 
@@ -36,12 +41,13 @@ object Application extends Controller with SessionHelper {
    * cart Form definition.
    */
 
-  case class CartItemX(itemId: String, price: String, variations: List[CartItemVariationX])
+  case class CartItemX(collection: String, itemId: String, price: String, variations: List[CartItemVariationX])
 
   case class CartItemVariationX(name: String, value: String)
 
   val cartForm: Form[CartItemX] = Form(
     mapping(
+      "collection" -> nonEmptyText,
       "itemId" -> nonEmptyText,
       "price" -> nonEmptyText,
       "variations" -> list(mapping(
@@ -58,8 +64,8 @@ object Application extends Controller with SessionHelper {
         case (cartItemX: CartItemX) => {
           Cart.findSessionCart(sessionInfo.sessionId) match {
             case Some(currentCart: Cart) =>
-              Cart.addItemToCart(currentCart, CartItem(cartItemX.itemId, 1, cartItemX.price.toDouble, cartItemX.variations.map(v => CartItemVariation(v.name, v.value))))
-            case None => Cart.createNewCart(sessionInfo.sessionId, CartItem(cartItemX.itemId, 1, cartItemX.price.toDouble, cartItemX.variations.map(v => CartItemVariation(v.name, v.value))))
+              Cart.addItemToCart(currentCart, CartItem(cartItemX.collection, cartItemX.itemId, 1, cartItemX.price.toDouble, cartItemX.variations.map(v => CartItemVariation(v.name, v.value))))
+            case None => Cart.createNewCart(sessionInfo.sessionId, CartItem(cartItemX.collection, cartItemX.itemId, 1, cartItemX.price.toDouble, cartItemX.variations.map(v => CartItemVariation(v.name, v.value))))
           }
         }
       }
