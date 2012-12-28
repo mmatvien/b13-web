@@ -16,6 +16,7 @@ import com.novus.salat.dao._
 import java.util.Date
 
 case class CartItem(
+                     collection: String,
                      itemId: String,
                      quantity: Int,
                      price: BigDecimal,

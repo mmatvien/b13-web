@@ -1,5 +1,6 @@
 package persistence
 
+
 /**
  * User: max
  * Date: 12/17/12
@@ -11,12 +12,11 @@ object Util {
 
     val arr = one.split(",")
     val result = arr.foldLeft(List(): List[String])((i, s) =>
-    s.trim.toList.filter(x => x != '\"').mkString("") :: i
+      s.trim.toList.filter(x => x != '\"').mkString("") :: i
     )
 
     result
   }
-
 
 
 }

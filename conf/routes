@@ -3,17 +3,17 @@
 # ~~~~
 
 # Home page
-GET     /                            controllers.Application.index
+GET     /                                       controllers.Application.index
 
 
-GET     /guess                       controllers.Application.guess
-GET     /item/:itemId                controllers.Application.item(itemId: String)
-GET     /cart                        controllers.Application.cart
-GET     /cart/remove/:itemHash       controllers.Application.remove(itemHash: String)
+GET     /collection/:collection                 controllers.Application.collection(collection: String)
+GET     /collection/:collection/item/:itemId    controllers.Application.item(collection:String,itemId: String)
+GET     /cart                                   controllers.Application.cart
+GET     /cart/remove/:itemHash                  controllers.Application.remove(itemHash: String)
 
-POST    /cart/add                    controllers.Application.add
-POST     /cart                       controllers.Application.update
+POST    /cart/add                               controllers.Application.add
+POST    /cart                                   controllers.Application.update
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file                controllers.Assets.at(path="/public", file)
+GET     /assets/*file                           controllers.Assets.at(path="/public", file)
 

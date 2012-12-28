@@ -26,11 +26,11 @@
                                 <tr class="cart-row">
                                     <td class="cart-item">
                                         <a href="/item/@item.itemId">
-                                        <img src="@persistence.Item.getItem(item.itemId).mainPicture"/>
+                                        <img src="@(new persistence.CollectionM(item.collection).Item.getItem(item.itemId)).mainPicture"/>
                                         </a>
                                     </td>
                                     <td class="cart-detail">
-                                        <h2><a href="/item/@item.itemId">@persistence.Item.getItem(item.itemId).title</a></h2>
+                                        <h2><a href="/item/@item.itemId">@(new persistence.CollectionM(item.collection).Item.getItem(item.itemId)).title</a></h2>
 
                                         @for((variation,indexVariation) <- item.variations.zipWithIndex){
                                             <input type="hidden" id="items[@index].variations[@indexVariation].name" name="items[@index].variations[@indexVariation].name" value="@variation.variationName">

@@ -484,7 +484,7 @@ a {
 }
 
 .four-per-row .coll-prod-meta {
-    width:130px;
+    /*width:130px;*/
     float:left;
     margin-top:13px;
     font-size:13px;
@@ -841,7 +841,7 @@ p.highlight {
     color:#333333;
     font-size:35px;
     line-height:35px;
-    margin:0 0 42px;
+    margin:0 0 15px;
     font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
 }
@@ -2241,7 +2241,7 @@ a.slide-link {
 }
 
 #collection-header {
-    margin:52px auto 38px;
+    margin:15px auto 15px;
     padding:0;
     list-style-type:none;
     width:884px;

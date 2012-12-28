@@ -18,28 +18,40 @@ case class Variation(
                       pictures: List[String],
                       variations: Map[String, List[String]])
 
-
 case class Item(
                  itemId: String,
                  itemUrl: String,
                  title: String,
                  categoryID: String,
+                 categoryName: String,
                  price: Double,
                  originalPrice: Double,
                  mainPicture: String,
                  variations: Variation,
-                 specifics: Map[String,String])
+                 specifics: Map[String, String])
 
-object Item extends ModelCompanion[Item, ObjectId] {
+class CollectionM(collection: String) {
 
-  val collection = MongoConnection()("b13_ebay")("guess_outlet")
-  val dao = new SalatDAO[Item, ObjectId](collection = collection) {}
+  object Item extends ModelCompanion[Item, ObjectId] {
 
-  // -- Queries
-  def findItems(): List[Item] = dao.find(MongoDBObject()).toList
+    val coll = MongoConnection()("b13_ebay")(collection)
+    val dao = new SalatDAO[Item, ObjectId](collection = coll) {}
 
-  def getItem(itemId: String): Item = {
-    dao.findOne(MongoDBObject("itemId" -> itemId)).get
+
+    // -- Queries
+    def findItems(cat: String, filter: String, size: String): List[Item] = {
+      val unfiltered = dao.find(MongoDBObject()).toList
+      unfiltered.filter {
+        item =>
+          item.categoryName.contains(cat) && item.categoryName.toUpperCase.contains(filter.toUpperCase)
+      }
+
+      //   unfiltered
+    }
+
+    def getItem(itemId: String): Item = {
+      dao.findOne(MongoDBObject("itemId" -> itemId)).get
+    }
   }
 
 }
