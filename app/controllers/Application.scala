@@ -1,10 +1,12 @@
 package controllers
 
-import persistence.{CartItemVariation, Cart, CartItem, CollectionM}
+import persistence.{Cart, CollectionM}
 
 import play.api.mvc._
 import play.api.data._
 import play.api.data.Forms._
+import persistence.CartItem
+import persistence.CartItemVariation
 import scala.Some
 
 
@@ -107,6 +109,8 @@ object Application extends Controller with SessionHelper {
 
   def update = Action {
     implicit request =>
+      val action = request.body.asFormUrlEncoded.get("update").head
+
       cartUpdateForm.bindFromRequest.fold(
       errors => BadRequest, {
         case (itemList: CartItemList) => {
@@ -117,13 +121,16 @@ object Application extends Controller with SessionHelper {
       }
       )
 
-      Ok(views.html.cart(currentCartItems)).flashing("success" -> "cart item updated")
+      if (action == "оформить") Ok(views.html.payment(currentCartItems)).flashing("success" -> "cart item updated")
+      else Ok(views.html.cart(currentCartItems)).flashing("success" -> "cart item updated")
   }
 
   def cart = Action {
     implicit request =>
       Ok(views.html.cart(currentCartItems))
   }
+
+
 
 }
 

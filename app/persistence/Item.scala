@@ -60,16 +60,12 @@ class CollectionM(collection: String) {
               val x1 = "" + item.variations.variations(key)
               Util.listU(x1).exists(x => x == size)
             }
-
-            // println(item.itemId + " : " +sizes.headOption.getOrElse(false) )
-
             sizes.headOption.getOrElse(false)
-
         }
       } else filtered
 
       sized
-      //   unfiltered
+
     }
 
     def getItem(itemId: String): Item = {

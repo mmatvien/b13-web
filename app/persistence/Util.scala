@@ -1,5 +1,8 @@
 package persistence
 
+import com.mongodb.casbah.commons.MongoDBObject
+import com.mongodb.casbah.Imports._
+
 
 /**
  * User: max
@@ -18,5 +21,46 @@ object Util {
     result
   }
 
+  def collectCategories(collection: String): List[Map[String, List[Map[String, List[String]]]]] = {
+
+    def appendCat(cat: String, s: List[Map[String, List[Map[String, List[String]]]]], key: String, res: Map[String, List[String]]): List[Map[String, List[Map[String, List[String]]]]] = {
+      val existing = s.filter(ll => ll.contains(cat))
+      val init = if (existing.isEmpty) List() else existing.head(cat)
+
+      val newMap = Map(key -> res(key))
+      Map(cat -> (newMap :: init)) :: s.filter(ll => !ll.contains(cat))
+    }
+
+    lazy val categories: List[Map[String, List[Map[String, List[String]]]]] = {
+      val q = MongoDBObject.empty
+      val fields = MongoDBObject("categoryName" -> 1)
+      val cats = MongoFactory.connection_b13_ebay(collection).find(q, fields).toList.map {
+        x => {
+          val all = x("categoryName").toString.split(":").toList
+          all.drop(1).head :: all.drop(1).tail
+        }
+      }
+
+      val grouped = cats.groupBy(_.head)
+
+      val res = grouped.keys.foldLeft(Map(): Map[String, List[String]])((s, i) =>
+        s ++ Map(i -> grouped(i).flatten.toSet.filter(xs => xs != i).toList)
+      )
+
+      val formatted2 = res.keys.foldLeft(List(): List[Map[String, List[Map[String, List[String]]]]])((s, key) =>
+
+        if (key.contains("Women")) appendCat("she", s, key, res)
+        else if (key.contains("Men")) appendCat("he", s, key, res)
+        else if (key.contains("Kid")) appendCat("kid", s, key, res)
+        else appendCat("other", s, key, res)
+
+      )
+
+      formatted2
+    }
+//     println(categories.mkString("\n"))
+//    println("-------")
+    categories
+  }
 
 }

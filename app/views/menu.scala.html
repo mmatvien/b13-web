@@ -1,0 +1,33 @@
+@(collection: String)
+
+
+
+<div class="oe_wrapper">
+    <div id="oe_overlay" class="oe_overlay"></div>
+
+    <ul id="oe_menu" class="oe_menu">
+
+    @persistence.Util.collectCategories(collection).map { cat =>
+        @for((subCat, li) <- cat) {
+            <li>
+                <a href="">@util.Translator.translate(subCat)</a>
+                <div>
+
+                    @li.map { xx =>
+                        <ul>
+                        @for((title, valList) <- xx) {
+                            <li class="oe_heading">@util.Translator.translate(title)</li>
+                            @valList.map { filterCat =>
+                                <li><a href="?cat=@title&filter=@filterCat">@util.Translator.translate(filterCat)</a></li>
+                            }
+                        }
+                        </ul>
+                    }
+
+                </div>
+            </li>
+        }
+    }
+
+    </ul>
+</div>

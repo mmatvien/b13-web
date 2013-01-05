@@ -3,8 +3,7 @@
 @main("brand 13") {
 
     <div class="clearfix template-product" id="product-content" itemscope="" itemtype="http://schema.org/Product">
-        <meta itemprop="url" content="http://brand14.myshopify.com/products/shirt">
-        <meta itemprop="image" content="@item.mainPicture">
+
 
 
         <form action="/cart/add" method="post" enctype="multipart/form-data">
@@ -54,7 +53,7 @@
                 <li id="product-description" class="below">
                     <h2>описание</h2>
                     <div id="full_description" class="rte" itemprop="description">
-                        <p>&nbsp;....</p>
+
 
                   @for(key <- item.specifics.keys){
                       <b>@key </b> @item.specifics(key)<br>

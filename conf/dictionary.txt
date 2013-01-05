@@ -1,2 +1,181 @@
 price=цена
 size=размер
+
+she=для неё
+Women's Accessories=аксессуары
+
+Baby & Toddler Clothing=Одежда для малышей (0-4/5 лет)
+Baby Accessories=Аксессуары для малышей
+Baby Shoes=Обувь для малышей
+Christening=Kрестины
+Boys' Clothing (Newborn-5T)=Одежда для мальчиков (Новорожденные-5 лет)
+Girls' Clothing (Newborn-5T)=Одежда для девочек (Новорожденные-5 лет)
+Unisex Clothing (Newborn-5T)=Одежда Унисекс (Новорожденные-5 лет)
+Other=Другое
+
+Kids' Clothing, Shoes & Accs=Детская одежда, обувь и аксессуары (4 года +)
+Boys' Clothing (Sizes 4 & Up)=Одежда для мальчиков (4 года +)
+Boys' Shoes=Обувь для мальчиков
+Boys' Accessories=Аксессуары для мальчиков
+Girls' Clothing (Sizes 4 & Up)=Одежда для девочек (4 года +)
+Girls' Shoes=Обувь для девочек
+Girls' Accessories=Аксессуары для девочек
+Unisex Clothing=Одежда Унисекс
+Unisex Shoes=Обувь Унисекс
+Other=Другое
+
+Men's Accessories=Мужские аксессуары
+Backpacks, Bags & Briefcases=Рюкзаки, сумки и портфели
+Belt Buckles=Пряжки
+Belts=Ремни
+Canes & Walking Sticks=Трости
+Cufflinks=Запонки
+Gloves & Mittens=Перчатки
+Hairpieces & Toupees=Накладные волосы
+Handkerchiefs=Носовые платки
+Hats=Шляпы
+ID & Document Holders=ID & Держатели документа
+Key Chains, Rings & Cases=Брелки, кольца и кейсы
+Money Clips=Зажимы для денег
+Organizers & Day Planners=Органайзеры и ежедневники
+Scarves=Шарфы
+Sunglasses=Солнечные очки
+Suspenders, Braces=Подтяжки
+Ties=Галстуки
+Umbrellas=Зонты
+Wallets=Кошельки
+Wristbands=Браслеты
+Mixed Items & Lots=Лоты
+Other=Другое
+
+
+Men's Clothing=Мужская одежда
+Casual Shirts=Повседневные рубашки
+Dress Shirts=Костюмные рубашки
+T-Shirts=Футболки
+Athletic Apparel=Спортивная одежда
+Blazers & Sport Coats=Пиджаки и жакеты
+Coats & Jackets=Пальто и куртки
+Jeans=Джинсы
+Pants=Брюки
+Shorts=Шорты
+Sleepwear & Robes=Пижамы и халаты
+Socks=Носки
+Suits=Костюмы
+Sweaters=Свитера
+Sweats & Hoodies=Олимпийки и толстовки
+Swimwear=Плавки
+Underwear=Нижнее белье
+Vests=Жилеты
+Mixed Items & Lots=Лоты
+Other=Другое
+
+Men's Shoes=Мужская обувь
+Athletic=Спортивная
+Boots=Ботинки
+Casual=Повседневная
+Dress/Formal=Классическая обувь
+Occupational=Спецобувь
+Sandals & Flip Flops=Сандалии и Вьетнамки
+Slippers=Тапочки
+Mixed Items & Lots=Лоты
+
+
+
+Unisex Clothing, Shoes & Accs=Одежда, обувь, аксессуары унисекс
+Unisex Accessories=Унисекс аксессуары
+Unisex Adult Clothing=Одежда унисекс
+Unisex Adult Shoes=Обувь унисекс
+Other=Другое
+
+
+Wedding & Formal Occasion=Свадебная и официальная одежда
+Wedding Dresses=Свадебные платья
+Bridal Shoes=Свадебная обувь
+Bridal Accessories=Свадебные аксессуары
+Bridesmaids' &amp; Formal Dresses=Подружка невесты/вечерние платья
+Mother of the Bride=Мать невесты
+Women's Formal Hats=Женские шляпки
+Men's Formal Occasion=Формальная мужская одежда
+Boys' Formal Occasion=Формальная одежда для мальчиков
+Girls' Formal Occasion=Формальная одежда для девочек
+Novelty Attire=Галантерея, косметика, сувениры
+
+
+Women's Accessories=Женские аксессуары
+Belt Buckles=Пряжки
+Belts=Ремни
+Fascinators & Headpieces=Головные уборы
+Gloves & Mittens=Перчатки и рукавицы
+Hair Accessories=Аксессуары для волос
+Handkerchiefs=Носовые платки
+Hats=Шляпы
+ID & Document Holders=ID и держатели документов
+Key Chains, Rings & Finders=Брелки и кольца
+Organizers & Day Planners=Органийзеры и ежедневники
+Scarves & Wraps=Шарфы и платки
+Shoe Charms, Jibbitz=Кулончики, подвески, накладки
+Sunglasses=Солнечные очки
+Ties=Галстуки
+Umbrellas=Зонты
+Wallets=Кошельки
+Wigs, Extensions & Supplies=Парики и накладные локоны
+Wristbands=Браслеты
+Mixed Items & Lots=Лоты
+Other=Другое
+
+
+Women's Clothing=Женская одежда
+Athletic Apparel=Спортивная одежда
+Coats & Jackets=Пальто/куртки/жакеты
+Dresses=Платья
+Hosiery & Socks=Чулочно-носочные изделия
+Intimates & Sleep=Белье и одежда для сна
+Jeans=Джинсы
+Jumpsuits & Rompers=Комбинезоны
+Leggings=Леггинсы
+Maternity=Мода для беременных
+Pants=Брюки
+Shorts=Шорты
+Skirts=Юбки
+Suits & Blazers=Костюмы и Пиджаки
+Sweaters=Свитера
+Sweats & Hoodies=Олимпийки и толстовки
+Swimwear=Купальники/Пляжная мода
+T-Shirts=Футболки
+Tops & Blouses=Топы и блузки
+Vests=Жилеты
+Mixed Items & Lots=Лоты
+Other=Другое
+
+Women's Handbags & Bags=Сумки
+Handbags & Purses=Сумки и кошельки
+Backpacks & Bookbags=Рюкзаки
+Briefcases & Laptop Bags=Портфели и сумки для ноутбуков
+Diaper Bags=Сумки для мам
+Travel & Shopping Bags=Богажные сумки
+Handbag Accessories=Аксессуары для сумок
+Mixed Items & Lots=Лоты
+
+
+Women's Shoes=Женская обувь
+Athletic=Спортивная
+Boots=Сапоги и ботинки
+Flats & Oxfords=Кеды, балетки и макасины
+Heels=Босоножки и туфли на каблуке
+Occupational=Профессиональная обувь
+Sandals & Flip Flops=Сандалии и Вьетнамки
+Slippers=Тапочки
+Mixed Items & Lots=Лоты
+
+Vintage=Стиль ретро/Винтаж
+Vintage Accessories=Винтажные аксессуары
+Children's Vintage Clothing=Винтажная детская одежда
+Men's Vintage Clothing=Винтажная мужская одежда
+Men's Vintage Shoes=Винтажная мужская обувь
+Unisex &amp; T-Shirts=Унисекс и футболки
+Women's Vintage Clothing=Винтажная женская одежда
+Women's Vintage Shoes=Женская винтажная обувь
+Vintage Reproductions=Винтажные репродукции
+Publications=Публикации
+Other=Другое

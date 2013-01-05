@@ -11,7 +11,13 @@ object ApplicationBuild extends Build {
     "se.radley" %% "play-plugins-salat" % "1.1",
     "commons-codec" % "commons-codec" % "1.5",
     "com.typesafe.akka" % "akka-zeromq" % "2.0.3",
-    "com.codahale" % "jerkson_2.9.1" % "0.5.0"
+    "com.codahale" % "jerkson_2.9.1" % "0.5.0",
+    "commons-codec" % "commons-codec" % "1.4",
+    "org.apache.httpcomponents" % "httpclient" % "4.1.1",
+    "org.apache.httpcomponents" % "httpcore" % "4.1",
+    "commons-logging" % "commons-logging" % "1.1.1",
+    "org.apache.httpcomponents" % "httpclient-cache" % "4.1.1",
+    "org.apache.httpcomponents" % "httpmime" % "4.1.1"
   )
 
   val main = PlayProject(appName, appVersion, appDependencies, mainLang = SCALA).settings(
