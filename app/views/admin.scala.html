@@ -1,0 +1,34 @@
+@(orders: List[persistence.Order])
+
+@mainAdmin("ADMIN") {
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @for((order, index) <- orders.zipWithIndex) {
+            <tr class="orderRow" id="@order.sessionId">
+                <td>
+                   @admin_order(order)
+
+                </td>
+            </tr>
+
+            <tr id="items_@order.sessionId" class="orderItemsHidden">
+
+                <td>
+
+                    @admin_detail(order.sessionId)
+
+                </td>
+            </tr>
+
+        }
+        </tbody>
+    </table>
+
+
+}

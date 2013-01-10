@@ -1,0 +1,6 @@
+.orderItemsHidden {
+    display: none;
+}
+.orderItemsVisible {
+    display: table-row-group;
+}

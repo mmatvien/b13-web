@@ -1,4 +1,4 @@
-@(collection: String, items: List[persistence.Item])(implicit sessionInfo: controllers.SessionInfo)
+@(collection: String, items: List[persistence.Item], page: Int, pagerSize: Int)(implicit sessionInfo: controllers.SessionInfo)
 
 
 
@@ -6,38 +6,33 @@
 
     @menu(collection)
 
-
     <div class="clearfix" id="content" role="main">
-        <ul class="clearfix" id="collection-header">
+            <ul class="clearfix" id="collection-header">
+                <li class="clearfix filter">
+                    <p>размер</p>
+                    <select class="special-select coll-filter" id="size-filter" name="size-filter" size="1" style="position: absolute; opacity: 0; font-size: 14px; width: 135px; height: 28px;">
+                    @for(size <- util.Reference.size) {
+                        <option value="">@size</option>
+                    }
+                    </select>
 
+                    <p style="padding-left:38px;">цвет</p>
 
-            <li class="clearfix filter">
+                    <select class="special-select coll-filter" name="color-filter2" id="color-filter" size="1" style="position: absolute; opacity: 0; font-size: 14px; width: 135px; height: 28px;">
+                    @for(color <- util.Reference.color) {
+                        <option value="">@color</option>
+                    }
+                    </select>
+                </li>
+            </ul>
 
-                <p>размер</p>
-                <select class="special-select coll-filter" id="size-filter" name="size-filter" size="1" style="position: absolute; opacity: 0; font-size: 14px; width: 135px; height: 28px;">
-                @for(size <- util.Reference.size) {
-                    <option value="">@size</option>
-                }
-                </select>
+        <br>
 
-                <p style="padding-left:38px;">цвет</p>
-
-                <select class="special-select coll-filter" name="color-filter2" id="color-filter" size="1" style="position: absolute; opacity: 0; font-size: 14px; width: 135px; height: 28px;">
-                @for(color <- util.Reference.color) {
-                    <option value="">@color</option>
-                }
-                </select>
-            </li>
-        </ul>
-
-
-
-
-        <div><br>
+        <div>
             <ul id="coll-product-list" class="clearfix">
             @for(item <- items) {
 
-                <li class="three-per-row default clearfix" >
+                <li class="three-per-row default clearfix">
                     <div class="coll-image-wrap">
                         <a href="/collection/@collection/item/@item.itemId">
                             <img src="@item.mainPicture" alt="shirt" style="height:330px; width:auto; opacity: 1;">
@@ -46,7 +41,7 @@
                     <div class="coll-prod-caption">
                         <div class="coll-prod-meta ">
                             <a href="/collection/@collection/item/@item.itemId" class="coll-prod-title">
-                                @item.title
+                            @item.title
                             </a>
 
                             <p class="coll-prod-price accent-text">
@@ -55,11 +50,10 @@
                                     <span style="text-decoration: line-through; color:red;">@util.Calculator.calculateFinalPrice(item.originalPrice)</span>
                                 }
 
-                            <a href="@item.itemUrl">[@item.itemId]</a>
+                            <a href="@item.itemUrl">[@item.itemId ]</a>
                             </p>
                         </div> <!-- .coll-prod-meta -->
 
-                        @*<a class="coll-prod-buy styled-small-button" href="/item/@item.itemId">купить</a>*@
                     </div>
                 </li>
 
@@ -67,6 +61,7 @@
             }
             </ul>
         </div>
+        @pagination(page, pagerSize)
         <div class="accent-text" id="breadcrumbs">
             <span class="sep">/</span> <span><a href="/collections">коллекции</a></span>
             <span class="sep">/</span> <span>GUESS</span>

@@ -342,13 +342,7 @@ $(function () {
         }
     }
 
-    /* Twitter Formatting Functions */
-    function linkifyTweet(tweetText) {
-        return tweetText
-            .replace(/((ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&?!\-\/]))?)/gi, '<a href="$1">$1</a>')
-            .replace(/(^|\s)#(\w+)/g, '$1<a href="http://search.twitter.com/search?q=$2">#$2</a>')
-            .replace(/(^|\s)@(\w+)/g, '$1<a href="http://twitter.com/$2">@$2</a>');
-    }
+
 
     function relativeTime(time_value) {
         var parsed_date = parseDate(time_value);
@@ -639,6 +633,7 @@ $(function () {
         // Initialize first photo
         product_container.find('img:first').imagesLoaded(function () {
             var elem = $(this);
+            alert(elem.height());
             elem.addClass('active').fadeIn(100);
             product_container.css('height', elem.height());
             elem.parent().css({'height': elem.height(), 'width': elem.width()});
@@ -658,6 +653,7 @@ $(function () {
                 photo_to_show.imagesLoaded(function () {
                     product_container.animate({height: photo_to_show.height()}, 200, function () {
                         photo_to_show.fadeIn(100, function () {
+
                             $(this).addClass('active');
                             $(this).parent().css({'height': $(this).height(), 'width': $(this).width()});
                         });

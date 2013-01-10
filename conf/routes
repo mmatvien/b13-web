@@ -6,7 +6,7 @@
 GET     /                                       controllers.Application.index
 
 
-GET     /collection/:collection                 controllers.Application.collection(collection: String)
+GET     /collection/:collection/:page                 controllers.Application.collection(collection: String, page: Int)
 GET     /collection/:collection/item/:itemId    controllers.Application.item(collection:String,itemId: String)
 GET     /cart                                   controllers.Application.cart
 GET     /cart/remove/:itemHash                  controllers.Application.remove(itemHash: String)
@@ -15,6 +15,15 @@ POST    /cart/add                               controllers.Application.add
 POST    /cart                                   controllers.Application.update
 
 POST    /payment                                controllers.Payment.payment
+
+
+# ROUTES for ADMIN area
+
+GET     /admin                                   controllers.Admin.index
+GET     /admin/ordered/:collection/:itemId       controllers.Admin.ordered(collection:String,itemId: String)
+GET     /admin/received/:collection/:itemId       controllers.Admin.received(collection:String,itemId: String)
+
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file                           controllers.Assets.at(path="/public", file)

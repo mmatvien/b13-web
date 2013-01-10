@@ -1,12 +1,10 @@
 package controllers
 
-import persistence.{Cart, CollectionM}
+import persistence.{Item, Cart, CartItem, CartItemVariation}
 
 import play.api.mvc._
 import play.api.data._
 import play.api.data.Forms._
-import persistence.CartItem
-import persistence.CartItemVariation
 import scala.Some
 
 
@@ -19,22 +17,23 @@ object Application extends Controller with SessionHelper {
   }
 
 
-  def collection(collection: String) = Action {
+  def collection(collection: String, page: Int) = Action {
     implicit request =>
 
       val filter = if (request.queryString.contains("filter")) request.queryString("filter").head else ""
       val size = if (request.queryString.contains("size")) request.queryString("size").head else ""
       val cat = if (request.queryString.contains("cat")) request.queryString("cat").head else ""
 
-      val items = (new CollectionM(collection)).Item.findItems(cat, filter, size)
+      val items = Item.findItems(collection, cat, filter, size, page)
+      val pagerSize = Item.findPagerSize(collection, cat, filter, size)
 
-      Ok(views.html.collection(collection, items)).withSession("uuid" -> sessionN(request))
+      Ok(views.html.collection(collection, items, page, pagerSize)).withSession("uuid" -> sessionN(request))
   }
 
 
   def item(collection: String, itemId: String) = Action {
     implicit request =>
-      Ok(views.html.item(new CollectionM(collection).Item.getItem(itemId))).withSession("uuid" -> sessionN(request))
+      Ok(views.html.item(Item.getItem(itemId))).withSession("uuid" -> sessionN(request))
   }
 
 
@@ -129,7 +128,6 @@ object Application extends Controller with SessionHelper {
     implicit request =>
       Ok(views.html.cart(currentCartItems))
   }
-
 
 
 }

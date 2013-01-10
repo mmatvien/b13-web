@@ -2,7 +2,7 @@
 
 @main("brand 13") {
 
-    <div class="clearfix template-product" id="product-content" itemscope="" itemtype="http://schema.org/Product">
+    <div class="clearfix template-product" id="product-content">
 
 
 
@@ -72,13 +72,8 @@
             <div id="product-photo-container" style="height: 52px;">
 
 
-                @if(item.variations.pictures.isEmpty){
-                    <a class="gallery cboxElement" href="@item.mainPicture" rel="gallery" style="height: 0px; width: 0px;">
-                        <img src="@item.mainPicture" alt="shirt" class="active" >
-                    </a>
-                }
-
                 @for(picture <- item.variations.pictures){
+
                     <a class="gallery cboxElement" href="@item.mainPicture" rel="gallery" style="height: 0px; width: 0px;">
                         <img src="@picture" alt="shirt" class="" style="display: none;">
                     </a>

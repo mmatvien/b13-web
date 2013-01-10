@@ -30,10 +30,23 @@ case class CartItemVariation(variationName: String, variationValue: String)
 case class Cart(
                  date: Date,
                  sessionId: String,
+                 cartState: Int,
                  cartItems: List[CartItem]
                  )
 
 object Cart extends ModelCompanion[Cart, ObjectId] {
+
+
+  val collection = MongoConnection()("b13_web")("cart")
+  val dao = new SalatDAO[Cart, ObjectId](collection = collection) {}
+
+  // -- Queries
+
+  def findSessionCart(sessionId: String): Option[Cart] =
+    dao.find(MongoDBObject("sessionId" -> sessionId, "cartState" -> 0)).toList.headOption
+
+  def findOrderCart(sessionId: String): Cart =
+    dao.find(MongoDBObject("sessionId" -> sessionId, "cartState" -> 1)).toList.headOption.get
 
   def updateCartItem(sessionId: String, itemId: String, quantityA: Int, variations: List[CartItemVariation]) {
     findSessionCart(sessionId: String) match {
@@ -56,22 +69,19 @@ object Cart extends ModelCompanion[Cart, ObjectId] {
 
   }
 
-
-  val collection = MongoConnection()("b13_web")("cart")
-  val dao = new SalatDAO[Cart, ObjectId](collection = collection) {}
-
-  // -- Queries
-  def findSessionCart(sessionId: String): Option[Cart] =
-    dao.find(MongoDBObject("sessionId" -> sessionId)).toList.headOption
-
-
   def createNewCart(sessionId: String, cartItem: CartItem) {
-    dao.insert(Cart(new Date, sessionId, List(cartItem)))
+    dao.insert(Cart(new Date, sessionId, 0, List(cartItem)))
   }
 
 
   def findCartItem(cart: Cart, itemId: String, variations: List[CartItemVariation]): Option[CartItem] = {
     cart.cartItems.filter(_.itemId == itemId).filter(_.variations == variations).headOption
+  }
+
+  def updateCartState(cart: Cart, state: Int) {
+    dao.update(q = MongoDBObject("sessionId" -> cart.sessionId, "cartState" -> 0),
+      t = cart.copy(cartState = state),
+      upsert = false, multi = false, wc = Cart.dao.collection.writeConcern)
   }
 
   /**
@@ -95,9 +105,7 @@ object Cart extends ModelCompanion[Cart, ObjectId] {
     findSessionCart(sessionId) match {
       case Some(cart) => {
         if (cart.cartItems.size > 1) {
-
           val newList = cart.cartItems.filter(item => item.toHash != itemToRemoveHash)
-
           dao.update(q = MongoDBObject("sessionId" -> cart.sessionId),
             t = cart.copy(cartItems = newList),
             upsert = false, multi = false, wc = Cart.dao.collection.writeConcern)

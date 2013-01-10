@@ -2,7 +2,8 @@ package persistence
 
 import com.mongodb.casbah.commons.MongoDBObject
 import com.mongodb.casbah.Imports._
-
+import java.util.Date
+import java.text.SimpleDateFormat
 
 /**
  * User: max
@@ -21,6 +22,11 @@ object Util {
     result
   }
 
+  def formatDate(dt: Date): String = {
+    val format: SimpleDateFormat = new SimpleDateFormat("MM-dd-yyyy HH:MM")
+    format.format(dt)
+  }
+
   def collectCategories(collection: String): List[Map[String, List[Map[String, List[String]]]]] = {
 
     def appendCat(cat: String, s: List[Map[String, List[Map[String, List[String]]]]], key: String, res: Map[String, List[String]]): List[Map[String, List[Map[String, List[String]]]]] = {
@@ -32,9 +38,9 @@ object Util {
     }
 
     lazy val categories: List[Map[String, List[Map[String, List[String]]]]] = {
-      val q = MongoDBObject.empty
+      val q = MongoDBObject("collection" -> collection)
       val fields = MongoDBObject("categoryName" -> 1)
-      val cats = MongoFactory.connection_b13_ebay(collection).find(q, fields).toList.map {
+      val cats = MongoFactory.connection_b13_ebay.find(q, fields).toList.map {
         x => {
           val all = x("categoryName").toString.split(":").toList
           all.drop(1).head :: all.drop(1).tail
@@ -58,9 +64,20 @@ object Util {
 
       formatted2
     }
-//     println(categories.mkString("\n"))
-//    println("-------")
+
     categories
   }
 
+  case class Specifics(name: String, value: String)
+
+  def collectSpecifics(collection: String) {
+    val q = MongoDBObject.empty
+    val fields = MongoDBObject("specifics" -> 1, "collection" -> collection)
+    val specifics = MongoFactory.connection_b13_ebay.find(q, fields).toList.map {
+      x => {
+        x.getAs[DBObject]("specifics").get.toMap.get("Brand")
+      }
+    }
+    println(specifics.toSet)
+  }
 }

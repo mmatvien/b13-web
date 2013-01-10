@@ -1,5 +1,6 @@
 /*
- * Copyright (c) 2012.
+ * Copyright (c) 2013.
+ * Maxim Matvienko - maxiru (r) LLC.
  * All Right Reserved, http://www.maxiru.com/
  */
 
@@ -19,7 +20,7 @@ case class Variation(
                       variations: Map[String, List[String]])
 
 case class Item(
-                 collection:String,
+                 collection: String,
                  itemId: String,
                  itemUrl: String,
                  title: String,
@@ -29,48 +30,44 @@ case class Item(
                  originalPrice: Double,
                  mainPicture: String,
                  variations: Variation,
-                 specifics: Map[String, String])
+                 specifics: Map[String, String],
+                 state: Int)
 
-class CollectionM(collection: String) {
+object Item extends ModelCompanion[Item, ObjectId] {
 
-  object Item extends ModelCompanion[Item, ObjectId] {
-
-    val coll = MongoConnection()("b13_ebay")(collection)
-    val dao = new SalatDAO[Item, ObjectId](collection = coll) {}
+  val coll = MongoConnection()("b13_ebay")("items")
+  val dao = new SalatDAO[Item, ObjectId](collection = coll) {}
 
 
-    // -- Queries
-    def findItems(cat: String, filter: String, size: String): List[Item] = {
-      val unfiltered = dao.find(MongoDBObject()).toList
+  // -- Queries
+  def findItems(collection: String, cat: String, filter: String, size: String, page: Int): List[Item] = {
+    val itemsPerPage = 12
+    dao.find(buildQuery(collection, cat, filter)).skip(itemsPerPage * (page - 1)).limit(itemsPerPage).toList
+  }
 
-      val filtered = if (filter != "") {
-        unfiltered.filter {
-          item =>
-            item.categoryName.contains(cat) && item.categoryName.toUpperCase.contains(filter.toUpperCase)
-        }
-      } else unfiltered
 
-      val sized = if (size != "") {
-        filtered.filter {
-          item =>
-            val sizes = for (
-              key <- item.variations.variations.keys
-              if (key.contains("Size"))
-            ) yield {
-              val x1 = "" + item.variations.variations(key)
-              Util.listU(x1).exists(x => x == size)
-            }
-            sizes.headOption.getOrElse(false)
-        }
-      } else filtered
+  def buildQuery(collection: String, cat: String, filter: String):MongoDBObject = {
+    val queryBuilder = MongoDBObject.newBuilder
+    queryBuilder += "collection" -> collection
+    queryBuilder += "categoryName" -> (".*" + cat + ".*" + filter + ".*").r
+    queryBuilder.result()
+  }
 
-      sized
+  def findPagerSize(collection: String, cat: String, filter: String, size: String): Int = {
+   dao.count(buildQuery(collection, cat, filter)).toInt
+  }
 
-    }
 
-    def getItem(itemId: String): Item = {
-      dao.findOne(MongoDBObject("itemId" -> itemId)).get
-    }
+  def changeState(itemId: String, state: Int) {
+    val item = getItem(itemId)
+    dao.update(q = MongoDBObject("itemId" -> itemId),
+      t = item.copy(state = state),
+      upsert = false, multi = false, wc = Item.dao.collection.writeConcern)
+  }
+
+
+  def getItem(itemId: String): Item = {
+    dao.findOne(MongoDBObject("itemId" -> itemId)).get
   }
 
 }

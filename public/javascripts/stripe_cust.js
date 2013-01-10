@@ -35,7 +35,9 @@ $(document).ready(function () {
         removeInputNames(); // THIS IS IMPORTANT!
 
         // given a valid form, submit the payment details to stripe
-        $(form['submit-button']).attr("disabled", "disabled")
+        $('.submit-button').attr("disabled", "disabled");
+        $('.submit-button').addClass("disabled")
+
 
         Stripe.createToken({
             number: $('.card-number').val(),
@@ -45,7 +47,8 @@ $(document).ready(function () {
         }, function (status, response) {
             if (response.error) {
                 // re-enable the submit button
-                $(form['submit-button']).removeAttr("disabled")
+                $('.submit-button').removeAttr("disabled")
+                $('.submit-button').removeClass("disabled")
 
                 // show the error
                 $(".payment-errors").html(response.error.message);

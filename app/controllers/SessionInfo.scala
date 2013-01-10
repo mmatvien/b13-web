@@ -37,11 +37,8 @@ trait SessionHelper {
     request.session.get("uuid") match {
       case Some(uuid) => getCartInfo(uuid)
       case None => {
-        println(request.session)
         val newSession = java.util.UUID.randomUUID().toString
         request.session + ("uuid" -> newSession)
-
-        println("session is set to : " + request.session.get("uuid"))
         getCartInfo(newSession)
       }
     }

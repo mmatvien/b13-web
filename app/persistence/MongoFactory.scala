@@ -21,6 +21,6 @@ object MongoFactory {
 
   val connection = MongoConnection(SERVER)
 
-  val connection_b13_ebay = connection(DATABASE_B13_EBAY)(_)
+  val connection_b13_ebay = connection(DATABASE_B13_EBAY)("items")
 
 }

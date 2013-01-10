@@ -10,17 +10,21 @@
 
 
         <form action="/payment" method="post" id="payment-form" style="display: none;" class="form-horizontal">
+
+
+    <input type="hidden" id="total" name="total" value="@cartItems.map(x => x.price * x.quantity).sum">
+
             <div class="row-fluid">
                 <div class="span4">
                     <div class="control-group">
-                        <label class="control-label" for="lName" style="color: white;">Фамилия</label>
+                        <label class="control-label" for="lastName" style="color: white;">Фамилия</label>
                         <div class="controls">
-                        <input type="text" name="lName" id="lName" class="required" style="height: 10px; color: white;" placeholder="Фамилия"/>
+                        <input type="text" name="lastName" id="lastName" class="required" style="height: 10px; color: white;" placeholder="Фамилия"/>
                         </div>
 
-                        <label class="control-label" for="fName" style="color: white;">Имя</label>
+                        <label class="control-label" for="firstName" style="color: white;">Имя</label>
                         <div class="controls">
-                        <input type="text" name="fName" id="fName" class="required" style="height: 10px; color: white;" placeholder="Имя"/>
+                        <input type="text" name="firstName" id="firstName" class="required" style="height: 10px; color: white;" placeholder="Имя"/>
                         </div>
 
                         <label class="control-label" for="phone" style="color: white;">Телефон</label>
@@ -33,31 +37,59 @@
                             <input type="text" name="email" id="email" class="required" style="height: 10px; color: white;" placeholder="Email">
                         </div>
 
+
+                        <label class="control-label" for="country" style="color: white;">Страна</label>
+                        <div class="controls">
+                            <input type="text" name="country" id="country" class="required" style="height: 10px; color: white;" placeholder="Страна">
+                        </div>
+
                         <label class="control-label" for="city" style="color: white;">Город</label>
                         <div class="controls">
                             <input type="text" name="city" id="city" class="required" style="height: 10px; color: white;" placeholder="Город">
                         </div>
 
-                        <label class="control-label" for="address" style="color: white;">Адрес</label>
+                        <label class="control-label" for="region" style="color: white;">Регион</label>
                         <div class="controls">
-                            <input type="text" name="address" id="address" class="required" style="height: 10px; color: white;" placeholder="Адрес">
+                            <input type="text" name="region" id="region" class="required" style="height: 10px; color: white;" placeholder="Регион">
+                        </div>
+
+
+                        <label class="control-label" for="street" style="color: white;">Улица</label>
+                        <div class="controls">
+                            <input type="text" name="street" id="street" class="required" style="height: 10px; color: white;" placeholder="Улица">
+                        </div>
+
+
+                        <label class="control-label" for="building" style="color: white;">Дом</label>
+                        <div class="controls">
+                            <input type="text" name="building" id="building" class="required" style="height: 10px; color: white;" placeholder="Дом">
+                        </div>
+
+                        <label class="control-label" for="apt" style="color: white;">Квартира</label>
+                        <div class="controls">
+                            <input type="text" name="apt" id="apt" class="required" style="height: 10px; color: white;" placeholder="Квартира">
+                        </div>
+
+                        <label class="control-label" for="zip" style="color: white;">Индекс</label>
+                        <div class="controls">
+                            <input type="text" name="zip" id="zip" class="required" style="height: 10px; color: white;" placeholder="Индекс">
                         </div>
                     </div>
                 </div>
 
                 <div class="span4">
                     <div class="control-group">
-                        <label class="control-label" for="lName" style="color: white;">Номер карты</label>
+                        <label class="control-label"  style="color: white;">Номер карты</label>
                         <div class="controls">
                         <input style="text-align: left; color: white; height: 10px;" type="text" size="20" autocomplete="off" class="card-number" placeholder="Номер карты"/>
                         </div>
 
-                        <label class="control-label" for="lName" style="color: white;">Код безопасности</label>
+                        <label class="control-label" style="color: white;">Код безопасности</label>
                         <div class="controls  controls-row">
                         <input style="color: white; height: 10px; width: 50px;" type="text" size="20" autocomplete="off" maxlength="4" class="card-cvc  span4" placeholder="CVC"/>
                         </div>
 
-                        <label class="control-label" for="lName" style="color: white;">Expiration</label>
+                        <label class="control-label" style="color: white;">Expiration</label>
                         <div class="controls controls-row">
                         <input style="color: white; width: 45px; height: 10px;" type="text" maxlength="2" size="2" class="card-expiry-month span4" placeholder="MM"/>
                             <span class="span1">/</span>
