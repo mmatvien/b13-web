@@ -12,13 +12,13 @@ $ ->
       qString += "?size=" + size
     window.location.href = qString
 
-
 window.Pager = class Pager
   goToPage: (num) ->
     qString = window.location.search
     cut = window.location.pathname.split("/")
     delete cut[cut.length - 1]
     base = cut.reduce (x, y) -> x + "/" + y
-    window.location = base + "/" + num + qString
+    window.location.replace(base + "/" + num + qString)
+
 
 

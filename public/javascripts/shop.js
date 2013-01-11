@@ -633,7 +633,6 @@ $(function () {
         // Initialize first photo
         product_container.find('img:first').imagesLoaded(function () {
             var elem = $(this);
-            alert(elem.height());
             elem.addClass('active').fadeIn(100);
             product_container.css('height', elem.height());
             elem.parent().css({'height': elem.height(), 'width': elem.width()});
