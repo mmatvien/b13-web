@@ -48,7 +48,7 @@ object Translator {
    *
    * @param category full category string
    */
-  def calculateShipping(category: String) {
+  def extractShipmentInfo(category: String) {
 
     val fullList = category.split(':').toList.reverse
 

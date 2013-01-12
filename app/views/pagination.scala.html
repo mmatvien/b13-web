@@ -1,21 +1,21 @@
 @(currentPage: Int, totalPages: Int)
 
 <div class="pagination">
-    @totalPages
+
     <ul>
         @if(currentPage > 1) {
-            <li> <a href="javascript:(new Pager).goToPage(@(currentPage - 1))">Prev</a></li>
+            <li> <a href="javascript:(new Pager).goToPage(@(currentPage - 1))"> <<< </a></li>
         }
-        @for(x <- 1 until totalPages/12 + 1) {
+        @for(x <- 1 until totalPages/30 + 1) {
             @if(x == currentPage){
-                <li class="disabled"><a id="pager_@x" href="javascript:(new Pager).goToPage(@x)">@x</a></li>
+                <li class="disabled" ><a id="pager_@x" href="javascript:(new Pager).goToPage(@x)">@x</a></li>
             } else {
                 <li><a id="pager_@x" href="javascript:(new Pager).goToPage(@x)">@x</a></li>
             }
 
         }
-        @if(totalPages/12 > currentPage) {
-            <li> <a href="javascript:(new Pager).goToPage(@(currentPage + 1))">Next</a></li>
+        @if(totalPages/30 > currentPage) {
+            <li> <a href="javascript:(new Pager).goToPage(@(currentPage + 1))"> >>> </a></li>
         }
     </ul>
 </div>

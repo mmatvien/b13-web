@@ -10,7 +10,7 @@
     @persistence.Util.collectCategories(collection).map { cat =>
         @for((subCat, li) <- cat) {
             <li>
-                <a href="">@util.Translator.translate(subCat)</a>
+                <a href="" style="font-family: Consolas;color: #1b1a1b;">@util.Translator.translate(subCat)</a>
                 <div>
 
                     @li.map { xx =>
@@ -28,24 +28,6 @@
             </li>
         }
     }
-
-
-        <li>
-            <a href="">brand</a>
-            <div>
-                @persistence.Util.collectSpecifics(collection)
-
-                <ul>
-
-                    <li class="oe_heading">Gucci</li>
-
-                        <li><a href="#">men's</a></li>
-                        <li><a href="#">wemen's</a></li>
-                </ul>
-
-
-            </div>
-        </li>
 
     </ul>
 </div>

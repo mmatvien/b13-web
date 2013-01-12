@@ -41,7 +41,7 @@ object Item extends ModelCompanion[Item, ObjectId] {
 
   // -- Queries
   def findItems(collection: String, cat: String, filter: String, size: String, page: Int): List[Item] = {
-    val itemsPerPage = 12
+    val itemsPerPage = 30
     dao.find(buildQuery(collection, cat, filter)).skip(itemsPerPage * (page - 1)).limit(itemsPerPage).toList
   }
 

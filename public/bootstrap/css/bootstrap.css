@@ -1424,7 +1424,7 @@ input[readonly],
 select[readonly],
 textarea[readonly] {
   cursor: not-allowed;
-  background-color: #eeeeee;
+  background-color: #b0b0b0;
 }
 
 input[type="radio"][disabled],
@@ -3189,8 +3189,8 @@ button.close {
 .btn.disabled,
 .btn[disabled] {
   color: #333333;
-  background-color: #e6e6e6;
-  *background-color: #d9d9d9;
+  background-color: #8a8a8a;
+  *background-color: #b0b0b0;
 }
 
 .btn:active,
@@ -4934,9 +4934,9 @@ input[type="submit"].btn.btn-mini {
 .pagination ul > .disabled > span,
 .pagination ul > .disabled > a,
 .pagination ul > .disabled > a:hover {
-  color: #999999;
+  color: #1b1a1b;
   cursor: default;
-  background-color: transparent;
+  background-color: #8a8a8a;
 }
 
 .pagination ul > li:first-child > a,

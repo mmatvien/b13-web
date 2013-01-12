@@ -26,7 +26,7 @@
             <header id="header" class="clearfix">
                 <div id="cart-summary" class="accent-text">
                     <h1 id="title" class="smooth" role="banner" style="visibility: visible;">
-                        <a href="/"><img src="/assets/images/b13-logo.png"/></a>
+                        <a href="/"><img src="/assets/images/logo.png" style="width: 200px;"/></a>
                     </h1>
                     <p class="cart-elem" id="cart-count">
                         <a class="no-underline" href="/cart">
@@ -53,12 +53,12 @@
                         <a href="/cart">оплатить</a>
                     </p>
 
-                    <form action="/search" method="get" id="search-form" role="search">
-                        <input name="q" type="text" id="search-field" placeholder="поиск..." class="hint">
-                        <input type="submit" value="" name="submit" id="search-submit">
-                    </form>
+                    @*<form action="/search" method="get" id="search-form" role="search">*@
+                        @*<input name="q" type="text" id="search-field" placeholder="поиск..." class="hint">*@
+                        @*<input type="submit" value="" name="submit" id="search-submit">*@
+                    @*</form>*@
 
-                    <a href="/cart" class="cart-elem smooth roundify-total round" id="cart-total">
+                    <a href="/cart" class="cart-elem smooth " id="cart-total">
                         <span id="cart-price" style="opacity: 1;">@sessionInfo.total</span>
                     </a>
                 </div> <!-- #cart-summary -->
@@ -108,11 +108,7 @@
             </footer> <!-- #footer -->
             <div id="sub-footer" class="clearfix">
                 <div class="footer-left-content">
-                    <div class="footer-nav accent-text" role="navigation">
-                        <a href="/search" title="поиск">поиск</a>
 
-                        <a href="/pages/about-us" title="о нас">о нас</a>
-                    </div>
 
                     <p id="shopify-attr" class="accent-text" role="contentinfo">Copyright © 2012 brand13.</p>
                 </div> <!-- #footer-left-content -->

@@ -4,30 +4,36 @@
 
 @main("brand 13") {
 
-    @menu(collection)
+    <div class = "collectionHeader">
+
+        @menu(collection)
+    </div>
+    <div class="collectionSubHeader">
+
+        <ul class="clearfix" id="collection-header">
+            <li class="clearfix filterL">найдено: @pagerSize</li>
+            <li class="clearfix filter">
+                <p>размер</p>
+                <select class="special-select coll-filter" id="size-filter" name="size-filter" size="1" style="position: absolute; opacity: 0; font-size: 14px; width: 135px; height: 28px;">
+                @for(size <- util.Reference.size) {
+                    <option value="">@size</option>
+                }
+                </select>
+
+                <p style="padding-left:38px;">цвет</p>
+
+                <select class="special-select coll-filter" name="color-filter2" id="color-filter" size="1" style="position: absolute; opacity: 0; font-size: 14px; width: 135px; height: 28px;">
+                @for(color <- util.Reference.color) {
+                    <option value="">@color</option>
+                }
+                </select>
+            </li>
+        </ul>
+
+
+    </div>
 
     <div class="clearfix" id="content" role="main">
-            <ul class="clearfix" id="collection-header">
-                <li class="clearfix filter">
-                    <p>размер</p>
-                    <select class="special-select coll-filter" id="size-filter" name="size-filter" size="1" style="position: absolute; opacity: 0; font-size: 14px; width: 135px; height: 28px;">
-                    @for(size <- util.Reference.size) {
-                        <option value="">@size</option>
-                    }
-                    </select>
-
-                    <p style="padding-left:38px;">цвет</p>
-
-                    <select class="special-select coll-filter" name="color-filter2" id="color-filter" size="1" style="position: absolute; opacity: 0; font-size: 14px; width: 135px; height: 28px;">
-                    @for(color <- util.Reference.color) {
-                        <option value="">@color</option>
-                    }
-                    </select>
-                </li>
-            </ul>
-
-        <br>
-
         <div>
             <ul id="coll-product-list" class="clearfix">
             @for(item <- items) {

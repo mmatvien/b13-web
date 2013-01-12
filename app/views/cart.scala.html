@@ -7,8 +7,6 @@
         <div class="clearfix page-container">
             @if(!cartItems.isEmpty) {
 
-                <h1 class="page-title">корзина</h1>
-
                 <form action="/cart" method="post" id="cartform">
                     <table>
                         <tbody>
@@ -42,7 +40,8 @@
                                     <input type="hidden" id="items[@index].hash" name="items[@index].hash" value="@item.toHash">
                                     <input type="hidden" id="items[@index].itemId" name="items[@index].itemId" value="@item.itemId"></td>
 
-                                    <td class="cart-quantity"><input type="text" class="field styled-input" name="items[@index].quantity" id="items[@index].quantity" value="@item.quantity"></td>
+                                    <td class="cart-quantity"><input type="text" class="field styled-input" name="items[@index].quantity" id="items[@index].quantity" value="@item.quantity">
+                                        <input type="submit" id="update-cart" name="update" value="обновить"></td>
                                     <td class="cart-total">@(item.price * item.quantity)</td>
                                     <td class="cart-remove"><a href="/cart/remove/@item.toHash" class="remove-glyph" title="remove"></a></td>
                                 </tr>
@@ -54,10 +53,12 @@
 
                     <div id="cart-meta">
                         <h3 id="cart-subtotal">итого <em>@cartItems.map(x => x.price * x.quantity).sum</em></h3>
-                        <h3 id="estimated-shipping">+ доставка <em>250.00</em></h3>
+                        <h3 id="estimated-shipping">+ доставка
 
-                        <input type="submit" id="update-cart" name="update" value="обновить">
-                        <span class="or"> или </span>
+
+                            <em>@util.Calculator.calculateShipment(cartItems)</em></h3>
+
+
                         <input id="checkout-button" class="styled-submit smooth" type="submit" name="update" value="оформить">
                     </div> <!-- #cart-meta -->
 
