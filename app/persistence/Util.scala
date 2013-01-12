@@ -65,7 +65,7 @@ object Util {
       formatted2
     }
 
-    categories.sorted
+    categories
   }
 
   case class Specifics(name: String, value: String)
