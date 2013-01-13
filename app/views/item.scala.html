@@ -22,7 +22,7 @@
                 @if(!item.variations.variations.keys.isEmpty) {
                         @for((variation, index) <- item.variations.variations.keys.zipWithIndex) {
 
-                        <label for="variations[@index].value">@variation</label>
+                        <label for="variations[@index].value">@util.Translator.translate(variation)</label>
 
                         <input type="hidden" id="variations[@index].name" name="variations[@index].name" value="@variation">
 
@@ -30,7 +30,7 @@
 
                         @for(value <- persistence.Util.listU("" + item.variations.variations(variation))) {
 
-                            <option value = "@value">@value</option>
+                            <option value = "@value">@util.Translator.translate(value)</option>
                         }
                         </select>
 
