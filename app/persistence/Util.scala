@@ -70,14 +70,17 @@ object Util {
 
   case class Specifics(name: String, value: String)
 
-  def collectSpecifics(collection: String) {
-    val q = MongoDBObject.empty
-    val fields = MongoDBObject("specifics" -> 1, "collection" -> collection)
+  def collectSpecifics(collection: String): Set[Any] = {
+    val q = MongoDBObject( "collection" -> collection)
+    val fields = MongoDBObject("specifics" -> 1)
     val specifics = MongoFactory.connection_b13_ebay.find(q, fields).toList.map {
       x => {
-        x.getAs[DBObject]("specifics").get.toMap.get("Brand")
+       x.getAs[DBObject]("specifics") match {
+         case Some(sp) => sp.toMap.get("Brand")
+         case None => ""
+       }
       }
     }
-    println(specifics.toSet)
+    specifics.toSet
   }
 }
