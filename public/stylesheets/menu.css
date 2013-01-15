@@ -17,18 +17,20 @@ ul.oe_menu{
     list-style:none;
     position:relative;
     margin:0px 0px 0px 0px;
-    width:500px;
+    width:900px;
     float:left;
     clear:both;
     border-bottom:1px solid #e2e2e2;
 }
 ul.oe_menu > li{
-    width:112px;
+    width:122px;
     height:20px;
     padding-bottom:25px;
     float:left;
     position:relative;
-
+    background-image: -webkit-linear-gradient(90deg, #f0f0f0, white);
+    margin-left: 1px;
+    text-align: center;
 }
 ul.oe_menu > li > a{
     display:block;
@@ -36,33 +38,41 @@ ul.oe_menu > li > a{
     text-decoration:none;
     font-weight:bold;
     font-size:18px;
-    width:90px;
+    width:110px;
     height:15px;
     padding:8px;
-    margin:1px;
+    text-align: center;
+    margin-top:10px;
     text-shadow:0px 0px 1px #000;
     opacity:0.8;
 
 }
 ul.oe_menu > li > a:hover,
 ul.oe_menu > li.selected > a{
-    background:#fff;
-    color:#101010;
-    opacity:1.0;
+    background-image: -webkit-linear-gradient(90deg, #f0f0f0, white);
+    color: white;
+    width: 104px;
+    display:block;
+    margin:2px;
+    padding:8px;
+    margin-top:10px;
+
+    /*opacity:1.0;*/
 }
 .oe_wrapper ul.hovered > li > a{
-    background:#fff;
-    text-shadow:0px 0px 1px #FFF;
+
+    /*text-shadow:0px 0px 1px #FFF;*/
 }
 ul.oe_menu div{
     position:absolute;
-    top:33px;
+    top:45px;
     left:1px;
     background:#fff;
     width:798px;
     height:480px;
     padding:30px;
     display:none;
+    text-align: left;
 }
 ul.oe_menu div ul li a{
     text-decoration:none;
@@ -70,7 +80,7 @@ ul.oe_menu div ul li a{
     padding:2px 2px 2px 4px;
     margin:2px;
     display:block;
-    font-size:12px;
+    font-size:14px;
 }
 ul.oe_menu div ul.oe_full{
     width:100%;
@@ -82,7 +92,7 @@ ul.oe_menu div ul li a:hover{
 ul.oe_menu li ul{
     list-style:none;
     float:left;
-    width: 250px;
+    width: 280px;
     margin-right:10px;
 }
 li.oe_heading{

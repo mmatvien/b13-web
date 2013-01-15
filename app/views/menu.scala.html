@@ -10,7 +10,7 @@
     @persistence.Util.collectCategories(collection).map { cat =>
         @for((subCat, li) <- cat) {
             <li>
-                <a href="" style="font-family: Consolas;color: #1b1a1b;">@util.Translator.translate(subCat)</a>
+                <a href="" style="color: #1b1a1b;">@util.Translator.translate(subCat)</a>
                 <div>
 
                     @li.map { xx =>

@@ -6,6 +6,8 @@
 
 package util
 
+import play.api.libs.json._
+
 /**
  * User: max
  * Date: 1/11/13
@@ -21,5 +23,14 @@ object UI {
       case _ => url
     }
     res
+  }
+
+
+  def extractVariationSpecs(specs: List[Map[String, String]]): List[(String, String)] = {
+    def extract(index: Int): (String, String) = {
+      val json = Json.parse("" + specs(index))
+      ((json \ "name").as[String], (json \ "value").as[String])
+    }
+    (0 to specs.size - 1).foldLeft(Nil: List[(String, String)])((c, i) => extract(i) :: c)
   }
 }

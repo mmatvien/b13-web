@@ -17,7 +17,15 @@ import com.novus.salat.dao._
  */
 case class Variation(
                       pictures: List[String],
-                      variations: Map[String, List[String]])
+                      specificsSet: Map[String, List[String]],
+                      specifics: List[VariationSpecifics])
+
+case class VariationSpecifics(
+                               quantity: Int,
+                               specific: List[Map[String, String]]
+                               )
+
+case class VSMap(map: Map[String, String])
 
 case class Item(
                  collection: String,
@@ -46,7 +54,7 @@ object Item extends ModelCompanion[Item, ObjectId] {
   }
 
 
-  def buildQuery(collection: String, cat: String, filter: String):MongoDBObject = {
+  def buildQuery(collection: String, cat: String, filter: String): MongoDBObject = {
     val queryBuilder = MongoDBObject.newBuilder
     queryBuilder += "collection" -> collection
     queryBuilder += "categoryName" -> (".*" + cat + ".*" + filter + ".*").r
@@ -54,7 +62,7 @@ object Item extends ModelCompanion[Item, ObjectId] {
   }
 
   def findPagerSize(collection: String, cat: String, filter: String, size: String): Int = {
-   dao.count(buildQuery(collection, cat, filter)).toInt
+    dao.count(buildQuery(collection, cat, filter)).toInt
   }
 
 

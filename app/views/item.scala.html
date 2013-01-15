@@ -4,37 +4,46 @@
 
     <div class="clearfix template-product" id="product-content">
 
-
+        <div id="variationDataX" style="visibility:hidden;">
+           @for(spec <- item.variations.specifics){
+                quantity : @spec.quantity , @util.UI.extractVariationSpecs(spec.specific.toList).map { x =>
+                @x._1 : @x._2,
+                }
+               ~
+            }
+        </div>
 
         <form action="/cart/add" method="post" enctype="multipart/form-data">
             <ul id="product-details">
                 <li id="product-title">
-                    <h1 itemprop="name">@item.title</h1>
+                    <h1>@item.title</h1>
                 </li>
 
-                <li id="product-prices" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                <li id="product-prices">
 
                     <p id="product-price" class="smooth">
-                        <span class="product-price" itemprop="price">цена: @util.Calculator.calculateFinalPrice(item.price) руб.</span>
+                        <span class="product-price">цена: @util.Calculator.calculateFinalPrice(item.price) руб.</span>
                     </p>
+
                 </li>
 
-                @if(!item.variations.variations.keys.isEmpty) {
-                        @for((variation, index) <- item.variations.variations.keys.zipWithIndex) {
+                @if(!item.variations.specificsSet.keys.isEmpty) {
+                        @for((variation, index) <- item.variations.specificsSet.keys.toList.reverse.zipWithIndex) {
 
-                        <label for="variations[@index].value">@util.Translator.translate(variation)</label>
+                       <li>
+                        <label for="variations[@index].value" style="width:185px; text-align:right; float:left; padding-right:7px; padding-top:3px; ">@util.Translator.translate(variation)</label>
 
-                        <input type="hidden" id="variations[@index].name" name="variations[@index].name" value="@variation">
 
-                        <select name="variations[@index].value" id="variations[@index].value" class="special-select coll-filter">
-
-                        @for(value <- persistence.Util.listU("" + item.variations.variations(variation))) {
-
+                        <select name="variations[@index].value" id="variations[@index].value" class="optionSelector">
+                            <option value = "empty">---</option>
+                        @for(value <- persistence.Util.listU("" + item.variations.specificsSet(variation))) {
                             <option value = "@value">@util.Translator.translate(value)</option>
                         }
                         </select>
 
-                    }
+                            <input type="hidden" id="variations[@index].name" name="variations[@index].name" value="@variation">
+                       </li>
+                        }
                 }
 
                 <input type="hidden" name="collection" value="@item.collection">
@@ -112,7 +121,7 @@
         </div>
     </div>
 
-
-    <script src="@routes.Assets.at("javascripts/jquery.colorbox-min2.js")" type="text/javascript"></script>
     <script type="text/javascript" src="/assets/coffee/item.js"></script>
+    <script src="@routes.Assets.at("javascripts/jquery.colorbox-min2.js")" type="text/javascript"></script>
+
 }

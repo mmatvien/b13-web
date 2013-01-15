@@ -1,5 +1,3 @@
-
-# on ready
 $ ->
   $('.orderRow').click ->
     detailRow = $('#items_' + this.id)

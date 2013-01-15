@@ -3,7 +3,7 @@
 
 html { font-size: 100%; overflow-y: scroll; -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 body { margin: 0; font-size:14px; line-height:21px; background-color: #002a80}
-body, button, input, select, textarea { font-family: Consolas; color: #222; }
+body, button, input, select, textarea { font-family: 'Comfortaa', cursive;; color: #222; }
 ::-moz-selection { background: #9abcca; color: #fff; text-shadow: none; }
 ::selection { background: #9abcca; color: #fff; text-shadow: none; }
 a:hover, a:active, a:focus { outline: 0; }
@@ -14,7 +14,7 @@ dfn { font-style: italic; }
 hr { display: block; height: 1px; border: 0; border-top: 1px solid #eeeeee; margin: 20px 0; padding: 0; }
 ins { background: #ff9; color: #000; text-decoration: none; }
 mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
-pre, code, kbd, samp { font-family: monospace, monospace; _font-family: Consolas, monospace; font-size: 1em; }
+pre, code, kbd, samp { font-family: monospace, monospace; _font-family: 'Comfortaa', cursive; monospace; font-size: 1em; }
 pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
 q { quotes: none; }
 q:before, q:after { content: ""; content: none; }
@@ -59,10 +59,10 @@ input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0;}
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
 .smooth { -webkit-text-stroke:0.1px; }
-.accent-text { font-family:Consolas, Utopia, 'Times New Roman', Times, serif; }
+.accent-text { font-family:'Comfortaa', cursive;, Utopia, 'Times New Roman', Times, serif; }
 input.hint, textarea.hint, input[type=text].hint, input[type=tel].hint, input[type=password].hint, input[type=email].hint { color: #bbbbbb; }
 input.error, textarea.error, input[type=text].error, input[type=tel].error, input[type=password].error, input[type=email].error, .in-error input, .in-error input[type=text], .in-error input[type=tel], .in-error input[type=password], .in-error input[type=email], .in-error textarea { border: 1px solid #FB8077; }
-.in-error span.error-message { padding-left:10px; font-size:13px; line-height:21px; color:#F8584C; font-family:Consolas, Utopia, 'Times New Roman', Times, serif; font-style:italic; }
+.in-error span.error-message { padding-left:10px; font-size:13px; line-height:21px; color:#F8584C; font-family:'Comfortaa', cursive;, Utopia, 'Times New Roman', Times, serif; font-style:italic; }
 .feedback.error, .feedback.success { font-size:14px; line-height:21px; margin-bottom:20px; }
 .feedback.success { margin-top:30px; }
 .feedback.error { background-color:#fcedec; border:1px solid #fb8077; padding:12px 14px; -webkit-border-radius:3px;    -moz-border-radius:3px; border-radius:3px; margin:0 40px 25px 0;}
@@ -93,7 +93,7 @@ input.error, textarea.error, input[type=text].error, input[type=tel].error, inpu
 body {
     background-color: white;
 
-    font-family:Consolas;
+    font-family:'Comfortaa', cursive;;
     color: #1b1a1b;
 }
 
@@ -441,7 +441,7 @@ a {
     font-weight:700;
     font-size:13px;
     color:#ffffff;
-    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;', Helvetica, Arial, sans-serif;
     line-height:14px;
 }
 
@@ -505,13 +505,13 @@ a {
 
 .four-per-row .coll-prod-title {
     font-weight:700;
-    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;', Helvetica, Arial, sans-serif;
 }
 
 .three-per-row .coll-prod-title {
     font-weight:700;
     font-size:16px;
-    font-family:consolas, Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;, Helvetica, Arial, sans-serif;
 }
 
 .four-per-row .coll-prod-title:hover, .three-per-row .coll-prod-title:hover {
@@ -702,7 +702,7 @@ select {
 }
 
 .rte h1, .rte h2, .rte h3, .rte h4, .rte h5, .rte h6 {
-    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;', Helvetica, Arial, sans-serif;
     color:#1B1A1B;
     -webkit-font-smoothing: antialiased;
     margin:0 0 14px;
@@ -839,7 +839,7 @@ p.highlight {
     font-size:35px;
     line-height:35px;
     margin:0 0 15px;
-    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -879,7 +879,7 @@ p.highlight {
     vertical-align:top;
     font-size:19px;
     margin:0 0 12px 0;
-    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;', Helvetica, Arial, sans-serif;
     color:#1B1A1B;
 }
 
@@ -921,7 +921,7 @@ p.highlight {
     font-size:14px;
     font-weight:400;
     margin:0;
-    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;', Helvetica, Arial, sans-serif;
 }
 
 .sidebar-article-title:hover { color:#1B1A1B;  }
@@ -975,7 +975,7 @@ p.highlight {
     font-size:19px;
     font-weight:700;
     margin:30px 0;
-    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;', Helvetica, Arial, sans-serif;
     color:#1B1A1B;
 }
 
@@ -1144,7 +1144,7 @@ p.highlight {
     margin-top:29px;
     opacity:0;
     display:block;
-    font-family: consolas;
+    font-family: 'Comfortaa', cursive;;
 }
 
 #cart-total-text { margin-left:12px; }
@@ -1163,7 +1163,7 @@ p.highlight {
     margin:-20px 0 16px;
     float:left;
 
-    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;', Helvetica, Arial, sans-serif;
     font-weight:700;
 
 }
@@ -1184,7 +1184,7 @@ p.highlight {
     padding-left:0;
     position:relative;
     z-index:9999;
-    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;', Helvetica, Arial, sans-serif;
 }
 
 .use-logo #nav {
@@ -1417,7 +1417,7 @@ p.highlight {
     color:#1B1A1B;
     font-size:16px;
     font-weight:700;
-    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;', Helvetica, Arial, sans-serif;
 }
 
 /* ABOUT MODULE */
@@ -1774,7 +1774,7 @@ p.highlight {
     padding:25px 20px;
     background:rgba(0,0,0,0.5);
     color:#ffffff;
-    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;', Helvetica, Arial, sans-serif;
 }
 
 .lt-ie9 .slide-caption { background: url('/assets/images/ie-caption-bg.png?0') repeat transparent; }
@@ -1850,7 +1850,7 @@ a.slide-link {
 #product-slider h2 {
     margin:40px 0 30px;
     color:#1B1A1B;
-    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;', Helvetica, Arial, sans-serif;
     font-size:19px;
     text-align:center
 }
@@ -1919,7 +1919,7 @@ a.slide-link {
 
 .widget-title {
     margin:0;
-    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;', Helvetica, Arial, sans-serif;
     font-size:19px;
     color:#1B1A1B;
     vertical-align:top;
@@ -1967,7 +1967,7 @@ a.slide-link {
     margin:0;
     line-height:26px;
     margin-top:12px;
-    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;', Helvetica, Arial, sans-serif;
 }
 
 .fp-article-title a {
@@ -2020,7 +2020,7 @@ a.slide-link {
     font-size:14px;
     font-weight:400;
     margin:0 0 14px 0;
-    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;', Helvetica, Arial, sans-serif;
 }
 
 /* LINK LIST */
@@ -2085,7 +2085,7 @@ a.slide-link {
     float:left;
     max-width:370px;
     margin:0;
-    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;', Helvetica, Arial, sans-serif;
     color:#1B1A1B;
 }
 
@@ -2128,7 +2128,7 @@ a.slide-link {
 
 #default-slide-message h1 {
     font-size:22px;
-    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;', Helvetica, Arial, sans-serif;
     color:#1B1A1B;
     margin:0 0 13px;
 }
@@ -2136,7 +2136,7 @@ a.slide-link {
 #default-slide-message p {
     font-size:14px;
     line-height:21px;
-    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;', Helvetica, Arial, sans-serif;
     color:#999999;
     font-weight:400;
     width:370px;
@@ -2250,7 +2250,7 @@ a.slide-link {
 #collection-title {
     float:left;
     max-width:530px;
-    font-family:Consolas, Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;, Helvetica, Arial, sans-serif;
 }
 
 #collection-title h1 {
@@ -2338,7 +2338,7 @@ a.slide-link {
     font-size:19px;
     color:#1B1A1B;
     margin:0 0 31px;
-    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;', Helvetica, Arial, sans-serif;
 }
 
 .product-share-item {
@@ -2381,7 +2381,7 @@ a.slide-link {
 
 .property-wrapper { margin:29px 0;}
 
-#product-details li { border-bottom:1px solid #eeeeee }
+#product-details li {margin-top: 2px; margin-bottom: 2px; border-bottom:3px solid #eeeeee; }
 
 #product-details li:last-child { border-bottom:0; }
 
@@ -2392,7 +2392,7 @@ a.slide-link {
     color:#1B1A1B;
     margin:0 0 10px 0;
     line-height:40px;
-    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;', Helvetica, Arial, sans-serif;
 }
 
 #product-title h2 {
@@ -2400,7 +2400,7 @@ a.slide-link {
     line-height:26px;
     color:#677e87;
     margin:0;
-    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;', Helvetica, Arial, sans-serif;
 }
 
 #product-prices { padding:15px 0 21px; }
@@ -2425,7 +2425,7 @@ a.slide-link {
 
 #product-details select {
     margin-top:4px;
-    min-width:142px;
+    max-width:142px;
 }
 
 #current-currency, #currencies-picker { display:none }
@@ -2444,7 +2444,7 @@ a.slide-link {
 
 #currencies-picker .custom-style-select-box-inner {
     font-size:12px;
-    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;', Helvetica, Arial, sans-serif;
     letter-spacing:0;
     font-style:normal;
     text-align:left;
@@ -2470,7 +2470,7 @@ a.slide-link {
     line-height:12px;
     color:#1B1A1B;
     margin-bottom:12px;
-    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;', Helvetica, Arial, sans-serif;
 }
 
 #quantity { width:35px; margin-bottom:0; text-align:center; }
@@ -2505,7 +2505,7 @@ a.slide-link {
     margin-left:6px;
     border:none;
     background:none;
-    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -2522,7 +2522,7 @@ a.slide-link {
 #product-description h2 {
     color: #1B1A1B;
     font-size:20px;
-    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;', Helvetica, Arial, sans-serif;
 }
 
 #product-photos {
@@ -2644,7 +2644,7 @@ a.slide-link {
     font-size:25px;
     color:#677e87;
     line-height:30px;
-    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;', Helvetica, Arial, sans-serif;
 }
 
 .blog-article-title:hover { color:#1B1A1B; }
@@ -2745,7 +2745,7 @@ a.slide-link {
     color:#1B1A1B;
     margin:0 0 6px 0;
     padding-top:28px;
-    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;', Helvetica, Arial, sans-serif;
 }
 
 #comments-title.no-comments {
@@ -2846,13 +2846,13 @@ a.slide-link {
     font-size:14px;
     font-weight:700;
     padding-bottom:15px;
-    font-family:Consolas, Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;, Helvetica, Arial, sans-serif;
 }
 
 .cart-item { width:120px; padding:20px 20px 20px 0; }
 .cart-detail {
     width:500px; padding-right:40px;
-    font-family:Consolas, Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;, Helvetica, Arial, sans-serif;
 }
 .cart-price {width:120px; padding-right:40px;}
 .cart-quantity {width:120px; padding-right:40px;}
@@ -2915,7 +2915,7 @@ a.slide-link {
     padding-bottom:15px;
     border-bottom:1px solid #302f30;
     margin:19px 0 20px 0;
-    font-family:Consolas, Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;, Helvetica, Arial, sans-serif;
 }
 
 #estimated-shipping { font-size:15px; }
@@ -2923,7 +2923,7 @@ a.slide-link {
 #cart-subtotal em, #estimated-shipping em {
     font-style:normal;
     font-weight:normal;
-    font-family:Consolas, Utopia, 'Times New Roman', Times, serif;
+    font-family:'Comfortaa', cursive;, Utopia, 'Times New Roman', Times, serif;
     color: #1b1a1b;
     font-size:25px;
     /*margin-left:12px;*/
@@ -2991,7 +2991,7 @@ a.slide-link {
 #empty-cart { color:#1B1A1B }
 
 #empty-cart h1 {
-    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;', Helvetica, Arial, sans-serif;
     margin-bottom:10px;
 }
 
@@ -3013,7 +3013,7 @@ a.slide-link {
     font-size:16px;
     margin-top:0;
     color:#1B1A1B;
-    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Comfortaa', cursive;', Helvetica, Arial, sans-serif;
 }
 
 #shipping-calculator-form-wrapper p {
