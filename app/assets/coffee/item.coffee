@@ -1,6 +1,8 @@
 $ ->
   $('.custSel').change ->
     cunstructOptions(this.id)
+    selectedValue = $('#' + jqSelector(this.id) + ' option:selected').val()
+    $('#' + selectedValue).click()
 
 
 cunstructOptions = (currentSelection) ->
