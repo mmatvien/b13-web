@@ -4,7 +4,7 @@
 
     <div class="clearfix template-product" id="product-content">
 
-        <div id="variationDataX" style="visibility:hidden;">
+        <div id="variationDataX" style="visibility:hidden;height: 1px;">
            @for(spec <- item.variations.specifics){
                 quantity : @spec.quantity ^ @spec.quantity , @util.UI.extractVariationSpecs(spec.specific.toList).map { x =>
                    @util.Translator.translate(x._1) : @x._2 ^ @util.Translator.translate(x._2),
@@ -31,7 +31,7 @@
                         @for((variation, index) <- item.variations.specificsSet.keys.toList.reverse.zipWithIndex) {
 
                        <li>
-                        <label for="variations[@index].value" style="width:185px; text-align:right; float:left; padding-right:7px; padding-top: 9px; ">@util.Translator.translate(variation)</label>
+                        <label for="variations[@index].value" style="width:215px; text-align:right; float:left; padding-right:7px; padding-top: 9px; ">@util.Translator.translate(variation)</label>
 
                         <input type="hidden" id="variations[@index].value_n" value="@util.Translator.translate(variation)">
 
@@ -102,8 +102,7 @@
 
                 @for(pic <- item.variations.pictures) {
                     @if(pic.url != item.mainPicture) {
-
-                        <li class="product-photo-thumb" id="@pic.name">
+                        <li class="product-photo-thumb" id="@pic.name.replaceAll(" ","")">
                             <img src="@pic.url" alt="shirt" style="margin-top: 0px; opacity: 1;">
                         </li>
 

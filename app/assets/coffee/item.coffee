@@ -2,7 +2,7 @@ $ ->
   $('.custSel').change ->
     cunstructOptions(this.id)
     selectedValue = $('#' + jqSelector(this.id) + ' option:selected').val()
-    $('#' + selectedValue).click()
+    $('#' + selectedValue.replace(" ", "")).click()
 
 
 cunstructOptions = (currentSelection) ->
@@ -19,20 +19,23 @@ cunstructOptions = (currentSelection) ->
   )
 
 removeOption = (selectorId, optionValue) ->
-  $("#" + jqSelector(selectorId) + " option[value='" + optionValue + "']").remove()
+  $("#" + jqSelector(selectorId) + " option[value='" + jqSelector(optionValue) + "']").remove()
 
-addOption = (selectorId, optionValue, optionText) ->
+addOption = (selectorId, optionValue, optionText, selected) ->
   $('#' + jqSelector(selectorId)).append($('<option>', { value: optionValue, text: optionText }))
+  if(optionValue == selected)
+    $('#' + jqSelector(selectorId)).val(selected)
 
 revalidateSelector = (currentS, selectorName, selectedName, selectedValue) ->
   optionsForThisSelector = validateOtherSelections(selectorName, selectedName, selectedValue)
+  selected = $('#' + jqSelector(currentS.attr('id'))).val()
   removeAllOptions(currentS.attr('id'))
   optionsForThisSelector.split(",").forEach((x) ->
     if (trim(x) != "")
-
-      addOption(currentS.attr('id'), trim(x.split("^")[0]), trim(x.split("^")[1]))
+      addOption(currentS.attr('id'), trim(x.split("^")[0]), trim(x.split("^")[1]), selected)
   )
   selectOnlyOption(currentS.attr('id'))
+
 
 
 selectOnlyOption = (selectorId) ->
@@ -42,6 +45,7 @@ selectOnlyOption = (selectorId) ->
       if(n == optionArray.length - 1)
         $(this).attr("selected", "selected")
         $('#' + jqSelector(selectorId)).val($(this).val())
+        $('#' + $(this).val().replace(" ", "")).click()
     )
 
 
@@ -50,8 +54,6 @@ removeAllOptions = (selectorId) ->
     if ($(this).val() != "---")
       removeOption(selectorId, $(this).val())
   )
-
-# getSelectorOptions(currentSelection)
 
 
 validateOtherSelections = (name, sname, svalue) ->
