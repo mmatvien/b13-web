@@ -1,14 +1,20 @@
 $ ->
+  $('.custSel').each((x) ->
+    sel = 'variations['+x+'].value'
+    cunstructOptions(sel)
+  )
+
   $('.custSel').change ->
+    selectedName = $('#' + jqSelector(this.id) + '_n').val()
     cunstructOptions(this.id)
+
     selectedValue = $('#' + jqSelector(this.id) + ' option:selected').val()
     $('#' + selectedValue.replace(" ", "")).click()
 
 
 cunstructOptions = (currentSelection) ->
-  selectedName = $('#' + jqSelector(currentSelection) + '_n').val()
+  selectedName = $("label[for='" + currentSelection + "']").text()
   selectedValue = $('#' + jqSelector(currentSelection) + ' option:selected').val()
-
   # go through all selectors
   $('.custSel').each((x) ->
     selector = jqSelector('variations[' + x + '].value')
@@ -35,7 +41,6 @@ revalidateSelector = (currentS, selectorName, selectedName, selectedValue) ->
       addOption(currentS.attr('id'), trim(x.split("^")[0]), trim(x.split("^")[1]), selected)
   )
   selectOnlyOption(currentS.attr('id'))
-
 
 
 selectOnlyOption = (selectorId) ->

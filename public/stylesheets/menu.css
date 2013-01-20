@@ -112,3 +112,8 @@ li.oe_heading{
 .collectionSubHeader{
     display: block;
 }
+
+.main_nav img{
+    padding: 3px;
+    width: 130px;
+}
