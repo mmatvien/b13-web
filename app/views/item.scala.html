@@ -78,34 +78,37 @@
 
         <div id="product-photos">
             <div id="product-photo-container" style="height: 52px;">
-                <a class="gallery cboxElement" href="@util.UI.scaleEbayImage(item.mainPicture)" rel="gallery" style="height: 0px; width: 0px;">
-                    <img src="@item.mainPicture" alt="shirt" class="" style="display: none;">
-                </a>
 
+                @if(item.variations.pictures.size < 1) {
+                    <a class="gallery cboxElement" href="@util.UI.scaleEbayImage(item.mainPicture)" rel="gallery" style="height: 0px; width: 0px;">
 
-                @for(pic <- item.variations.pictures) {
-                    @if(pic.url != item.mainPicture) {
+                        <img src="@item.mainPicture" alt="" class="" style="display: none;">
+                    </a>
+                } else {
+                    @for(pic <- item.variations.pictures) {
+                        @if(util.UI.picExists(item.variations.specifics,pic.name.replaceAll(" ", ""))) {
                         <a class="gallery cboxElement" href="@util.UI.scaleEbayImage(pic.url)" rel="gallery" style="height: 0px; width: 0px;">
-                            <img src="@pic.url" alt="shirt" class="" style="display: none;">
+                            <img src="@pic.url" alt="@pic.name.replaceAll(" ", "")" class="" style="display: none;">
                         </a>
+                        }
                     }
                 }
+
             </div> <!-- #product-photo-container -->
 
 
             <ul id="product-photo-thumbs" class="clearfix">
-                @if(item.variations.pictures.size > 1) {
+                @if(item.variations.pictures.size < 1) {
                     <li class="product-photo-thumb">
-                        <img src="@item.mainPicture" alt="shirt" style="margin-top: 0px; opacity: 1;">
+                        <img src="@item.mainPicture" alt="" style="margin-top: 0px; opacity: 1;">
                     </li>
-                }
-
-                @for(pic <- item.variations.pictures) {
-                    @if(pic.url != item.mainPicture) {
-                        <li class="product-photo-thumb" id="@pic.name.replaceAll(" ","")">
-                            <img src="@pic.url" alt="shirt" style="margin-top: 0px; opacity: 1;">
-                        </li>
-
+                } else {
+                    @for(pic <- item.variations.pictures) {
+                        @if(util.UI.picExists(item.variations.specifics,pic.name.replaceAll(" ", ""))) {
+                            <li class="product-photo-thumb" id="@pic.name.replaceAll(" ", "")">
+                                <img src="@pic.url" alt="@pic.name" style="margin-top: 0px; opacity: 1;">
+                            </li>
+                        }
                     }
                 }
             </ul>

@@ -1,15 +1,26 @@
 $ ->
   $('.custSel').each((x) ->
-    sel = 'variations['+x+'].value'
+    sel = 'variations[' + x + '].value'
     cunstructOptions(sel)
   )
 
   $('.custSel').change ->
-    selectedName = $('#' + jqSelector(this.id) + '_n').val()
     cunstructOptions(this.id)
-
     selectedValue = $('#' + jqSelector(this.id) + ' option:selected').val()
     $('#' + selectedValue.replace(" ", "")).click()
+
+  $('.product-photo-thumb').click ->
+    id = this.id
+    $('.custSel').each((n) ->
+      selector = 'variations[' + n + '].value'
+      optionArray = $('#' + jqSelector(selector) + ' option')
+      optionArray.each(->
+        if($(this).val() == id)
+          $(this).val(id)
+          $(this).attr("selected", "selected")
+      )
+
+    )
 
 
 cunstructOptions = (currentSelection) ->
@@ -109,3 +120,4 @@ trim = (str) ->
 
 jqSelector = (str) ->
   str.replace(/([;&,\.\+\*\~':"\!\^#$%@\[\]\(\)=>\|])/g, '\\$1')
+

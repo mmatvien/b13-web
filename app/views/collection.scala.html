@@ -20,9 +20,9 @@
             @for(item <- items) {
 
                 <li class="three-per-row default clearfix">
-                    <div class="coll-image-wrap">
+                    <div class="coll-image-wrap" style="height:330px;">
                         <a href="/collection/@collection/item/@item.itemId">
-                            <img src="@item.mainPicture"  style="height:330px; width:auto; opacity: 1;">
+                            <img src="@item.mainPicture"  style="max-height:330px; width:auto; opacity: 1;">
                         </a>
                     </div> <!-- .coll-image-wrap -->
                     <div class="coll-prod-caption">

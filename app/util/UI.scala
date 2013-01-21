@@ -7,6 +7,7 @@
 package util
 
 import play.api.libs.json._
+import persistence.VariationSpecifics
 
 /**
  * User: max
@@ -32,5 +33,18 @@ object UI {
       ((json \ "name").as[String], (json \ "value").as[String])
     }
     (0 to specs.size - 1).foldLeft(Nil: List[(String, String)])((c, i) => extract(i) :: c)
+  }
+
+
+  def picExists(sp: List[VariationSpecifics], pic: String): Boolean = {
+    def exists(spec: VariationSpecifics): List[Int] = {
+      extractVariationSpecs(spec.specific.toList).map {
+        x =>
+          if (x._2 == pic) 1
+          else 0
+      }
+    }
+    val x = sp.map(d => exists(d)).flatten
+    x.contains(1)
   }
 }
