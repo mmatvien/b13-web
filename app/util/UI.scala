@@ -40,6 +40,7 @@ object UI {
     def exists(spec: VariationSpecifics): List[Int] = {
       extractVariationSpecs(spec.specific.toList).map {
         x =>
+          println("comparing " + x._2 + " to " + pic)
           if (x._2 == pic) 1
           else 0
       }

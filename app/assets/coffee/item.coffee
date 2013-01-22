@@ -7,7 +7,7 @@ $ ->
   $('.custSel').change ->
     cunstructOptions(this.id)
     selectedValue = $('#' + jqSelector(this.id) + ' option:selected').val()
-    $('#' + selectedValue.replace(" ", "")).click()
+    $('#' + selectedValue.replace(" ", "_")).click()
 
   $('.product-photo-thumb').click ->
     id = this.id
@@ -19,7 +19,6 @@ $ ->
           $(this).val(id)
           $(this).attr("selected", "selected")
       )
-
     )
 
 

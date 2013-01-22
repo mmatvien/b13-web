@@ -86,9 +86,9 @@
                     </a>
                 } else {
                     @for(pic <- item.variations.pictures) {
-                        @if(util.UI.picExists(item.variations.specifics,pic.name.replaceAll(" ", ""))) {
+                        @if(util.UI.picExists(item.variations.specifics,pic.name.replaceAll(" ", "_"))) {
                         <a class="gallery cboxElement" href="@util.UI.scaleEbayImage(pic.url)" rel="gallery" style="height: 0px; width: 0px;">
-                            <img src="@pic.url" alt="@pic.name.replaceAll(" ", "")" class="" style="display: none;">
+                            <img src="@pic.url" alt="@pic.name.replaceAll(" ", "_")" class="" style="display: none;">
                         </a>
                         }
                     }
@@ -104,8 +104,8 @@
                     </li>
                 } else {
                     @for(pic <- item.variations.pictures) {
-                        @if(util.UI.picExists(item.variations.specifics,pic.name.replaceAll(" ", ""))) {
-                            <li class="product-photo-thumb" id="@pic.name.replaceAll(" ", "")">
+                        @if(util.UI.picExists(item.variations.specifics,pic.name.replaceAll(" ", "_"))) {
+                            <li class="product-photo-thumb" id="@pic.name.replaceAll(" ", "_")">
                                 <img src="@pic.url" alt="@pic.name" style="margin-top: 0px; opacity: 1;">
                             </li>
                         }
