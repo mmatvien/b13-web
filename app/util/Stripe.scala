@@ -110,7 +110,8 @@ abstract class APIResource {
 
   def rawRequest(method: String, url: String, params: Map[String,_] = Map.empty): (String, Int) = {
     val client = httpClient
-    val paramList = params.flatMap(kv => flattenParam(kv._1, kv._2)).toList
+
+    val paramList = params.flatMap{kv:(String,_) => flattenParam(kv._1, kv._2)}.toList
     try {
       val request = method.toLowerCase match {
         case "get" => getRequest(url, paramList)

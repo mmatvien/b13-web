@@ -9,5 +9,6 @@
  * Time: 11:24 AM
  */
 
-val x = "H"
+val x: Map[String, _] = Map.empty
+
 

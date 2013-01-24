@@ -79,7 +79,7 @@ object Calculator {
     val totalWeight = cartShipmentOptions.map(x => x.weight).sum
     val envelopeFit = {
       if (cartShipmentOptions.size > 1) false
-      else if (cartShipmentOptions(0).envelopeFit == 0) true
+      else if (cartShipmentOptions(0).envelopeFit) true
       else false
     }
 
