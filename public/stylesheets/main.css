@@ -1666,10 +1666,19 @@ p.highlight {
     display:block;
     height:35px;
     margin-left:24px;
-
     background:url('/assets/images/payment-sprite.png?0') no-repeat 0 0;
-
     text-indent:-9999px;
+}
+
+.payment-option2 {
+    float:right;
+    display:block;
+    height:35px;
+    margin-left:24px;
+}
+
+#ebay {
+    width:64px;
 }
 
 #pay-paypal {
