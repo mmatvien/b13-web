@@ -6,100 +6,104 @@
 
 
     <div class="clearfix" id="content" role="main" style="text-align:center;">
-        <h1>оплата</h1>
+
 
 
         <form action="/payment" method="post" id="payment-form" style="display: none;" class="form-horizontal">
 
 
-    <input type="hidden" id="total" name="total" value="@cartItems.map(x => x.price * x.quantity).sum">
+        <input type="hidden" id="total" name="total" value="@cartItems.map(x => x.price * x.quantity).sum">
 
             <div class="row-fluid">
-                <div class="span4">
-                    <div class="control-group">
-                        <label class="control-label" for="lastName" style="color: white;">Фамилия</label>
-                        <div class="controls">
-                        <input type="text" name="lastName" id="lastName" class="required" style="height: 10px; color: white;" placeholder="Фамилия"/>
+                <div class="span6">
+                    <h2>доставка</h2><br>
+                    <div class="control-group well" >
+                        <label class="control-label" for="lastName">Фамилия</label>
+                        <div class="controls controls-row">
+                        <input type="text" name="lastName" id="lastName" class="required span6" style="height: 10px;" placeholder="Фамилия"/>
                         </div>
 
-                        <label class="control-label" for="firstName" style="color: white;">Имя</label>
-                        <div class="controls">
-                        <input type="text" name="firstName" id="firstName" class="required" style="height: 10px; color: white;" placeholder="Имя"/>
+                        <label class="control-label" for="firstName">Имя</label>
+                        <div class="controls controls-row">
+                        <input type="text" name="firstName" id="firstName" class="required span6" style="height: 10px;" placeholder="Имя"/>
                         </div>
 
-                        <label class="control-label" for="phone" style="color: white;">Телефон</label>
-                        <div class="controls">
-                        <input type="text" name="phone" id="phone" class="required" style="height: 10px; color: white;" placeholder="Телефон"/>
+                        <label class="control-label" for="phone">Телефон</label>
+                        <div class="controls controls-row">
+                        <input type="text" name="phone" id="phone" class="required span6" style="height: 10px;" placeholder="Телефон"/>
                         </div>
 
-                        <label class="control-label" for="email" style="color: white;">Email</label>
-                        <div class="controls">
-                            <input type="text" name="email" id="email" class="required" style="height: 10px; color: white;" placeholder="Email">
-                        </div>
-
-
-                        <label class="control-label" for="country" style="color: white;">Страна</label>
-                        <div class="controls">
-                            <input type="text" name="country" id="country" class="required" style="height: 10px; color: white;" placeholder="Страна">
-                        </div>
-
-                        <label class="control-label" for="city" style="color: white;">Город</label>
-                        <div class="controls">
-                            <input type="text" name="city" id="city" class="required" style="height: 10px; color: white;" placeholder="Город">
-                        </div>
-
-                        <label class="control-label" for="region" style="color: white;">Регион</label>
-                        <div class="controls">
-                            <input type="text" name="region" id="region" class="required" style="height: 10px; color: white;" placeholder="Регион">
+                        <label class="control-label" for="email">Email</label>
+                        <div class="controls controls-row">
+                            <input type="text" name="email" id="email" class="required span6" style="height: 10px; " placeholder="Email">
                         </div>
 
 
-                        <label class="control-label" for="street" style="color: white;">Улица</label>
-                        <div class="controls">
-                            <input type="text" name="street" id="street" class="required" style="height: 10px; color: white;" placeholder="Улица">
+                        <label class="control-label" for="country">Страна</label>
+                        <div class="controls controls-row">
+                            <input type="text" name="country" id="country" class="required span6" style="height: 10px;" placeholder="Страна">
+                        </div>
+
+                        <label class="control-label" for="city">Город</label>
+                        <div class="controls controls-row">
+                            <input type="text" name="city" id="city" class="required span6" style="height: 10px;" placeholder="Город">
+                        </div>
+
+                        <label class="control-label" for="region">Регион</label>
+                        <div class="controls controls-row">
+                            <input type="text" name="region" id="region" class="required span6" style="height: 10px;" placeholder="Регион">
                         </div>
 
 
-                        <label class="control-label" for="building" style="color: white;">Дом</label>
-                        <div class="controls">
-                            <input type="text" name="building" id="building" class="required" style="height: 10px; color: white;" placeholder="Дом">
+                        <label class="control-label" for="street">Улица</label>
+                        <div class="controls controls-row">
+                            <input type="text" name="street" id="street" class="required span6" style="height: 10px;" placeholder="Улица">
                         </div>
 
-                        <label class="control-label" for="apt" style="color: white;">Квартира</label>
-                        <div class="controls">
-                            <input type="text" name="apt" id="apt" class="required" style="height: 10px; color: white;" placeholder="Квартира">
+
+                        <label class="control-label" for="building">Дом</label>
+                        <div class="controls controls-row">
+                            <input type="text" name="building" id="building" class="required span4" style="height: 10px;" placeholder="Дом">
                         </div>
 
-                        <label class="control-label" for="zip" style="color: white;">Индекс</label>
-                        <div class="controls">
-                            <input type="text" name="zip" id="zip" class="required" style="height: 10px; color: white;" placeholder="Индекс">
+                        <label class="control-label" for="apt">Квартира</label>
+                        <div class="controls controls-row">
+                            <input type="text" name="apt" id="apt" class="required span4" style="height: 10px;" placeholder="Квартира">
+                        </div>
+
+                        <label class="control-label" for="zip">Индекс</label>
+                        <div class="controls controls-row">
+                            <input type="text" name="zip" id="zip" class="required span2" style="height: 10px;" placeholder="Индекс">
                         </div>
                     </div>
                 </div>
 
-                <div class="span4">
-                    <div class="control-group">
-                        <label class="control-label"  style="color: white;">Номер карты</label>
-                        <div class="controls">
-                        <input style="text-align: left; color: white; height: 10px;" type="text" size="20" autocomplete="off" class="card-number" placeholder="Номер карты"/>
-                        </div>
+                <div class="span6" >
+                    <h2>оплата</h2><br>
 
-                        <label class="control-label" style="color: white;">Код безопасности</label>
-                        <div class="controls  controls-row">
-                        <input style="color: white; height: 10px; width: 50px;" type="text" size="20" autocomplete="off" maxlength="4" class="card-cvc  span4" placeholder="CVC"/>
-                        </div>
+                    <div class="control-group  well">
 
-                        <label class="control-label" style="color: white;">Expiration</label>
+                        <label class="control-label">Номер карты</label>
                         <div class="controls controls-row">
-                        <input style="color: white; width: 45px; height: 10px;" type="text" maxlength="2" size="2" class="card-expiry-month span4" placeholder="MM"/>
-                            <span class="span1">/</span>
-                        <input style="color: white; width: 60px; height: 10px;" type="text" size="4" maxlength="4" class="card-expiry-year span4" placeholder="YYYY"/>
+                        <input style="height: 10px;" type="text" size="20" autocomplete="off" class="card-number span6" placeholder="Номер карты"/>
                         </div>
 
-                        <br> <br> <br>
-                        <div class="controls">
-                            <button type="submit" class="submit-button btn btn-primary btn-large">оплатить</button>
+                        <label class="control-label">Код безопасности</label>
+                        <div class="controls controls-row">
+                        <input style="height: 10px; width: 50px;" type="text" size="20" autocomplete="off" maxlength="4" class="card-cvc  span4" placeholder="CVC"/>
                         </div>
+
+                        <label class="control-label">Expiration</label>
+                        <div class="controls controls-row">
+                        <input style="width: 45px; height: 10px;" type="text" maxlength="2" size="2" class="card-expiry-month span4" placeholder="MM"/>
+                            <span class="span1">/</span>
+                        <input style="width: 60px; height: 10px;" type="text" size="4" maxlength="4" class="card-expiry-year span4" placeholder="YYYY"/>
+                        </div>
+
+
+                    </div><br> <br> <br>
+                    <div class="controls">
+                        <button type="submit" class="submit-button btn btn-primary btn-large">оплатить</button>
                     </div>
                 </div>
             </div>
@@ -116,6 +120,7 @@
         -->
         <script>if (window.Stripe) $("#payment-form").show()</script>
         <noscript><p>JavaScript is required for the registration form.</p></noscript>
+        <script src="@routes.Assets.at("javascripts/jquery.blockUI.js")" type="text/javascript"></script>
 
 
 }

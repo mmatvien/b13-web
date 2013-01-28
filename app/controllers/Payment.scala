@@ -82,7 +82,7 @@ object Payment extends Controller with SessionHelper {
         Cart.updateCartState(cart, 1)
         orderId
       }
-      case None => "error, cart not found"
+      case None => "ошибка, корзина пуста"
     }
 
   }
@@ -93,9 +93,6 @@ object Payment extends Controller with SessionHelper {
       paymentForm.bindFromRequest.fold(
       errors => BadRequest, {
         case (payment: PaymentInfo) => {
-          println("got the form ")
-          println("tokenId = " + payment.stripeToken)
-
           //TODO: implement ebay check on checkout
           //val checkItemsOnEbay()
 

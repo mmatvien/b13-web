@@ -28,7 +28,7 @@
                         </a>
                     </td>
                     <td class="cart-detail">
-                        <h2><a href="/collection/@item.collection/item/@item.itemId">@persistence.Item.getItem(item.itemId).title</a>
+                        <h2><a href="/collection/@item.collection/item/@item.itemId">@util.Translator.translate(persistence.Item.getItem(item.itemId).title)</a>
                         </h2>
 
                         @for((variation, indexVariation) <- item.variations.zipWithIndex){
@@ -36,7 +36,7 @@
                                name="items[@index].variations[@indexVariation].name" value="@variation.variationName">
                         <input type="hidden" id="items[@index].variations[@indexVariation].value"
                                name="items[@index].variations[@indexVariation].value" value="@variation.variationValue">
-                        @variation.variationName : @variation.variationValue <br>
+                            @util.Translator.translate(variation.variationName) : @util.Translator.translate(variation.variationValue) <br>
                         }
                     </td>
                     <td class="cart-price">@(item.price)
@@ -67,7 +67,7 @@
                     <em>@util.Calculator.calculateShipment(cartItems)</em></h3>
 
 
-                <!--  <input id="checkout-button" class="styled-submit smooth" type="submit" name="update" value="оформить"> -->
+                <input id="checkout-button" class="styled-submit smooth" type="submit" name="update" value="оформить">
             </div>
             <!-- #cart-meta -->
 

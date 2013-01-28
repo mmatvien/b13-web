@@ -15,6 +15,7 @@ POST    /cart/add                               controllers.Application.add
 POST    /cart                                   controllers.Application.update
 
 POST    /payment                                controllers.Payment.payment
+POST    /subscribe                              controllers.Application.subscribe
 
 
 # ROUTES for ADMIN area

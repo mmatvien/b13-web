@@ -1,10 +1,12 @@
 package controllers
 
-import persistence.{Item, Cart, CartItem, CartItemVariation}
+import persistence._
 
 import play.api.mvc._
 import play.api.data._
 import play.api.data.Forms._
+import persistence.CartItem
+import persistence.CartItemVariation
 import scala.Some
 
 
@@ -129,6 +131,23 @@ object Application extends Controller with SessionHelper {
       Ok(views.html.cart(currentCartItems))
   }
 
+  val subscribeForm: Form[Subscription] = Form(
+    mapping(
+      "email" -> text
+    )(Subscription.apply)(Subscription.unapply))
 
+
+  def subscribe = Action {
+    implicit request =>
+      subscribeForm.bindFromRequest.fold(
+      errors => BadRequest, {
+        case (subscription: Subscription) => {
+          println(subscription.email)
+          Ok.flashing("success" -> "спасибо за подписку")
+        }
+        Ok.flashing("success" -> "спасибо за подписку")
+      }
+      )
+  }
 }
 

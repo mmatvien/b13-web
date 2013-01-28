@@ -40,7 +40,7 @@ object UI {
     def exists(spec: VariationSpecifics): List[Int] = {
       extractVariationSpecs(spec.specific.toList).map {
         x =>
-          if (x._2 == pic) 1
+          if (x._2.replaceAll(" ", "_") == pic) 1
           else 0
       }
     }

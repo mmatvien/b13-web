@@ -47,8 +47,8 @@ $(document).ready(function () {
         }, function (status, response) {
             if (response.error) {
                 // re-enable the submit button
-                $('.submit-button').removeAttr("disabled")
-                $('.submit-button').removeClass("disabled")
+                $('.submit-button').removeAttr("disabled");
+                $('.submit-button').removeClass("disabled");
 
                 // show the error
                 $(".payment-errors").html(response.error.message);
@@ -63,7 +63,9 @@ $(document).ready(function () {
              //   var input = $("<input name='stripeToken' value='" + token + "' style='display:none;' />");
                 form.append("<input type='hidden' name='stripeToken' value='" + token + "'/>");
                 // and submit
+                $.blockUI({ message: '<h1>подождите ...</h1>' });
                 form.get(0).submit();
+
             }
         });
 
@@ -71,12 +73,12 @@ $(document).ready(function () {
     }
 
     // add custom rules for credit card validating
-    jQuery.validator.addMethod("cardNumber", Stripe.validateCardNumber, "Please enter a valid card number");
-    jQuery.validator.addMethod("cardCVC", Stripe.validateCVC, "Please enter a valid security code");
+    jQuery.validator.addMethod("cardNumber", Stripe.validateCardNumber, "заполните правильно");
+    jQuery.validator.addMethod("cardCVC", Stripe.validateCVC, "заполните правильно");
     jQuery.validator.addMethod("cardExpiry", function () {
         return Stripe.validateExpiry($(".card-expiry-month").val(),
             $(".card-expiry-year").val())
-    }, "Please enter a valid expiration");
+    }, "заполните правильно");
 
     // We use the jQuery validate plugin to validate required params on submit
     $("#payment-form").validate({
