@@ -1,0 +1,30 @@
+@(ops: List[persistence.Ops], user: String, page: String)
+
+@mainAdmin("ADMIN :: INVENTORY", user, page) {
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>inventory</th>
+            </tr>
+        </thead>
+        <tbody>
+        @for((ops, index) <- ops.zipWithIndex) {
+            <tr class="orderRow">
+                <td>
+                    @admin_ops_head(ops)
+                </td>
+            </tr>
+
+            @*<tr id="items_@order.sessionId" class="orderItemsHidden">*@
+                @*<td>*@
+                @*@admin_detail(order.sessionId)*@
+                @*</td>*@
+            @*</tr>*@
+
+        }
+        </tbody>
+    </table>
+
+
+}

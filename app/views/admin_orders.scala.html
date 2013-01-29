@@ -1,6 +1,6 @@
-@(orders: List[persistence.Order])
+@(orders: List[persistence.Order], user: String, page: String)
 
-@mainAdmin("ADMIN") {
+@mainAdmin("ADMIN :: ORDERS", user, page) {
 
     <table class="table table-bordered">
         <thead>
@@ -12,17 +12,13 @@
         @for((order, index) <- orders.zipWithIndex) {
             <tr class="orderRow" id="@order.sessionId">
                 <td>
-                   @admin_order(order)
-
+                    @admin_order(order)
                 </td>
             </tr>
 
             <tr id="items_@order.sessionId" class="orderItemsHidden">
-
                 <td>
-
-                    @admin_detail(order.sessionId)
-
+                 @admin_detail(order.sessionId)
                 </td>
             </tr>
 

@@ -26,10 +26,18 @@ object Application extends Controller with SessionHelper {
       val size = if (request.queryString.contains("size")) request.queryString("size").head else ""
       val cat = if (request.queryString.contains("cat")) request.queryString("cat").head else ""
 
-      val items = Item.findItems(collection, cat, filter, size, page)
-      val pagerSize = Item.findPagerSize(collection, cat, filter, size)
+      if (collection == "watches" || collection == "sunglasses") {
+        println("looking for " + collection)
+        val items = Item.findByCategory(collection, filter, size, page)
+        val pagerSize = Item.findCategoryPagerSize(collection, filter, size)
+        Ok(views.html.collection(collection, items, page, pagerSize)).withSession("uuid" -> sessionN(request))
+      } else {
+        val items = Item.findSellerItems(collection, cat, filter, size, page)
+        val pagerSize = Item.findSellerPagerSize(collection, cat, filter, size)
+        Ok(views.html.collection(collection, items, page, pagerSize)).withSession("uuid" -> sessionN(request))
+      }
 
-      Ok(views.html.collection(collection, items, page, pagerSize)).withSession("uuid" -> sessionN(request))
+
   }
 
 

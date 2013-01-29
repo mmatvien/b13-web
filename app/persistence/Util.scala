@@ -4,6 +4,7 @@ import com.mongodb.casbah.commons.MongoDBObject
 import com.mongodb.casbah.Imports._
 import java.util.Date
 import java.text.SimpleDateFormat
+import org.joda.time.DateTime
 
 /**
  * User: max
@@ -23,9 +24,11 @@ object Util {
   }
 
   def formatDate(dt: Date): String = {
-    val format: SimpleDateFormat = new SimpleDateFormat("MM-dd-yyyy HH:MM")
+    val format: SimpleDateFormat = new SimpleDateFormat("MM-dd-yyyy HH:mm")
     format.format(dt)
   }
+
+  def formatDateTime(dt: DateTime): String = dt.toString("MM-dd-yyyy HH:mm")
 
   def collectCategories(collection: String): List[Map[String, List[Map[String, List[String]]]]] = {
 
@@ -71,14 +74,14 @@ object Util {
   case class Specifics(name: String, value: String)
 
   def collectSpecifics(collection: String): Set[Any] = {
-    val q = MongoDBObject( "collection" -> collection)
+    val q = MongoDBObject("collection" -> collection)
     val fields = MongoDBObject("specifics" -> 1)
     val specifics = MongoFactory.connection_b13_ebay.find(q, fields).toList.map {
       x => {
-       x.getAs[DBObject]("specifics") match {
-         case Some(sp) => sp.toMap.get("Brand")
-         case None => ""
-       }
+        x.getAs[DBObject]("specifics") match {
+          case Some(sp) => sp.toMap.get("Brand")
+          case None => ""
+        }
       }
     }
     specifics.toSet

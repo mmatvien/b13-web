@@ -1,0 +1,14 @@
+@(ops: persistence.Ops)
+
+<table class="table-condensed error" style="width:100%;height:35px;">
+    <tr class="error">
+        <td style="width:200px;vertical-align:middle;"><a href ="/collection/@ops.seller/1">@ops.seller</a></td>
+        <td style="width:100px;vertical-align:middle;">- @ops.removed</td>
+        <td style="width:100px;vertical-align:middle;">+ @ops.added</td>
+        <td style="width:100px;vertical-align:middle;">! @ops.updated</td>
+        <td style="width:100px;vertical-align:middle;">? @ops.other</td>
+        <td style="width:200px;vertical-align:middle;">@persistence.Util.formatDateTime(ops.lastRan)</td>
+        <td style="width:100px;vertical-align:middle;">@ops.size</td>
+        <td></td>
+    </tr>
+</table>

@@ -18,7 +18,7 @@
                         @for((title, valList) <- xx) {
                             <li class="oe_heading">@util.Translator.translate(title)</li>
                             @valList.map { filterCat =>
-                                <li><a href="?cat=@title&filter=@filterCat">@util.Translator.translate(filterCat)</a></li>
+                                <li><a href="1?cat=@title&filter=@filterCat">@util.Translator.translate(filterCat)</a></li>
                             }
                         }
                         </ul>

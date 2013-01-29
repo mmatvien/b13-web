@@ -49,21 +49,37 @@ object Item extends ModelCompanion[Item, ObjectId] {
 
 
   // -- Queries
-  def findItems(collection: String, cat: String, filter: String, size: String, page: Int): List[Item] = {
+  def findSellerItems(seller: String, cat: String, filter: String, size: String, page: Int): List[Item] = {
     val itemsPerPage = 30
-    dao.find(buildQuery(collection, cat, filter)).skip(itemsPerPage * (page - 1)).limit(itemsPerPage).toList
+    dao.find(collectionQuery(seller, cat, filter)).skip(itemsPerPage * (page - 1)).limit(itemsPerPage).toList
   }
 
 
-  def buildQuery(collection: String, cat: String, filter: String): MongoDBObject = {
+  def findByCategory(cat: String, filter: String, size: String, page: Int): List[Item] = {
+    val itemsPerPage = 30
+    dao.find(categoryQuery(cat, filter)).skip(itemsPerPage * (page - 1)).limit(itemsPerPage).toList
+  }
+
+  def collectionQuery(seller: String, cat: String, filter: String): MongoDBObject = {
     val queryBuilder = MongoDBObject.newBuilder
-    queryBuilder += "collection" -> collection
+    queryBuilder += "collection" -> seller
     queryBuilder += "categoryName" -> (".*" + cat + ".*" + filter + ".*").r
     queryBuilder.result()
   }
 
-  def findPagerSize(collection: String, cat: String, filter: String, size: String): Int = {
-    dao.count(buildQuery(collection, cat, filter)).toInt
+
+  def categoryQuery(cat: String, filter: String): MongoDBObject = {
+    val queryBuilder = MongoDBObject.newBuilder
+    queryBuilder += "categoryName" -> (".*" + cat + ".*" + filter + ".*").r
+    queryBuilder.result()
+  }
+
+  def findSellerPagerSize(seller: String, cat: String, filter: String, size: String): Int = {
+    dao.count(collectionQuery(seller, cat, filter)).toInt
+  }
+
+  def findCategoryPagerSize( cat: String, filter: String, size: String): Int = {
+    dao.count(categoryQuery(cat, filter)).toInt
   }
 
 

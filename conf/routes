@@ -6,7 +6,7 @@
 GET     /                                       controllers.Application.index
 
 
-GET     /collection/:collection/:page                 controllers.Application.collection(collection: String, page: Int)
+GET     /collection/:collection/:page           controllers.Application.collection(collection: String, page: Int)
 GET     /collection/:collection/item/:itemId    controllers.Application.item(collection:String,itemId: String)
 GET     /cart                                   controllers.Application.cart
 GET     /cart/remove/:itemHash                  controllers.Application.remove(itemHash: String)
@@ -19,10 +19,16 @@ POST    /subscribe                              controllers.Application.subscrib
 
 
 # ROUTES for ADMIN area
+GET     /admin                                 controllers.Admin.index
+GET     /admin/orders                                   controllers.Admin.orders
+GET     /admin/orders/ordered/:collection/:itemId       controllers.Admin.ordered(collection:String,itemId: String)
+GET     /admin/orders/received/:collection/:itemId      controllers.Admin.received(collection:String,itemId: String)
 
-GET     /admin                                   controllers.Admin.index
-GET     /admin/ordered/:collection/:itemId       controllers.Admin.ordered(collection:String,itemId: String)
-GET     /admin/received/:collection/:itemId       controllers.Admin.received(collection:String,itemId: String)
+GET     /admin/inventory                         controllers.Admin.inventory
+
+POST  /admin/login  	                         controllers.Auth.authenticate
+GET   /admin/logout   	                         controllers.Auth.logout
+GET   /admin/login   	                         controllers.Auth.login
 
 
 

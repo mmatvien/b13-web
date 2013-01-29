@@ -66,7 +66,9 @@
 
 
                   @for(key <- item.specifics.keys){
-                      <b>@util.Translator.translate(key) </b> @util.Translator.translate(item.specifics(key))<br>
+                      @if(!item.specifics(key).contains("$")) {
+                         <b>@util.Translator.translate(key) </b> @util.Translator.translate(item.specifics(key))<br>
+                      }
                   }
 
                     </div> <!-- #full_description rte -->
@@ -81,16 +83,24 @@
 
                 @if(item.variations.pictures.size < 1) {
                     <a class="gallery cboxElement" href="@util.UI.scaleEbayImage(item.mainPicture)" rel="gallery" style="height: 0px; width: 0px;">
-
                         <img src="@item.mainPicture" alt="" class="" style="display: none;">
                     </a>
                 } else {
                     @for(pic <- item.variations.pictures) {
-                        @if(util.UI.picExists(item.variations.specifics,pic.name.replaceAll(" ", "_"))) {
-                        <a class="gallery cboxElement" href="@util.UI.scaleEbayImage(pic.url)" rel="gallery" style="height: 0px; width: 0px;">
-                            <img src="@pic.url" alt="@pic.name.replaceAll(" ", "_")" class="" style="display: none;">
-                        </a>
+                        @if(pic.url.isEmpty){
+                            <a class="gallery cboxElement" href="@util.UI.scaleEbayImage(item.mainPicture)" rel="gallery" style="height: 0px; width: 0px;">
+                                <img src="@item.mainPicture" alt="@pic.name.replaceAll(" ", "_")" class="" style="display: none;">
+                            </a>
+                        }else {
+                            @if(util.UI.picExists(item.variations.specifics,pic.name.replaceAll(" ", "_"))) {
+                                <a class="gallery cboxElement" href="@util.UI.scaleEbayImage(pic.url)" rel="gallery" style="height: 0px; width: 0px;">
+                                    <img src="@pic.url" alt="@pic.name.replaceAll(" ", "_")" class="" style="display: none;">
+                                </a>
+                            }
                         }
+
+
+
                     }
                 }
 
@@ -104,10 +114,16 @@
                     </li>
                 } else {
                     @for(pic <- item.variations.pictures) {
-                        @if(util.UI.picExists(item.variations.specifics,pic.name.replaceAll(" ", "_"))) {
-                            <li class="product-photo-thumb" id="@pic.name.replaceAll(" ", "_")">
-                                <img src="@pic.url" alt="@pic.name" style="margin-top: 0px; opacity: 1;">
-                            </li>
+                        @if(pic.url.isEmpty){
+                                <li class="product-photo-thumb" id="@pic.name.replaceAll(" ", "_")">
+                                    <img src="@item.mainPicture" alt="@pic.name" style="margin-top: 0px; opacity: 1;">
+                                </li>
+                        } else {
+                            @if(util.UI.picExists(item.variations.specifics,pic.name.replaceAll(" ", "_"))) {
+                                <li class="product-photo-thumb" id="@pic.name.replaceAll(" ", "_")">
+                                    <img src="@pic.url" alt="@pic.name" style="margin-top: 0px; opacity: 1;">
+                                </li>
+                            }
                         }
                     }
                 }
