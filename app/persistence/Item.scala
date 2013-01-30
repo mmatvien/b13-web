@@ -57,6 +57,8 @@ object Item extends ModelCompanion[Item, ObjectId] {
 
   def findByCategory(cat: String, filter: String, size: String, page: Int): List[Item] = {
     val itemsPerPage = 30
+    val quer = categoryQuery(cat, filter)
+    println(quer)
     dao.find(categoryQuery(cat, filter)).skip(itemsPerPage * (page - 1)).limit(itemsPerPage).toList
   }
 
@@ -70,7 +72,7 @@ object Item extends ModelCompanion[Item, ObjectId] {
 
   def categoryQuery(cat: String, filter: String): MongoDBObject = {
     val queryBuilder = MongoDBObject.newBuilder
-    queryBuilder += "categoryName" -> (".*" + cat + ".*" + filter + ".*").r
+    queryBuilder += "categoryName" -> (".*(?i):" + cat + ".*" + filter + ".*").r
     queryBuilder.result()
   }
 
