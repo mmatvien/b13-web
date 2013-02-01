@@ -8,6 +8,7 @@ import play.api.data.Forms._
 import persistence.CartItem
 import persistence.CartItemVariation
 import scala.Some
+import org.joda.time.DateTime
 
 
 object Application extends Controller with SessionHelper {
@@ -27,7 +28,6 @@ object Application extends Controller with SessionHelper {
       val cat = if (request.queryString.contains("cat")) request.queryString("cat").head else ""
 
       if (collection == "watches" || collection == "sunglasses") {
-        println("looking for " + collection)
         val items = Item.findByCategory(collection, filter, size, page)
         val pagerSize = Item.findCategoryPagerSize(collection, filter, size)
         Ok(views.html.collection(collection, items, page, pagerSize)).withSession("uuid" -> sessionN(request))
@@ -141,7 +141,8 @@ object Application extends Controller with SessionHelper {
 
   val subscribeForm: Form[Subscription] = Form(
     mapping(
-      "email" -> text
+      "email" -> text,
+      "dateTime" -> optional(jodaDate)
     )(Subscription.apply)(Subscription.unapply))
 
 
@@ -150,10 +151,33 @@ object Application extends Controller with SessionHelper {
       subscribeForm.bindFromRequest.fold(
       errors => BadRequest, {
         case (subscription: Subscription) => {
-          println(subscription.email)
+          Subscription.save(Subscription(subscription.email, Some(DateTime.now)))
           Ok.flashing("success" -> "спасибо за подписку")
         }
         Ok.flashing("success" -> "спасибо за подписку")
+      }
+      )
+  }
+
+  val questionForm: Form[Question] = Form(
+    mapping(
+      "email" -> text,
+      "question" -> text,
+      "dateTime" -> optional(jodaDate),
+      "state" -> optional(number)
+    )(Question.apply)(Question.unapply))
+
+
+  def question = Action {
+    implicit request =>
+      questionForm.bindFromRequest.fold(
+      errors => BadRequest, {
+        case (question: Question) => {
+          println(" ---- questions")
+          Question.save(Question(question.email, question.question, Some(DateTime.now), Some(0)))
+          Ok.flashing("success" -> "спасибо за вопрос")
+        }
+        Ok.flashing("success" -> "спасибо за вопрос")
       }
       )
   }

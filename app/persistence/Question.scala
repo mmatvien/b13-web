@@ -16,11 +16,11 @@ import com.mongodb.casbah.commons.conversions.scala.RegisterJodaTimeConversionHe
  * Date: 1/27/13
  * Time: 9:28 PM
  */
-case class Subscription(email: String, dateTime: Option[DateTime])
+case class Question(email: String, question: String, dateTime: Option[DateTime], state: Option[Int])
 
-  object Subscription extends ModelCompanion[Subscription, ObjectId] {
+object Question extends ModelCompanion[Question, ObjectId] {
   RegisterJodaTimeConversionHelpers()
-  val collection = MongoConnection()("b13_web")("subscriptions")
-  val dao = new SalatDAO[Subscription, ObjectId](collection = collection) {}
+  val collection = MongoConnection()("b13_web")("questions")
+  val dao = new SalatDAO[Question, ObjectId](collection = collection) {}
 
 }

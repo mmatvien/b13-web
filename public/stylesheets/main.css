@@ -1067,6 +1067,14 @@ p.highlight {
 
 #cart-count .no-underline { border-bottom:none; }
 
+.questions {
+    float:right;
+    position:relative;
+    display:block;
+    margin-right:20px;
+    margin-top:4px;
+}
+
 #search-form {
     float:right;
     width:180px;

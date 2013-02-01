@@ -36,6 +36,9 @@
                     <h1 id="title" class="smooth" role="banner" style="visibility: visible;">
                         <a href="/"><img src="/assets/images/logo-265.png" style="width: 200px;"/></a>
                     </h1>
+
+
+
                     <p class="cart-elem" id="cart-count">
                         <a class="no-underline" href="/cart">
                             @sessionInfo.itemCount
@@ -60,7 +63,9 @@
                         </a> ·
                         <a href="/cart">оплатить</a>
                     </p>
-
+                    <span class="questions">
+                        <a href="#questionsModal" data-toggle="modal">вопросы</a>
+                    </span>
                     @*<form action="/search" method="get" id="search-form" role="search">*@
                         @*<input name="q" type="text" id="search-field" placeholder="поиск..." class="hint">*@
                         @*<input type="submit" value="" name="submit" id="search-submit">*@
@@ -158,6 +163,31 @@
             </div> <div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div> <div id="cboxBottomCenter" style="float: left; width: 302px;"></div> <div id="cboxBottomRight" style="float: left;"></div></div>
             </div> <div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div>
         </div>
+
+
+        <!-- Modal -->
+        <div id="questionsModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel">вопросы</h3>
+            </div>
+            <form id="questionForm" method="post" action="/question">
+
+                <div class="modal-body">
+                   <input type="email" placeholder="ваш@@email.com" name="contact[email]" id="email-input-questions">
+                   <textarea style="width:500px;height:200px;" placeholder="вопрос" id="questionF" name="input-question"></textarea>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-danger" style="float:right;" data-dismiss="modal" aria-hidden="true">отменить</button>
+                    <button class="btn btn-success" style="float:right;" type="submit" id="questionSubmit">послать</button>
+                </div>
+
+            </form>
+        </div>
+
+
+
 
         <script type="text/javascript">
 

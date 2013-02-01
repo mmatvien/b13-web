@@ -11,7 +11,6 @@ import com.mongodb.casbah.Imports._
 import org.joda.time.DateTime
 import com.mongodb.casbah.commons.MongoDBObject
 
-
 /**
  * User: max
  * Date: 1/29/13

@@ -16,6 +16,7 @@ POST    /cart                                   controllers.Application.update
 
 POST    /payment                                controllers.Payment.payment
 POST    /subscribe                              controllers.Application.subscribe
+POST    /question                               controllers.Application.question
 
 
 # ROUTES for ADMIN area
@@ -25,6 +26,7 @@ GET     /admin/orders/ordered/:collection/:itemId       controllers.Admin.ordere
 GET     /admin/orders/received/:collection/:itemId      controllers.Admin.received(collection:String,itemId: String)
 
 GET     /admin/inventory                         controllers.Admin.inventory
+GET     /admin/questions                         controllers.Admin.questions
 
 POST  /admin/login  	                         controllers.Auth.authenticate
 GET   /admin/logout   	                         controllers.Auth.logout

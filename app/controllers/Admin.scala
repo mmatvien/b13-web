@@ -2,7 +2,7 @@ package controllers
 
 
 import play.api.mvc._
-import persistence.{Ops, Item, Order}
+import persistence.{Question, Ops, Item, Order}
 
 object Admin extends Controller with Secured {
 
@@ -44,6 +44,14 @@ object Admin extends Controller with Secured {
     email => {
       implicit request =>
         Ok(views.html.admin_inventory(Ops.getLatest, email, "inventory"))
+    }
+  }
+
+
+  def questions = IsAuthenticated {
+    email => {
+      implicit request =>
+        Ok(views.html.admin_questions(Question.findAll().toList, email, "questions"))
     }
   }
 
