@@ -6,7 +6,7 @@
 
 import com.mongodb.casbah.Imports._
 
-import persistence.{NormalUser, Administrator, Address, Account}
+import persistence.{NormalUser, Administrator, Account}
 import play.api._
 
 object Global extends GlobalSettings {
@@ -21,16 +21,16 @@ object Global extends GlobalSettings {
         username = "max",
         password = Account.hash("freed0M11", "mmatvien@gmail.commaxH"),
         email = "mmatvien@gmail.com",
-        permission = Administrator,
-        address = Some(Address("Orlando", "123 45", "USA"))))
+        permission = Administrator
+      ))
 
 
       Account.save(Account(
         username = "lena",
         password = Account.hash("skorpion4ik'", "lena.matvien@gmail.commaxH"),
         email = "lena.matvien@gmail.com",
-        permission = NormalUser,
-        address = Some(Address("Orlando", "75000", "USA"))))
+        permission = NormalUser
+      ))
     }
   }
 }

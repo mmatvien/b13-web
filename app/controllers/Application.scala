@@ -16,7 +16,12 @@ object Application extends Controller with SessionHelper {
 
   def index = Action {
     implicit request =>
-      Ok(views.html.index("Your new application is ready.")).withSession("uuid" -> sessionN(request))
+      Ok(views.html.index("index.")).withSession("uuid" -> sessionN(request))
+  }
+
+  def about = Action {
+    implicit request =>
+      Ok(views.html.about("about.")).withSession("uuid" -> sessionN(request))
   }
 
 

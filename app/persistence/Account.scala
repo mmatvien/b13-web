@@ -5,7 +5,6 @@
  */
 package persistence
 
-import java.util.Date
 import com.novus.salat.annotations._
 import com.novus.salat.dao._
 import com.mongodb.casbah.Imports._
@@ -16,12 +15,7 @@ case class Account(
                     username: String,
                     password: String,
                     email: String,
-                    permission: Permission,
-                    address: Option[Address] = None,
-                    added: Date = new Date(),
-                    updated: Option[Date] = None,
-                    deleted: Option[Date] = None,
-                    @Key("company_id") company: Option[ObjectId] = None
+                    permission: Permission
                     )
 
 object Account extends ModelCompanion[Account, ObjectId] {
