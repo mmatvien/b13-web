@@ -5,6 +5,7 @@ import com.mongodb.casbah.Imports._
 import java.util.Date
 import java.text.SimpleDateFormat
 import org.joda.time.DateTime
+import scala.Some
 
 /**
  * User: max
@@ -43,7 +44,7 @@ object Util {
     lazy val categories: List[Map[String, List[Map[String, List[String]]]]] = {
       val q = MongoDBObject("collection" -> collection)
       val fields = MongoDBObject("categoryName" -> 1)
-      val cats = MongoFactory.connection_b13_ebay.find(q, fields).toList.map {
+      val cats = MongoFactory.ItemsCollection.find(q, fields).toList.map {
         x => {
           val all = x("categoryName").toString.split(":").toList
           all.drop(1).head :: all.drop(1).tail
@@ -76,7 +77,7 @@ object Util {
   def collectSpecifics(collection: String): Set[Any] = {
     val q = MongoDBObject("collection" -> collection)
     val fields = MongoDBObject("specifics" -> 1)
-    val specifics = MongoFactory.connection_b13_ebay.find(q, fields).toList.map {
+    val specifics = MongoFactory.ItemsCollection.find(q, fields).toList.map {
       x => {
         x.getAs[DBObject]("specifics") match {
           case Some(sp) => sp.toMap.get("Brand")
@@ -85,5 +86,16 @@ object Util {
       }
     }
     specifics.toSet
+
   }
+
+  def removeSeller(sellerName: String) {
+    val q1 = MongoDBObject("collection" -> sellerName)
+    MongoFactory.ItemsCollection.remove(q1)
+    val q2 = MongoDBObject("seller" -> sellerName)
+    MongoFactory.OpsCollection.remove(q2)
+    val q3 = MongoDBObject("name" -> sellerName)
+    MongoFactory.SellerCollection.remove(q3)
+  }
+
 }

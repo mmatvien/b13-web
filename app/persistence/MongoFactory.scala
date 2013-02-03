@@ -10,17 +10,19 @@ package persistence
  * Date: 12/17/12
  * Time: 10:10 AM
  */
-import com.mongodb.casbah.MongoConnection
+import com.mongodb.casbah.{MongoCollection, MongoConnection}
 
 
 object MongoFactory {
 
   private val SERVER = "localhost"
+  private val DATABASE = "b13_ebay"
+  private val ITEMS = "items"
+  private val OPS = "ops"
+  private val SELLER = "seller"
 
-  private val DATABASE_B13_EBAY = "b13_ebay"
-
-  val connection = MongoConnection(SERVER)
-
-  val connection_b13_ebay = connection(DATABASE_B13_EBAY)("items")
-
+  val connection: MongoConnection = MongoConnection(SERVER)
+  val ItemsCollection: MongoCollection = connection(DATABASE)(ITEMS)
+  val OpsCollection: MongoCollection = connection(DATABASE)(OPS)
+  val SellerCollection: MongoCollection = connection(DATABASE)(SELLER)
 }

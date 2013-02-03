@@ -2,7 +2,7 @@ package controllers
 
 
 import play.api.mvc._
-import persistence.{Question, Ops, Item, Order}
+import persistence._
 
 object Admin extends Controller with Secured {
 
@@ -55,5 +55,27 @@ object Admin extends Controller with Secured {
     }
   }
 
+  def removeSeller(seller: String) = IsAuthenticated {
+    email => {
+      implicit request =>
+        println("removing seller : " + seller)
+        persistence.Util.removeSeller(seller)
+        Ok(views.html.admin_inventory(Ops.getLatest, email, "inventory"))
+    }
+  }
+
+
+  def addSeller() = IsAuthenticated {
+    email => {
+      implicit request =>
+        val map: Map[String, Seq[String]] = request.body.asFormUrlEncoded.getOrElse(Map())
+        println("adding seller : " + map.get("sellerName").get.head)
+        val sellerName = map.get("sellerName").get.head
+        if (!sellerName.isEmpty) {
+          Seller.save(Seller(sellerName, persistence.New.toString))
+        }
+        Ok(views.html.admin_inventory(Ops.getLatest, email, "inventory"))
+    }
+  }
 }
 

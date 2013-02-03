@@ -26,6 +26,9 @@ GET     /admin/orders/ordered/:collection/:itemId       controllers.Admin.ordere
 GET     /admin/orders/received/:collection/:itemId      controllers.Admin.received(collection:String,itemId: String)
 
 GET     /admin/inventory                         controllers.Admin.inventory
+GET     /admin/inventory/remove                  controllers.Admin.removeSeller(seller: String)
+POST    /admin/inventory/add                     controllers.Admin.addSeller
+
 GET     /admin/questions                         controllers.Admin.questions
 
 POST  /admin/login  	                         controllers.Auth.authenticate

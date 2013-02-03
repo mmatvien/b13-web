@@ -37,5 +37,4 @@ object Ops extends ModelCompanion[Ops, ObjectId] {
     dao.find(MongoDBObject.empty).sort(sort).toList.groupBy{_.seller}.map{_._2.head}.toList
   }
 
-
 }

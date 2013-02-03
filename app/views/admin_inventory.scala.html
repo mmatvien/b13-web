@@ -9,13 +9,22 @@
             </tr>
         </thead>
         <tbody>
-        @for((ops, index) <- ops.zipWithIndex) {
-            <tr class="orderRow">
-                <td>
+            @for((ops, index) <- ops.zipWithIndex) {
+                <tr class="orderRow">
+                    <td>
                     @admin_ops_head(ops)
+                    </td>
+                </tr>
+            }
+            <tr>
+                <td>
+                    <form action="/admin/inventory/add" method="post">
+                        <label for="sellerName"></label>
+                      seller name  <input type="text" name="sellerName" id="sellerName"/>
+                        <button class="btn-danger" type="submit" value="add">add</button>
+                    </form>
                 </td>
             </tr>
-        }
         </tbody>
     </table>
 }
