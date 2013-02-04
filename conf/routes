@@ -4,7 +4,8 @@
 
 # Home page
 GET     /                                       controllers.Application.index
-GET     /about                                       controllers.Application.about
+GET     /about                                  controllers.Application.about
+GET     /terms                                  controllers.Application.terms
 
 
 GET     /collection/:collection/:page           controllers.Application.collection(collection: String, page: Int)

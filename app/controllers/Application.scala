@@ -24,6 +24,11 @@ object Application extends Controller with SessionHelper {
       Ok(views.html.about("about.")).withSession("uuid" -> sessionN(request))
   }
 
+  def terms = Action {
+    implicit request =>
+      Ok(views.html.terms("terms.")).withSession("uuid" -> sessionN(request))
+  }
+
 
   def collection(collection: String, page: Int) = Action {
     implicit request =>
