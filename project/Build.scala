@@ -18,7 +18,8 @@ object Build extends Build {
     "commons-logging" % "commons-logging" % "1.1.1",
     "org.apache.httpcomponents" % "httpclient-cache" % "4.1.1",
     "org.apache.httpcomponents" % "httpmime" % "4.1.1",
-    "net.liftweb" %% "lift-json" % "2.5-M4"
+    "net.liftweb" %% "lift-json" % "2.5-M4",
+    "org.scalatest" % "scalatest_2.10" % "1.9.1" % "test"
   )
 
   val main = play.Project(appName, appVersion, appDependencies).settings(

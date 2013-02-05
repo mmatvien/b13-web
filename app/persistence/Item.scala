@@ -49,6 +49,13 @@ object Item extends ModelCompanion[Item, ObjectId] {
 
 
   // -- Queries
+
+  // -- Queries
+  def findAllSellerItems(seller: String): Stream[Item] = {
+    dao.find(collectionQuery(seller, "", "")).toStream
+  }
+
+
   def findSellerItems(seller: String, cat: String, filter: String, size: String, page: Int): List[Item] = {
     val itemsPerPage = 30
     dao.find(collectionQuery(seller, cat, filter)).skip(itemsPerPage * (page - 1)).limit(itemsPerPage).toList

@@ -48,31 +48,32 @@ object Translator {
    *
    * @param category full category string
    */
-  def extractShipmentInfo(category: String) {
+  def extractShipmentInfo(category: String): Double = {
 
     val fullList = category.split(':').toList.reverse
 
     val shipping = matchFromFile("conf/shipping.txt", fullList.head)
 
     val shippingStructure = shipping.split(',').toList
-    val prev = fullList.tail.head
+    val parentCategory = fullList.tail.head
 
-    println(category)
 
-    if (shippingStructure.size > 1) {
+    def extract(parentCategory: String, shippingStructure: List[String]): Double = {
+      if (shippingStructure.size > 1) {
 
-      if (prev.contains("Men")) {
-        println("weight = " + shippingStructure(0))
-      }
-
-      if (prev.contains("Women")) {
-        println("weight = " + shippingStructure(1))
-      }
-
-      if (prev.contains("Kid")) {
-        println("weight = " + shippingStructure(2))
+        if (parentCategory.contains("Men")) {
+          return (shippingStructure(0).toDouble)
+        } else if (parentCategory.contains("Women")) {
+          return (shippingStructure(1).toDouble)
+        } else if (parentCategory.contains("Kid")) {
+          return (shippingStructure(2).toDouble)
+        } else 0
+      } else {
+        -1.toDouble
       }
     }
+    extract(parentCategory, shippingStructure)
   }
+
 
 }
