@@ -52,7 +52,7 @@ class ShippingTest extends FunSuite {
 
   test("Category loader should split each item's category", CategoryTest) {
     running(FakeApplication()) {
-      assert(1===1)
+      assert(1 === 1)
     }
   }
 
