@@ -34,12 +34,12 @@ class ShippingTest extends FunSuite {
       var failedCategories: List[String] = List()
       sellerList.foreach {
         seller =>
-          FileUtil.removeFile(seller)
+          FileUtil.removeFile(s"test/$seller")
           Item.findAllSellerItems(seller).map {
             item =>
               val res = util.Translator.extractShipmentInfo(item.categoryName).toInt
               if (!shippingExists(res) && !failedCategories.contains(item.categoryName)) {
-                util.FileUtil.appendToFile(seller, item.categoryName)
+                util.FileUtil.appendToFile(s"test/$seller", item.categoryName)
                 failedCategories = item.categoryName :: failedCategories
               }
           }
