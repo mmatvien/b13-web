@@ -8,7 +8,7 @@ object Build extends Build {
   val appVersion = "1.0-SNAPSHOT"
 
   val appDependencies = Seq(
-    "se.radley" %% "play-plugins-salat" % "1.2-SNAPSHOT",
+    "se.radley" %% "play-plugins-salat" % "1.2",
     "commons-codec" % "commons-codec" % "1.5",
     "com.typesafe.akka" % "akka-zeromq" % "2.0.3",
     "com.codahale" % "jerkson_2.9.1" % "0.5.0",

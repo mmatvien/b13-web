@@ -51,8 +51,8 @@ object Item extends ModelCompanion[Item, ObjectId] {
   // -- Queries
 
   // -- Queries
-  def findAllSellerItems(seller: String): Stream[Item] = {
-    dao.find(collectionQuery(seller, "", "")).toStream
+  def findAllSellerItems(seller: String): List[Item] = {
+    dao.find(collectionQuery(seller, "", "")).toList
   }
 
 
