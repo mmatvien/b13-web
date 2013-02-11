@@ -68,15 +68,15 @@ object Filter {
   }
 
   def collectAllCategories(): List[String] = {
-    var categorySet: Set[String] = Set()
+    var categorySet: List[String] = List()
     Seller.findAllSellers().map {
       seller =>
         Item.findAllSellerItems(seller.name).map {
           item =>
-            categorySet += item.categoryName
+            categorySet = item.categoryName :: categorySet
         }
     }
-    categorySet.toList.sortWith(_.toLowerCase < _.toLowerCase)
+    categorySet.sortWith(_.toLowerCase < _.toLowerCase)
   }
 
   def collectBrandsForCategory(category: String): List[String] = {

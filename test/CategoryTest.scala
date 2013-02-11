@@ -35,7 +35,6 @@ class CategoryTest extends FunSuite {
       val groupedCategories = util.Filter.collectAllCategories().groupBy(w => w).mapValues(_.size)
       println(groupedCategories.mkString("\n"))
 
-
       assert(1 === 1)
     }
   }
