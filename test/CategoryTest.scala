@@ -27,16 +27,14 @@ class CategoryTest extends FunSuite {
 
   test("Category loader should split each item's category") {
     running(FakeApplication()) {
-     // util.Filter.collectCategoriesForBrand(List("Seiko")).map(println)
-     // util.Filter.collectBrandsForCategory("").map(println)
-      val grouped = util.Filter.collectAllBrands().groupBy(w => w).mapValues(_.size)
+      val groupedBrands = util.Filter.collectAllBrands().groupBy(w => w).mapValues(_.size)
+      println(groupedBrands.mkString("\n"))
 
+      println("---------------------------------------")
 
+      val groupedCategories = util.Filter.collectAllCategories().groupBy(w => w).mapValues(_.size)
+      println(groupedCategories.mkString("\n"))
 
-
-     println(grouped.mkString("\n"))
-
-      //util.Filter.collectAllCategories().map(println)
 
       assert(1 === 1)
     }
