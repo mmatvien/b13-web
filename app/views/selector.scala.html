@@ -11,7 +11,7 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">БРЭНД<b class="caret"></b></a>
             <ul class="dropdown-menu">
 
-                @for(brand <- util.Filter.collectAllBrands()){
+                @for(brand <- util.Filter.mainBrands){
                     <li><a id="@brand" class="multicheck" href="#">@brand
                     <span class="pull-right"></span></a></li>
                 }
@@ -22,9 +22,9 @@
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">ДЛЯ НЕЕ<b class="caret"></b></a>
             <ul class="dropdown-menu">
-                <li><a id="forHer1" class="singlecheck" href="#">Test A
-                    <span class="pull-right"></span></a></li>
-                <li><a id="forHer2" class="singlecheck" href="#">Test B
+                <li> Clothing</li>
+                <li role="presentation" class="divider"></li>
+                <li><a id="forHer2" class="singlecheck" href="#">Suits & Blazers -> 21
                     <span class="pull-right"></span></a></li>
                 <li><a id="forHer3" class="singlecheck" href="#">Test C
                     <span class="pull-right"></span></a></li>
@@ -79,9 +79,26 @@
                     <span class="pull-right"></span></a></li>
                 <div class="clearfix"></div>
             </ul>
+
+        </li>
+
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">ДЛЯ МАЛЫШЕЙ<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a id="forKids1" class="singlecheck" href="#">Test A
+                    <span class="pull-right"></span></a></li>
+                <li><a id="forKids2" class="singlecheck" href="#">Test B
+                    <span class="pull-right"></span></a></li>
+                <li><a id="forKids3" class="singlecheck" href="#">Test C
+                    <span class="pull-right"></span></a></li>
+                <li><a id="forKids4" class="singlecheck" href="#">Test D
+                    <span class="pull-right"></span></a></li>
+                <div class="clearfix"></div>
+            </ul>
+
         </li>
 
     </ul>
-
+    <a href = "" class = "btn btn-success pull-right" style="width:20px; height:13px;">OK</a>
 </div>
 </div>
