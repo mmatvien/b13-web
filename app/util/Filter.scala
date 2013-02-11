@@ -40,19 +40,21 @@ object Filter {
   }
 
   def collectAllBrands(): List[String] = {
-    var brandSet: Set[String] = Set()
+    var brandSet: List[String] = List()
 
     Seller.findAllSellers().map {
       seller =>
         Item.findAllSellerItems(seller.name).map {
           item =>
             item.specifics.get("Brand") match {
-              case Some(brand) => brandSet += brand
+              case Some(brand) => brandSet = brand :: brandSet
               case None =>
             }
         }
     }
-    brandSet.toList.sortWith(_.toLowerCase < _.toLowerCase)
+
+
+    brandSet.sortWith(_.toLowerCase < _.toLowerCase)
   }
 
   def extractCategory(position: Int, fullCategory: List[String]): List[String] = {

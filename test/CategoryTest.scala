@@ -29,9 +29,14 @@ class CategoryTest extends FunSuite {
     running(FakeApplication()) {
      // util.Filter.collectCategoriesForBrand(List("Seiko")).map(println)
      // util.Filter.collectBrandsForCategory("").map(println)
-      util.Filter.collectAllBrands().map(println)
+      val grouped = util.Filter.collectAllBrands().groupBy(w => w).mapValues(_.size)
 
-      util.Filter.collectAllCategories().map(println)
+
+
+
+     println(grouped.mkString("\n"))
+
+      //util.Filter.collectAllCategories().map(println)
 
       assert(1 === 1)
     }
