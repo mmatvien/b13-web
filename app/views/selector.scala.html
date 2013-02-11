@@ -16,6 +16,7 @@
                               <li><a id="@brand" class="multicheck" href="#">@brand
                               <span class="pull-right"></span></a></li>
                           }
+                        <div class="clearfix"></div>
                     </ul>
                 </li>
                 <li class="column-menu span3">
@@ -24,6 +25,7 @@
                               <li><a id="@brand" class="multicheck" href="#">@brand
                               <span class="pull-right"></span></a></li>
                           }
+                        <div class="clearfix"></div>
                     </ul>
                 </li>
 
@@ -33,6 +35,7 @@
                             <li><a id="@brand" class="multicheck" href="#">@brand
                             <span class="pull-right"></span></a></li>
                         }
+                        <div class="clearfix"></div>
                     </ul>
                 </li>
             </ul>
@@ -82,26 +85,18 @@
                 </li>
 
                 <li class="column-menu span5">
-                    <ul>
-                        <li role="presentation" class="menuHeader">Изделия из драгоценных металллов</li>
-                        <li role="presentation" class="divider"></li>
 
-                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Fine"))){
-                            <li><a id="@brand" class="multicheck" href="#">@util.Translator.translate(brand.split(":").reverse.take(2).reverse.head)
-                            <span class="pull-right"></span></a></li>
-                        }
-                        <div class="clearfix"></div>
-
-                    </ul>
 
                     <ul>
                         <li role="presentation" class="menuHeader">Бижутерия и ювелирные изделия</li>
                         <li role="presentation" class="divider"></li>
 
-                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Fashion"))){
-                            <li><a id="@brand" class="multicheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
-                            <span class="pull-right"></span></a></li>
-                        }
+                        <li><a id="Bands" class="multicheck" href="#"><span class="pull-right"></span>Браслеты</a></li>
+                        <li><a id="Rings" class="multicheck" href="#"><span class="pull-right"></span>Kольца</a></li>
+                        <li><a id="Earrings" class="multicheck" href="#"><span class="pull-right"></span>Cерьги</a></li>
+                        <li><a id="Necklaces" class="multicheck" href="#"><span class="pull-right"></span>Oжерелья и кулоны</a></li>
+                        <li><a id="Pendants" class="multicheck" href="#"><span class="pull-right"></span>Подвески и браслеты с подвесками</a></li>
+                        <li><a id="Other" class="multicheck" href="#"><span class="pull-right"></span>Другое</a></li>
                         <div class="clearfix"></div>
 
                     </ul>
