@@ -42,7 +42,7 @@
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">ДЛЯ НЕЕ<b class="caret"></b></a>
 
-            <ul class="dropdown-menu span11">
+            <ul class="dropdown-menu span12">
 
                 <li class="column-menu span3 firstcolumn">
 
@@ -58,7 +58,7 @@
                     </ul>
                 </li>
 
-                <li class="column-menu span3">
+                <li class="column-menu span4">
 
                     <ul>
                         <li role="presentation" class="menuHeader">Аксессуары</li>
@@ -83,11 +83,35 @@
 
                 <li class="column-menu span5">
                     <ul>
-                        <li role="presentation" class="menuHeader">Ювелирные изделия и часы</li>
+                        <li role="presentation" class="menuHeader">Изделия из драгоценных металллов</li>
                         <li role="presentation" class="divider"></li>
 
-                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Jewelry & Watches"))){
-                            <li><a id="@brand" class="multicheck" href="#">@brand.split(":").reverse.take(2).reverse.mkString(" : ")
+                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Fine"))){
+                            <li><a id="@brand" class="multicheck" href="#">@util.Translator.translate(brand.split(":").reverse.take(2).reverse.head)
+                            <span class="pull-right"></span></a></li>
+                        }
+                        <div class="clearfix"></div>
+
+                    </ul>
+
+                    <ul>
+                        <li role="presentation" class="menuHeader">Бижутерия и ювелирные изделия</li>
+                        <li role="presentation" class="divider"></li>
+
+                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Fashion"))){
+                            <li><a id="@brand" class="multicheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <span class="pull-right"></span></a></li>
+                        }
+                        <div class="clearfix"></div>
+
+                    </ul>
+
+                    <ul>
+                        <li role="presentation" class="menuHeader">Часы</li>
+                        <li role="presentation" class="divider"></li>
+
+                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Wristwatches"))){
+                            <li><a id="@brand" class="multicheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
