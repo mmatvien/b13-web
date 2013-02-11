@@ -54,7 +54,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Women's Clothing"))){
-                            <li><a id="@brand" class="multicheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li><a id="@brand" class="singlecheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -68,7 +68,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Women's Accessories"))){
-                            <li><a id="@brand" class="multicheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li><a id="@brand" class="singlecheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -77,7 +77,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Women's Shoes"))){
-                            <li><a id="@brand" class="multicheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li><a id="@brand" class="singlecheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -85,18 +85,16 @@
                 </li>
 
                 <li class="column-menu span5">
-
-
                     <ul>
                         <li role="presentation" class="menuHeader">Бижутерия и ювелирные изделия</li>
                         <li role="presentation" class="divider"></li>
 
-                        <li><a id="Bands" class="multicheck" href="#"><span class="pull-right"></span>Браслеты</a></li>
-                        <li><a id="Rings" class="multicheck" href="#"><span class="pull-right"></span>Kольца</a></li>
-                        <li><a id="Earrings" class="multicheck" href="#"><span class="pull-right"></span>Cерьги</a></li>
-                        <li><a id="Necklaces" class="multicheck" href="#"><span class="pull-right"></span>Oжерелья и кулоны</a></li>
-                        <li><a id="Pendants" class="multicheck" href="#"><span class="pull-right"></span>Подвески и браслеты с подвесками</a></li>
-                        <li><a id="Other" class="multicheck" href="#"><span class="pull-right"></span>Другое</a></li>
+                        <li><a id="Bands" class="singlecheck" href="#"><span class="pull-right"></span>Браслеты</a></li>
+                        <li><a id="Rings" class="singlecheck" href="#"><span class="pull-right"></span>Kольца</a></li>
+                        <li><a id="Earrings" class="singlecheck" href="#"><span class="pull-right"></span>Cерьги</a></li>
+                        <li><a id="Necklaces" class="singlecheck" href="#"><span class="pull-right"></span>Oжерелья и кулоны</a></li>
+                        <li><a id="Pendants" class="singlecheck" href="#"><span class="pull-right"></span>Подвески и браслеты с подвесками</a></li>
+                        <li><a id="Other" class="singlecheck" href="#"><span class="pull-right"></span>Другое</a></li>
                         <div class="clearfix"></div>
 
                     </ul>
@@ -121,80 +119,216 @@
 
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">ДЛЯ НЕГО<b class="caret"></b></a>
-            <ul class="dropdown-menu">
-                <li><a id="forHim1" class="singlecheck" href="#">Test A
-                    <span class="pull-right"></span></a></li>
-                <li><a id="forHim2" class="singlecheck" href="#">Test B
-                    <span class="pull-right"></span></a></li>
-                <li><a id="forHim3" class="singlecheck" href="#">Test C
-                    <span class="pull-right"></span></a></li>
-                <li><a id="forHim4" class="singlecheck" href="#">Test D
-                    <span class="pull-right"></span></a></li>
-                <div class="clearfix"></div>
+            <ul class="dropdown-menu span12">
+
+                <li class="column-menu span3 firstcolumn">
+
+                    <ul>
+                        <li role="presentation" class="menuHeader">Одежда</li>
+                        <li role="presentation" class="divider"></li>
+
+                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Men's Clothing"))){
+                            <li><a id="@brand" class="singlecheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <span class="pull-right"></span></a></li>
+                        }
+                        <div class="clearfix"></div>
+                    </ul>
+                </li>
+
+                <li class="column-menu span4">
+
+                    <ul>
+                        <li role="presentation" class="menuHeader">Аксессуары</li>
+                        <li role="presentation" class="divider"></li>
+
+                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Men's Accessories"))){
+                            <li><a id="@brand" class="singlecheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <span class="pull-right"></span></a></li>
+                        }
+                        <div class="clearfix"></div>
+
+
+                    </ul>
+                </li>
+
+                <li class="column-menu span5">
+                    <ul>
+                        <li role="presentation" class="menuHeader">Обувь</li>
+                        <li role="presentation" class="divider"></li>
+
+                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Men's Shoes"))){
+                            <li><a id="@brand" class="singlecheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <span class="pull-right"></span></a></li>
+                        }
+                        <div class="clearfix"></div>
+
+                        <li role="presentation" class="menuHeader">Часы</li>
+                        <li role="presentation" class="divider"></li>
+
+                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Wristwatches"))){
+                            <li><a id="@brand" class="multicheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <span class="pull-right"></span></a></li>
+                        }
+                        <div class="clearfix"></div>
+
+                    </ul>
+                </li>
             </ul>
         </li>
 
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">ДЛЯ МАЛЬЧИКОВ<b class="caret"></b></a>
-            <ul class="dropdown-menu">
-                <li><a id="forBoys1" class="singlecheck" href="#">Test A
-                    <span class="pull-right"></span></a></li>
-                <li><a id="forBoys2" class="singlecheck" href="#">Test B
-                    <span class="pull-right"></span></a></li>
-                <li><a id="forBoys3" class="singlecheck" href="#">Test C
-                    <span class="pull-right"></span></a></li>
-                <li><a id="forBoys4" class="singlecheck" href="#">Test D
-                    <span class="pull-right"></span></a></li>
-                <div class="clearfix"></div>
+            <ul class="dropdown-menu span12">
+
+                <li class="column-menu span3 firstcolumn">
+
+                    <ul>
+                        <li role="presentation" class="menuHeader">Одежда</li>
+                        <li role="presentation" class="divider"></li>
+
+                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Boys' Clothing"))){
+                            <li><a id="@brand" class="singlecheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <span class="pull-right"></span></a></li>
+                        }
+                        <div class="clearfix"></div>
+                    </ul>
+                </li>
+
+                <li class="column-menu span4">
+
+                    <ul>
+                        <li role="presentation" class="menuHeader">Аксессуары</li>
+                        <li role="presentation" class="divider"></li>
+
+                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Boys' Accessories"))){
+                            <li><a id="@brand" class="singlecheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <span class="pull-right"></span></a></li>
+                        }
+                        <div class="clearfix"></div>
+
+
+                    </ul>
+                </li>
+
+                <li class="column-menu span5">
+                    <ul>
+                        <li role="presentation" class="menuHeader">Обувь</li>
+                        <li role="presentation" class="divider"></li>
+
+                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Boys' Shoes"))){
+                            <li><a id="@brand" class="singlecheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <span class="pull-right"></span></a></li>
+                        }
+                        <div class="clearfix"></div>
+
+                    </ul>
+                </li>
             </ul>
         </li>
 
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">ДЛЯ ДЕВОЧЕК<b class="caret"></b></a>
-            <ul class="dropdown-menu">
-                <li><a id="forGirls1" class="singlecheck" href="#">Test A
-                    <span class="pull-right"></span></a></li>
-                <li><a id="forGirls2" class="singlecheck" href="#">Test B
-                    <span class="pull-right"></span></a></li>
-                <li><a id="forGirls3" class="singlecheck" href="#">Test C
-                    <span class="pull-right"></span></a></li>
-                <li><a id="forGirls4" class="singlecheck" href="#">Test D
-                    <span class="pull-right"></span></a></li>
-                <div class="clearfix"></div>
-            </ul>
+            <ul class="dropdown-menu span12">
 
+                <li class="column-menu span3 firstcolumn">
+
+                    <ul>
+                        <li role="presentation" class="menuHeader">Одежда</li>
+                        <li role="presentation" class="divider"></li>
+
+                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Girls' Clothing"))){
+                            <li><a id="@brand" class="singlecheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <span class="pull-right"></span></a></li>
+                        }
+                        <div class="clearfix"></div>
+                    </ul>
+                </li>
+
+                <li class="column-menu span4">
+
+                    <ul>
+                        <li role="presentation" class="menuHeader">Аксессуары</li>
+                        <li role="presentation" class="divider"></li>
+
+                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Girls' Accessories"))){
+                            <li><a id="@brand" class="singlecheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <span class="pull-right"></span></a></li>
+                        }
+                        <div class="clearfix"></div>
+
+
+                    </ul>
+                </li>
+
+                <li class="column-menu span5">
+                    <ul>
+                        <li role="presentation" class="menuHeader">Обувь</li>
+                        <li role="presentation" class="divider"></li>
+
+                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Girls' Shoes"))){
+                            <li><a id="@brand" class="singlecheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <span class="pull-right"></span></a></li>
+                        }
+                        <div class="clearfix"></div>
+
+                    </ul>
+                </li>
+            </ul>
         </li>
 
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">ДЛЯ МАЛЫШЕЙ<b class="caret"></b></a>
-            <ul class="dropdown-menu">
-                <li><a id="forKids1" class="singlecheck" href="#">Test A
-                    <span class="pull-right"></span></a></li>
-                <li><a id="forKids2" class="singlecheck" href="#">Test B
-                    <span class="pull-right"></span></a></li>
-                <li><a id="forKids3" class="singlecheck" href="#">Test C
-                    <span class="pull-right"></span></a></li>
-                <li><a id="forKids4" class="singlecheck" href="#">Test D
-                    <span class="pull-right"></span></a></li>
-                <div class="clearfix"></div>
-            </ul>
+            <ul class="dropdown-menu span6">
 
+                <li class="column-menu span3 firstcolumn">
+
+                    <ul>
+                        <li role="presentation" class="menuHeader">Аксессуары</li>
+                        <li role="presentation" class="divider"></li>
+
+                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Baby Accessories"))){
+                            <li><a id="@brand" class="singlecheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <span class="pull-right"></span></a></li>
+                        }
+                        <div class="clearfix"></div>
+                    </ul>
+                </li>
+            </ul>
         </li>
 
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">РАЗНОЕ<b class="caret"></b></a>
-            <ul class="dropdown-menu">
-                <li><a id="other1" class="singlecheck" href="#">Test A
-                    <span class="pull-right"></span></a></li>
-                <li><a id="other2" class="singlecheck" href="#">Test B
-                    <span class="pull-right"></span></a></li>
-                <li><a id="other3" class="singlecheck" href="#">Test C
-                    <span class="pull-right"></span></a></li>
-                <li><a id="other4" class="singlecheck" href="#">Test D
-                    <span class="pull-right"></span></a></li>
-                <div class="clearfix"></div>
-            </ul>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> РАЗНОЕ <b class="caret"></b> </a>
+            <ul class="dropdown-menu span5">
 
+                <li class="column-menu span2 firstcolumn">
+
+                    <ul>
+                        <li role="presentation" class="menuHeader"> Аксессуары </li>
+                        <li role="presentation" class="divider"></li>
+
+                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Travel Accessories"))) {
+                            <li> <a id="@brand" class="singlecheck" href="#"> @util.Translator.translate(brand.split(":").reverse.head)
+                            <span class="pull-right"></span> </a> </li>
+                        }
+
+                    </ul>
+                </li>
+                <li class="column-menu span3">
+                    <ul>
+                        <li role="presentation" class="menuHeader"> Office </li>
+                        <li role="presentation" class="divider"></li>
+
+                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Office"))) {
+                            <li> <a id="@brand" class="singlecheck" href="#"> @util.Translator.translate(brand.split(":").reverse.head)
+                            <span class="pull-right"></span> </a> </li>
+                        }
+                        <div class="clearfix"></div>
+
+                    </ul>
+                </li>
+                <div class="clearfix"></div>
+
+            </ul>
         </li>
 
 
