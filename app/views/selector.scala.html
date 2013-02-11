@@ -9,15 +9,35 @@
 
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">БРЭНД<b class="caret"></b></a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu span9">
+                <li class="column-menu span3 firstcolumn">
+                    <ul>
+                          @for(brand <- util.Filter.mainBrands.take(util.Filter.mainBrands.size/3)){
+                              <li><a id="@brand" class="multicheck" href="#">@brand
+                              <span class="pull-right"></span></a></li>
+                          }
+                    </ul>
+                </li>
+                <li class="column-menu span3">
+                    <ul>
+                          @for(brand <- util.Filter.mainBrands.drop(util.Filter.mainBrands.size/3).take(util.Filter.mainBrands.size/3)){
+                              <li><a id="@brand" class="multicheck" href="#">@brand
+                              <span class="pull-right"></span></a></li>
+                          }
+                    </ul>
+                </li>
 
-                @for(brand <- util.Filter.mainBrands){
-                    <li><a id="@brand" class="multicheck" href="#">@brand
-                    <span class="pull-right"></span></a></li>
-                }
-                <div class="clearfix"></div>
+                <li class="column-menu span3">
+                    <ul>
+                        @for(brand <- util.Filter.mainBrands.drop(util.Filter.mainBrands.size/3).drop(util.Filter.mainBrands.size/3)){
+                            <li><a id="@brand" class="multicheck" href="#">@brand
+                            <span class="pull-right"></span></a></li>
+                        }
+                    </ul>
+                </li>
             </ul>
         </li>
+
 
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">ДЛЯ НЕЕ<b class="caret"></b></a>
@@ -98,7 +118,24 @@
 
         </li>
 
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">РАЗНОЕ<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a id="other1" class="singlecheck" href="#">Test A
+                    <span class="pull-right"></span></a></li>
+                <li><a id="other2" class="singlecheck" href="#">Test B
+                    <span class="pull-right"></span></a></li>
+                <li><a id="other3" class="singlecheck" href="#">Test C
+                    <span class="pull-right"></span></a></li>
+                <li><a id="other4" class="singlecheck" href="#">Test D
+                    <span class="pull-right"></span></a></li>
+                <div class="clearfix"></div>
+            </ul>
+
+        </li>
+
+
     </ul>
-    <a href = "" class = "btn btn-success pull-right" style="width:20px; height:13px;">OK</a>
+    <a href = "" class = "btn btn-warning pull-right" style="margin:0 0 0 0; width:20px; height:18px;">OK</a>
 </div>
 </div>

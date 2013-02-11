@@ -1,0 +1,23 @@
+/*
+ * Copyright (c) 2013.
+ * Maxim Matvienko - maxiru (r) LLC.
+ * All Right Reserved, http://www.maxiru.com/
+ */
+
+.navbar .dropdown-menu [class*="span"] {
+    padding-top: 10px;
+}
+.navbar .dropdown-menu > li.column-menu ul {
+    display: inline-block;
+    list-style: none outside none;
+    margin: 0 0 16px -40px;
+    width: 100%;
+}
+.navbar .dropdown-menu > li.column-menu li {
+    display: inline;
+    float: left;
+    width: 100%;
+}
+.navbar .dropdown-menu > li.column-menu.firstcolumn {
+    margin-left: 0;
+}
