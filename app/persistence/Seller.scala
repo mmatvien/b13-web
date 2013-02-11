@@ -16,8 +16,11 @@ import com.mongodb.casbah.commons.conversions.scala.RegisterJodaTimeConversionHe
  */
 
 trait State
+
 case object Active extends State
+
 case object Passive extends State
+
 case object New extends State
 
 case class Seller(name: String, state: String)
@@ -26,5 +29,9 @@ object Seller extends ModelCompanion[Seller, ObjectId] {
   RegisterJodaTimeConversionHelpers()
   val collection = MongoConnection()("b13_ebay")("seller")
   val dao = new SalatDAO[Seller, ObjectId](collection = collection) {}
+
+  def findAllSellers(): List[Seller] = {
+    dao.find(MongoDBObject.empty).toList
+  }
 }
 

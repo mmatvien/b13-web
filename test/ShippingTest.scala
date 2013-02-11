@@ -9,14 +9,13 @@ import persistence._
 import play.api.test.FakeApplication
 import play.api.test.Helpers.running
 import util.FileUtil
-import org.scalatest.Tag
 
 /**
  * User: max
  * Date: 2/5/13
  * Time: 1:37 PM
  */
-object CategoryTest extends Tag("Category Test")
+
 
 class ShippingTest extends FunSuite {
 
@@ -49,11 +48,5 @@ class ShippingTest extends FunSuite {
     }
   }
 
-
-  test("Category loader should split each item's category", CategoryTest) {
-    running(FakeApplication()) {
-      assert(1 === 1)
-    }
-  }
 
 }

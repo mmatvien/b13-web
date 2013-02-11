@@ -51,6 +51,17 @@ object Item extends ModelCompanion[Item, ObjectId] {
   // -- Queries
 
   // -- Queries
+  def findAllItems(): List[Item] = {
+    dao.find(MongoDBObject.empty).toList
+  }
+
+  def findItemsByBrand(brands: List[String]): List[Item] = {
+    if (brands.isEmpty)
+      dao.find(MongoDBObject.empty).toList
+    else
+      dao.find("specifics.Brand" $in brands).toList
+  }
+
   def findAllSellerItems(seller: String): List[Item] = {
     dao.find(collectionQuery(seller, "", "")).toList
   }
@@ -87,7 +98,7 @@ object Item extends ModelCompanion[Item, ObjectId] {
     dao.count(collectionQuery(seller, cat, filter)).toInt
   }
 
-  def findCategoryPagerSize( cat: String, filter: String, size: String): Int = {
+  def findCategoryPagerSize(cat: String, filter: String, size: String): Int = {
     dao.count(categoryQuery(cat, filter)).toInt
   }
 

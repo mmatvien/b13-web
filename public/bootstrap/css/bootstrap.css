@@ -4297,7 +4297,7 @@ input[type="submit"].btn.btn-mini {
 .navbar-inner {
   min-height: 40px;
   padding-right: 20px;
-  padding-left: 20px;
+  padding-left: 0px;
   background-color: #fafafa;
   background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f2f2f2));
@@ -4342,9 +4342,8 @@ input[type="submit"].btn.btn-mini {
   padding: 10px 20px 10px;
   margin-left: -20px;
   font-size: 20px;
-  font-weight: 200;
+  font-weight: 400;
   color: #777777;
-  text-shadow: 0 1px 0 #ffffff;
 }
 
 .navbar .brand:hover {

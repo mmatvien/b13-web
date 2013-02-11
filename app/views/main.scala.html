@@ -3,205 +3,208 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>@title</title>
-        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/logo-icon.png")">
-<link href='http://fonts.googleapis.com/css?family=Comfortaa:400,700,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" media="screen" href="@routes.Assets.at("bootstrap/css/bootstrap.css")">
-        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
-        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/menu.css")">
+<head>
+    <title> @title </title>
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/logo-icon.png")">
+    <link href='http://fonts.googleapis.com/css?family=Comfortaa:400,700,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("bootstrap/css/bootstrap.css")">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/menu.css")">
 
-        <script src="@routes.Assets.at("javascripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("javascripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
 
 
-        <script src="@routes.Assets.at("javascripts/jquery.validate.js")" type="text/javascript"></script>
-        <script src="@routes.Assets.at("bootstrap/js/bootstrap.min.js")" type="text/javascript"></script>
-        <script src="@routes.Assets.at("javascripts/bootbox.min.js")" type="text/javascript"></script>
-        <script src="@routes.Assets.at("javascripts/validate.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("javascripts/jquery.validate.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("bootstrap/js/bootstrap.min.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("javascripts/bootbox.min.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("javascripts/validate.js")" type="text/javascript"></script>
 
-        <script>
+    <script>
             var product_image_w_to_h_ratio = 1;
-        </script>
+    </script>
 
-        <script type="text/javascript" src="https://js.stripe.com/v1/"></script>
-        <script src="@routes.Assets.at("javascripts/stripe_cust.js")" type="text/javascript"></script>
+    <script type="text/javascript" src="https://js.stripe.com/v1/"></script>
+    <script src="@routes.Assets.at("javascripts/stripe_cust.js")" type="text/javascript"></script>
 
-    </head>
-    <body>
+</head>
+<body>
 
-        <div id="container">
+    <div id="container">
 
-            <header id="header" class="clearfix">
-                <div id="cart-summary" class="accent-text">
-                    <h1 id="title" class="smooth" role="banner" style="visibility: visible;">
-                        <a href="/"><img src="/assets/images/logo-265.png" style="width: 200px;"/></a>
-                    </h1>
+        <header id="header" class="clearfix">
+            <div id="cart-summary" class="accent-text">
+                <h1 id="title" class="smooth" role="banner" style="visibility: visible;">
+                    <a href="/"> <img src="/assets/images/logo-265.png" style="width: 200px;"/> </a>
+                </h1>
 
 
 
-                    <p class="cart-elem" id="cart-count">
-                        <a class="no-underline" href="/cart">
-                            @sessionInfo.itemCount
-                            @if(sessionInfo.itemCount == 0) {
+                <p class="cart-elem" id="cart-count">
+                    <a class="no-underline" href="/cart">
+                        @sessionInfo.itemCount
+                        @if(sessionInfo.itemCount == 0) {
                                 покупок
                             }
-                            @if(sessionInfo.itemCount == 1) {
-                                покупка
-                            }
-                            @if(sessionInfo.itemCount == 2) {
-                                покупки
-                            }
-                            @if(sessionInfo.itemCount == 3) {
-                                покупки
-                            }
-                            @if(sessionInfo.itemCount == 4) {
-                                покупки
-                            }
-                            @if(sessionInfo.itemCount > 4) {
-                                покупок
-                            }
-                        </a> ·
-                        <a href="/cart">оплатить</a>
-                    </p>
-                    <span class="questions">
-                        <a href="#questionsModal" data-toggle="modal">вопросы</a>
-                    </span>
-                    @*<form action="/search" method="get" id="search-form" role="search">*@
-                        @*<input name="q" type="text" id="search-field" placeholder="поиск..." class="hint">*@
-                        @*<input type="submit" value="" name="submit" id="search-submit">*@
-                    @*</form>*@
+                        @if(sessionInfo.itemCount == 1) {
+                            покупка
+                        }
+                        @if(sessionInfo.itemCount == 2) {
+                            покупки
+                        }
+                        @if(sessionInfo.itemCount == 3) {
+                            покупки
+                        }
+                        @if(sessionInfo.itemCount == 4) {
+                            покупки
+                        }
+                        @if(sessionInfo.itemCount > 4) {
+                            покупок
+                        }
+                    </a> ·
+                    <a href="/cart"> оплатить </a>
+                </p>
+                <span class="questions">
+                    <a href="#questionsModal" data-toggle="modal"> вопросы </a>
+                </span>
 
-                    <a href="/cart" class="cart-elem smooth " id="cart-total">
-                        <span id="cart-price" style="opacity: 1;">@sessionInfo.total</span>
-                    </a>
-                </div> <!-- #cart-summary -->
+                @*<form action="/search" method="get" id="search-form" role="search">*@
+                @*<input name="q" type="text" id="search-field" placeholder="поиск..." class="hint">*@
+                @*<input type="submit" value="" name="submit" id="search-submit">*@
+                @*</form>*@
+
+                <a href="/cart" class="cart-elem smooth " id="cart-total">
+                    <span id="cart-price" style="opacity: 1;"> @sessionInfo.total </span>
+                </a>
+            </div> <!-- #cart-summary -->
 
 
-            </header> <!-- #header -->
+        </header> <!-- #header -->
+
+            @selector()
 
             @content
 
 
             <!-- #content -->
 
-            <footer id="footer" class="has-twitter">
-                <ul class="clearfix" id="footer-modules">
-                    <li class="ft-module one-third" id="about-module">
-                    <h3><a href="/about" >о нас</a></h3>
+        <footer id="footer" class="has-twitter">
+            <ul class="clearfix" id="footer-modules">
+                <li class="ft-module one-third" id="about-module">
+                    <h3> <a href="/about"> о нас </a> </h3>
                     <div id="about-description" class="clearfix">
-                        настоящие брэндовие товары прямо с американских распродаж
+                            настоящие брэндовие товары прямо с американских распродаж
                     </div>
 
 
-                    <li class="ft-module one-third" id="twitter-module">
-                        <h3><a href="/terms" >условия</a></h3>
-                        <div id="terms" class="clearfix">
+                <li class="ft-module one-third" id="twitter-module">
+                    <h3> <a href="/terms"> условия </a> </h3>
+                    <div id="terms" class="clearfix">
                             оформление заказа, оплата и доставка
-                        </div>
-                    </li>
+                    </div>
+                </li>
 
 
 
-                    <li class="ft-module one-third" id="mailing-list-module" style="margin-right: 0px;">
-                        <h3>рассылка</h3>
-                        <p style="font-family:'Comfortaa', cursive;">подпишитесь на еженедельные рассылки новинок</p>
+                <li class="ft-module one-third" id="mailing-list-module" style="margin-right: 0px;">
+                    <h3> рассылка </h3>
+                    <p style="font-family:'Comfortaa', cursive;"> подпишитесь на еженедельные рассылки новинок </p>
 
-                        <form method="post" action="/subscribe" id="subscribeForm" >
-                            <input type="email" placeholder="ваш@@email.com" name="contact[email]" id="email-input">
-                            <input type="submit" class="btn styled-submit" value="OK" name="subscribe" id="email-submit">
-                        </form>
-                    </li>
-                </ul>
-            </footer> <!-- #footer -->
-            <div id="sub-footer" class="clearfix">
-                <div class="footer-left-content">
-
-
-                    <p id="shopify-attr" class="accent-text" role="contentinfo">Copyright © 2012 brand13.</p>
-
-                </div> <!-- #footer-left-content -->
+                    <form method="post" action="/subscribe" id="subscribeForm">
+                        <input type="email" placeholder="ваш@@email.com" name="contact[email]" id="email-input">
+                        <input type="submit" class="btn styled-submit" value="OK" name="subscribe" id="email-submit">
+                    </form>
+                </li>
+            </ul>
+        </footer> <!-- #footer -->
+        <div id="sub-footer" class="clearfix">
+            <div class="footer-left-content">
 
 
-                <ul id="payment-options" class="clearfix">
-                    @*<li class="payment-option" id="pay-paypal">PayPal</li>*@
+                <p id="shopify-attr" class="accent-text" role="contentinfo"> Copyright © 2012 brand13.</p>
 
-                    <li class="payment-option" id="pay-visa">Visa</li>
-                    <li class="payment-option" id="pay-mastercard">Mastercard</li>
-                    <li class="payment-option2" id="ebay">
+            </div> <!-- #footer-left-content -->
+
+
+            <ul id="payment-options" class="clearfix">
+
+                @*<li class="payment-option" id="pay-paypal">PayPal</li>*@
+
+                <li class="payment-option" id="pay-visa"> Visa </li>
+                <li class="payment-option" id="pay-mastercard"> Mastercard </li>
+                <li class="payment-option2" id="ebay">
                     <img style="opacity: 0.5;height: 35px;" src="@routes.Assets.at("images/ebay_market_108x45.gif")" />
-                    </li>
-                </ul>
-            </div>
+                </li>
+            </ul>
         </div>
+    </div>
 
 
-        <script src="@routes.Assets.at("javascripts/jquery.colorbox-min2.js")" type="text/javascript"></script>
-        <script src="@routes.Assets.at("javascripts/shop.js")" type="text/javascript"></script>
-        <script src="@routes.Assets.at("javascripts/menu.js")" type="text/javascript"></script>
-        <script src="@routes.Assets.at("coffee/ajax.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("javascripts/jquery.colorbox-min2.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("javascripts/shop.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("javascripts/menu.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("coffee/ajax.js")" type="text/javascript"></script>
 
 
-        <div id="cboxOverlay" style="opacity: 1; cursor: auto; display: none;"></div>
-        <div id="colorbox" class="" style="padding-bottom: 32px; padding-right: 0px; top: 270px; left: 603px; position: absolute; width: 1302px; height: 1402px; opacity: 1; cursor: auto; display: none;">
-            <div id="cboxWrapper" style="height: 1434px; width: 1302px;">
-                <div><div id="cboxTopLeft" style="float: left;"></div> <div id="cboxTopCenter" style="float: left; width: 302px;"></div> <div id="cboxTopRight" style="float: left;"></div></div>
-                <div style="clear: left;">
+    <div id="cboxOverlay" style="opacity: 1; cursor: auto; display: none;"></div>
+    <div id="colorbox" class="" style="padding-bottom: 32px; padding-right: 0px; top: 270px; left: 603px; position: absolute; width: 1302px; height: 1402px; opacity: 1; cursor: auto; display: none;">
+        <div id="cboxWrapper" style="height: 1434px; width: 1302px;">
+            <div> <div id="cboxTopLeft" style="float: left;"></div> <div id="cboxTopCenter" style="float: left; width: 302px;"></div> <div id="cboxTopRight" style="float: left;"></div> </div>
+            <div style="clear: left;">
                 <div id="cboxMiddleLeft" style="float: left; height: 402px;"></div>
-                    <div id="cboxContent" style="float: left; width: 1302px; height: 1402px;">
-                <div id="cboxLoadingOverlay" style="float: left; display: none;"></div>
-                <div id="cboxLoadingGraphic" style="float: left; display: none;"></div>
-                <div id="cboxTitle" style="float: left; display: block;"></div>
-                <div id="cboxCurrent" style="float: left; display: none;"></div>
-                <div id="cboxNext" style="float: left; display: none;"></div>
-                <div id="cboxPrevious" style="float: left; display: none;"></div>
-                <div id="cboxSlideshow" style="float: left; display: none;"></div>
-                <div id="cboxClose" style="float: left;">
-                close
-            </div>
-            </div> <div id="cboxMiddleRight" style="float: left; height: 402px;"></div>
-            </div> <div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div> <div id="cboxBottomCenter" style="float: left; width: 302px;"></div> <div id="cboxBottomRight" style="float: left;"></div></div>
-            </div> <div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div>
-        </div>
+                <div id="cboxContent" style="float: left; width: 1302px; height: 1402px;">
+                    <div id="cboxLoadingOverlay" style="float: left; display: none;"></div>
+                    <div id="cboxLoadingGraphic" style="float: left; display: none;"></div>
+                    <div id="cboxTitle" style="float: left; display: block;"></div>
+                    <div id="cboxCurrent" style="float: left; display: none;"></div>
+                    <div id="cboxNext" style="float: left; display: none;"></div>
+                    <div id="cboxPrevious" style="float: left; display: none;"></div>
+                    <div id="cboxSlideshow" style="float: left; display: none;"></div>
+                    <div id="cboxClose" style="float: left;">
+                            close
+                    </div>
+                </div> <div id="cboxMiddleRight" style="float: left; height: 402px;"></div>
+            </div> <div style="clear: left;"> <div id="cboxBottomLeft" style="float: left;"></div> <div id="cboxBottomCenter" style="float: left; width: 302px;"></div> <div id="cboxBottomRight" style="float: left;"></div> </div>
+        </div> <div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div>
+    </div>
 
 
         <!-- Modal Questions-->
-        <div id="questionsModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h3 id="myModalLabel">вопросы</h3>
-            </div>
-            <form id="questionForm" method="post" action="/question">
-
-                <div class="modal-body">
-                   <input type="email" placeholder="ваш@@email.com" name="contact[email]" id="email-input-questions">
-                   <textarea style="width:500px;height:200px;" placeholder="вопрос" id="questionF" name="input-question"></textarea>
-                </div>
-
-                <div class="modal-footer">
-                    <button class="btn btn-danger" style="float:right;" data-dismiss="modal" aria-hidden="true">отменить</button>
-                    <button class="btn btn-success" style="float:right;" type="submit" id="questionSubmit">послать</button>
-                </div>
-
-            </form>
+    <div id="questionsModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"> × </button>
+            <h3 id="myModalLabel"> вопросы </h3>
         </div>
+        <form id="questionForm" method="post" action="/question">
+
+            <div class="modal-body">
+                <input type="email" placeholder="ваш @@ email.com" name="contact[email]" id="email-input-questions">
+                <textarea style="width:500px;height:200px;" placeholder="вопрос" id="questionF" name="input-question"></textarea>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-danger" style="float:right;" data-dismiss="modal" aria-hidden="true"> отменить </button>
+                <button class="btn btn-success" style="float:right;" type="submit" id="questionSubmit"> послать </button>
+            </div>
+
+        </form>
+    </div>
 
 
 
 
 
-        <script type="text/javascript">
+    <script type="text/javascript">
 
             var _gaq = _gaq || [];
             _gaq.push(['_setAccount', 'UA-38027530-1']);
             _gaq.push(['_trackPageview']);
-
             (function() {
             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
             })();
 
-        </script>
+    </script>
 
-    </body>
+</body>
 </html>

@@ -1,0 +1,55 @@
+@()
+
+<script src="@routes.Assets.at("coffee/selector.js")" type="text/javascript"></script>
+
+<div class="navbar">
+<div class="navbar-inner">
+
+    <ul class="nav">
+
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">категория<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a id="chk2A" class="singlecheck" href="#">Test A
+                    <span class="pull-right"></span></a></li>
+                <li><a id="chk2B" class="singlecheck" href="#">Test B
+                    <span class="pull-right"></span></a></li>
+                <li><a id="chk2C" class="singlecheck" href="#">Test C
+                    <span class="pull-right"></span></a></li>
+                <li><a id="chk2D" class="singlecheck" href="#">Test D
+                    <span class="pull-right"></span></a></li>
+                <div class="clearfix"></div>
+            </ul>
+        </li>
+
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">брэнд<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+
+                @for(brand <- util.Filter.collectAllBrands()){
+                    <li><a id="@brand" class="multicheck" href="#">@brand
+                    <span class="pull-right"></span></a></li>
+                }
+                <div class="clearfix"></div>
+            </ul>
+        </li>
+
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">пол/возраст<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a id="chk3A" class="singlecheck" href="#">Test A
+                    <span class="pull-right"></span></a></li>
+                <li><a id="chk3B" class="singlecheck" href="#">Test B
+                    <span class="pull-right"></span></a></li>
+                <li><a id="chk3C" class="singlecheck" href="#">Test C
+                    <span class="pull-right"></span></a></li>
+                <li><a id="chk3D" class="singlecheck" href="#">Test D
+                    <span class="pull-right"></span></a></li>
+                <div class="clearfix"></div>
+            </ul>
+        </li>
+
+    </ul>
+
+</div>
+</div>
