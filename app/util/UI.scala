@@ -47,4 +47,18 @@ object UI {
     val x = sp.map(d => exists(d)).flatten
     x.contains(1)
   }
+
+  def compressCategory(category: String): String = {
+    def normalize(str: String): String = {
+      str.replaceAll(" ", "").replaceAll("&", "_").replaceAll("'", "_").replace("(", "_").replace(")", "_")
+    }
+    val pieces = category.split(":").toList
+    if (pieces.size > 1) {
+      normalize(pieces.reverse(1)) + "_" + normalize(pieces.reverse(0))
+    } else {
+      normalize(pieces(0))
+    }
+
+  }
+
 }

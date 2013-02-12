@@ -7,42 +7,9 @@
 
     <ul class="nav">
 
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">БРЭНД<b class="caret"></b></a>
-            <ul class="dropdown-menu span9">
-                <li class="column-menu span3 firstcolumn">
-                    <ul>
-                          @for(brand <- util.Ref.mainBrands.take(util.Ref.mainBrands.size/3)){
-                              <li><a id="@brand" class="brandNav" href="#">@brand
-                              <span class="pull-right"></span></a></li>
-                          }
-                        <div class="clearfix"></div>
-                    </ul>
-                </li>
-                <li class="column-menu span3">
-                    <ul>
-                          @for(brand <- util.Ref.mainBrands.drop(util.Ref.mainBrands.size/3).take(util.Ref.mainBrands.size/3)){
-                              <li><a id="@brand" class="brandNav" href="#">@brand
-                              <span class="pull-right"></span></a></li>
-                          }
-                        <div class="clearfix"></div>
-                    </ul>
-                </li>
-
-                <li class="column-menu span3">
-                    <ul>
-                        @for(brand <- util.Ref.mainBrands.drop(util.Ref.mainBrands.size/3).drop(util.Ref.mainBrands.size/3)){
-                            <li><a id="@brand" class="brandNav" href="#">@brand
-                            <span class="pull-right"></span></a></li>
-                        }
-                        <div class="clearfix"></div>
-                    </ul>
-                </li>
-            </ul>
-        </li>
 
 
-        <li class="dropdown">
+        <li class="dropdown" id="dropShe">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">ДЛЯ НЕЕ<b class="caret"></b></a>
 
             <ul class="dropdown-menu span12">
@@ -54,7 +21,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Women's Clothing"))){
-                            <li><a id="@brand" class="categoryNavShe" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li class='@util.UI.compressCategory(brand)'><a id="@brand" class="categoryNavShe" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -68,7 +35,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Women's Accessories"))){
-                            <li><a id="@brand" class="categoryNavShe" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li class='@util.UI.compressCategory(brand)'> <a id="@brand" class="categoryNavShe" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -77,7 +44,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Women's Shoes"))){
-                            <li><a id="@brand" class="categoryNavShe" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li class='@util.UI.compressCategory(brand)'><a id="@brand" class="categoryNavShe" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -104,7 +71,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Wristwatches"))){
-                            <li><a id="@brand" class="categoryNavShe" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li class='@util.UI.compressCategory(brand)'><a id="@brand" class="categoryNavShe" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -113,7 +80,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Women's Handbags & Bags"))){
-                            <li><a id="@brand" class="categoryNavShe" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li class='@util.UI.compressCategory(brand)'><a id="@brand" class="categoryNavShe" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -126,7 +93,7 @@
 
 
 
-        <li class="dropdown">
+        <li class="dropdown" id="dropHe">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">ДЛЯ НЕГО<b class="caret"></b></a>
             <ul class="dropdown-menu span12">
 
@@ -137,7 +104,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Men's Clothing"))){
-                            <li><a id="@brand" class="categoryNavHe" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li class='@util.UI.compressCategory(brand)'><a id="@brand" class="categoryNavHe" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -151,7 +118,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Men's Accessories"))){
-                            <li><a id="@brand" class="categoryNavHe" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li class='@util.UI.compressCategory(brand)'><a id="@brand" class="categoryNavHe" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -166,7 +133,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Men's Shoes"))){
-                            <li><a id="@brand" class="categoryNavHe" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li class='@util.UI.compressCategory(brand)'><a id="@brand" class="categoryNavHe" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -175,7 +142,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Wristwatches"))){
-                            <li><a id="@brand" class="categoryNavHe" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li class='@util.UI.compressCategory(brand)'><a id="@brand" class="categoryNavHe" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -185,7 +152,7 @@
             </ul>
         </li>
 
-        <li class="dropdown">
+        <li class="dropdown" id="dropBoy">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">ДЛЯ МАЛЬЧИКОВ<b class="caret"></b></a>
             <ul class="dropdown-menu span7">
 
@@ -196,7 +163,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Boys' Clothing (Sizes 4 & Up)"))){
-                            <li><a id="@brand" class="categoryNavBoy" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li class='@util.UI.compressCategory(brand)'><a id="@brand" class="categoryNavBoy" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -211,7 +178,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Boys' Shoes"))){
-                            <li><a id="@brand" class="categoryNavBoy" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li class='@util.UI.compressCategory(brand)'><a id="@brand" class="categoryNavBoy" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -220,7 +187,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Boys' Accessories"))){
-                            <li><a id="@brand" class="categoryNavBoy" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li class='@util.UI.compressCategory(brand)'><a id="@brand" class="categoryNavBoy" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -230,7 +197,7 @@
             </ul>
         </li>
 
-        <li class="dropdown">
+        <li class="dropdown" id="dropGirl">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">ДЛЯ ДЕВОЧЕК<b class="caret"></b></a>
             <ul class="dropdown-menu span7">
 
@@ -241,7 +208,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Girls' Clothing (Sizes 4 & Up)"))){
-                            <li><a id="@brand" class="categoryNavGirl" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li class='@util.UI.compressCategory(brand)'><a id="@brand" class="categoryNavGirl" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -255,7 +222,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Children's Jewelry"))){
-                            <li><a id="@brand" class="categoryNavGirl" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li class='@util.UI.compressCategory(brand)'><a id="@brand" class="categoryNavGirl" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -264,28 +231,20 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Girls' Accessories"))){
-                            <li><a id="@brand" class="categoryNavGirl" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li class='@util.UI.compressCategory(brand)'><a id="@brand" class="categoryNavGirl" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
 
 
 
-                        <li role="presentation" class="menuHeader">Обувь</li>
-                        <li role="presentation" class="divider"></li>
-
-                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Girls' Shoes"))){
-                            <li><a id="@brand" class="categoryNavGirl" href="#">@util.Translator.translate(brand.split(":").reverse.head)
-                            <span class="pull-right"></span></a></li>
-                        }
-                        <div class="clearfix"></div>
 
                     </ul>
                 </li>
             </ul>
         </li>
 
-        <li class="dropdown">
+        <li class="dropdown" id="dropKid">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">ДЛЯ МАЛЫШЕЙ<b class="caret"></b></a>
             <ul class="dropdown-menu span6">
 
@@ -297,7 +256,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Boys' Clothing (Newborn-5T)"))){
-                            <li><a id="@brand" class="categoryNavKid" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li class='@util.UI.compressCategory(brand)'><a id="@brand" class="categoryNavKid" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
 
@@ -305,7 +264,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Baby Accessories") || c.contains("Baby:Diapering"))){
-                            <li><a id="@brand" class="categoryNavKid" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li class='@util.UI.compressCategory(brand)'><a id="@brand" class="categoryNavKid" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -313,47 +272,71 @@
                 </li>
                 <li class="column-menu span3">
                     <ul>
-                        <div class="clearfix"></div>
+
                         <li role="presentation" class="menuHeader">Одежда для девочек</li>
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Girls' Clothing (Newborn-5T)"))){
-                            <li><a id="@brand" class="categoryNavKid" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li class='@util.UI.compressCategory(brand)'><a id="@brand" class="categoryNavKid" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
 
+                        <li role="presentation" class="menuHeader">Обувь</li>
+                        <li role="presentation" class="divider"></li>
+                        <li class='BabyShoes'><a id="Baby & Toddler Clothing:Baby Shoes" class="categoryNavKid" href="#">Обувь <span class="pull-right"></span></a></li>
+                        <div class="clearfix"></div>
 
                     </ul>
                 </li>
-
             </ul>
         </li>
 
-        <li class="dropdown">
+        <li class="dropdown" id="dropOther">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"> РАЗНОЕ <b class="caret"></b> </a>
-            <ul class="dropdown-menu span5">
+            <ul class="dropdown-menu span6">
 
-                <li class="column-menu span2 firstcolumn">
+                <li class="column-menu span3 firstcolumn">
 
                     <ul>
                         <li role="presentation" class="menuHeader"> Аксессуары </li>
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Travel Accessories"))) {
-                            <li> <a id="@brand" class="categoryNavOther" href="#"> @util.Translator.translate(brand.split(":").reverse.head)
+                            <li class='@util.UI.compressCategory(brand)'> <a id="@brand" class="categoryNavOther" href="#"> @util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span> </a> </li>
                         }
 
-                    </ul>
-                </li>
-                <li class="column-menu span3">
-                    <ul>
-                        <li role="presentation" class="menuHeader"> Office </li>
+
+
+
+                        <li role="presentation" class="menuHeader"> Офис </li>
                         <li role="presentation" class="divider"></li>
 
-                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Office") || c.contains("Laptop & Desktop Accessories") ||  c.contains("Gym, Workout & Yoga"))) {
-                            <li> <a id="@brand" class="categoryNavOther" href="#"> @util.Translator.translate(brand.split(":").reverse.head)
+                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Office") ||  c.contains("Gym, Workout & Yoga"))) {
+                            <li class='@util.UI.compressCategory(brand)'> <a id="@brand" class="categoryNavOther" href="#"> @util.Translator.translate(brand.split(":").reverse.head)
+                            <span class="pull-right"></span> </a> </li>
+                        }
+                        <div class="clearfix"></div>
+                    </ul>
+                </li>
+
+                <li class="column-menu span3">
+                    <ul>
+                        <li role="presentation" class="menuHeader"> Камера - фото </li>
+                        <li role="presentation" class="divider"></li>
+
+                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Camera & Photo Accessories"))) {
+                            <li class='@util.UI.compressCategory(brand)'> <a id="@brand" class="categoryNavOther" href="#"> @util.Translator.translate(brand.split(":").reverse.head)
+                            <span class="pull-right"></span> </a> </li>
+                        }
+                        <div class="clearfix"></div>
+
+                        <li role="presentation" class="menuHeader">Сумки и чехлы</li>
+                        <li role="presentation" class="divider"></li>
+
+                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Laptop & Desktop Accessories"))) {
+                            <li class='@util.UI.compressCategory(brand)'> <a id="@brand" class="categoryNavOther" href="#"> @util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span> </a> </li>
                         }
                         <div class="clearfix"></div>
@@ -367,6 +350,44 @@
 
 
     </ul>
-    <a href = "" class = "btn styled-submit pull-right" style="margin:0 0 0 0; "><i class="icon-search"></i></a>
+
+    <ul class="nav pull-right">
+        <li class="divider-vertical"></li>
+        <li class="dropdown" id="dropBrand">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">БРЭНД<b class="caret"></b></a>
+            <ul class="dropdown-menu span9">
+                <li class="column-menu span3 firstcolumn">
+                    <ul>
+                        @for(brand <- util.Ref.mainBrands.take(util.Ref.mainBrands.size/3)){
+                            <li class='@util.UI.compressCategory(brand)'><a id="@brand" class="brandNav" href="#">@brand
+                            <span class="pull-right"></span></a></li>
+                        }
+                        <div class="clearfix"></div>
+                    </ul>
+                </li>
+                <li class="column-menu span3">
+                    <ul>
+                        @for(brand <- util.Ref.mainBrands.drop(util.Ref.mainBrands.size/3).take(util.Ref.mainBrands.size/3)){
+                            <li class='@util.UI.compressCategory(brand)'><a id="@brand" class="brandNav" href="#">@brand
+                            <span class="pull-right"></span></a></li>
+                        }
+                        <div class="clearfix"></div>
+                    </ul>
+                </li>
+
+                <li class="column-menu span3">
+                    <ul>
+                        @for(brand <- util.Ref.mainBrands.drop(util.Ref.mainBrands.size/3).drop(util.Ref.mainBrands.size/3)){
+                            <li class='@util.UI.compressCategory(brand)'><a id="@brand" class="brandNav" href="#">@brand
+                            <span class="pull-right"></span></a></li>
+                        }
+                        <div class="clearfix"></div>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+    </ul>
+
 </div>
 </div>

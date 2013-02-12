@@ -4,13 +4,13 @@
 
 @main("brand 13") {
 
-    <div class = "collectionHeader">
-        @menu(collection)
-    </div>
+   <!-- <div class = "collectionHeader">  @menu(collection) </div> -->
     <div class="collectionSubHeader">
 
-        @subfilter(pagerSize, collection)
-
+            <!--        @subfilter(pagerSize, collection) -->
+        <ul class="clearfix" id="collection-header">
+            <li class="clearfix filterL">найдено: @pagerSize</li>
+                </ul>
     </div>
 
     <div class="clearfix" id="content" role="main">
