@@ -13,6 +13,15 @@ package util
  */
 object Ref {
 
+  val topCategory = List(
+    "she",
+    "he",
+    "boy",
+    "girl",
+    "kid",
+    "other"
+  )
+
   val mainCategories = List(
     "Baby:Diapering:Diaper Bags",
     "Baby:Strollers",

@@ -52,8 +52,6 @@ object Filter {
             }
         }
     }
-
-
     brandSet.sortWith(_.toLowerCase < _.toLowerCase)
   }
 

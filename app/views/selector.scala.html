@@ -13,7 +13,7 @@
                 <li class="column-menu span3 firstcolumn">
                     <ul>
                           @for(brand <- util.Ref.mainBrands.take(util.Ref.mainBrands.size/3)){
-                              <li><a id="@brand" class="multicheck" href="#">@brand
+                              <li><a id="@brand" class="brandNav" href="#">@brand
                               <span class="pull-right"></span></a></li>
                           }
                         <div class="clearfix"></div>
@@ -22,7 +22,7 @@
                 <li class="column-menu span3">
                     <ul>
                           @for(brand <- util.Ref.mainBrands.drop(util.Ref.mainBrands.size/3).take(util.Ref.mainBrands.size/3)){
-                              <li><a id="@brand" class="multicheck" href="#">@brand
+                              <li><a id="@brand" class="brandNav" href="#">@brand
                               <span class="pull-right"></span></a></li>
                           }
                         <div class="clearfix"></div>
@@ -32,7 +32,7 @@
                 <li class="column-menu span3">
                     <ul>
                         @for(brand <- util.Ref.mainBrands.drop(util.Ref.mainBrands.size/3).drop(util.Ref.mainBrands.size/3)){
-                            <li><a id="@brand" class="multicheck" href="#">@brand
+                            <li><a id="@brand" class="brandNav" href="#">@brand
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -54,7 +54,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Women's Clothing"))){
-                            <li><a id="@brand" class="singlecheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li><a id="@brand" class="categoryNavShe" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -68,7 +68,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Women's Accessories"))){
-                            <li><a id="@brand" class="singlecheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li><a id="@brand" class="categoryNavShe" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -77,7 +77,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Women's Shoes"))){
-                            <li><a id="@brand" class="singlecheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li><a id="@brand" class="categoryNavShe" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -89,12 +89,12 @@
                         <li role="presentation" class="menuHeader">Бижутерия и ювелирные изделия</li>
                         <li role="presentation" class="divider"></li>
 
-                        <li><a id="Bands" class="singlecheck" href="#"><span class="pull-right"></span>Браслеты</a></li>
-                        <li><a id="Rings" class="singlecheck" href="#"><span class="pull-right"></span>Kольца</a></li>
-                        <li><a id="Earrings" class="singlecheck" href="#"><span class="pull-right"></span>Cерьги</a></li>
-                        <li><a id="Necklaces" class="singlecheck" href="#"><span class="pull-right"></span>Oжерелья и кулоны</a></li>
-                        <li><a id="Pendants" class="singlecheck" href="#"><span class="pull-right"></span>Подвески и браслеты с подвесками</a></li>
-                        <li><a id="Other" class="singlecheck" href="#"><span class="pull-right"></span>Другое</a></li>
+                        <li><a id="Bands" class="categoryNavShe" href="#"><span class="pull-right"></span>Браслеты</a></li>
+                        <li><a id="Rings" class="categoryNavShe" href="#"><span class="pull-right"></span>Kольца</a></li>
+                        <li><a id="Earrings" class="categoryNavShe" href="#"><span class="pull-right"></span>Cерьги</a></li>
+                        <li><a id="Necklaces" class="categoryNavShe" href="#"><span class="pull-right"></span>Oжерелья и кулоны</a></li>
+                        <li><a id="Pendants" class="categoryNavShe" href="#"><span class="pull-right"></span>Подвески и браслеты с подвесками</a></li>
+                        <li><a id="Other" class="categoryNavShe" href="#"><span class="pull-right"></span>Другое</a></li>
                         <div class="clearfix"></div>
 
                     </ul>
@@ -104,7 +104,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Wristwatches"))){
-                            <li><a id="@brand" class="multicheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li><a id="@brand" class="categoryNavShe" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -128,7 +128,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Men's Clothing"))){
-                            <li><a id="@brand" class="singlecheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li><a id="@brand" class="categoryNavHe" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -142,7 +142,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Men's Accessories"))){
-                            <li><a id="@brand" class="singlecheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li><a id="@brand" class="categoryNavHe" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -157,7 +157,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Men's Shoes"))){
-                            <li><a id="@brand" class="singlecheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li><a id="@brand" class="categoryNavHe" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -166,7 +166,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Wristwatches"))){
-                            <li><a id="@brand" class="multicheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li><a id="@brand" class="categoryNavHe" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -187,7 +187,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Boys' Clothing"))){
-                            <li><a id="@brand" class="singlecheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li><a id="@brand" class="categoryNavBoy" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -202,7 +202,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Boys' Shoes"))){
-                            <li><a id="@brand" class="singlecheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li><a id="@brand" class="categoryNavBoy" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -211,7 +211,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Boys' Accessories"))){
-                            <li><a id="@brand" class="singlecheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li><a id="@brand" class="categoryNavBoy" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -232,7 +232,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Girls' Clothing"))){
-                            <li><a id="@brand" class="singlecheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li><a id="@brand" class="categoryNavGirl" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -246,7 +246,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Girls' Accessories"))){
-                            <li><a id="@brand" class="singlecheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li><a id="@brand" class="categoryNavGirl" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -254,7 +254,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Girls' Shoes"))){
-                            <li><a id="@brand" class="singlecheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li><a id="@brand" class="categoryNavGirl" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -275,7 +275,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Baby Accessories"))){
-                            <li><a id="@brand" class="singlecheck" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <li><a id="@brand" class="categoryNavKid" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
@@ -295,7 +295,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Travel Accessories"))) {
-                            <li> <a id="@brand" class="singlecheck" href="#"> @util.Translator.translate(brand.split(":").reverse.head)
+                            <li> <a id="@brand" class="categoryNavOther" href="#"> @util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span> </a> </li>
                         }
 
@@ -307,7 +307,7 @@
                         <li role="presentation" class="divider"></li>
 
                         @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Office"))) {
-                            <li> <a id="@brand" class="singlecheck" href="#"> @util.Translator.translate(brand.split(":").reverse.head)
+                            <li> <a id="@brand" class="categoryNavOther" href="#"> @util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span> </a> </li>
                         }
                         <div class="clearfix"></div>
