@@ -39,7 +39,7 @@ object Application extends Controller with SessionHelper {
       val brand = if (request.queryString.contains("brand")) request.queryString("brand").head else ""
 
       if (util.Ref.topCategory.contains(collection)) {
-        val category = cat.replaceAll("\\|", "&")
+        val category = cat.replaceAll("\\|", "&").replace("(","\\(").replace(")","\\)")
         val items = Item.findByCategory(category, filter, size, page)
         val pagerSize = Item.findCategoryPagerSize(category, filter, size)
         Ok(views.html.collection(collection, items, page, pagerSize)).withSession("uuid" -> sessionN(request))

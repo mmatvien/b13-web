@@ -1,3 +1,4 @@
+import collection.immutable.{ListMap, SortedMap}
 import org.scalatest.FunSuite
 import play.api.test.FakeApplication
 import play.api.test.Helpers._
@@ -32,7 +33,8 @@ class CategoryTest extends FunSuite {
 
       println("---------------------------------------")
 
-      val groupedCategories = util.Filter.collectAllCategories().groupBy(w => w).mapValues(_.size).keys.toList.sorted
+      val groupedCategories =   ListMap((util.Filter.collectAllCategories().groupBy(w => w).mapValues(_.size).toList.sorted):_*)
+
       println(groupedCategories.mkString("\n"))
 
       assert(1 === 1)

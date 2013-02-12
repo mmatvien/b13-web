@@ -109,6 +109,15 @@
                         }
                         <div class="clearfix"></div>
 
+                        <li role="presentation" class="menuHeader">Сумки</li>
+                        <li role="presentation" class="divider"></li>
+
+                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Women's Handbags & Bags"))){
+                            <li><a id="@brand" class="categoryNavShe" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <span class="pull-right"></span></a></li>
+                        }
+                        <div class="clearfix"></div>
+
                     </ul>
                 </li>
             </ul>
@@ -186,7 +195,7 @@
                         <li role="presentation" class="menuHeader">Одежда</li>
                         <li role="presentation" class="divider"></li>
 
-                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Boys' Clothing"))){
+                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Boys' Clothing (Sizes 4 & Up)"))){
                             <li><a id="@brand" class="categoryNavBoy" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
@@ -231,7 +240,7 @@
                         <li role="presentation" class="menuHeader">Одежда</li>
                         <li role="presentation" class="divider"></li>
 
-                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Girls' Clothing"))){
+                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Girls' Clothing (Sizes 4 & Up)"))){
                             <li><a id="@brand" class="categoryNavGirl" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
@@ -242,6 +251,15 @@
                 <li class="column-menu span4">
 
                     <ul>
+                        <li role="presentation" class="menuHeader">Бижутерия</li>
+                        <li role="presentation" class="divider"></li>
+
+                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Children's Jewelry"))){
+                            <li><a id="@brand" class="categoryNavGirl" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <span class="pull-right"></span></a></li>
+                        }
+                        <div class="clearfix"></div>
+
                         <li role="presentation" class="menuHeader">Аксессуары</li>
                         <li role="presentation" class="divider"></li>
 
@@ -250,6 +268,9 @@
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
+
+
+
                         <li role="presentation" class="menuHeader">Обувь</li>
                         <li role="presentation" class="divider"></li>
 
@@ -266,21 +287,46 @@
 
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">ДЛЯ МАЛЫШЕЙ<b class="caret"></b></a>
-            <ul class="dropdown-menu span4">
+            <ul class="dropdown-menu span6">
 
                 <li class="column-menu span3 firstcolumn">
 
                     <ul>
+
+                        <li role="presentation" class="menuHeader">Одежда для мальчиков</li>
+                        <li role="presentation" class="divider"></li>
+
+                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Boys' Clothing (Newborn-5T)"))){
+                            <li><a id="@brand" class="categoryNavKid" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <span class="pull-right"></span></a></li>
+                        }
+
                         <li role="presentation" class="menuHeader">Аксессуары</li>
                         <li role="presentation" class="divider"></li>
 
-                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Baby Accessories"))){
+                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Baby Accessories") || c.contains("Baby:Diapering"))){
                             <li><a id="@brand" class="categoryNavKid" href="#">@util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
                     </ul>
                 </li>
+                <li class="column-menu span3">
+                    <ul>
+                        <div class="clearfix"></div>
+                        <li role="presentation" class="menuHeader">Одежда для девочек</li>
+                        <li role="presentation" class="divider"></li>
+
+                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Girls' Clothing (Newborn-5T)"))){
+                            <li><a id="@brand" class="categoryNavKid" href="#">@util.Translator.translate(brand.split(":").reverse.head)
+                            <span class="pull-right"></span></a></li>
+                        }
+                        <div class="clearfix"></div>
+
+
+                    </ul>
+                </li>
+
             </ul>
         </li>
 
@@ -306,7 +352,7 @@
                         <li role="presentation" class="menuHeader"> Office </li>
                         <li role="presentation" class="divider"></li>
 
-                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Office"))) {
+                        @for(brand <- util.Ref.mainCategories.filter(c => c.contains("Office") || c.contains("Laptop & Desktop Accessories") ||  c.contains("Gym, Workout & Yoga"))) {
                             <li> <a id="@brand" class="categoryNavOther" href="#"> @util.Translator.translate(brand.split(":").reverse.head)
                             <span class="pull-right"></span> </a> </li>
                         }
