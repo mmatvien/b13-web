@@ -60,11 +60,11 @@
 
             <div id="cart-meta">
                 <h3 id="cart-subtotal">итого <em>@cartItems.map(x => x.price * x.quantity).sum</em></h3>
+                <em>@util.Calculator.calculateShipment(cartItems)</em>
+                <h3 id="estimated-shipping">+ доставка</h3>
 
-                <h3 id="estimated-shipping">+ доставка
 
 
-                    <em>@util.Calculator.calculateShipment(cartItems)</em></h3>
 
 
                 <input id="checkout-button" class="styled-submit smooth" type="submit" name="update" value="оформить">

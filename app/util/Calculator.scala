@@ -34,7 +34,9 @@ object Calculator {
   case class ShipmentTotalOption(totalWeight: BigDecimal,
                                  envelopeFit: Boolean,
                                  mediumBoxFit: Boolean,
-                                 largeBoxFit: Boolean)
+                                 largeBoxFit: Boolean) {
+    override def toString = s"total weight = $totalWeight envelope fit = $envelopeFit : medium box fit = $mediumBoxFit : large box fit = $largeBoxFit"
+  }
 
   case class ShipmentItemOption(weight: BigDecimal,
                                 envelopeFit: Boolean,
@@ -57,7 +59,7 @@ object Calculator {
     s
   }
 
-  def calculateShipment(cartItems: List[CartItem]) {
+  def calculateShipment(cartItems: List[CartItem]):ShipmentTotalOption = {
     val cartShipmentOptions = cartItems.foldLeft(Nil: List[ShipmentItemOption]) {
       (sum, cartItem) =>
         val item = persistence.Item.getItem(cartItem.itemId)
@@ -99,6 +101,7 @@ object Calculator {
 
     println(shipmentTotalOption)
 
+    shipmentTotalOption
   }
 
 
