@@ -4,10 +4,10 @@
 
 @main("brand 13") {
 
-   <!-- <div class = "collectionHeader">  @menu(collection) </div> -->
+    @selector(filter = true)
     <div class="collectionSubHeader">
 
-            <!--        @subfilter(pagerSize, collection) -->
+
         <ul class="clearfix" id="collection-header">
             <li class="clearfix filterL">найдено: @pagerSize</li>
                 </ul>
@@ -48,10 +48,10 @@
             </ul>
         </div>
         @pagination(page, pagerSize)
-        <div class="accent-text" id="breadcrumbs">
+        <!--<div class="accent-text" id="breadcrumbs">
             <span class="sep">/</span> <span><a href="/collections">коллекции</a></span>
             <span class="sep">/</span> <span>GUESS</span>
-        </div>
+        </div> -->
     </div>
 
     <script type="text/javascript" src="/assets/coffee/collection.js"></script>

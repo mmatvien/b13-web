@@ -79,7 +79,7 @@ $ ->
     window.location.href = qString
 
 
-
-  x = getParameterByName("cat")
-  cs = x.replace(/\|/g,"_").replace(/\s/g,"").replace(/:/g,"_").replace(/'/g,"_").replace(/\(/g,"_").replace(/\)/g,"_")
-  $('.'+cs).addClass("active")
+  if(window.location.search.length > 1)
+    x = getParameterByName("cat")
+    cs = x.replace(/\|/g,"_").replace(/\s/g,"").replace(/:/g,"_").replace(/'/g,"_").replace(/\(/g,"_").replace(/\)/g,"_")
+    $('.'+cs).addClass("active")
