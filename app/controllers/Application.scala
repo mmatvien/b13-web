@@ -36,18 +36,20 @@ object Application extends Controller with SessionHelper {
       val filter = if (request.queryString.contains("filter")) request.queryString("filter").head else ""
       val size = if (request.queryString.contains("size")) request.queryString("size").head else ""
       val cat = if (request.queryString.contains("cat")) request.queryString("cat").head else ""
-      val brand = if (request.queryString.contains("brand")) request.queryString("brand").head else ""
+      val br = if (request.queryString.contains("brand")) request.queryString("brand").head else ""
+      val brand = br.replaceAll("\\|", "&").replace("(","\\(").replace(")","\\)")
+      val category = cat.replaceAll("\\|", "&").replace("(","\\(").replace(")","\\)")
+      val brands = Item.findBrandsByCategory(category, filter)
 
       if (util.Ref.topCategory.contains(collection)) {
-        val category = cat.replaceAll("\\|", "&").replace("(","\\(").replace(")","\\)")
-        val items = Item.findByCategory(category, filter, size, page)
-        val pagerSize = Item.findCategoryPagerSize(category, filter, size)
-        Ok(views.html.collection(collection, items, page, pagerSize)).withSession("uuid" -> sessionN(request))
+        val items = Item.findByCategory(category, brand, filter, size, page)
+        val pagerSize = Item.findCategoryPagerSize(category,brand, filter, size)
+        Ok(views.html.collection(collection, items, brands, page, pagerSize)).withSession("uuid" -> sessionN(request))
       } else {
-        println("brand search " + brand)
+        println("seller search " + br)
         val items = Item.findSellerItems(collection, cat, filter, size, page)
         val pagerSize = Item.findSellerPagerSize(collection, cat, filter, size)
-        Ok(views.html.collection(collection, items, page, pagerSize)).withSession("uuid" -> sessionN(request))
+        Ok(views.html.collection(collection, items, brands, page, pagerSize)).withSession("uuid" -> sessionN(request))
       }
 
 

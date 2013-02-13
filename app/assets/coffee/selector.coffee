@@ -37,7 +37,6 @@ $ ->
     $('#dropShe').addClass("active")
 
 
-
   if(urlString.indexOf("other") > 0)
     $('#dropOther').addClass("active")
   if(urlString.indexOf("kid") > 0)
@@ -69,7 +68,7 @@ $ ->
 
 
   navigateBrand = (section, brand) ->
-    qString = "?brand=" + brand.replace(/&/g, "|")
+    qString = "1?cat="+getParameterByName("cat")+"&brand=" + brand.replace(/&/g, "|")
     window.location.href = qString
 
   navigate = (section, id) ->
@@ -80,6 +79,11 @@ $ ->
 
 
   if(window.location.search.length > 1)
-    x = getParameterByName("cat")
-    cs = x.replace(/\|/g,"_").replace(/\s/g,"").replace(/:/g,"_").replace(/'/g,"_").replace(/\(/g,"_").replace(/\)/g,"_")
-    $('.'+cs).addClass("active")
+    categoryParameter = getParameterByName("cat")
+    if(categoryParameter.length > 0)
+      cs = categoryParameter.replace(/\|/g,"_").replace(/\s/g,"").replace(/:/g,"_").replace(/'/g,"_").replace(/\(/g,"_").replace(/\)/g,"_")
+      $('.'+cs).addClass("active")
+    brandParameter = getParameterByName("brand")
+    if(brandParameter.length > 0)
+      bs = brandParameter.replace(/\|/g,"_").replace(/\s/g,"").replace(/:/g,"_").replace(/'/g,"_").replace(/\(/g,"_").replace(/\)/g,"_")
+      $('.'+bs).addClass("active")

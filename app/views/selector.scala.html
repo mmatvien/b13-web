@@ -1,4 +1,4 @@
-@(filter:Boolean)
+@(brands: List[String])
 
 <script src="@routes.Assets.at("coffee/selector.js")" type="text/javascript"></script>
 
@@ -6,8 +6,6 @@
 <div class="navbar-inner">
 
     <ul class="nav">
-
-
 
         <li class="dropdown" id="dropShe">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">ДЛЯ НЕЕ<b class="caret"></b></a>
@@ -351,41 +349,50 @@
 
     </ul>
 
-    @if(filter) {
+    @if(!brands.isEmpty) {
         <ul class="nav pull-right">
             <li class="divider-vertical"></li>
             <li class="dropdown" id="dropBrand">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"> БРЭНД <b class="caret"></b> </a>
-                <ul class="dropdown-menu span9">
-                    <li class="column-menu span3 firstcolumn">
-                        <ul>
-                            @for(brand <- util.Ref.mainBrands.take(util.Ref.mainBrands.size / 3)) {
-                                <li class='@util.UI.compressCategory(brand)'> <a id="@brand" class="brandNav" href="#"> @brand
-                                <span class="pull-right"></span> </a> </li>
-                            }
-                            <div class="clearfix"></div>
-                        </ul>
-                    </li>
-                    <li class="column-menu span3">
-                        <ul>
-                            @for(brand <- util.Ref.mainBrands.drop(util.Ref.mainBrands.size / 3).take(util.Ref.mainBrands.size / 3)) {
-                                <li class='@util.UI.compressCategory(brand)'> <a id="@brand" class="brandNav" href="#"> @brand
-                                <span class="pull-right"></span> </a> </li>
-                            }
-                            <div class="clearfix"></div>
-                        </ul>
-                    </li>
 
-                    <li class="column-menu span3">
-                        <ul>
-                            @for(brand <- util.Ref.mainBrands.drop(util.Ref.mainBrands.size / 3).drop(util.Ref.mainBrands.size / 3)) {
-                                <li class='@util.UI.compressCategory(brand)'> <a id="@brand" class="brandNav" href="#"> @brand
-                                <span class="pull-right"></span> </a> </li>
-                            }
-                            <div class="clearfix"></div>
-                        </ul>
+                @if(brands.size < 2){
+
+                    <ul class="dropdown-menu span3">
+                        <li class="column-menu span3 firstcolumn">
+                            <ul>
+                                @for(brand <- brands) {
+                                    <li class='@util.UI.compressCategory(brand)'> <a id="@brand" class="brandNav" href="#"> @brand
+                                    <span class="pull-right"></span> </a> </li>
+                                }
+                                <div class="clearfix"></div>
+                            </ul>
+                        </li>
+
+                    </ul>
+                    } else {
+                    <ul class="dropdown-menu span6">
+                    <li class="column-menu span3 firstcolumn">
+                    <ul>
+                        @for(brand <- brands.take(brands.size/2)) {
+                            <li class='@util.UI.compressCategory(brand)'> <a id="@brand" class="brandNav" href="#"> @brand
+                            <span class="pull-right"></span> </a> </li>
+                        }
+                    <div class="clearfix"></div>
+                    </ul>
                     </li>
-                </ul>
+                    <li class="column-menu span3">
+                    <ul>
+                        @for(brand <- brands.drop(brands.size/2)) {
+                            <li class='@util.UI.compressCategory(brand)'> <a id="@brand" class="brandNav" href="#"> @brand
+                            <span class="pull-right"></span> </a> </li>
+                        }
+                    <div class="clearfix"></div>
+                    </ul>
+                    </li>
+                    </ul>
+                    }
+
+
             </li>
 
         </ul>

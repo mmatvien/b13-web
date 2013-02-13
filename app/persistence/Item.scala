@@ -73,12 +73,22 @@ object Item extends ModelCompanion[Item, ObjectId] {
   }
 
 
-  def findByCategory(cat: String, filter: String, size: String, page: Int): List[Item] = {
+  def findByCategory(cat: String, brand: String, filter: String, size: String, page: Int): List[Item] = {
     val itemsPerPage = 30
-    val quer = categoryQuery(cat, filter)
+    val quer = categoryQuery(cat, brand, filter)
     println(quer)
-    dao.find(categoryQuery(cat, filter)).skip(itemsPerPage * (page - 1)).limit(itemsPerPage).toList
+    dao.find(quer).skip(itemsPerPage * (page - 1)).limit(itemsPerPage).toList
   }
+
+
+  def categoryQuery(cat: String, brand: String, filter: String): MongoDBObject = {
+    val queryBuilder = MongoDBObject.newBuilder
+    queryBuilder += "categoryName" -> (".*(?i):" + cat + ".*" + filter + ".*").r
+    if (!brand.isEmpty)
+      queryBuilder += "specifics.Brand" -> (".*(?i)" + brand + ".*").r
+    queryBuilder.result()
+  }
+
 
   def collectionQuery(seller: String, cat: String, filter: String): MongoDBObject = {
     val queryBuilder = MongoDBObject.newBuilder
@@ -87,19 +97,12 @@ object Item extends ModelCompanion[Item, ObjectId] {
     queryBuilder.result()
   }
 
-
-  def categoryQuery(cat: String, filter: String): MongoDBObject = {
-    val queryBuilder = MongoDBObject.newBuilder
-    queryBuilder += "categoryName" -> (".*(?i):" + cat + ".*" + filter + ".*").r
-    queryBuilder.result()
-  }
-
   def findSellerPagerSize(seller: String, cat: String, filter: String, size: String): Int = {
     dao.count(collectionQuery(seller, cat, filter)).toInt
   }
 
-  def findCategoryPagerSize(cat: String, filter: String, size: String): Int = {
-    dao.count(categoryQuery(cat, filter)).toInt
+  def findCategoryPagerSize(cat: String, brand: String, filter: String, size: String): Int = {
+    dao.count(categoryQuery(cat, brand, filter)).toInt
   }
 
 
@@ -110,6 +113,11 @@ object Item extends ModelCompanion[Item, ObjectId] {
       upsert = false, multi = false, wc = Item.dao.collection.writeConcern)
   }
 
+
+  def findBrandsByCategory(cat: String, filter: String): List[String] = {
+    val quer = categoryQuery(cat, "", filter)
+    dao.find(quer).map(it => it.specifics.get("Brand").getOrElse("")).toSet.toList.sorted
+  }
 
   def getItem(itemId: String): Item = {
     dao.findOne(MongoDBObject("itemId" -> itemId)).get

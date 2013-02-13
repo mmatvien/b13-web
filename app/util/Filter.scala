@@ -91,4 +91,13 @@ object Filter {
     }
     brandSet.toList.sortWith(_.toLowerCase < _.toLowerCase)
   }
+
+
+  def extractBrandsFromItemList(items: List[persistence.Item]): List[String] = {
+    val res = for (item <- items) yield {
+      item.specifics.get("Brand").getOrElse("")
+    }
+    res.toSet.toList.sortWith(_.toLowerCase < _.toLowerCase)
+  }
+
 }

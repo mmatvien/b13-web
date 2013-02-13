@@ -1,16 +1,18 @@
-@(collection: String, items: List[persistence.Item], page: Int, pagerSize: Int)(implicit sessionInfo: controllers.SessionInfo)
+@(collection: String, items: List[persistence.Item], brands:List[String], page: Int, pagerSize: Int)(implicit sessionInfo: controllers.SessionInfo)
 
 
 
 @main("brand 13") {
 
-    @selector(filter = true)
+    @selector(brands)
     <div class="collectionSubHeader">
 
+     <ul class="breadcrumb">
 
-        <ul class="clearfix" id="collection-header">
-            <li class="clearfix filterL">найдено: @pagerSize</li>
-                </ul>
+        <li><a href="#">@util.Translator.translate(collection)</a> <span class="divider">></span></li>
+        <li class="active">найдено: @pagerSize</li>
+    </ul>
+
     </div>
 
     <div class="clearfix" id="content" role="main">
