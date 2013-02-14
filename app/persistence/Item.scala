@@ -92,10 +92,12 @@ object Item extends ModelCompanion[Item, ObjectId] {
       queryBuilder += "specifics.Brand" -> (".*(?i)" + brand + ".*").r
 
     if (cat.contains("Watches"))
-      if (section.contains("she"))
-        queryBuilder += "specifics.Gender" -> (".*(?i)Ladies.*").r
+      if (section.contains("she")) {
+        val femaleList = List((".*Ladies.*").r, (".*Women.*").r)
+        queryBuilder ++= "specifics.Gender" $in femaleList
+      }
       else
-        queryBuilder += "specifics.Gender" -> (".*(?i)Men.*").r
+        queryBuilder += "specifics.Gender" -> (".*Men.*").r
     queryBuilder.result()
   }
 
