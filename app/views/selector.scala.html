@@ -23,6 +23,14 @@
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
+                        <li role="presentation" class="menuHeader">Обувь</li>
+                        <li role="presentation" class="divider"></li>
+
+                        @for(category <- util.Ref.mainCategories.filter(c => c.contains("Women's Shoes"))){
+                            <li class='@util.UI.compressCategory(category)'><a id="@category" class="categoryNavShe" href="#">@util.Translator.translate(category.split(":").reverse.head)
+                            <span class="pull-right"></span></a></li>
+                        }
+                        <div class="clearfix"></div>
                     </ul>
                 </li>
 
@@ -38,27 +46,12 @@
                         }
                         <div class="clearfix"></div>
 
-                        <li role="presentation" class="menuHeader">Обувь</li>
-                        <li role="presentation" class="divider"></li>
-
-                        @for(category <- util.Ref.mainCategories.filter(c => c.contains("Women's Shoes"))){
-                            <li class='@util.UI.compressCategory(category)'><a id="@category" class="categoryNavShe" href="#">@util.Translator.translate(category.split(":").reverse.head)
-                            <span class="pull-right"></span></a></li>
-                        }
-                        <div class="clearfix"></div>
-
-                    </ul>
-                </li>
-
-                <li class="column-menu span5">
-
-                    <ul>
-
                         <li role="presentation" class="menuHeader">Бижутерия и ювелирные изделия</li>
                         <li role="presentation" class="divider"></li>
 
                         <li><a id="Bracelets" class="categoryNavShe" href="#"><span class="pull-right"></span>Браслеты</a></li>
-                        <li><a id="Wedding & Anniversary Bands:Other" class="categoryNavShe" href="#"><span class="pull-right"></span>Kольца</a></li>
+                        <li><a id="Wedding & Anniversary Bands:Other" class="categoryNavShe" href="#"><span class="pull-right"></span>Обручальные кольца</a></li>
+                        <li><a id="Rings" class="categoryNavShe" href="#"><span class="pull-right"></span>Kольца</a></li>
                         <li><a id="Earrings" class="categoryNavShe" href="#"><span class="pull-right"></span>Cерьги</a></li>
                         <li><a id="Necklaces" class="categoryNavShe" href="#"><span class="pull-right"></span>Oжерелья и кулоны</a></li>
                         <li><a id="Pendants" class="categoryNavShe" href="#"><span class="pull-right"></span>Подвески и браслеты с подвесками</a></li>
@@ -74,6 +67,12 @@
                         }
                         <div class="clearfix"></div>
 
+                    </ul>
+                </li>
+
+                <li class="column-menu span5">
+
+                    <ul>
                         <li role="presentation" class="menuHeader">Сумки</li>
                         <li role="presentation" class="divider"></li>
 
@@ -82,6 +81,7 @@
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
+
 
                         <li role="presentation" class="menuHeader">Унисекс</li>
                         <li role="presentation" class="divider"></li>

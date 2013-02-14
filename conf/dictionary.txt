@@ -1,800 +1,1649 @@
+Costumes, Reenactment, Theater=Театральные костюмы
+
+Costumes=Костюмы
+
+Bag Height=Высота сумки
+
+Bag Depth=Глубина сумки
+
+Bag Length=Длина сумки
+
+Strap Drop=Высота просвета ручки
+
+Small=Маленький
+
+Medium=Средний
+
+Large=Большой
+
+Extra Large=Очень большой
+
+Metal Purity=Чистота металла/Проба
+
+Planners & Organazers=Органайзеры и блокноты
+
+Desk & Drawer Organazers=Органайзеры для рабочего места
+
+Money Belts & Wallets=Органайзеры для денег и кошельки
+
+Locks=Замки
+
+Copper=Медь
+
+Gold Filled=Накладное золото
+
+Multi-Tone Gold=Многоцветное золото
+
+Platinum=Платина
+
+Platinum Plated=Покрытие платиной
+
+Rose Gold=Розовое золото
+
+Stainless Steel=Нержавеющая сталь
+
+White Gold=Белое золото
+
+Yellow Gold=Желтое золото
+
+
+
+
+
+
+
 she=для неё
+
 he=для него
+
 other=разное
+
 kid=для детей
+
 boy=для мальчиков
+
 girl=для девочек
 
+
+
 Gender=Пол
+
 Boys=Мальчики
+
 Girls=Девочки
+
 Unisex=Унисекс
+
 Brand=Бренд/Фирма
+
 Color=Цвет
+
 Beiges=Бежевый
+
 Blacks=Черный
+
 Blues=Синий
+
 Browns=Коричневый
+
 Clear=Прозрачный
+
 Grays=Серый
+
 Greens=Зеленый
+
 Ivories=Слоновой кости
+
 Metallics=Металик
+
 Multi-Color=Многоцветный
+
 Oranges=Оранжевый
+
 Pinks=Розовый
+
 Purples=Сиреневый
+
 Reds=Красный
+
 Whites=Белый
+
 Yellows=Желтый
+
 Material=Материал
+
 Acrylic=Акрил
+
 100% Cashmere=100% кашемир
+
 Cashmere Blend=Кашемир с добавками
+
 100% Cotton=100% хлопок
+
 Cotton Blend=Хлопок с добавками
+
 Fishnet=Сетка
+
 Fleece=Флис
+
 Fur=Натуральный мех
+
 Faux Fur=Искусственный мех
+
 Gore-Tex/Water Resistant=Водонепроницаемый текстиль
+
 Knit=Вязка
+
 Lace=Кружево
+
 Lambswool=Овечья шерсть
+
 Leather=Натуральная кожа
+
 Faux Leather=Искусственной кожи
+
 Microfiber=Микрофайбер
+
 Nylon=Нейлон
+
 Polyester=Полиэстер
+
 Rubber=Резина
+
 Satin=Атлас
+
 Shearling=Овчина
+
 100% Silk=100% шелк
+
 Silk Blend=Шелк с добавками
+
 Suede=Замша
+
 Velvet=Бархат
+
 Country of Manufacture=Страна изготовления
+
 Shade=Оттенок
 
+
+
 Size=Размер
+
 Newborn=Новорожденный
+
 0-12 Months=0-12 месяцев
+
 12-24 Months=12-24 месяца
+
 2T=2 года
+
 3T=3 года
+
 4T=4 года
+
 5T=5 лет
+
 2XS=2XS
+
 XS=XS
+
 S=S
+
 M=M
+
 L=L
+
 XL=XL
+
 One Size=Один Размер
+
 Pattern=Модель
+
 Animal Print=Звериный орнамент
+
 Argyle/Diamond=В ромбик
+
 Camouflage=Камуфляж
+
 Fair Isle/Nordic=Нордический
+
 Floral=Цветочный
+
 Geometric=Геометрический
+
 Novelty/Cartoon=Персонажи мультфильмов
+
 Paisley=Пейсли
+
 Plaids & Checks=В клетку
+
 Polka Dot=В горошек
+
 Solid=Однотонный
+
 Striped=В полоску
+
 Type=Тип
+
 Barrette=Заколка
+
 Bobby Pin=Заколка
+
 Bun Net=Сетка для волос
+
 Hair Bow=Бант
+
 Hair Claw=Зажимы для волос
+
 Hair Clip=Заколки
+
 Hair Comb=Гребешок
+
 Hair Stick=Шпильки
+
 Headband=Ободки
+
 Ponytail Holder=Заколки для хвостов
+
 Scrunchie=Скранчи
+
 Synthetic=Синтетика
+
 Chiffon=Шифон
+
 Crystal=Кристалл
+
 Elastic=Эластик
+
 Fabric=Ткань
+
 Feather=Перо
+
 Felt=Войлок
+
 Foam=Пена
+
 Glass=Стекло
+
 Metal/Chain=Металл / Сеть
+
 Organza=Органза
+
 Plastic=Пластик
 
+
+
 Preemie/Up to 7 lb.=до 7 фунтов (3 кг)
+
 Newborn=новорожденный
+
 0-3 Months=0-3 месяца
+
 3 Months=3 месяца
+
 3-6 Months=3-6 месяцев
+
 3-9 Months=3-9 месяцев
+
 6 Months=6 месяцев
+
 6-9 Months=6-9 месяцев
+
 9 Months=9 месяцев
+
 9-12 Months=9-12 месяцев
+
 12 Months=12 месяцев
+
 18 Months=18 месяцев
+
 24 Months=24 месяца
+
 0-6 Months=0-6 месяцев
+
 3-6 Months=3-6 месяцев
+
 6-12 Months=6-12 месяцев
+
 12-18 Months=12-18 месяцев
+
 18-24 Months=18-24 месяца
+
 Earrings=Серьги
 
+
+
 Jewelry Set=Комплект ювелирных изделий
+
 Necklace=Ожерелье
+
 Ring=Кольцо
+
 Brass=Латунь
+
 Chrome=Хром
+
 Nickel=Никель
+
 Pewter=Олово
+
 Resin=Смола
+
 Silver Plated=Посеребрение
+
 Vinyl=Винил
+
 US Shoe Size (Baby & Toddler)=Размер обуви США (детский)
+
 Width=Ширина
+
 Narrow=Узкий
+
 Medium=Средний
+
 Wide=Широкий
+
 Style=Стиль
+
 Athletic=Спорт
+
 Booties=Ботинки
+
 Casual Shoes=Повседневная обувь
+
 Clogs=Сабо
+
 Crib Shoes=Пинетки
+
 Dress Shoes=Нарядная обувь
+
 Flats=Балетки
+
 Flip Flops=Вьетнамки
+
 Loafers=Мокасины
+
 Mary Janes=Туфли с ремешком
+
 Oxfords=Полуботинки
+
 Sandals=Сандалии
+
 Walking Shoes=Обувь для ходьбы
+
 Water Shoes=Водостойкая обувь
+
 Boot Type=Тип обуви
+
 Casual=Повседневный
+
 Cowboy=Ковбой
+
 Dress=Нарядная обувь
+
 Hiking=Туристическая
+
 Rain=Демисезонная
+
 Snow=Зимняя
+
 Features & Fastening=Функции и застежки
+
 Buckle=Пряжка
+
 Knitted/Crocheted=На завязках
+
 Laces=На шнурках
+
 Lights=С подсветкой
+
 Slip-On=Без застежек
+
 Squeaky=Скрипучие
+
 Velcro=На липучке
+
 Wheels=С колесами
+
 Zipper=На молнии
 
+
+
 Dress=Платье
+
 Gown=Сарафан
-Outfits & Sets=Костюмы и наборы
+
 Rompers & Jumpsuits=Комбинезоны
+
 Suits & Tuxedos=Костюмы и смокинги
+
 Socks=Носки
+
 Hat=Шапка/шляпа
+
 Shoes=Обувь
+
 Angora=Ангора
+
 Corduroy=Вельвет
+
 Organic Cotton=Органический хлопок
+
 Denim=Джинс/ы
+
 Down=Пух
+
 Flannel=Фланель
+
 Linen=Лен
+
 Linen Blend=Лен с добавками
+
 Lycra/Spandex=Лайкра / спандекс
+
 Jeans=Джинсы
+
 Overalls=Комбинезон
+
 Pants=Брюки
+
 Shorts=Шорты
+
 Occasion=Тип
+
 Dressy=Нарядный
+
 Everyday=Повседневный
+
 Holiday=Праздник
+
 Spring=Весна
+
 Summer=Лето
+
 Fall=Осень
+
 Winter=Зима
+
 All Seasons=Всесезонный
+
 Sleeve Length=Длина рукава
+
 Season=Сезон
+
 Sleeveless=Безрукавный
+
 Short Sleeve=Короткий рукав
+
 3/4 Sleeve=3/4 рукав
+
 Long Sleeve=Длинный рукав
+
 Coat=Пальто
+
 Jacket=Куртка
+
 Raincoat=Плащ
+
 Snowsuit=Зимний комбинезон
+
 Vest=Жилет
+
 One-Piece=Цельный
+
 Two-Piece=Состоящий из двух частей
+
 Three-Piece=Состоящий из трех частей
+
 Pageant=Карнавальное шествие
+
 Wedding=Свадьба
+
 Cardigan=Кардиган
+
 Hoodie=Толстовка с капюшоном
+
 Pullover=Пуловер
+
 Swim Bottoms=Низ от купального костюма
+
 Swim Top=Верх от купального костюма
+
 Leggings=Леггинсы
+
 Overalls=Комбинезон
+
 Nightgown=ночная рубашка
+
 100% Wool=100% шерсть
+
 Wool Blend=Шерсть с добавками
+
 Complete Swim Set=Полный купальный костюм
+
 Cover-Up=Накидка
 
 
+
+
+
 4 Husky=4 упитанный
+
 4 Slim=4 худощавый
+
 5 Husky=5 упитанный
+
 5 Slim=5 худощавый
+
 6 Husky=6 упитанный
+
 6 Slim=6 худощавый
+
 7 Husky=7 упитанный
+
 7 Slim=7 худощавый
+
 8 Husky=8 упитанный
+
 8 Slim=8 худощавый
+
 9 Husky=9 упитанный
+
 9 Slim=9 худощавый
+
 Boot Cut=Расширенные книзу
+
 Cargo=Карго
+
 Carpenter=Капентер
+
 Classic/Straight Leg=Классический прямой крой
+
 Cropped/Cut Off=Укороченный
+
 Flare=Клеш
+
 Overalls=Комбинезон
+
 Relaxed=Свободный крой
+
 Slim/Skinny=Узкий крой
+
 Wide Leg=Широкий крой
+
 Basic Coat=Пальто
+
 Basic Jacket=Куртка/Жакет
+
 Fleece Jacket=Утепленный Жакет/Флис
+
 Jean Jacket=Джинсовый жакет
+
 Parka=Куртка-парка
+
 Poncho=Пончо
+
 Puffer Jacket=Стеганная куртка
+
 Rain Gear=Дождевик
+
 Ski Jacket=Лыжная куртка
+
 Ski Pants=Лыжные брюки
+
 Snowsuit/Skisuit=Зимний/Лыжный комбинезон
+
 Vest=Жилет
+
 Athletic/Sweat Pants=Спортивные/утепленные брюки
+
 Cargo/Combat=Карго/Комбат
+
 Casual Pants=Повседневные брюки
+
 Dress Pants=Нарядные брюки
+
 Khakis/Chinos=Хаки/Чино
+
 Overalls=Комбинезон
+
 Board Shorts=Широкие шорты
+
 Boxer Trunks=Боксеры
+
 Brief Trunks=Короткие шорты
+
 Swim Shorts=Шорты-плавки/Плавки
+
 Swin Shirt=Верх для купания
+
 Boxer Briefs=Трусы-боксеры
+
 Boxers=Боксеры
+
 Briefs=Плавки
+
 Thermal Leggings/Long Johns=Термо-Леггинсы
+
 Thermal Top=Термо-Toп
+
 Undershirt=Майка
+
 Uniform Type=Тип униформы
+
 School=Школьная
+
 Scouting=Скауты
+
 Scrubs=Рабочая
+
 Badge=Бэйдж, значок
+
 Belt/Belt Buckle=Ремень/Пряжка
+
 Hat=Головной убор
+
 Jacket=Куртка/жакет
+
 Neckerchief=Шейный платок
+
 Sash=Лента
+
 Shirt=Рубашка
+
 Shorts=Шорты
+
 Socks=Носки
+
 Sweater=Свитер
 
 
+
+
+
 Backpack=Рюкзак
+
 Drawstring=Сумка-мешок
+
 Duffle/Gym Bag=Спортивная/багажная сумка
+
 Lunch Bag=Кейс для ланча
+
 Messenger/Shoulder Bag=Сумка через голову/через плечо
+
 Toiletry Bag=Сумка-чехол
+
 Belt=Ремень
+
 Belt Buckle=Пряжка
+
 Everyday Gloves=Повседневные перчатки
+
 Fingerless Gloves=Перчатки без пальцев
+
 Mittens=Рукавицы
+
 Ski Gloves=Лыжные перчатки
+
 Winter Gloves=Зимние перчатки
+
 Shade=Оттенок
+
 Aviator/Trapper=Шапка-ушанка
+
 Baseball Cap=Бейсболка
+
 Beanie=Бини шапка
+
 Beret=Берет
+
 Boonie/Bush=Рыбацкая/охотничья
+
 Bowler/Derby=Шляпа-котелок
+
 Bucket=Шляпа-бакет
+
 Cadet/Military=Кадетский/Военные
+
 Cowboy/Western=Ковбойская шляпа
+
 Fedora/Trilby=Шляпа-Трилби/Федора
+
 Newsboy/Cabbie=Кепи
+
 Russian Ushanka/Cossack=Русская ушанка/Казачья
+
 Top Hat=Шляпа-цинидр
+
 Trucker=Тракер
+
 Visor=Шляпа-козырек
+
 Wood=Дерево
+
 Aviator=Авиатор
+
 Rectangular=Прямоугольник
+
 Round=Круг
+
 Sport=Спорт
+
 Square=Квардат
+
 Frame Color=Цвет оправы
+
 Frame Material=Материал оправы
+
 Ascot=Аскот
+
 Bow Tie=Галстук-бабочка
+
 Cravat=Галстук-Крават
+
 Cummerbund=Пояс-каммербунд
+
 Neck Tie=Галстук
+
 Neck Tie Set=Галстук в наборе
+
 Attachment=Способ крепления
+
 Clip-on=На клипсе
+
 Elastic=На резинке
+
 Tied=Узел
+
 Compact/Folding=Складной
+
 Dome=Купол
+
 Fashion=Стильный
+
 Golf=Гольф
+
 Pagoda=Зонт-трость
+
 Standard/Classic=Стандартный/классический
+
 Boxer Brief=Трусы-боксеры
+
 4 Plus=4 Плюс
+
 5 Plus=5 Плюс
+
 6 Plus=6 Плюс
+
 7 Plus=7 Плюс
+
 8 Plus=8 Плюс
+
 9 Plus=9 Плюс
+
 Dress Length=Длина платья
+
 Above Knee=Выше колена
+
 Full-Length=До пят
+
 Knee-Length=До колен
+
 Boyfriend=Бойфренд стиль
+
 Capri/Cropped=Капри/укороченные
+
 Leggings/Jeggings=Леггинсы / Джеггинсы
+
 Shrugs, Ponchos & Capes=Пончо и накидки
+
 Nightgown=Ночная рубашка
+
 Pajama Bottoms=Пижамные штаны
+
 Pajama Set=Пижама в комплекте
+
 Pajama Top/Nightshirt=Верх пижамы / Ночная сорочка
+
 Robe=Халат
+
 Ankle Socks=Носки
+
 Athletic Socks=Спортивные носки
+
 Knee Socks=Гольфы
+
 Slipper Socks=Носки-тапочки
+
 Tights=Колготки
+
 Toe Socks=Носки с пальчиками
+
 Boleros & Shrugs=Болеро
+
 Sweater Dress=Свитер-платье
+
 Wrap=Шаль
+
 Bikini Bottoms=Бикини
+
 Bikini Set=Купальник
+
 Bikini Top=Верх от купальника
+
 Board Shorts=Шорты
+
 Swim Shirt=Плавательная рубашка
+
 Swimsuit=Купальник
+
 Tankini Set=Комплект танкини
+
 Tankini Top=Верх танкини
+
 Boyshorts & Boxers=Шортики
+
 Bra=Бюстгальтер
+
 Briefs=Трусики
+
 Camisole=Камисоль
+
 Crop Top=Укороченный топ
+
 Set=Комплект
+
 Slip=Комбинация
+
 Thermal Leggings/Long Johns=Термо Леггинсы / Кальсоны
+
 Belt/Belt Buckle=Пояс / Пряжка
+
 Jumper/Dress=Сарафан / Платье
+
 Skirt/Skort=Юбки / юбки-шорты
 
 
+
+
+
 US Shoe Size (Youth)=Размер обуви США (Подростковый)
+
 Fascinator=Украшения для волос
+
 Feather Extension=Перья
+
 Bandana=Бандана
+
 Boas=Боа
+
 Cowl/Snood=Капор
+
 Hijab=Хиджаб
+
 Pashmina=Пашмины
+
 Scarf=Шарф
+
 Shawl/Wrap=Шаль
+
 Cat Eye=Кошачий глаз
+
 Heart=Сердце
+
 Shield=Щит
 
 
+
+
+
 Bookbag=Книжная сумка
+
 Briefcase/Attache=Портфели
+
 Fanny/Waist Pack=Сумка на талию
+
 Suit/Garment Bag=Сумка для костюмов и вешей
+
 Tote Bag=Большая сумка
+
 Canvas=Холст
+
 Crocodile/Alligator=Крокодил / Аллигатор
+
 Patent Leather=Лакированная кожа
+
 Metal=Металл
+
 PVC=ПВХ
+
 Faux Suede=Искусственная замша
+
 Audio Pocket=Аудио карман
+
 Bottle Pocket=Карман для бутылки
+
 Eco-Friendly=Безопасность для экологии
+
 Expandable=Увеличивающаяся
+
 Hydration Pockets=Гидро-карманы
+
 Insulated=Изоляция
+
 Key Clip=Пристежка для ключей
+
 Laptop Sleeve/Protection=Отдел для ноутбука
+
 Machine Washable=Машинная стирка
+
 Reflective=С отражением
+
 Reversible=Двустороннее ношение
+
 Water Resistant=Водонепроницаемость
+
 Wheels/Rolling=Колеса
+
 Features=Характеристики
+
 Classic=Классический
+
 Novelty=Персонаж
+
 Theme=Тема
+
 Animal=Животное
+
 Awareness=Осведомленность
+
 Buildings & Monuments=Здания и памятники
+
 Cartoons & Characters=Мультфильмы и персонажи
+
 Celebrity=Знаменитость
+
 Celestial & Horoscope=Гороскоп
+
 Coins & Money=Монеты и деньги
+
 Cowboy & Western=Ковбой
+
 Flags & Political=Флаги и политика
+
 Food & Drink=Продовольствие и напитки
+
 Gambling/Casino=Азартные игры / Казино
+
 Hobby & Craft=Хобби и ремесла
+
 Holiday=Праздник
+
 LEGO/Toys=LEGO / Игрушки
+
 Letters, Numbers & Symbols=Буквы, цифры и символы
+
 Military & Weaponry=Война и оружие
+
 Motorcycle=Мотоцикл
+
 Music=Музыка
+
 Religious=Религиозный
+
 Skeleton & Skulls=Скелет и череп
+
 Sports=Спорт
+
 Stamps=Марки
+
 Superhero=Супергерой
+
 Vehicles/Transportation=Транспорт
+
 Shape=Форма
+
 Bar=Полоска
+
 Circle=Круг
+
 Cross=Крест
+
 Knot=Узел
+
 Oval=Овал
+
 Rectangle=Прямоугольник
+
 Athletic Gloves=Спортивные перчатки
+
 Driving Gloves=Водительские перчатки
+
 Evening Gloves=Вечерние перчатки
+
 Everyday Gloves=Повседневные перчатки
+
 Fingerless=Без пальцев
+
 Mittens=Рукавицы
+
 Ski Gloves=Лыжные перчатки
+
 Winter Gloves=Зимние перчатки
+
 Work Gloves=Рабочие перчатки
+
 Hairpiece=Шиньон
+
 Toupee=Хохолок
+
 Texture=Текстура
+
 Curly=Кудри
+
 Straight=Прямой
+
 Wavy=Волны
+
 Hair Type=Тип волос
+
 Length=Длина
+
 Cap Construction=Крепление
+
 Human Hair=Человеческий волос
+
 Short=Короткий
+
 Medium=Средний
+
 Long=Длинный
+
 Classic Cap=Классическая кепка
+
 Full Lace/Capless=Шнуровка
+
 Lace Front=Передняя шнуровка
+
 Monofilament=Мононить
+
 Adjustable=Регулируемый
+
 Du-Rag/Biker=Байкер
+
 Panama=Панама
+
 Ski=Лыжи
+
 Wide Brim=С широкими полями
 
+
+
 Headscarf=Платок для головы
+
 Snood=Сетка
+
 Lens Color=Цвет линз
+
 Metal & Plastic=Металл и пластик
+
 Protection=Защита
+
 Lens Technology=Технология линзы
+
 Anti-Reflective=Антибликовая
+
 Gradient=Градиент
+
 Mirrored=Зеркальная
+
 Photochromatic=Фотохромная
+
 Polarized=Поляризованная
+
 Length=Длина
+
 Short (< 57 in.)=Короткий (<57 дюйма)
+
 Classic (57 in.-60 in.)=Классический (57-60 дюймов)
+
 Long (>60")=Длинный (> 60 дюймов)
+
 Skinny (< 3 1/2 in.)=Узкий (<3,5 дюймов)
+
 Classic (3 1/2 in.-3 3/4 in.)=Классический (3,5-3,75 дюймов)
+
 Wide (> 3 3/4 in.)=Широкий (> 3,75 дюймов)
+
 Umbrella Hat=Зонтик-шляпа
+
 Stone=Камень
+
 Beige=Бежевый
+
 Khaki=Хаки
+
 Camel=Горчичный
+
 Taupe=Серо-бежевый
+
 Other Beige=Бежевый
+
 Black=Черный
+
 Light Blue=Голубой
+
 Medium Blue=Средний синий
+
 Dark Blue, Navy=Темно-синий
+
 Bright Blue=Ярко синий
+
 Aqua=Цвет морской волны
+
 Periwinkle=Сиренево-синий
+
 Other Blue=Синий
+
 Light Brown=Светло-коричневый
+
 Medium Brown=Средне-коричневый
+
 Dark Brown=Темно-коричневый
+
 Espresso=Эспрессо
+
 Rust=Кирпичный
+
 Other Brown=Коричневый
+
 Light Gray=Светло-серый
+
 Medium Gray=Средне-серый
+
 Dark Gray=Темно-серый
+
 Charcoal=Древесный уголь
+
 Heather Gray=Серый
+
 Other Gray=Серый
+
 Light Green=Светло-зеленый
+
 Medium Green=Средне-зеленый
+
 Dark Green=Темно-зеленый
+
 Bright Green=Ярко-зеленый
+
 Olive Green=Оливковый
+
 Other Green=Зеленый
+
 Off-White=Почти белый
+
 Ivory=Слоновая кость
+
 Champagne=Шампанское
+
 Other Ivory=Слоновая кость
+
 Silver=Серебро
+
 Gold=Золото
+
 Bronze=Бронза
+
 Pewter=Олово
+
 Other Metallic=Металик
+
 Light Orange=Светло-оранжевый
+
 Medium Orange=Средне-оранжевый
+
 Dark Orange=Темно-оранжевый
+
 Bright Orange=Яркий оранжевый
+
 Other Orange=Оранжевый
+
 Light Pink=Светло-розовый
+
 Medium Pink=Средне-розовый
+
 Dark Pink=Темно-розовый
+
 Bright Pink=Ярко-розовый
+
 Salmon=Лосось
+
 Mauve=Розовато-лиловый
+
 Other Pink=Розовый
+
 Light Purple=Светло-фиолетовый
+
 Medium Purple=Средне-фиолетовый
+
 Dark Purple=Темно-фиолетовый
+
 Bright Purple=Ярко-фиолетовый
+
 Other Purple=Фиолетовый
+
 True Red=Красный
+
 Brick Red=Кирпично-красный
+
 Burgundy=Бургундия
+
 Bright Red=Ярко-красный
+
 Other Red=Красный
+
 White=Белый
+
 Light Yellow=Светло-желтый
+
 Medium Yellow=Средне-желтый
+
 Dark Yellow=Темно-желтый
+
 Bright Yellow=Яркий желтый
+
 Other Yellow=Желтый
+
 Bifold=Двойной (один сгиб)
+
 Trifold=Тройной (два сгиба)
+
 Coin Wallet=Кошелек для монет
+
 ID Wallet=Кошелек
+
 Checkbook=Чековая книжка
+
 Organizer=Органайзер
+
 Photo Holder=Корман для фото
+
 Zip-Around=На молнии
+
 Puffer=Стеганная куртка
 
 
+
+
+
 Button-Front=На пуговицах
+
 Hawaiian=Гавайский
+
 Henley=Henley
+
 Polo, Rugby=Поло, регби
+
 Tank=Топ
+
 Turtleneck=Водолазка
+
 Western=Дикий запад
+
 Size Type=Тип размера
+
 Regular=Стандартный
+
 Big & Tall=Большой и высокий
+
 Size (Men's)=Размер (мужской США)
+
 Acetate=Ацетат
+
 Bamboo=Бамбук
+
 Hemp=Конопля
+
 Rayon=Вискоза
+
 Recycled Materials=Вторичное сырье
+
 Dress Shirt Size =Размер рубашки
+
 Fit=Крой
+
 Slim Fit, Fitted=Зауженный
+
 Classic Fit=Классический
+
 Collar=Воротник
+
 Banded (Collarless)=Без воротника
+
 Button-Down=На пуговицах
+
 Point (Straight)=Прямой
+
 Spread=Широкий
+
 Tuxedo=Смокинг
+
 Cuff Style=Стиль манжеты
+
 French Cuff=Французские манжеты
+
 Standard Cuff=Стандартные манжеты
+
 Basic Tee=Футболка
+
 Embellished Tee=Украшенная футболка
+
 Graphic Tee=Футболка с графикой
+
 Personalized Tee=Персонализированная футболка
+
 Base Layers=Базовый нательный слой
+
 Competitive Swimwear=Спортивные плавки/купальники
+
 Jerseys=Майки
+
 Shirts & Tops=Рубашки и топы
+
 Snowsuits & Bibs=Лыжные костюмы
+
 Tracksuits & Sweats=Спортивные костюмы и толстовки
+
 Auto Racing=Автогонки
+
 Baseball & Softball=Бейсбол и софтбол
+
 Basketball=Баскетбол
+
 Bowling=Боулинг
+
 Camping & Hiking=Кемпинг и пешие прогулки
+
 Cycling=Езда на велосипеде
+
 Equestrian=Конный спорт
+
 Fishing=Рыбалка
+
 Fitness & Yoga=Фитнес и йога
+
 Football=Футбол
+
 Golf=Гольф
+
 Gymnastics=Гимнастика
+
 Hockey=Хоккей
+
 Hunting=Охота
+
 Martial Arts=Боевые искусства
+
 Paintball=Пейнтбол
+
 Running=Бег
+
 Skateboarding=Скейтбординг
+
 Ski & Snow=Лыжный & Снежный
+
 Soccer=Футбол
+
 Surfing & Windsurfing=Серфинг и виндсерфинг
+
 Swimming=Плавание
+
 Tennis=Теннис
+
 Short=Короткий
+
 Jacket Size=Размеры жакета (США)
+
 One Button=Одна пуговица
+
 Two Button=Две пуговицы
+
 Three Button=Три пуговицы
+
 Four Button=Четыре пуговицы
+
 Double Breasted=Двубортный
+
 Jacket Length=Длина жакета
+
 Long=Длинный
+
 X-Long=Экстра-длинный
+
 Flight/Bomber=Летчик
+
 Military=Военный
+
 Peacoat=Укороченное пальто-трэнч
+
 Rainwear=Непромокаемая одежда
+
 Trench=Трэнч
+
 Varsity/Baseball=Бейсбольная куртка
+
 Windbreaker=Ветровка
+
 Bottoms Size (Men's)=Размер по талии (мужской)
+
 Inseam=Длина по внутреннему шву
+
 Baggy, Loose=Багги, Loose
+
 Classic, Straight Leg=Классический прямой крой
+
 Slim, Skinny=Узкий крой
+
 Wash=Выварка/цвет
+
 Light =Светлый
+
 Medium =Средний
+
 Dark =Темный
+
 Distessed=Неравномерный
+
 Stonewashed=Частичная потертость
+
 Acid Washed=Кислотная потертость
+
 Rinsed, Indigo=Индиго
+
 Black & Gray=Черный и серый
+
 Embellished=Украшенный
+
 Colored=Цветной
+
 Rise=Тип посадка
+
 Classic=Классический
+
 Mid-Rise=Средняя посадка
+
 Low=Низкая посадка
+
 Ultra-Low=Ультра-низкая
 
 
+
+
+
 Corduroys=Вельветовые брюки
+
 Dress - Flat Front=Костюмные без складок
+
 Dress - Pleat=Костюмные с плиссировкой
+
 Khakis, Chinos=Хаки, чино
+
 Board, Surf=Свободный стиль
+
 Carpenter, Utility=Карпентер, утилиты
+
 Casual Shorts=Шорты повседневные
+
 Dress Shorts=Костюмные шорты
+
 Front Style=Передний крой
+
 Flat=Без складок/плоский
+
 Pleated=Плиссированный
+
 Lounge Pants=Домашние/пижамные штаны
+
 Nightshirt=Ночная рубашка
+
 Pajama Sets=Комплекты пижамы
+
 Robes=Халаты
+
 Sleep Shorts=Пижамные шорты
+
 Sock Size=Размер носков
+
 Waist Size=Размер по талии
+
 1/2 Zip=1/2 на молнии
+
 Crewneck=Вырез мыском
+
 Full Zip=Полнстью на молнии
+
 Hooded=С капюшоном
+
 Polo=Поло
+
 V-Neck=V-образный вырез
+
 Sweatshirt, Crew=Толстовка
+
 Track & Sweat Pants=Трек & Трико
+
 Track & Sweat Suits=Трек & утепленные костюмы
+
 Track Jacket=Спортивный жакет
+
 Competition=Для профессионального спорта
+
 Rashguard=Водолазка для водных видов спорта
+
 Swim Briefs=Плавки
+
 Thongs=Стринги
+
 Trunks=Трусы шортами
+
 Boxer=Боксер
+
 Brief=Плавки
+
 Thermal=Термо-белье
+
 Thong, Bikinis=Стринги, бикини
 
 
+
+
+
 Athletic Sneakers=Спортивные кроссовки
+
 Basketball Shoes=Баскетбольная обувь
+
 Bowling Shoes=Обувь для боулинга
+
 Cleats=Бутсы
+
 Dance=Танцевальная обувь
+
 Golf Shoes=Обувь для гольфа
+
 Hiking, Trail=Пешие прогулки, походы
+
 Running, Cross Training=Для бега
+
 Skateboarding=Скейтбординг
+
 Walking=Ходьба
+
 Water Shoes=Водная обувь
+
 Extra Narrow (A+)=Очень узкие (+)
+
 Narrow (C, B)=Узкие (C, B)
+
 Medium (D, M)=Средние (D, M)
+
 Wide (E,W)=Широкие (E, W)
+
 Extra Wide (EE+)=Очень широкие (EE +)
+
 Snakeskin=Змеиная кожа
+
 Vegan=Веган
+
 US Shoe Size (Men's)=Размер обуви (мужской США)
+
 Ankle Boots=Ботильоны
+
 Cowboy, Western=Ковбой
+
 Desert Boots=Бутсы
+
 Rainboots=Резиновая обувь
+
 Riding, Equestrian=Верховая езда, конный
+
 Snow, Winter=Снег, зима
+
 Work & Safety=Работа и безопасность
+
 Boat Shoes=Повседневные туфли
+
 Driving Moccasins=Мокасины
+
 Fashion Sneakers=Стильные кроссовки
+
 Loafers & Slip Ons=Мокасины и туфли без шнурков
+
 Wing Tip=Винг Тип
+
 Nursing & Uniform=Медицина и униформа
+
 Fisherman=Рыбацкая обувь
+
 Flip-Flops=Сланцы
+
 Slides=Слайды
+
 Sport Sandals=Спортивные сандалии
+
 Strap=С ремешком
+
 Booties=Ботинки
+
 Moccasin Slippers=Тапочки-мокасины
+
 Scuffs=Сабо
 
+
+
 US Size=Размер (США)
+
 Athletic-Inspired=Полуспортивные
 
 
@@ -808,992 +1657,1994 @@ Athletic-Inspired=Полуспортивные
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 Elbow=До локтя
+
 Opera/Long=Оперные / Длинные
+
 Wrist=До запястья
+
 Hairnet & Snood=Сетка для волос и капор
+
 Velour=Велюр
+
 Children's=Детский
+
 Designer/Artist=Дизайнер / Художник
+
 Patterned=Узорный
+
 Plain=Простой
+
 State & Souvenir=Сувенир
+
 Western/Bandana=Западный / Бандана
+
 Embroidered=Вышитый
+
 Hand Painted=Ручная роспись
+
 Lace & Crocheted=Кружева и рюши
+
 Monogrammed=С монограммой
+
 Church/Dress=Церковь / Наряд
+
 Cloche=Клоше
+
 Pillbox=Пилбокс
+
 Turban/Chemo=Тюрбан
+
 Aluminum=Алюминий
+
 Cowl/Infinity=Капор
+
 Hip Scarf=Набедренный шарф
+
 Muffler=Плотный шарф
+
 Stole=Шарф
+
 Butterfly=Бабочка
+
 Designer=Дизайнер
+
 Wrap=Шаль
+
 Clutch=Клатч
+
 Coin Purse=Портмоне
+
 Envelope=Конверт
+
 Mini Wallet=Мини кошелек
+
 Wristlet=Кошелек на браслете
+
 Bangs=Челка
+
 Bun=Ракушка
+
 Full Wig=Полный парик
+
 Hair Fall/Half Wig=Локоны / полупарик
+
 Ponytail=Хвост
+
 Top Piece/Wiglet=Частичный парик
+
 Hair Type=Тип волос
+
 Hair Extension=Наращивание волос
+
 Classic Bonded=Аппликация
+
 Clip-In=На клипсах
+
 Combs=Гребень
+
 Drawstring=На завязках
+
 Hair Wrap=Шаль из волос
+
 Heat Free Bonds=Аппликации без нагрева
+
 Microtube=Микротубы
+
 Microtube Extensions=Макротубы
+
 Shrink Tube=Термо-трубки
+
 Weaving/Bonding=Ткань/Клей
+
 Weft=Локон
+
 Cap=Шапочка
+
 Display/Stand=Дисплей / Стенд
+
 Finger Cots=Напальчники
+
 Fusion Iron=Утюжок для волос
+
 Glue=Клей
+
 Hair Remover Solution=Средства для удаления волос
+
 Kit=Наборы
+
 Links, Rings & Tubes=Звенья, кольца и трубы
+
 Microneedle=Микроиголки
+
 Pins=Булавки
+
 Pliers=Плоскогубцы
+
 Shampoo & Conditioner=Шампунь и кондиционер
+
 Tape=Лента
+
 Threader=Вдеватель ниток
+
 Wig Brush=Расческа для париков
+
 Wig Care=Средства по уходу за париками
+
 Manufacturer=Производитель
 
 
+
+
+
 Leotards & Unitards=Купальники и комбинезоны
+
 Pants, Tights, Leggings=Брюки, колготки, леггинсы
+
 Skirts, Skorts & Dresses=Юбки, платья и юбка-шорты
+
 Sports Bras, Bra Tops=Спортивные бюстгальтеры, бюстгальтер-топы
+
 Petites=Петит (рост до 163 см)
+
 Plus=Плюс
+
 Juniors=Молодежный
+
 Bolero, Shrug=Болеро, накидка
+
 Cape=Пальто-накидка
+
 Size (Women's)=Размер (женский США)
+
 Fur Type=Тип меха
+
 Beaver=Бобр
+
 Broadtail=Каракуль
+
 Chinchilla=Шиншилла
+
 Coyote=Койот
+
 Fitch=Хорек
+
 Fox=Лиса
+
 Lamb=Овца
+
 Leopard=Леопард
+
 Lynx=Рысь
+
 Mink=Норка
+
 Muskrat=Ондатра
+
 Rabbit=Кролик
+
 Raccoon=Енот
+
 Sable=Соболь
+
 Shearling=Молодой барашек
+
 Asymmetrical Hem=Асимметричный подол
+
 Ball Gown=Бальное платье
+
 Blouson=Блузон
+
 Bubble=Пузырь
+
 Corset=Корсет
+
 Empire Waist=Приталенный крой
+
 Maxi=Макси
+
 One Shoulder=Одно плечо
+
 Peplum=Пеплум
+
 Sheath=Футляр
+
 Shift=Шифт
+
 Shirt Dress=Рубашка
+
 Stretch, Bodycon=Стретч
+
 Sundress=Сарафан
+
 Sweater Dress=Платье-свитер
+
 Tea Dress=Простое платье
+
 Tiered=Многоуровневое
+
 Tunic=Туника
+
 Wiggle/Pencil=Платье-Карандаш
+
 Wrap Dress=Платье-шаль
+
 Clubwear=Клубный
+
 Cocktail=Коктейль
+
 Formal=Формальный
+
 Little Black Dress=Маленькое черное платье
+
 Wear to Work=Для работы
+
 Summer/Beach=Лето / пляж
+
 Dress Length=Длина платья
+
 Above Knee, Mini=Выше колена, мини
+
 Asymmetrical Hem=Асимметричный Подол
+
 Knee-Length=Длиной до колен
+
 Mid-Calf=Середина икры
+
 Full-Length=Во всю длину
+
 Sleeve Style=Стиль рукава
+
 Batwing, Dolman=Летучая мышь
+
 Cap Sleeve =Спущенный рукав
+
 Halter=Вокруг шеи
+
 Kimono Sleeve=Рукав-кимоно
+
 Off-Shoulder=Открытые плечи
+
 One Shoulder=Одно плечо
+
 Spaghetti Strap=Лямка
+
 Sprapless=Без лямокt
 
+
+
 Hosiery Size=Размер чулочно-носочных изделий
+
 One Size: Regular=Один Размер: Стандарт
+
 One Size: Plus=Один Размер: Плюс
+
 Pantyhose=Колготки
+
 Peds=Носки-следы
+
 Body Stockings=Чулки для тела
+
 Stockings=Чулки
+
 Thigh-Highs=Высокие чулки
+
 Band Size=Размер (обхват) от грудью
+
 Cup Size=Размер чашки
+
 Balconettes=Балконет
+
 Bra Sets=Комплекты бюстгальтеров
+
 Demis=Небольшое покрытие чашки
+
 Full Coverage Bras=Полное покрытие чашки
+
 Minimizers=Бюстгальтер-минимайзер
+
 Nursing, Maternity Bras=Для кормления грудью
+
 Plunge Bras=Для глубокого декольте
+
 Push-Up Bras=Пуш-Ап Бюстгальтеры
+
 Sports Bras=Спортивные бюстгальтеры
+
 Strapless, Multi-way Bras=Без бретелек, трансформеры
+
 Training Bras=Спортивные бюстгальтеры
+
 T-Shirt Bras=Контурные бюстгалтеры (без декора)
+
 Support Type=Тип поддержки
+
 Underwire=С косточкой
+
 Wire Free=Без косточки
+
 Intimates & Sleep Size (Women's)=Размер женского белья (США)
+
 Hook & Eye=На крючках
+
 Lace Up=Шнуровка
+
 Zip=Молния
+
 Body Suits=Боди
+
 Briefs=Трусы
+
 Shaping Tops=Формирующие топы
+
 Slip Shapers=Утягивающие комбинации
+
 Waist Cinchers=Утяжка для талии
+
 Babydoll, Chemise=Пеньюар
+
 Gowns=Сорочка
+
 Lounge Pants, Sleep Shorts=Брюки, шорты сна
+
 Robe & Gown Sets=Комплекты для сна и отдыха
+
 Sleepshirt=Ночная рубашка
+
 Full Slips=Комбинация
+
 Half Slips=Нижняя юбка
+
 OS=Один размер
+
 Men=Для него
+
 Women=Для нее
 
+
+
 Camera & Photo Acceossories=Аксессуары для фото и видео камер
+
 Manufacturer Part Number=Номер модели
+
 Jackets & Outerwear=Куртки и верхняя одежда
+
 Accessories=Аксессуары
+
 Accessory Bundles=Комплекты аксессуаров
+
 Acrylic Nails & Tips=Акриловые ногти и типсы
+
 Acrylic, Plastic, Lucite=Акрил, пластик
+
 African=Африканские
+
 Agate=Агат
+
 Amber=Янтарь
+
 Amethyst=Аметист
+
 Anklets=Украшения для ног
+
 Antique=Антикварные
+
 Armbands=Браслеты
+
 Asian & East Indian=Азиатские и индийские
+
 Athletic Apparel=Спортивная одежда
+
 Audio Docks & Speakers=Аудио подставки и спикеры
+
 Azurite=Азурит
+
 Baby & Toddler Clothing=Одежда для малышей (0-4/5 лет)
+
 Baby Accessories=Аксессуары для малышей
+
 Baby Shoes=Обувь для малышей
+
 Backpacks & Bags=Рюкзаки и сумки
+
 Backpacks & Bookbags=Рюкзаки и книжные сумки
+
 Backpacks, Bags & Briefcases=Рюкзаки, сумки и портфели
+
 Backpacks=Рюкзаки
+
 Bags & Backpacks=Сумки и рюкзаки
+
 Bags=Сумки
+
 Bands without Stones=Кольца без камней
+
 Bath & Body=Все для ванны и душа
+
 Bath Bombs & Fizzies=Добавки для ванной
+
 Bath Brushes & Sponges=Щетки и мочалки
+
 Bath Oils=Масла для ванн
+
 Bath Salts=Соли для ванн
+
 Bath Sets & Kits=Наборы для ванн
+
 Batteries=Батарейки
+
 Beads=Из бисера
+
 Belly Chains=Цепи для живота
+
 Belt Buckles=Пряжки
+
 Belts & Belt Buckles=Ремни и пряжки
+
 Belts=Ремни
+
 Bezels & Inserts=Передние панели и вставки
+
 Blazers & Sport Coats=Пиджаки и жакеты
+
 Blush=Румяна
+
 Body Butters=Масло для тела
+
 Body Glitter=Блеск для тела
+
 Body Jewelry=Украшения для тела
+
 Body Piercing=Пирсинг-украшения
+
 Body Powders=Присыпки и порошки для тела
+
 Body Scrubs=Скрабы
+
 Body Sprays & Mists=Спреи для тела
+
 Body Washes & Shower Gels=Гели для ванн и душа
+
 Body=Средства для тела
+
 Bolo Ties=Боло галстуки
+
 Boots=Сапоги и ботинки
+
 Bottoms=Брюки и шорты
+
 Boxes, Cases & Watch Winders=Коробки, кейсы и устройства для заводки
+
 Boys' Accessories=Аксессуары для мальчиков
+
 Boys' Clothing (Newborn-5T)=Одежда для мальчиков (Новорожденные-5 лет)
+
 Boys' Clothing (Sizes 4 & Up)=Одежда для мальчиков (4 года +)
+
 Boys' Formal Occasion=Официальная одежда для мальчиков
+
 Boys' Shoes=Обувь для мальчиков
+
 Bracelets=Браслеты
+
 Braiders=Завязки, резинки и пр.
+
 Bras & Bra Sets=Бюстгальтеры и комплекты
+
 Bras=Бюстгальтеры
+
 Brass=Латунь
+
 Breast Forms, Enhancers=Коррекция груди
+
 Bridal & Wedding Party Jewelry=Ювелирные изделия для свадебных церемоний
+
 Bridal Accessories=Свадебные аксессуары
+
 Bridal Jewelry=Свадебные украшения
+
 Bridal Shoes=Свадебная обувь
+
 Bridesmaids' & Formal Dresses=Подружка невесты/вечерние платья
+
 Briefcases & Laptop Bags=Портфели и сумки для ноутбуков
+
 Bronze=Бронза
+
 Bronzers & Highlighters=Бронзеры
+
 Brow Enhancers=Для бровей
+
 Brush Cases & Holders=Кейсы для кисточек
+
 Brush Cleaners=Очистители для кисточек
+
 Brushes & Applicators=Кисти и аппликаторы
+
 Brushes & Combs=Расчески и щетки
+
 Bubble Baths=Пена для ванн
+
 Business & Credit Card Cases=Кейсы для визиток и крединтных карт
+
 Cables & Adapters=Кабели и адаптеры
+
 Camisoles & Camisole Sets=Камисоли
+
 Candles=Свечи
+
 Canes & Walking Sticks=Трости
+
 Canes, Walking Sticks=Трости
+
 Car Speakerphones=Автомобилные спикеры
+
 Cases, Covers & Skins=Кейсы, чехлы и наклейки
+
 Casual Shirts=Повседневные рубашки
+
 Casual Shoes=Повседневная обувь
+
 Casual=Повседневный
+
 Cell Phones & Accessories=Сотовые телефоны и аксессуары
+
 Cell Phones Accessories=Аксессуары для сотовых телефонов
+
 Cellulite Treatment=Лечение целлюлита
+
 Celtic=Кельтские
+
 Ceramic, Clay, Porcelain=Керамика, глина, фарфор
+
 Chains, Necklaces=Цепочки, ожерелья
+
 Chains=Цепи
+
 Chairs=Стулья
+
 Chargers & Cradles=Зарядные устройства и подставки
+
 Charms & Charm Bracelets=Подвески и браслеты с подвесками
+
 Checkbook Covers=Обложки для чековых книжек
+
 Checkbook Holders=Кейсы для чековых книжек
+
 Children's Bath & Body=Детские средства для ванн и тела
+
 Children's Hair Care=Уходу за детскими волосами
+
 Children's Jewelry=Детские украшения
+
 Children's Oral Care=Средства по уходу за полостью рта для детей
+
 Children's Vintage Clothing=Винтажная детская одежда
+
 Christening=Kрестины
+
 Citrine=Цитрин
+
 Class Rings=Кольца-печатки
+
 Cleaners & Polish=Очистители и Полироли
+
 Cloisonne=Клуазоне
+
 Clothes Hangers=Вешалки
+
 Coats & Jackets=Пальто, куртки, жакеты
+
 Collars=Воротники
+
 Compact Mirrors=Компактные зеркала
+
 Concealer=Тон
+
 Conditioner=Кондиционеры
+
 Copper=Медь
+
 Corsets & Bustiers=Корсеты и бюстье
+
 Cosmetic Bags=Косметички
+
 Costume=Костюмы
+
 Coupons=Купоны
+
 Cross=Крест
+
 Crystal, Glass=Кристаллы и стекло
+
 Crystal=Кристаллы
+
 Crystals=Кристаллы
+
 Cufflinks=Запонки
+
 Cufflinks=Запонки
+
 Curling Irons=Щипцы для завивки
+
 Cuticle Creams & Softeners=Кремы и смягчители для кутикулы
+
 CZ, Moissanite & Simulated=Имитации
+
 CZ, Simulated Stones=Искусственные камни
+
 Damage Treatments=Лечение для волос
+
 Dental Floss & Flossers=Зубные нити
+
 Deodorants & Antiperspirants=Дезодоранты и антиперспиранты
+
 Diamond=Бриллианты
+
 Diamonds (Enhanced Natural)=Бриллианты (улучшенные натуральные)
+
 Diamonds (Lab-Created)=Бриллианты (лабораторные)
+
 Diamonds (Natural)=Бриллианты (натуральные)
+
 Diamonds (Rough Natural)=Бриллианты (необработанные натуральные)
+
 Diamonds & Gemstones=Бриллианты и драгоценные камни
+
 Diamonds & Gemstones=Бриллианты и драгоценные камни
+
 Diaper Bags=Сумки для мам
+
 Dietary Supplements, Nutrition=Диетические добавки, питание
+
 Dragon=Дракон
+
 Dress Shirts=Костюмные рубашки
+
 Dress Shoes=Классическая обувь
+
 Dress/Formal=Классическая обувь
+
 Dresses=Платья
+
 Duffle & Gym Bags=Спортивные сумки
+
 Earmuffs, Earwarmers=Наушники
+
 Earrings=Серьги
+
 Emerald=Изумруд
+
 Enamel=Эмаль
+
 Engagement & Wedding=Свадебные укашения
+
 Engagement Rings=Кольца для помолвки
+
 Engagement/Wedding Ring Sets=Наборы свадебних колец
+
 Ethnic, Regional & Tribal=Этнические украшения
+
 Eye Shadow Primer=Основа под тени
+
 Eye Shadow/Liner Combination=Тени для век /наборы лайнэров
+
 Eye Shadow=Тени для век
+
 Eyeglass Chains & Holders=Цепи и держатели для очков
+
 Eyeglasses=Очки
+
 Eyelash Tools=Приспособления для ресниц
+
 Eyeliner=Подводки для глаз
+
 Eyes=Для глаз
+
 Face Powder=Пудра
+
 Face=Для лица
+
 Faceplates, Decals & Stickers=Лицевые панели и наклейки
+
 False Eyelash Adhesives=Клей для накладных ресниц
+
 False Eyelashes=Накладные ресницы
+
 Fanny, Waist Packs=Поясные и набедренные сумки
+
 Fans & Parasols=Вееры и зонты
+
 Fans=Вееры
+
 Fascinators & Headpieces=Головные уборы
+
 Fashion Jewelry=Бижутерия
+
 Feminine Hygiene=Женская гигиена
+
 Files & Implements=Пилочки и инструменты
+
 Findings=Детали
+
 Fine Anklets=Украшения для ног
+
 Fine Bracelets=Браслеты
+
 Fine Charms & Charm Bracelets=Подвески и браслеты с подвесками
+
 Fine Earrings=Серьги
+
 Fine Jewelry Sets=Комплекты ювелирных изделий
+
 Fine Jewelry=Изделия из драгоценных металлов
+
 Fine Necklaces & Pendants=Ожерелья и кулоны
+
 Fine Pins & Brooches=Булавки и броши
+
 Fine Rings=Кольца
+
 Fine=Драгоценные
+
 First Aid=Первая помощь
+
 Flats & Oxfords=Кеды, балетки и макасины
+
 FM Transmitters=FM трансмиттеры
+
 Foot Care=Уход за ногами
+
 Foundation Primer=Базовая основа
+
 Foundation=Основа
+
 Fragrances=Парфюмерия
+
 Fused Glass=Плавленое стекло
+
 Fused Glass=Плавленое стекло
+
 Garnet=Гранат
+
 Garter Belts=Пояса с подвязками
+
 Garters=Подвязки
+
 Gel, Mousse & Spray=Гели, муссы и спреи
+
 Gemstone=Драгоценные камни
+
 Gemstones=Драгоценные камни
+
 Girls' Accessories=Аксессуары для девочек
+
 Girls' Clothing (Newborn-5T)=Одежда для девочек (Новорожденные-5 лет)
+
 Girls' Clothing (Sizes 4 & Up)=Одежда для девочек (4 года +)
+
 Girls' Formal Occasion=Официальная одежда для девочек
+
 Girls' Shoes=Обувь для девочек
+
 Glass, Crystal=Стекло и хрусталь
+
 Glass, Czech Glass=Стекло, чешское стекло
+
 Gloves & Mittens=Перчатки и рукавицы
+
 Gloves=Перчатки
+
 Gold (w/o Stone)=Золото (без камней)
+
 Gold Plate/Fill (w/o Stone)=Позолота без камней
+
 Gold Plated/Filled=Позолота/ наполнение золотом
+
 Gold=Золото
+
 Grillz, Dental Grills=Наклаки на зубы
+
 Hair & Head Jewelry=Ювелирные изделия дляволос и головы
+
 Hair Accessories=Аксессуары для волос
+
 Hair Care & Salon=Уход за волосами
+
 Hair Color=Краски
+
 Hair Dryers=Фены
+
 Hair Loss=От потери волос
+
 Hairpieces & Toupees=Накладные волосы
+
 Hand Cream=Крема для рук
+
 Handbag Accessories=Аксессуары для сумок
+
 Handbags & Bags=Сумки
+
 Handbags & Purses=Сумки и кошельки
+
 Handbags, Purses=Сумки и кошельки
+
 Handcrafted, Artisan Jewelry=Изделия ручной работы
+
 Handkerchiefs=Носовые платки
+
 Handkerchiefs=Носовые платки
+
 Handkerchiefs=Носовые платки
+
 Hat Boxes=Коробки для шляп
+
 Hats=Головные уборы
+
 Headsets=Гарнитура
+
 Health & Beauty=Здоровье и красота
+
 Health Care=Продукты для здоровья
+
 Heels=Босоножки и туфли на каблуке
+
 Hematite=Гематит
+
 Hosiery & Socks=Чулочно-носочные изделия
+
 Hosiery & Socks=Чулочно-носочные изделия
+
 Hot &amp; Cold Therapies=Горячая и холодная терапия
+
 ID & Badge Holders=Кейсы и держатели для бэйджей
+
 ID & Document Holders=Обложки и кейсы для документов
+
 Intimates & Sleep=Нижнее и ночное белье
+
 Jade=Нефрит
+
 Jasper=Джаспер
+
 Jeans, Pants & Shorts=Джинсы, брюки и шорты
+
 Jeans=Джинсы
+
 Jewelry & Watches=Ювелирные изделия и часы
+
 Jewelry Boxes & Organizers=Шкатулки и органайзеры
+
 Jewelry Boxes=Шкатулки
+
 Jewelry Design & Repair=Для дизайна и ремонта украшений
+
 Jewelry for Parts or Repair=Запасные части для украшений
+
 Jewelry Holders & Organizers=Держатели и органайзеры для ювелирных изделий
+
 Jewelry Sets=Комплекты ювелирных изделий
+
 Jewelry=Ювелирные изделия
+
 Jumpsuits & Rompers=Комбинезоны
+
 Key Chains, Rings & Cases=Брелки, кольца и кейсы
+
 Key Chains, Rings & Finders=Брелки и кольца
+
 Key Chains=Брелки
+
 Key Ring Watches=Часы на брелке
+
 Kids' Clothing, Shoes & Accs=Детская одежда, обувь и аксессуары (4 года +)
+
 Labradorite=Лабрадорит
+
 Lapis=Лапис
+
 Lash Growth & Conditioner=Средства для ресниц
+
 Leather=Кожа
+
 Leg & Body Cover=Средства для ног и тела
+
 Leg Warmers=Гетры
+
 Leggings=Леггинсы
+
 Lip Balm=Бальзамы для губ
+
 Lip Gloss=Блески для губ
+
 Lip Liner=Подводки для губ
+
 Lip Plumper=Средства для увеличния губ
+
 Lip Stain=Стойкая помада
+
 Lips=Для губ
+
 Lipstick Cases=Кейсы для губной помады
+
 Lipstick Primer=Основа под губную помаду
+
 Lipstick=Губная помада
+
 Loose Beads=Украшения из бисера и бусин
+
 Loose Diamonds & Gemstones=Изделия с драгоценными камнями
+
 Lotions-Body=Лосьоны для тела
+
 Lotions-Hand=Лосьоны для рук
+
 Makeup Bags & Cases=Кейсы для косметики
+
 Makeup Organizers, Caddies=Органайзеры для косметики
+
 Makeup Removers=Средства для снятия макияжа
+
 Makeup Sets & Kits=наборы для макияжа
+
 Makeup Tools & Accessories=Аксессуары для макияжа
+
 Makeup Totes=Сумки для косметики
+
 Makeup Train Cases=Кайсы для путешествий
+
 Makeup=Макияж
+
 Malachite=Малахит
+
 Manicure Kits=Маникюрные наборы
+
 Manuals & Guides=Инструкции
+
 Manuals & Guides=Руководства и инструкции
+
 Mascara=Тушь для ресниц
+
 Massage=Массаж
+
 Massagers=Массажеры
+
 Maternity=Для будущих мам
+
 Medical, Mobility & Disability=Медицинские товары
+
 Memory Card Readers & Adapters=Карт-ридеры и адаптеры
+
 Memory Cards=Карты памяти
+
 Men's Accessories=Мужские аксессуары
+
 Men's Clothing=Мужская одежда
+
 Men's Formal Occasion=Официальная мужская одежда
+
 Men's Hats=Мужские головные уборы
+
 Men's Jewelry=Мужские украшения
+
 Men's Shoes=Мужская обувь
+
 Men's Vintage Clothing=Винтажная мужская одежда
+
 Men's Vintage Shoes=Винтажная мужская обувь
+
 Metal=Металл
+
 Metals=Металлы
+
 Mexican=Мексиканские
+
 Middle Eastern=Ближневосточные
+
 Millefiori=Мельхиор
+
 Mixed Intimate Items=Смешанные Интимные Изделия
+
 Mixed Items & Lots=Смешанные лоты
+
 Mixed Lots=Смешанные лоты
+
 Mixed Makeup Lots=Смешанные лоты для макияжа
+
 Mixed Materials=Смешанные материалы
+
 Mixed Maternity Items=Различные предметы материнства
+
 Modern=Современные
+
 Money Clips=Зажимы для денег
+
 Moonstone=Лунный камень
+
 Mother of the Bride=Мать невесты
+
 Mother-of-Pearl=Перламутр
+
 Mounts & Holders=Держатели
+
 Movements=Механизмы
+
 Multi-purpose=Много функциональные
+
 Nail Art=Nail Art
+
 Nail Care & Polish=Уход за ногтями и покрытия
+
 Nail Dryers=Сушки для ногтей
+
 Nail Polish=Лак для ногтей
+
 Native American=Индейских
+
 Natural & Homeopathic Remedies=Природные и гомеопатические средства
+
 Necklace Watches=Часы-ожерелье
+
 Necklaces & Pendants=Ожерелья и кулоны
+
 New, Vintage Reproductions=Новые репродукции
+
 Novelty Attire=Галантерея, косметика, сувениры
+
 Nurse Watches=Часы медицинские
+
 Nursing=Для кормящих мам
+
 Obsidian=Обсидиан
+
 Occupational=Специализированная
+
 Oils & Creams=Масла и кремы
+
 One-Pieces=Некомплектные товары
+
 Onyx=Оникс
+
 Opal=Опал
+
 Oral Care=Уход за полостью рта
+
 Organizers & Day Planners=Органайзеры и ежедневники
+
 Organizers & Day Planners=Органийзеры и ежедневники
+
 Other=Другое
+
 Outerwear=Верхняя одежда
+
 Outfits & Sets=Комплекты и наборы
+
 Over-the-Counter Medicine=Лекарства без рецепта
+
 Panties=Трусики
+
 Pants=Брюки
+
 Pantyhose & Tights=Колготки
+
 Paraffin Spas=Парафиновые СПА
+
 Parts, Tools & Guides=Запчасти, инструменты и инструкции
+
 Parts=Запчасти
+
 Passport Holders=Кейсы и обложки для паспорта
+
 Pearl (Imitation)=Искусственный жемчуг
+
 Pearl=Жемчуг
+
 Pedicure & Foot Spas=Педикюр и СПА для ног
+
 Pedicure Kits=Педикюрные наборы
+
 Pendants=Кулоны
+
 Peridot=Перидот
+
 Perms=Завивка
+
 Pewter=Олово
+
 Pill Boxes, Pill Cases=Коробки и кейсы для таблеток
+
 Pillows=Подушки
+
 Pins & Brooches=Булавки и броши
+
 Pins, Brooches=Булавки и броши
+
 Pins=Значки, Булавки
+
 Platinum=Платина
+
 Pocket Watches=Карманные часы
+
 Porcelain=Фарфор
+
 Precious Metal without Stones=Драгоценные металлы без камней
+
 Price Guides & Publications=Прайс листы и публикации
+
 Publications=Публикации
+
 Puffs, Sponges & Wedges=Губки, диски и палочки
+
 Purses & Wallets=Кошельки и бумажники
+
 Quartz=Кварц
+
 Refillable Compacts=Многоцелевые емкости
+
 Relaxation Aids=Средства релаксации
+
 Reusable Eco Bags=Многоразовые ЭКО сумки
+
 Rhinestones=Стразы
+
 Ring Watches=Часы-кольца
+
 Rings=Кольца
+
 Rollers, Curlers=Бигуди
+
 Ruby=Рубин
+
 Salon Equipment &gt;=Оборудование для салонов
+
 Samples & Travel Sizes=Пробники
+
 Sandals & Flip Flops=Сандалии и Вьетнамки
+
 Sapphire=Сапфир
+
 Scar & Stretch Mark Reducers=Редукторы для шрамов и растяжек
+
 Scarves & Bandanas=Шарфы и банданы
+
 Scarves & Wraps=Шарфы и платки
+
 Scarves, Wraps=Шарфы, палантины
+
 Scarves=Шарфы
+
 Screen Protectors=Защитные пленки
+
 Seed=Семена
+
 Sets & Kits=Наборы и комплекты
+
 Sets without Stones=Наборы без камней
+
 Sets=Наборы
+
 Settings Only=Без камней
+
 Sexual Wellness=Сексуальное здоровие
+
 Shampoo=Шампуни
+
 Shapewear=Корректирующее белье
+
 Sharpeners=Точилки
+
 Shaving & Hair Removal=Бритье и эпиляция
+
 Shell, Bone, Coral=Ракушка, кость, коралл
+
 Shoe Accessories=Аксессуары для обуви
+
 Shoe Care & Repair=Средства по уходу за обувью
+
 Shoe Charms, Jibbitz=Кулончики, подвески, накладки
+
 Shoe Insoles=Стельки для обуви
+
 Shoelaces=Шнурки
+
 Shorts=Шорты
+
 Signal Boosters=Усилители сигнала
+
 Silver Plate/Fill (w/o Stone)=Посеребрение без камней
+
 Silver=Серебро
+
 Skin Care=Уход за кожей
+
 Skirts=Юбки
+
 Skorts=Юбка-шорты
+
 Sleeping Aids=Средства для сна
+
 Sleepwear & Robes=Пижамы и халаты
+
 Sleepwear=Пижама
+
 Slippers=Тапочки
+
 Slips, Petticoats & Hoops=Комбинации, нижние юбки и обручи
+
 Slips=Трусики
+
 Smoking Cessation=Борьба с курением
+
 Soaps=Мало
+
 Socks & Tights=Носки и колготки
+
 Socks=Носки
+
 South American=Южноамериканские
+
 Southwestern=Юго-западные
+
 Sport=Спорт
+
 Stainless Steel=Нержавеющая сталь
+
 Sterling Silver (w/o Stone)=Серебро (без камней)
+
 Sterling Silver (w/o Stone)=Серебро без камней
+
 Stockings & Thigh-Highs=Чулки
+
 Stone=Камень
+
 Stones & Rocks=Камни
+
 Storage Bags & Preservation=Сумки и чехлы для хранения
+
 Straightening Irons=Утюги для выпрямления
+
 Straps & Charms=Ремни и подвески
+
 Studs=Серьги
+
 Styling Accessories=Стайлинг
+
 Styluses=Стилусы
+
 Sugilite=Sugilite
+
 Suits & Blazers=Костюмы и Пиджаки
+
 Suits=Костюмы
+
 Sunglasses=Солнечные очки
+
 Supplies=Вспомогательные товары
+
 Suspenders, Braces=Подтяжки
+
 Suspenders=Подтяжки
+
 Sweaters=Свитера
+
 Sweats & Hoodies=Олимпийки и толстовки
+
 Sweatshirts & Hoodies=Кофты и толстовки
+
 Sweatshirts, Hoodies=Кофты и толстовки
+
 Swimwear=Пляжная мода
+
 Systems & Kits=Наборы и комплекты
+
 T-Shirts=Футболки
+
 Tables=Столы
+
 Tanning Beds & Lamps=Солярии и лампы
+
 Tattoos & Body Art=Татуировки и боди-арта
+
 Teddies=Боди и пеньюары
+
 Tiaras & Headbands=Диадемы и ободки
+
 Tie Clasps, Tacks=Зажимы для галстука, кнопки
+
 Ties, Cravats & Cummerbunds=Галстуки, шейные платки и камербанды
+
 Ties=Галстуки
+
 Tiger's Eye=Тигровый глаз
+
 Titanium (w/o Stone)=Титан без камней
+
 Titanium=Титан
+
 Toe Rings=Кольца для ног
+
 Tools & Parts=Инструменты и запчасти
+
 Tools & Repair Kits=Инструменты и ремкомплекты
+
 Tools=Инструментарий
+
 Toothbrushes-Electric=Зубные щетки электрические
+
 Toothbrushes-Standard=Зубные щетки стандартные
+
 Toothpaste=Зубная паста
+
 Tops & Blouses=Топы и блузки
+
 Tops & T-Shirts=Топы и футболки
+
 Tops, Shirts & T-Shirts=Топы, рубашки и футболки
+
 Tourmaline=Турмалин
+
 Travel & Shopping Bags=Сумки для шоппинга и путешествий
+
 Travel & Trial Sizes=Пробники и средства в дорогу
+
 Turquoise=Бирюза
+
 Tuxedo & Formal Jackets=Смокинг и деловые пиджаки
+
 Tuxedo & Formal Shirts=Смокинг и деловые рубашки
+
 Tuxedo & Formal Vests=Смокинг и деловые жилеты
+
 Tuxedos & Formal Suits=Смокинги и деловые костюмы
+
 Umbrellas & Parasols=Зонты
+
 Umbrellas=Зонты
+
 Underwear=Нижнее белье
+
 Uniforms=Униформа
+
 Unisex & T-Shirts=Унисекс и футболки
+
 Unisex Accessories=Унисекс аксессуары
+
 Unisex Adult Clothing=Одежда унисекс
+
 Unisex Adult Shoes=Обувь унисекс
+
 Unisex Clothing (Newborn-5T)=Одежда Унисекс (Новорожденные-5 лет)
+
 Unisex Clothing, Shoes & Accs=Одежда, обувь, аксессуары унисекс
+
 Unisex Clothing=Одежда Унисекс
+
 Unisex Shoes=Обувь Унисекс
+
 Veils=Фата
+
 Velvet=Бархат
+
 Vests=Жилеты
+
 Vintage & Antique Jewelry=Антикварные украшения
+
 Vintage Accessories=Винтажные аксессуары
+
 Vintage Ethnic/Regional/Tribal=Этнические украшения
+
 Vintage Handcrafted, Artisan=Ручной работы
+
 Vintage Reproductions=Винтажные репродукции
+
 Vintage=Стиль ретро/Винтаж
+
 Vision Care=Уход за глазми
+
 Wallets=Кошельки
+
 Watch Batteries=Батарейки для часов
+
 Watch=Часы
+
 Watches for Parts=Часы на запчасти
+
 Watches=Часы
+
 Wedding & Anniversary Bands=Свадебные и кольца для годовщин
+
 Wedding & Formal Occasion=Одежда для официальных церемоний/свадеб
+
 Wedding Dresses=Свадебные платья
+
 Weight Management=Все для похудения
+
 Whitening=Отбеливание
+
 Wholesale Lots=Лоты
+
 Wigs, Extensions & Supplies=Парики и наращивание волос
+
 Women's Accessories=Женские аксессуары
+
 Women's Clothing=Женская одежда
+
 Women's Formal Hats=Женские шляпки
+
 Women's Hair Extensions=Наращивание волос
+
 Women's Handbags & Bags=Сумки
+
 Women's Hats=Женские шляпки
+
 Women's Shoes=Женская обувь
+
 Women's Vintage Clothing=Винтажная женская одежда
+
 Women's Vintage Shoes=Женская винтажная обувь
+
 Women's Wigs=Парики
+
 Wood=Дерево
+
 Workbenches=Верстаки
+
 Wraps & Jackets=Накидки
+
 Wristbands=Браслеты
+
 Wristwatch Bands=Ремни и браслеты для часов
+
 Wristwatches=Наручные часы
+
 Luggage=Багаж
+
 Accessory Bundles=Набор аксессуаров
+
 Batteries=Батареи
+
 Battery Grips=Батарейные блоки
+
 Cables & Adapters=Кабели и адаптеры
+
 Camcorder Tapes & Discs=Ленты видеокамер и диски
+
 Camera & Camcorder Lights=Фонари для камер
+
 Cases, Bags & Covers=Кейсы, сумки и чехлы
+
 Chargers & Cradles=Зарядные устройства и подставки
+
 Cleaning Equipment & Kits=Оборудование для очистки
+
 LCD Hoods=LCD Вайзер
+
 Memory Cards=Карты памяти
+
 Memory Card Cases=Чехлы для карт памяти
+
 Memory Card Readers & Adapters=Карт-ридеры и адаптеры
+
 Microphones=Микрофоны
+
 Photo Albums & Storage=Фотоальбомы и средства для хранения
+
 Remotes & Shutter Releases=Дистанционное управление
+
 Screen Protectors=Защитные пленки
+
 Straps & Hand Grips=Ремни и поручни
+
 Underwater Cases & Housings=Подводные чехлы и зажимы
+
 Viewfinders & Eyecups=Видоискатели и наглазники
+
 iPads, Tablets & eBook Readers=iPad, Tablet и eBook
+
 iPad/Tablet/eBook Accessories=Аксессуары к iPad, Tablet и eBook
+
 Laptops & Netbooks=Ноутбуки и нетбуки
+
 Desktops & All-In-Ones=Компьютеры и All-In-One
+
 Laptop & Desktop Accessories=Ноутбуки и аксессуары для десктопа
+
 Cables & Connectors=Кабели и разъемы
+
 Computer Components & Parts=Компьютерные компоненты и части
+
 Drives, Storage & Blank Media=Дисководы, средства для хранения информации
+
 Enterprise Networking, Servers=Корпоративные сети и серверы
+
 Home Networking & Connectivity=Домашние сети и средства подключения
+
 Keyboards, Mice & Pointing=Клавиатуры, мыши и указки
+
 Monitors, Projectors & Accs=Мониторы, проекторы и аксессуары
+
 Power Protection, Distribution=Трансформаторы и распределители
+
 Printers, Scanners & Supplies=Принтеры, сканеры и сопутствующие товары
+
 Software=Программное обеспечение
+
 Manuals & Resources=Руководства и инструкции
+
 Vintage Computing=Винтажная вычислительная техника
+
 A/V Cables & Adapters=A / V кабели и адаптеры
+
 Cases, Covers, Keyboard Folios=Корпуса, крышки
+
 Chargers & Sync Cables=Зарядные устройства и кабели
+
 Docking Stations/Keyboards=Док-станции / Клавиатуры
+
 Memory Card & USB Adapters=Карты памяти и USB-адаптеры
+
 Mounts, Stands & Holders=Крепления, подставки и держатели
+
 Reading Lights=Лампы для чтения
+
 Stickers & Decals=Наклейки и надписи
 
 
+
+
+
 Girl's=Девочка
+
 Boy's=Мальчик
+
 Cartoon/Idol=Мультфильм / Герой
+
 Luxury: Dress Styles=Классический стиль ЛЮКС
+
 Luxury: Sport Styles=Спортивный стиль ЛЮКС
+
 Alarm=Будильник
+
 Altimeter=Высотомер
+
 Atomic/Radio Controlled=Автономый / Радиоуправляемый
+
 Chronograph=Хронограф
+
 Compass=Компас
+
 Date=Дата
+
 Day & Date=День и дата
+
 Easy To Read=Легко читаемый
+
 Heart Rate Monitor=Монитор сердечного ритма
+
 Light=Подсветка
+
 Moon Phase=Фазы Луны
+
 Multiple Time Zone=Часовые пояса
+
 Power Reserve Indicator=Индикатор зарядки
+
 Repeater=Повторитель
+
 Stopwatch=Секундомер
+
 Tachymeter=Тахометр
+
 Thermometer=Термометр
+
 Tide Indicator=Индикатор приливов
+
 Tourbillon=Tourbillon
+
 Water Resistant up to 100 m=Водонепроницаемость до 100 м
+
 Water Resistant over 100 m=Водонепроницаемые более 100 м
+
 Band Material=Материал ремешка
+
 Carbon Fiber=Углеродные волокна
+
 Fabric/Canvas=Ткань
+
 Silicon/Rubber=Силикон/Резина
+
 Stainless & Plated Metal=Нержавеющий металл с покрытием
+
 Stainless & Solid Gold=Нержавеющий/Цельное золото
+
 Age=Возраст
+
 Movement=Механизм
+
 Quartz : Battery=Кварц: Аккумулятор
+
 Quartz: Solar powered=Кварц: солнечная энергия
+
 Quartz: Kinetic=Кварц: Кинетический
+
 Mechanical: Hand-winding=Механические: Ручной завод
+
 Mechanical: Automatic=Механический: Автоматика
+
 Display=Дисплей
+
 Analog=Аналоговый
+
 Analog & Digital=Аналоговый и цифровой
+
 Binary=Двоичный
+
 Digital=Цифровой
+
 LED=Жидко-кристаллический
+
 Serial Number=Серийный номер
+
 Bride & Groom Set=Комплект невесты и жениха
+
 Engagement & Band=Обручение
+
 Engagement & Multiple Band(s)=Обручение
+
 Setting & Band(s)=Плоские кольца
+
 Men's=Мужской
+
 Women's=Женский
+
 Length (inches)=Длина (в дюймах)
+
 Abalone=Морское ушко
+
 Ametrine=Аметрин
+
 Ammolite=Аммолит
+
 Apatite=Апатит
+
 Aventurine=Авантюрин
+
 Beryl=Берилл
+
 Bloodstone=Гелиотроп
+
 Chalcedony=Халцедон
+
 Charoite=Чароит
+
 Chrome Diopside=Хром диопсид
+
 Chrysoberyl=Хризоберилл
+
 Chrysocolla=Хризоколла
+
 Chrysoprase=Хризопраз
+
 Bone=Кость
+
 Charm(s)=Подвески
+
 Charm Bracelet Only=Только браслет
+
 Charm Bracelet with Charms=Браслет с подвеской
+
 Animals & Insects=Животные и насекомые
+
 Baby=Ребенок
+
 Beach & Nautical=Пляж и море
+
 Cartoons, TV & Movie Characters=Мультфильмы, ТВ и герои фильмов
+
 Clothing, Handbags & Shoes=Одежда, сумки и обувь
+
 Colleges & Universities=Колледжи и университеты
+
 Computer & Office=Компьютеры и офис
+
 Fairytale & Fantasy=Сказки и фэнтези
+
 Family & Friends=Семья и друзья
+
 Flowers & Plants=Цветы и растения
+
 Gadgets & Tools=Гаджеты и инструменты
+
 Hobbies & Crafts=Хобби и ремесла
+
 Home & Garden=Дом и сад
+
 Letters, Numbers & Words=Буквы, цифры и слова
+
 Love & Hearts=Любовь и сердца
+
 Cameo=Камея
+
 Chain/Link=Сеть / Цепь
+
 Chandelier=Люстра
+
 Cluster=Кластер
+
 Cuff=Манжета
+
 Drop/Dangle=Капля / висюлька
+
 Hoop=Обруч
+
 Huggie=На английском замке
+
 Journey=Путешествие
+
 Shamballa=Shamballa
+
 Stick=Гвоздик/палочка
+
 Stud=Шпилька/гвоздик
+
 Fastening=Крепление
+
 Butterfly=Бабочка
+
 Clip-On=Клипса
+
 Hook=Крючок
+
 Leverback=Крючок с застежкой сзади
+
 Magnetic=Магнит
+
 Omega back=Омега
+
 Screw Back (non-pierced)=Винт
+
 Screw Back (pierced)=Винт
+
 Snap Closure=Защелкой
+
 Threader=Ниточкой
+
 Band=Лентой
+
 Claddagh=Claddagh - ирландский символ любви
+
 Claw Ring=Кольцо-коготь
+
 Hinged=Откидное
+
 Ring Harness=Кольцо-жгут
+
 Rolling=Прокатка
+
 Signet=Печатка
+
 Spinner=Плетение
+
 Bangle=Обруч
+
 Beaded/Strand=Бисероплетение
+
 Friendship=Дружба
+
 ID/Identification=ID / Идентификация
+
 Jelly=Студень
+
 Medical/Alert=Медицина
+
 Tennis=Теннис
+
 Alexandrite=Александрит
+
 Carnelian=Сердолик
+
 Coral=Коралл
+
 Iolite=Иолит
+
 Kunzite=Кунсайт
+
 Marcasite=Марказит
+
 Morganite=Морганит
+
 Mother of Pearl=Перламутр
+
 Irraditation=Придание блеска
+
 Routinely Enhanced=Улучшенный
+
 Coating=Облицовка/покрытие
+
 Lasering=Лазерная генерация
+
 Clarity Enhancement=Улучшение прозачности
+
 Filling=Насыщение
+
 Lab-Created=Создан в лаборатории
+
 Engagement Ring Style=Стиль кольца
+
 Setting Only=Основа/кольцо без камней
+
 Band Style=Стиль ободка кольца
+
 Bands without Stones=Без камней
+
 With Diamonds=С бриллиантами
+
 With Diamonds & Gemstones=С бриллиантами и драгоценными камнями
+
 With Gemstones=С драгоценными камнями
+
 Diamond Color=Цвет бриллианта
+
 Clarity=Прозрачность
+
 Cut=Огранка
+
 Ideal=Идеально
+
 Excellent=Отлично
+
 Very Good=Тщательно
+
 Good=Хорошо
+
 Fair=Средний
+
 Poor=Ниже среднего
+
 Not Enhanced=Не улучшен
+
 Clarity Enhanced=Увеличена прозрачность
+
 Color Enhanced=Улучшен цвет
+
 Color & Clarity Enhanced=Улучшены цвет и прозрачность
+
 Unknown=Не известно
+
 Certification/Grading=Сертификация/классификации
+
 Main Stone Treatment=Обработка основного камня
+
 Total Carat Weight (TCW)=Вес в каратах
+
 Main Stone Shape=Форма основного камня
+
 Baguette=Багет
+
 Briolette=Бриолет
+
 Cabochon=Кабошон
+
 Emerald=Прямоугольник/Квадрат
+
 Heart=Сердце
+
 Marquise=Маркиза
+
 Oval=Овал
+
 Pear=Груша
+
 Princess=Принцесса
+
 Radiant=Лучи
+
 Round=Круг
+
 Trillion=Треугольник
+
 Chocolate=Шоколад
+
 Cream=Крем
+
 Gray=Серый
+
 Lavender=Лаванда
+
 Multi-Colored=Многоцветный
+
 Orange=Оранжевый
+
 Peach=Персик
+
 Pink=Розовый
+
 Purple=Сиреневый
+
 Red=Красный
+
 Yellow=Желтый
-Main Stone Color=Цвет основного камня
+
+MainStone Color=Цвет основного камня
+
 Sizable=Возможно изменение размера
+
 Simulated Diamond=Лабораторный бриллиант
+
 Palladium=Палладий
+
 Rhodium=Родий
+
 Rhodium Plated=Покрытие родием
+
 Rose Gold Filled=Накладное розовое золото
+
 Rose Gold Plated=Позолота розовым золотом
+
 Titanium Plated=Титановое покрытие
+
 Tungsten=Вольфрам
+
 White Gold Filled=Накладное белое золото
+
 White Gold Plated=Позолота белым золотом
+
 Yellow Gold Filled=Накладное желтое золото
+
 Yellow Gold Plated=Позолота желтым золотом
+
 Solitaire with Accents=Solitaire с акцентами
+
 Three-Stone=Три камня
+
 Main Stone=Основной камень
+
 No Stone=Без камней
+
 Aquamarine=Аквамарин
+
 Cubic Zirconia=Цирконий
+
 Rhinestone=Страза
+
 Topaz=Топаз
+
 Ceramic=Керамика
+
 Ring Size=Размер кольца
+
 Moissanite=Муассанит
+
