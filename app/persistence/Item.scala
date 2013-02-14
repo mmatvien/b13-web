@@ -92,10 +92,10 @@ object Item extends ModelCompanion[Item, ObjectId] {
       queryBuilder += "specifics.Brand" -> (".*(?i)" + brand + ".*").r
 
     if (cat.contains("Watches"))
-      if (section.contains("he"))
-        queryBuilder += "specifics.Gender" -> (".*(?i)Men.*").r
-      else
+      if (section.contains("she"))
         queryBuilder += "specifics.Gender" -> (".*(?i)Ladies.*").r
+      else
+        queryBuilder += "specifics.Gender" -> (".*(?i)Men.*").r
     queryBuilder.result()
   }
 
