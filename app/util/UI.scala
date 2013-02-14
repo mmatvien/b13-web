@@ -50,7 +50,7 @@ object UI {
 
   def compressCategory(category: String): String = {
     def normalize(str: String): String = {
-      str.replaceAll(" ", "").replaceAll("&", "_").replaceAll("'", "_").replace("(", "_").replace(")", "_")
+      str.replaceAll(" ", "").replaceAll("&", "_").replaceAll("'", "_").replace("(", "_").replace(")", "_").replace(",","_")
     }
     val pieces = category.split(":").toList
     if (pieces.size > 1) {

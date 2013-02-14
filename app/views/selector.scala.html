@@ -46,11 +46,14 @@
                             <span class="pull-right"></span></a></li>
                         }
                         <div class="clearfix"></div>
+
                     </ul>
                 </li>
 
                 <li class="column-menu span5">
+
                     <ul>
+
                         <li role="presentation" class="menuHeader">Бижутерия и ювелирные изделия</li>
                         <li role="presentation" class="divider"></li>
 
@@ -59,12 +62,9 @@
                         <li><a id="Earrings" class="categoryNavShe" href="#"><span class="pull-right"></span>Cерьги</a></li>
                         <li><a id="Necklaces" class="categoryNavShe" href="#"><span class="pull-right"></span>Oжерелья и кулоны</a></li>
                         <li><a id="Pendants" class="categoryNavShe" href="#"><span class="pull-right"></span>Подвески и браслеты с подвесками</a></li>
-                        <li><a id="Other" class="categoryNavShe" href="#"><span class="pull-right"></span>Другое</a></li>
+                        <li><a id="Fine Jewelry:Other" class="categoryNavShe" href="#"><span class="pull-right"></span>Другое</a></li>
                         <div class="clearfix"></div>
 
-                    </ul>
-
-                    <ul>
                         <li role="presentation" class="menuHeader">Часы</li>
                         <li role="presentation" class="divider"></li>
 
@@ -83,6 +83,13 @@
                         }
                         <div class="clearfix"></div>
 
+                        <li role="presentation" class="menuHeader">Унисекс</li>
+                        <li role="presentation" class="divider"></li>
+
+                        @for(category <- util.Ref.mainCategories.filter(c => c.contains("Unisex Accessories"))){
+                            <li class='@util.UI.compressCategory(category)'> <a id="@category" class="categoryNavShe" href="#">@util.Translator.translate(category.split(":").reverse.head)
+                            <span class="pull-right"></span></a></li>
+                        }
                     </ul>
                 </li>
             </ul>
@@ -145,6 +152,13 @@
                         }
                         <div class="clearfix"></div>
 
+                        <li role="presentation" class="menuHeader">Унисекс</li>
+                        <li role="presentation" class="divider"></li>
+
+                        @for(category <- util.Ref.mainCategories.filter(c => c.contains("Unisex Accessories"))){
+                            <li class='@util.UI.compressCategory(category)'> <a id="@category" class="categoryNavShe" href="#">@util.Translator.translate(category.split(":").reverse.head)
+                            <span class="pull-right"></span></a></li>
+                        }
                     </ul>
                 </li>
             </ul>
@@ -216,6 +230,16 @@
                 <li class="column-menu span4">
 
                     <ul>
+
+                        <li role="presentation" class="menuHeader">Обувь</li>
+                        <li role="presentation" class="divider"></li>
+
+
+                            <li class='@util.UI.compressCategory("Kids' Clothing, Shoes & Accs:Girls' Shoes")'><a id="Clothing, Shoes & Accessories:Kids' Clothing, Shoes & Accs:Girls' Shoes" class="categoryNavGirl" href="#">Обувь
+                            <span class="pull-right"></span></a></li>
+
+                        <div class="clearfix"></div>
+
                         <li role="presentation" class="menuHeader">Бижутерия</li>
                         <li role="presentation" class="divider"></li>
 
@@ -253,7 +277,8 @@
                         <li role="presentation" class="menuHeader">Одежда для мальчиков</li>
                         <li role="presentation" class="divider"></li>
 
-                        @for(category <- util.Ref.mainCategories.filter(c => c.contains("Boys' Clothing (Newborn-5T)"))){
+                        @for(category <- util.Ref.mainCategories.filter(c => c.contains("" +
+                                ""))){
                             <li class='@util.UI.compressCategory(category)'><a id="@category" class="categoryNavKid" href="#">@util.Translator.translate(category.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
@@ -311,7 +336,7 @@
                         <li role="presentation" class="menuHeader"> Офис </li>
                         <li role="presentation" class="divider"></li>
 
-                        @for(category <- util.Ref.mainCategories.filter(c => c.contains("Office") ||  c.contains("Gym, Workout & Yoga"))) {
+                        @for(category <- util.Ref.mainCategories.filter(c => c.contains("Office"))) {
                             <li class='@util.UI.compressCategory(category)'> <a id="@category" class="categoryNavOther" href="#"> @util.Translator.translate(category.split(":").reverse.head)
                             <span class="pull-right"></span> </a> </li>
                         }
@@ -337,6 +362,13 @@
                             <li class='@util.UI.compressCategory(category)'> <a id="@category" class="categoryNavOther" href="#"> @util.Translator.translate(category.split(":").reverse.head)
                             <span class="pull-right"></span> </a> </li>
                         }
+                        <div class="clearfix"></div>
+
+                        <li role="presentation" class="menuHeader">Спорт</li>
+                        <li role="presentation" class="divider"></li>
+                        <li class='@util.UI.compressCategory("Backpacks:Other")'><a id="Backpacks:Other" class="categoryNavShe" href="#"><span class="pull-right"></span>Рюкзаки</a></li>
+                        <li class='@util.UI.compressCategory("Gym, Workout & Yoga:Gym Bags")'><a id="Gym, Workout & Yoga:Gym Bags" class="categoryNavShe" href="#"><span class="pull-right"></span>Сумки для зала</a></li>
+
                         <div class="clearfix"></div>
 
                     </ul>

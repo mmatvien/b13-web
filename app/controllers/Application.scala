@@ -38,8 +38,10 @@ object Application extends Controller with SessionHelper {
       val cat = if (request.queryString.contains("cat")) request.queryString("cat").head else ""
       val br = if (request.queryString.contains("brand")) request.queryString("brand").head else ""
       val brand = br.replaceAll("\\|", "&").replace("(","\\(").replace(")","\\)")
-      val category = cat.replaceAll("\\|", "&").replace("(","\\(").replace(")","\\)")
+      val category = cat.replaceAll("\\|", "&").replace("(","\\(").replace(")","\\)").replace("undefined:","")
       val brands = Item.findBrandsByCategory(category, filter)
+
+      println(category)
 
       if (util.Ref.topCategory.contains(collection)) {
         val items = Item.findByCategory(category, brand, filter, size, page)

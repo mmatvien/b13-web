@@ -20,11 +20,7 @@ import util.FileUtil
 class ShippingTest extends FunSuite {
 
   val sellerList = List(
-    "tommyhilfiger",
-    "aeropostale",
-    "watchgrabber",
-    "shopwss",
-    "reedsjewelers"
+    "aeropostale"
   )
 
   test("Item should have a non-zero shipping cost") {
@@ -39,6 +35,7 @@ class ShippingTest extends FunSuite {
               val res = util.Translator.extractShipmentInfo(item.categoryName).toInt
               if (!shippingExists(res) && !failedCategories.contains(item.categoryName)) {
                 util.FileUtil.appendToFile(s"test/$seller", item.categoryName)
+                println(s"failed $item.categoryName")
                 failedCategories = item.categoryName :: failedCategories
               }
           }
@@ -46,7 +43,7 @@ class ShippingTest extends FunSuite {
       assert(failedCategories.isEmpty)
       def shippingExists(v: Int): Boolean = v > 0
     }
-  }
 
+  }
 
 }
