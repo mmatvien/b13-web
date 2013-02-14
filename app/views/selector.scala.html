@@ -277,8 +277,7 @@
                         <li role="presentation" class="menuHeader">Одежда для мальчиков</li>
                         <li role="presentation" class="divider"></li>
 
-                        @for(category <- util.Ref.mainCategories.filter(c => c.contains("" +
-                                ""))){
+                        @for(category <- util.Ref.mainCategories.filter(c =>  c.contains("Boys' Clothing (Newborn-5T)"))){
                             <li class='@util.UI.compressCategory(category)'><a id="@category" class="categoryNavKid" href="#">@util.Translator.translate(category.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
