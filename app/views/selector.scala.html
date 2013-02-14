@@ -60,14 +60,6 @@
                         <li><a id="Fine Jewelry:Other" class="categoryNavShe" href="#"><span class="pull-right"></span>Другое</a></li>
                         <div class="clearfix"></div>
 
-                        <li role="presentation" class="menuHeader">Часы</li>
-                        <li role="presentation" class="divider"></li>
-
-                        @for(category <- util.Ref.mainCategories.filter(c => c.contains("Wristwatches"))){
-                            <li class='@util.UI.compressCategory(category)'><a id="@category" class="categoryNavShe" href="#">@util.Translator.translate(category.split(":").reverse.head)
-                            <span class="pull-right"></span></a></li>
-                        }
-                        <div class="clearfix"></div>
 
                     </ul>
                 </li>
@@ -92,6 +84,16 @@
                             <li class='@util.UI.compressCategory(category)'> <a id="@category" class="categoryNavShe" href="#">@util.Translator.translate(category.split(":").reverse.head)
                             <span class="pull-right"></span></a></li>
                         }
+                        <div class="clearfix"></div>
+
+                        <li role="presentation" class="menuHeader">Часы</li>
+                        <li role="presentation" class="divider"></li>
+
+                        @for(category <- util.Ref.mainCategories.filter(c => c.contains("Wristwatches"))){
+                            <li class='@util.UI.compressCategory(category)'><a id="@category" class="categoryNavShe" href="#">@util.Translator.translate(category.split(":").reverse.head)
+                            <span class="pull-right"></span></a></li>
+                        }
+                        <div class="clearfix"></div>
                     </ul>
                 </li>
             </ul>

@@ -30,28 +30,27 @@ object Application extends Controller with SessionHelper {
   }
 
 
-  def collection(collection: String, page: Int) = Action {
+  def collection(section: String, page: Int) = Action {
     implicit request =>
 
       val filter = if (request.queryString.contains("filter")) request.queryString("filter").head else ""
       val size = if (request.queryString.contains("size")) request.queryString("size").head else ""
       val cat = if (request.queryString.contains("cat")) request.queryString("cat").head else ""
       val br = if (request.queryString.contains("brand")) request.queryString("brand").head else ""
-      val brand = br.replaceAll("\\|", "&").replace("(","\\(").replace(")","\\)")
-      val category = cat.replaceAll("\\|", "&").replace("(","\\(").replace(")","\\)").replace("undefined:","")
-      val brands = Item.findBrandsByCategory(category, filter)
+      val brand = br.replaceAll("\\|", "&").replace("(", "\\(").replace(")", "\\)")
 
-      println(category)
+      val category = cat.replaceAll("\\|", "&").replace("(", "\\(").replace(")", "\\)").replace("undefined:", "")
+      val brands = Item.findBrandsByCategory(section, category, filter)
 
-      if (util.Ref.topCategory.contains(collection)) {
-        val items = Item.findByCategory(category, brand, filter, size, page)
-        val pagerSize = Item.findCategoryPagerSize(category,brand, filter, size)
-        Ok(views.html.collection(collection, items, brands, page, pagerSize)).withSession("uuid" -> sessionN(request))
+      if (util.Ref.topCategory.contains(section)) {
+        val items = Item.findByCategory(section, category, brand, filter, size, page)
+        val pagerSize = Item.findCategoryPagerSize(section, category, brand, filter, size)
+        Ok(views.html.collection(section, items, brands, page, pagerSize)).withSession("uuid" -> sessionN(request))
       } else {
         println("seller search " + br)
-        val items = Item.findSellerItems(collection, cat, filter, size, page)
-        val pagerSize = Item.findSellerPagerSize(collection, cat, filter, size)
-        Ok(views.html.collection(collection, items, brands, page, pagerSize)).withSession("uuid" -> sessionN(request))
+        val items = Item.findSellerItems(section, cat, filter, size, page)
+        val pagerSize = Item.findSellerPagerSize(section, cat, filter, size)
+        Ok(views.html.collection(section, items, brands, page, pagerSize)).withSession("uuid" -> sessionN(request))
       }
 
 

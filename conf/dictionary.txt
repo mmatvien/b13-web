@@ -22,7 +22,7 @@ Metal Purity=Чистота металла/Проба
 
 Planners & Organizers=Органайзеры и блокноты
 
-Desk & Drawer Organizers=Органайзеры для рабочего места
+Desk & Drawer Organizers=Настольные органайзеры
 
 Money Belts & Wallets=Кошельки и зажимы
 
@@ -47,8 +47,6 @@ White Gold=Белое золото
 Yellow Gold=Желтое золото
 
 Laptop Cases & Bags=Кейсы для ноутбуков
-
-
 
 
 
