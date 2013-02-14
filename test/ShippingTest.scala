@@ -8,6 +8,8 @@ import org.scalatest.FunSuite
 import persistence._
 import play.api.test.FakeApplication
 import play.api.test.Helpers.running
+import util.Calculator.ShipmentItemInfo
+import util.Calculator.ShipmentItemEmpty
 import util.FileUtil
 
 /**
@@ -32,18 +34,25 @@ class ShippingTest extends FunSuite {
           FileUtil.removeFile(s"test/$seller")
           Item.findAllSellerItems(seller).map {
             item =>
-              val res = util.Translator.extractShipmentInfo(item.categoryName).toInt
-              if (!shippingExists(res) && !failedCategories.contains(item.categoryName)) {
-                util.FileUtil.appendToFile(s"test/$seller", item.categoryName)
-                println(s"failed $item.categoryName")
-                failedCategories = item.categoryName :: failedCategories
+              util.Calculator.generateItemShipmentInfo(item) match {
+
+                case si:ShipmentItemInfo => {
+//                  println(s"success ${item.categoryName}")
+                }
+                case ShipmentItemEmpty => {
+                  if (!failedCategories.contains(item.categoryName)) {
+                    util.FileUtil.appendToFile(s"test/$seller", item.categoryName)
+                    failedCategories = item.categoryName :: failedCategories
+                  }
+                }
               }
           }
       }
+      val failed = failedCategories.toSet.mkString("\n")
+      print(failed)
       assert(failedCategories.isEmpty)
-      def shippingExists(v: Int): Boolean = v > 0
-    }
 
+    }
   }
 
 }

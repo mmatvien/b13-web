@@ -42,41 +42,4 @@ object Translator {
     else res
   }
 
-
-  /**
-   * shipping calculator
-   *
-   * @param category full category string
-   */
-  def extractShipmentInfo(category: String): Double = {
-
-    val fullList = category.split(':').toList.reverse
-
-    val shipping = matchFromFile("conf/shipping.txt", fullList.head)
-
-    val shippingStructure = shipping.split(',').toList
-    val parentCategory = fullList.tail.head
-
-
-    def extract(parentCategory: String, shippingStructure: List[String]): Double = {
-      if (shippingStructure.size > 1) {
-
-        if (parentCategory.contains("Men")) {
-          println("found men")
-          return (shippingStructure(0).toDouble)
-        } else if (parentCategory.contains("Women")) {
-          println("found women")
-          return (shippingStructure(1).toDouble)
-        } else if (parentCategory.contains("Kid") || parentCategory.contains("Boy") || parentCategory.contains("Girl") || parentCategory.contains("Baby")) {
-          println("found kid")
-          return (shippingStructure(2).toDouble)
-        } else 0
-      } else {
-        -1.toDouble
-      }
-    }
-    extract(parentCategory, shippingStructure)
-  }
-
-
 }

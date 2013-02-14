@@ -7,7 +7,7 @@ package util
  */
 
 import scala.BigDecimal.RoundingMode.HALF_UP
-import persistence.CartItem
+import persistence.{Item, CartItem}
 
 object Calculator {
   var KURS_DOLLARA: BigDecimal = 32
@@ -33,15 +33,21 @@ object Calculator {
 
   case class ShipmentTotalOption(totalWeight: BigDecimal,
                                  envelopeFit: Boolean,
+                                 smallBoxFit: Boolean,
                                  mediumBoxFit: Boolean,
                                  largeBoxFit: Boolean) {
-    override def toString = s"total weight = $totalWeight envelope fit = $envelopeFit : medium box fit = $mediumBoxFit : large box fit = $largeBoxFit"
+    override def toString = s"total weight = $totalWeight envelope fit = $envelopeFit : small box fit = $smallBoxFit : medium box fit = $mediumBoxFit : large box fit = $largeBoxFit"
   }
 
-  case class ShipmentItemOption(weight: BigDecimal,
-                                envelopeFit: Boolean,
-                                mediumBoxFit: Int,
-                                largeBoxFit: Int)
+  trait ShipmentItem
+
+  case class ShipmentItemInfo(weight: BigDecimal,
+                              envelopeFit: Boolean,
+                              smallBoxFit: Int,
+                              mediumBoxFit: Int,
+                              largeBoxFit: Int) extends ShipmentItem
+
+  case object ShipmentItemEmpty extends ShipmentItem
 
 
   def getWeight(shippingStructure: List[String], subcategory: String): BigDecimal = {
@@ -59,43 +65,58 @@ object Calculator {
     s
   }
 
-  def calculateShipment(cartItems: List[CartItem]):ShipmentTotalOption = {
-    val cartShipmentOptions = cartItems.foldLeft(Nil: List[ShipmentItemOption]) {
+  def generateItemShipmentInfo(item: Item): ShipmentItem = {
+    val category = item.categoryName
+    val shipping = Translator.matchFromFile("conf/shipping.txt", category)
+    if (shipping.isEmpty)
+      ShipmentItemEmpty
+    else {
+      val shippingStructureFull = shipping.split(',').toList
+
+      val itemWeight = BigDecimal(shippingStructureFull(0))
+      val envelope = BigDecimal(shippingStructureFull(1))
+      val smallBoxPercentage = BigDecimal(shippingStructureFull(2))
+      val mediumBoxPercentage = BigDecimal(shippingStructureFull(3))
+      val largeBoxPercentage = BigDecimal(shippingStructureFull(4))
+
+      ShipmentItemInfo(itemWeight, envelope == 0, smallBoxPercentage.toInt, mediumBoxPercentage.toInt, largeBoxPercentage.toInt)
+    }
+  }
+
+
+  def calculateShipment(cartItems: List[CartItem]): ShipmentTotalOption = {
+    val cartShipmentOptions = cartItems.foldLeft(Nil: List[ShipmentItem]) {
       (sum, cartItem) =>
         val item = persistence.Item.getItem(cartItem.itemId)
-        val fullList = item.categoryName.split(':').toList.reverse
-        val shipping = Translator.matchFromFile("conf/shipping.txt", fullList.head)
-        val shippingStructureFull = shipping.split(',').toList
-        val subcategory = fullList.tail.head
-
-
-        val itemWeight = getWeight(shippingStructureFull.drop(0), subcategory)
-        val envelope = getWeight(shippingStructureFull.drop(3), subcategory)
-        val mediumBoxPercentage = getWeight(shippingStructureFull.drop(6), subcategory)
-        val largeBoxPercentage = getWeight(shippingStructureFull.drop(9), subcategory)
-
-        val itemShipmentOption = ShipmentItemOption(itemWeight, envelope == 0, mediumBoxPercentage.toInt, largeBoxPercentage.toInt)
+        val itemShipmentOption = generateItemShipmentInfo(item)
         itemShipmentOption :: sum
     }
 
-    val totalWeight = cartShipmentOptions.map(x => x.weight).sum
+    val nonEmptyShipmentOptions: List[ShipmentItemInfo] = for (si <- cartShipmentOptions if (si.isInstanceOf[ShipmentItemInfo])) yield si.asInstanceOf[ShipmentItemInfo]
+
+    val totalWeight = nonEmptyShipmentOptions.map(x => x.weight).sum
     val envelopeFit = {
       if (cartShipmentOptions.size > 1) false
-      else if (cartShipmentOptions(0).envelopeFit) true
+      else if (nonEmptyShipmentOptions(0).envelopeFit) true
       else false
     }
 
+    val smallBoxFit = {
+      if (nonEmptyShipmentOptions.map(x => x.smallBoxFit).sum > 100) false
+      else true
+    }
+
     val mediumBoxFit = {
-      if (cartShipmentOptions.map(x => x.mediumBoxFit).sum > 100) false
+      if (nonEmptyShipmentOptions.map(x => x.mediumBoxFit).sum > 100) false
       else true
     }
 
     val largeBoxFit = {
-      if (cartShipmentOptions.map(x => x.largeBoxFit).sum > 100) false
+      if (nonEmptyShipmentOptions.map(x => x.largeBoxFit).sum > 100) false
       else true
     }
 
-    val shipmentTotalOption = ShipmentTotalOption(totalWeight, envelopeFit, mediumBoxFit, largeBoxFit)
+    val shipmentTotalOption = ShipmentTotalOption(totalWeight, envelopeFit, smallBoxFit, mediumBoxFit, largeBoxFit)
 
     println(cartShipmentOptions)
 
