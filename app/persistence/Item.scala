@@ -83,7 +83,11 @@ object Item extends ModelCompanion[Item, ObjectId] {
 
   def categoryQuery(cat: String, brand: String, filter: String): MongoDBObject = {
     val queryBuilder = MongoDBObject.newBuilder
-    queryBuilder += "categoryName" -> (".*(?i)" + cat + ".*" + filter + ".*").r
+    if (cat.contains("Men")){
+      queryBuilder += "categoryName" -> (".*(?i):" + cat + ".*" + filter + ".*").r
+    } else {
+      queryBuilder += "categoryName" -> (".*(?i)" + cat + ".*" + filter + ".*").r
+    }
     if (!brand.isEmpty)
       queryBuilder += "specifics.Brand" -> (".*(?i)" + brand + ".*").r
     queryBuilder.result()
