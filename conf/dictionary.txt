@@ -20,11 +20,11 @@ Extra Large=Очень большой
 
 Metal Purity=Чистота металла/Проба
 
-Planners & Organazers=Органайзеры и блокноты
+Planners & Organizers=Органайзеры и блокноты
 
-Desk & Drawer Organazers=Органайзеры для рабочего места
+Desk & Drawer Organizers=Органайзеры для рабочего места
 
-Money Belts & Wallets=Органайзеры для денег и кошельки
+Money Belts & Wallets=Кошельки и зажимы
 
 Locks=Замки
 
@@ -45,6 +45,8 @@ Stainless Steel=Нержавеющая сталь
 White Gold=Белое золото
 
 Yellow Gold=Желтое золото
+
+Laptop Cases & Bags=Кейсы для ноутбуков
 
 
 
@@ -3598,7 +3600,7 @@ Red=Красный
 
 Yellow=Желтый
 
-MainStone Color=Цвет основного камня
+Main Stone Color=Цвет основного камня
 
 Sizable=Возможно изменение размера
 
