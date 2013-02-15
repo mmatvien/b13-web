@@ -32,6 +32,7 @@ object UI {
       val json = Json.parse("" + specs(index))
       ((json \ "name").as[String], (json \ "value").as[String])
     }
+    println(specs)
     (0 to specs.size - 1).foldLeft(Nil: List[(String, String)])((c, i) => extract(i) :: c)
   }
 
