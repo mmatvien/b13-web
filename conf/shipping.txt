@@ -288,7 +288,7 @@ Clothing, Shoes & Accessories:Kids' Clothing, Shoes & Accs:Boys' Accessories:Glo
 Jewelry & Watches:Fine Jewelry:Fine Earrings:Pearl=0.13,1,150,150,150
 Travel:Luggage Accessories:Luggage Tags=0.12,0,100,10,5
 Sporting Goods:Team Sports:Basketball:Clothing, Shoes & Accessories:Clothing:Youth=1.06,1,150,33,20
-Clothing, Shoes & Accessories:Men's Accessories:Money Clips=0.11.0,50,8,4
+Clothing, Shoes & Accessories:Men's Accessories:Money Clips=0.11,0,50,8,4
 Home & Garden:Home Decor:Candles=1.05,1,150,10,5
 Sporting Goods:Outdoor Sports:Fishing:Clothing, Shoes & Accessories:Footwear:Men=3.05,1,150,150,150
 Health & Beauty:Vision Care:Low Vision Magnifiers & Lenses=0.13,1,150,10,5
