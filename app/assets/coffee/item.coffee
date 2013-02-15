@@ -7,22 +7,36 @@ $ ->
   $('.custSel').change ->
     cunstructOptions(this.id)
     selectedValue = $('#' + jqSelector(this.id) + ' option:selected').val()
-    $('#' + selectedValue.replace(" ", "_")).click()
+    $('#' + selectedValue.replace(/\s/g, "_")).click()
 
   $('.product-photo-thumb').click ->
-    id = this.id
+    if(!selectPictureOption(this.id))
+      alert("option is missing")
+
+
+selectPictureOption = (pictureId) ->
+  optionExists = false
+  $('.custSel').each((nb) ->
     $('.custSel').each((n) ->
       selector = 'variations[' + n + '].value'
       optionArray = $('#' + jqSelector(selector) + ' option')
       optionArray.each(->
-        if($(this).val() == id)
-          $(this).val(id)
+        if($(this).val().replace(/\s/g, "_") == pictureId)
+          optionExists = true
           $(this).attr("selected", "selected")
+          cunstructOptions(selector)
       )
     )
+    if(!optionExists)
+      selectorA = 'variations[' + nb + '].value'
+      $('#' + jqSelector(selectorA)).val("---")
+      cunstructOptions(selectorA)
+  )
+
 
 
 cunstructOptions = (currentSelection) ->
+
   selectedName = $("label[for='" + currentSelection + "']").text()
   selectedValue = $('#' + jqSelector(currentSelection) + ' option:selected').val()
   # go through all selectors
@@ -60,7 +74,7 @@ selectOnlyOption = (selectorId) ->
       if(n == optionArray.length - 1)
         $(this).attr("selected", "selected")
         $('#' + jqSelector(selectorId)).val($(this).val())
-        $('#' + $(this).val().replace(" ", "")).click()
+        $('#' + $(this).val().replace(/\s/g, "_")).click()
     )
 
 

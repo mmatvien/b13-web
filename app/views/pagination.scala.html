@@ -6,7 +6,7 @@
         @if(currentPage > 1) {
             <li> <a href="javascript:(new Pager).goToPage(@(currentPage - 1))"> <<< </a></li>
         }
-        @for(x <- 1 until totalPages/30 + 1) {
+        @for(x <- 1 to totalPages/30 + 1) {
             @if(x == currentPage){
                 <li class="disabled" ><a id="pager_@x" href="javascript:(new Pager).goToPage(@x)">@x</a></li>
             } else {

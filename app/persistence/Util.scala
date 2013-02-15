@@ -15,7 +15,7 @@ import scala.Some
 object Util {
   def listU(li: String): List[String] = {
     val one = li.dropRight(1).drop(1)
-
+println(li)
     val arr = one.split(",")
     val result = arr.foldLeft(List(): List[String])((i, s) =>
       s.trim.toList.filter(x => x != '\"').mkString("") :: i
