@@ -13,6 +13,10 @@ $ ->
     if(!selectPictureOption(this.id))
       alert("option is missing")
 
+  $(".custSel").validate({
+    debug: true
+  })
+
 
 selectPictureOption = (pictureId) ->
   optionExists = false
@@ -36,7 +40,6 @@ selectPictureOption = (pictureId) ->
 
 
 cunstructOptions = (currentSelection) ->
-
   selectedName = $("label[for='" + currentSelection + "']").text()
   selectedValue = $('#' + jqSelector(currentSelection) + ' option:selected').val()
   # go through all selectors

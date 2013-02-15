@@ -17,14 +17,6 @@ $ ->
     else
       return decodeURIComponent(results[1].replace(/\+/g, " "))
 
-  #/* Single Select - allow only one selection */
-  #/* Toggle checked state and icon and also remove any other selections */
-  #  $('.singlecheck').click ->
-  #    $(this).parent().siblings().children().removeClass("checked")
-  #    $(this).parent().siblings().children().find("span").removeClass("icon-ok")
-  #    $(this).toggleClass("checked")
-  #    $(this).find("span").toggleClass("icon-ok")
-  #    return false
   urlString = window.location.href
   if(urlString.indexOf("boy") > 0)
     $('#dropBoy').addClass("active")

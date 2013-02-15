@@ -22,7 +22,24 @@ import util.FileUtil
 class ShippingTest extends FunSuite {
 
   val sellerList = List(
-    "aeropostale"
+    "reedsjewelers",
+    "ebags",
+    "tommyhilfiger",
+    "shopwss",
+    "nevadafashiondirect",
+    "aeropostale",
+    "thewatchery",
+    "watchgrabber",
+    "jomashop",
+    "guess_outlet",
+    "timberland",
+    "ilovedooney",
+    "desigerxframesxoutlet",
+    "josabank",
+    "calvinklein",
+    "solsticesunglasses",
+    "underarmour",
+    "xtremelooksforkids"
   )
 
   test("Item should have a non-zero shipping cost") {
