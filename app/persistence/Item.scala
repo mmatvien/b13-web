@@ -15,6 +15,7 @@ import com.novus.salat.dao._
  * Date: 12/16/12
  * Time: 9:57 PM
  */
+
 case class Variation(
                       pictures: List[VariationPictures],
                       specificsSet: Map[String, List[String]],
@@ -24,7 +25,6 @@ case class VariationSpecifics(
                                quantity: Int,
                                specific: List[Map[String, String]]
                                )
-
 
 case class VariationPictures(name: String, url: String)
 

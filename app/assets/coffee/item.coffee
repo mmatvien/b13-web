@@ -129,10 +129,11 @@ getSelectorOptions = (selector) ->
   )
 
 trim = (str) ->
-  if(str != "")
+  if(str != "" && str != undefined)
+    alert("trimming" + str)
     str.replace /^\s+|\s+$/g, ""
   else
-    str
+    ""+str
 
 jqSelector = (str) ->
   str.replace(/([;&,\.\+\*\~':"\!\^#$%@\[\]\(\)=>\|])/g, '\\$1')

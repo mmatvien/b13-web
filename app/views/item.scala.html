@@ -4,7 +4,7 @@
 
     <div class="clearfix template-product" id="product-content">
 
-        <div id="variationDataX" style="visibility:hidden;height: 1px;">
+        <div id="variationDataX"  style="visibility:hidden;height: 1px;">
            @for(spec <- item.variations.specifics){
                 quantity : @spec.quantity ^ @spec.quantity , @util.UI.extractVariationSpecs(spec.specific.toList).map { x =>
                    @util.Translator.translate(x._1) : @x._2 ^ @util.Translator.translate(x._2),
@@ -27,24 +27,24 @@
 
                 </li>
 
-                @if(!item.variations.specificsSet.keys.isEmpty) {
-                        @for((variation, index) <- item.variations.specificsSet.keys.toList.reverse.zipWithIndex) {
+                @for((spec, index) <- util.UI.constructVariationDropdowns(item.variations.specifics).keys.toList.reverse.zipWithIndex) {
 
-                       <li>
-                        <label for="variations[@index].value" style="width:215px; text-align:right; float:left; padding-right:7px; padding-top: 9px; ">@util.Translator.translate(variation)</label>
+                    <li>
+                    <label for="variations[@index].value" style="width:215px; text-align:right; float:left; padding-right:7px; padding-top: 9px; ">@util.Translator.translate(spec)</label>
 
-                        <input type="hidden" id="variations[@index].value_n" value="@util.Translator.translate(variation)">
+                    <input type="hidden" id="variations[@index].value_n" value="@util.Translator.translate(spec)">
 
-                        <select name="variations[@index].value" id="variations[@index].value" class="optionSelector@index custSel" style="height:30px; margin-bottom: 8px;">
-                            <option value="---">---</option>
-                        @for(value <- persistence.Util.listU("" + item.variations.specificsSet(variation))) {
+                    <select name="variations[@index].value" id="variations[@index].value" class="optionSelector@index custSel" style="height:30px; margin-bottom: 8px;">
+                    <option value="---">---</option>
+                        @for(value <- util.UI.constructVariationDropdowns(item.variations.specifics)(spec)) {
                             <option value = "@value">@util.Translator.translate(value)</option>
                         }
-                        </select>
+                    </select>
 
-                            <input type="hidden" id="variations[@index].name" name="variations[@index].name" value="@variation">
-                       </li>
-                        }
+                    <input type="hidden" id="variations[@index].name" name="variations[@index].name" value="@spec">
+                    </li>
+
+
                 }
 
                 <input type="hidden" name="collection" value="@item.collection">

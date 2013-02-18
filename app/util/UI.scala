@@ -26,13 +26,46 @@ object UI {
     res
   }
 
+  def constructVariationDropdowns(specifics: List[VariationSpecifics]): Map[String, List[String]] = {
 
-  def extractVariationSpecs(specs: List[Map[String, String]]): List[(String, String)] = {
-    def extract(index: Int): (String, String) = {
+    def extractTup(spec: List[Map[String, String]]): List[(String, String)] = {
+      (0 to spec.size - 1).map {
+        index =>
+          extract(index, spec)
+      }.toList
+    }
+
+
+    def extract(index: Int, specs: List[Map[String, String]]): (String, String) = {
       val json = Json.parse("" + specs(index))
       ((json \ "name").as[String], (json \ "value").as[String])
     }
-    println(specs)
+
+
+    var finalMap: Map[String, List[String]] = Map()
+
+    specifics.filter(d => d.quantity > 0).foreach {
+      spec =>
+        val tupList = extractTup(spec.specific)
+
+        for (tup <- tupList) {
+          val list = tup._2.replace(",","`") :: finalMap.getOrElse(tup._1, List())
+          finalMap += tup._1 -> list.toSet.toList
+        }
+
+    }
+
+    //println(finalMap)
+    finalMap
+  }
+
+
+  def extractVariationSpecs(specs: List[Map[String, String]]): List[(String, String)] = {
+
+    def extract(index: Int): (String, String) = {
+      val json = Json.parse("" + specs(index))
+      ((json \ "name").as[String], (json \ "value").as[String].replace(",","`"))
+    }
     (0 to specs.size - 1).foldLeft(Nil: List[(String, String)])((c, i) => extract(i) :: c)
   }
 
@@ -51,7 +84,7 @@ object UI {
 
   def compressCategory(category: String): String = {
     def normalize(str: String): String = {
-      str.replaceAll(" ", "").replaceAll("&", "_").replaceAll("'", "_").replace("(", "_").replace(")", "_").replace(",","_")
+      str.replaceAll(" ", "").replaceAll("&", "_").replaceAll("'", "_").replace("(", "_").replace(")", "_").replace(",", "_")
     }
     val pieces = category.split(":").toList
     if (pieces.size > 1) {

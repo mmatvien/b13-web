@@ -19,6 +19,7 @@ object Util {
     val result = arr.foldLeft(List(): List[String])((i, s) =>
       s.trim.toList.filter(x => x != '\"').mkString("") :: i
     )
+//    println(result)
 
     result
   }
