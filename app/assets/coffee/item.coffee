@@ -130,7 +130,6 @@ getSelectorOptions = (selector) ->
 
 trim = (str) ->
   if(str != "" && str != undefined)
-    alert("trimming" + str)
     str.replace /^\s+|\s+$/g, ""
   else
     ""+str
