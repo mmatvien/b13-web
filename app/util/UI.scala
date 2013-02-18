@@ -49,13 +49,11 @@ object UI {
         val tupList = extractTup(spec.specific)
 
         for (tup <- tupList) {
-          val list = tup._2.replace(",","`") :: finalMap.getOrElse(tup._1, List())
+          val list = tup._2.replace(",", "`") :: finalMap.getOrElse(tup._1, List())
           finalMap += tup._1 -> list.toSet.toList
         }
 
     }
-
-    //println(finalMap)
     finalMap
   }
 
@@ -64,7 +62,7 @@ object UI {
 
     def extract(index: Int): (String, String) = {
       val json = Json.parse("" + specs(index))
-      ((json \ "name").as[String], (json \ "value").as[String].replace(",","`"))
+      ((json \ "name").as[String], (json \ "value").as[String].replace(",", "`"))
     }
     (0 to specs.size - 1).foldLeft(Nil: List[(String, String)])((c, i) => extract(i) :: c)
   }
@@ -95,4 +93,21 @@ object UI {
 
   }
 
+  def generateShippingOptions(cartItems: List[persistence.CartItem]): List[(String, String)] = {
+    val so = Calculator.calculateShipment(cartItems)
+    var options: List[(String, String)] = Nil
+    if (so.envelopeFit) options = ("envelope", "конверт - " + (24.95 * Calculator.KURS_DOLLARA)) :: options
+    else if (so.smallBoxFit) options = ("smallBox", "маленький бокс - " + (24.95 * Calculator.KURS_DOLLARA)) :: options
+    else if (so.mediumBoxFit) options = ("smallBox", "средний бокс - " + (60.95 * Calculator.KURS_DOLLARA)) :: options
+    else if (so.largeBoxFit) options = ("smallBox", "средний бокс - " + (78.95 * Calculator.KURS_DOLLARA)) :: options
+
+    val weight = Calculator.calculateShipment(cartItems).totalWeight
+    if (weight < 1814)
+      options = ("firstClass", "first class mail - " + Calculator.shippingCostFirstClassMail(weight)) :: options
+    if (weight < 19958)
+      options = ("priority", "priority mail - " + Calculator.shippingCostPriorityMail(weight)) :: options
+
+
+    options
+  }
 }

@@ -88,13 +88,29 @@ object Calculator {
     val cartShipmentOptions = cartItems.foldLeft(Nil: List[ShipmentItem]) {
       (sum, cartItem) =>
         val item = persistence.Item.getItem(cartItem.itemId)
-        val itemShipmentOption = generateItemShipmentInfo(item)
-        itemShipmentOption :: sum
+       val sh = for (x <- 0 to cartItem.quantity) yield {
+          generateItemShipmentInfo(item)
+        }
+        sh :: sum
     }
+    def convertToGrams(oz: String): BigDecimal = {
+      val split = oz.split('.')
+      val o = BigDecimal(split(0).toInt)
+      if (split(1).toString.length < 2)
+        ((o * 16 + (("0" + split(1)).toInt * 10))) * 28.3495
+      else {
+        (o * 16 + BigDecimal(split(1).toInt)) * 28.3495
+      }
+    }
+
 
     val nonEmptyShipmentOptions: List[ShipmentItemInfo] = for (si <- cartShipmentOptions if (si.isInstanceOf[ShipmentItemInfo])) yield si.asInstanceOf[ShipmentItemInfo]
 
-    val totalWeight = nonEmptyShipmentOptions.map(x => x.weight).sum
+    val totalWeight = nonEmptyShipmentOptions.foldLeft(BigDecimal(0)) {
+      (c, i) =>
+        println(s" converting ${i.weight} = ${convertToGrams(i.weight.toString)}")
+        c + convertToGrams(i.weight.toString)
+    }
     val envelopeFit = {
       if (cartShipmentOptions.size > 1) false
       else if (nonEmptyShipmentOptions(0).envelopeFit) true
@@ -125,5 +141,12 @@ object Calculator {
     shipmentTotalOption
   }
 
+  def shippingCostPriorityMail(totalWeight: BigDecimal): BigDecimal = {
+    (1 + util.ShippingRef.priorityMail.filter(x => (x.gramsFrom < totalWeight && x.gramsTo > totalWeight)).head.price) * KURS_DOLLARA
+  }
+
+  def shippingCostFirstClassMail(totalWeight: BigDecimal): BigDecimal = {
+    (1 + util.ShippingRef.firstClass.filter(x => (x.gramsFrom < totalWeight && x.gramsTo > totalWeight)).head.price) * KURS_DOLLARA
+  }
 
 }

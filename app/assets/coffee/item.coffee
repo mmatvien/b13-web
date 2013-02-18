@@ -14,7 +14,13 @@ $ ->
       alert("option is missing")
 
   $(".custSel").validate({
-    debug: true
+    rules: {
+    name: "required",
+    email: {
+      required: true,
+      email: true
+    }
+    }
   })
 
 
