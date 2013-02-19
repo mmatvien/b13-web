@@ -10,7 +10,7 @@ import scala.BigDecimal.RoundingMode.HALF_UP
 import persistence.{Item, CartItem}
 
 object Calculator {
-  var KURS_DOLLARA: BigDecimal = 32
+  var KURS_DOLLARA: BigDecimal = 31
 
 
   def calculateFinalPrice(original: BigDecimal): BigDecimal = {
