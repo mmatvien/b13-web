@@ -11,10 +11,10 @@ $ ->
         $('#insuranceOption').css({visibility: 'hidden'})
         $('#insurancePrice').text("")
 
-  $('#insuranceOption').change ->
-    selectedValue = $('#' + this.id + ' option:selected').val()
-    if(selectedValue == "")
-      $('#insurancePrice').text("")
-      $('#insurancePrice').text("")
-    else
-      $('#insurancePrice').text(parseFloat(selectedValue).toFixed(2))
+  $('#insure').change ->
+    alert(this.selected)
+#    if(selectedValue == "")
+#      $('#insurancePrice').text("")
+#      $('#insurancePrice').text("")
+#    else
+#      $('#insurancePrice').text(parseFloat(selectedValue).toFixed(2))
