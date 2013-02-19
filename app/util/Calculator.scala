@@ -128,9 +128,7 @@ object Calculator {
       else true
     }
 
-    val shipmentTotalOption = ShipmentTotalOption(totalWeight, envelopeFit, smallBoxFit, mediumBoxFit, largeBoxFit)
-
-    shipmentTotalOption
+    ShipmentTotalOption(totalWeight, envelopeFit, smallBoxFit, mediumBoxFit, largeBoxFit)
   }
 
   def shippingCostPriorityMail(totalWeight: BigDecimal): Float = {

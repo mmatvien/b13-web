@@ -98,8 +98,8 @@ object UI {
     var options: List[(String, String)] = Nil
     if (so.envelopeFit) options = (f"envelope:${(24.95 * Calculator.KURS_DOLLARA)}%9.2f", "конверт") :: options
     else if (so.smallBoxFit) options = (f"smallBox:${(24.95 * Calculator.KURS_DOLLARA)}%9.2f", "маленький бокс") :: options
-    else if (so.mediumBoxFit) options = (f"smallBox:${(60.95 * Calculator.KURS_DOLLARA)}%9.2f", "средний бокс") :: options
-    else if (so.largeBoxFit) options = (f"smallBox:${(78.95 * Calculator.KURS_DOLLARA)}%9.2f", "средний бокс") :: options
+    else if (so.mediumBoxFit) options = (f"mediumBox:${(60.95 * Calculator.KURS_DOLLARA)}%9.2f", "средний бокс") :: options
+    else if (so.largeBoxFit) options = (f"bigBox:${(78.95 * Calculator.KURS_DOLLARA)}%9.2f", "большой бокс") :: options
 
     val weight = Calculator.calculateShipment(cartItems).totalWeight
     if (weight < 1814)
