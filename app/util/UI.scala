@@ -102,11 +102,11 @@ object UI {
     else if (so.largeBoxFit) options = (f"bigBox:${(78.95 * Calculator.KURS_DOLLARA)}%9.2f", "большой бокс") :: options
 
     val weight = Calculator.calculateShipment(cartItems).totalWeight
+
     if (weight < 1814)
       options = (f"firstClass:${Calculator.shippingCostFirstClassMail(weight)}%9.2f", "first class mail") :: options
     if (weight < 19958)
       options = (f"priority:${Calculator.shippingCostPriorityMail(weight)}%9.2f", "priority mail") :: options
-
 
     options
   }

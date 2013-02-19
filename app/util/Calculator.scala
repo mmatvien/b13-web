@@ -89,7 +89,7 @@ object Calculator {
       (sum, cartItem) =>
         val item = persistence.Item.getItem(cartItem.itemId)
         val itemShipmentOption = generateItemShipmentInfo(item)
-        val all = for(x <- 0 to cartItem.quantity) yield itemShipmentOption
+        val all = for(x <- 1 to cartItem.quantity) yield itemShipmentOption
         all.toList ::: sum
     }
 
