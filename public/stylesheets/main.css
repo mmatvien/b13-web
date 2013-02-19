@@ -2928,7 +2928,7 @@ a.slide-link {
     color:#1B1A1B;
     font-size:19px;
     padding-bottom:15px;
-    border-bottom:1px solid #302f30;
+    /*border-bottom:1px solid #302f30;*/
     margin:19px 0 20px 0;
     font-family:'Comfortaa', cursive;, Helvetica, Arial, sans-serif;
 }

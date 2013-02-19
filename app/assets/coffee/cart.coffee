@@ -16,4 +16,3 @@ $ ->
       $('#insurancePrice').text("")
     else
       $('#insurancePrice').text(selectedValue)
-      
