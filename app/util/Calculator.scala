@@ -8,6 +8,7 @@ package util
 
 import scala.BigDecimal.RoundingMode.HALF_UP
 import persistence.{Item, CartItem}
+import util.ShippingRef.PriorityInsurance
 
 object Calculator {
   var KURS_DOLLARA: BigDecimal = 31
@@ -89,7 +90,7 @@ object Calculator {
       (sum, cartItem) =>
         val item = persistence.Item.getItem(cartItem.itemId)
         val itemShipmentOption = generateItemShipmentInfo(item)
-        val all = for(x <- 1 to cartItem.quantity) yield itemShipmentOption
+        val all = for (x <- 1 to cartItem.quantity) yield itemShipmentOption
         all.toList ::: sum
     }
 
@@ -139,4 +140,8 @@ object Calculator {
     ((1 + util.ShippingRef.firstClass.filter(x => (x.gramsFrom < totalWeight && x.gramsTo > totalWeight)).head.price) * KURS_DOLLARA).toFloat
   }
 
+
+  def calculateInsurance(cost: BigDecimal): List[PriorityInsurance] = {
+    util.ShippingRef.priorityInsurance.filter(x => x.ins < cost)
+  }
 }
