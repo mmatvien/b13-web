@@ -119,10 +119,15 @@ object Item extends ModelCompanion[Item, ObjectId] {
 
 
   def changeState(itemId: String, state: Int) {
-    val item = getItem(itemId)
-    dao.update(q = MongoDBObject("itemId" -> itemId),
-      t = item.copy(state = state),
-      upsert = false, multi = false, wc = Item.dao.collection.writeConcern)
+    getItem(itemId) match {
+      case Some(item) => {
+        dao.update(q = MongoDBObject("itemId" -> itemId),
+          t = item.copy(state = state),
+          upsert = false, multi = false, wc = Item.dao.collection.writeConcern)
+      }
+      case None => // item not found
+    }
+
   }
 
 
@@ -131,8 +136,8 @@ object Item extends ModelCompanion[Item, ObjectId] {
     dao.find(quer).map(it => it.specifics.get("Brand").getOrElse("")).toSet.toList.sorted
   }
 
-  def getItem(itemId: String): Item = {
-    dao.findOne(MongoDBObject("itemId" -> itemId)).get
+  def getItem(itemId: String): Option[Item] = {
+    dao.findOne(MongoDBObject("itemId" -> itemId))
   }
 
 }

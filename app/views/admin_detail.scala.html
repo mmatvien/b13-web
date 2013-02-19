@@ -12,18 +12,18 @@
             }
             </td>
             <td style="width:200px;">
-                <a href = "@persistence.Item.getItem(item.itemId).itemUrl" target="_blank">@persistence.Item.getItem(item.itemId).title</a>
+                <a href = "@persistence.Item.getItem(item.itemId).get.itemUrl" target="_blank">@persistence.Item.getItem(item.itemId).get.title</a>
             </td>
             <td style="width:400px;">
-                @if(persistence.Item.getItem(item.itemId).state == 0) {
+                @if(persistence.Item.getItem(item.itemId).get.state == 0) {
                     <button class="btn btn-danger" id="button1_@item.itemId">not ordered</button>
                     <a class="invisible" id="link1_@item.itemId" href="/admin/orders/ordered/@item.collection/@item.itemId">q</a>
                 }
-                @if(persistence.Item.getItem(item.itemId).state == 1) {
+                @if(persistence.Item.getItem(item.itemId).get.state == 1) {
                     <button class="btn btn-info" id="button2_@item.itemId">not received</button>
                     <a class="invisible" id="link2_@item.itemId" href="/admin/orders/received/@item.collection/@item.itemId">q</a>
                 }
-                @if(persistence.Item.getItem(item.itemId).state == 2) {
+                @if(persistence.Item.getItem(item.itemId).get.state == 2) {
                     not shipped
                 }
             </td>

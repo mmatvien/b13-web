@@ -59,7 +59,10 @@ object Application extends Controller with SessionHelper {
 
   def item(collection: String, itemId: String) = Action {
     implicit request =>
-      Ok(views.html.item(Item.getItem(itemId))).withSession("uuid" -> sessionN(request))
+      Item.getItem(itemId) match {
+        case Some(item) => Ok(views.html.item(item)).withSession("uuid" -> sessionN(request))
+        case None => Redirect("/")
+      }
   }
 
 
@@ -101,16 +104,24 @@ object Application extends Controller with SessionHelper {
 
 
   def currentCartItems(implicit sessionInfo: SessionInfo): List[CartItem] = Cart.findSessionCart(sessionInfo.sessionId) match {
-    case Some(cart) => cart.cartItems
+    case Some(cart) => cart.cartItems.filter {
+      cartItem => {
+        persistence.Item.getItem(cartItem.itemId) match {
+          case Some(item) => true
+          case None => {
+            Cart.removeItem(sessionInfo.sessionId, cartItem.toHash)
+            false
+          }
+        }
+      }
+    }
     case None => List()
   }
 
 
   def remove(cartItemHash: String) = Action {
     implicit request =>
-
       Cart.removeItem(sessionInfo.sessionId, cartItemHash)
-
       Redirect("/cart").flashing("success" -> "cart item removed")
   }
 
@@ -145,7 +156,6 @@ object Application extends Controller with SessionHelper {
         }
       }
       )
-
       if (action == "оформить") Ok(views.html.payment(currentCartItems)).flashing("success" -> "cart item updated")
       else Ok(views.html.cart(currentCartItems)).flashing("success" -> "cart item updated")
   }

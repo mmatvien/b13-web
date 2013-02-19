@@ -101,7 +101,6 @@ object Cart extends ModelCompanion[Cart, ObjectId] {
 
 
   def removeItem(sessionId: String, itemToRemoveHash: String) {
-
     findSessionCart(sessionId) match {
       case Some(cart) => {
         if (cart.cartItems.size > 1) {

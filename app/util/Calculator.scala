@@ -36,7 +36,8 @@ object Calculator {
                                  envelopeFit: Boolean,
                                  smallBoxFit: Boolean,
                                  mediumBoxFit: Boolean,
-                                 largeBoxFit: Boolean) {
+                                 largeBoxFit: Boolean,
+                                 firstClassAvailable:Boolean ) {
     override def toString = s"total weight = $totalWeight envelope fit = $envelopeFit : small box fit = $smallBoxFit : medium box fit = $mediumBoxFit : large box fit = $largeBoxFit"
   }
 
@@ -46,25 +47,11 @@ object Calculator {
                               envelopeFit: Boolean,
                               smallBoxFit: Int,
                               mediumBoxFit: Int,
-                              largeBoxFit: Int) extends ShipmentItem
+                              largeBoxFit: Int,
+                              firstClassAvailable:Boolean) extends ShipmentItem
 
   case object ShipmentItemEmpty extends ShipmentItem
 
-
-  def getWeight(shippingStructure: List[String], subcategory: String): BigDecimal = {
-
-    println(subcategory)
-
-    val s: BigDecimal = {
-      if (shippingStructure.size > 1) {
-        if (subcategory.contains("Men")) BigDecimal(shippingStructure(0))
-        else if (subcategory.contains("Women")) BigDecimal(shippingStructure(1))
-        else if (subcategory.contains("Kid") || subcategory.contains("Boy") || subcategory.contains("Girl")) BigDecimal(shippingStructure(2))
-        else BigDecimal(0)
-      } else BigDecimal(0)
-    }
-    s
-  }
 
   def generateItemShipmentInfo(item: Item): ShipmentItem = {
     val category = item.categoryName
@@ -79,19 +66,26 @@ object Calculator {
       val smallBoxPercentage = BigDecimal(shippingStructureFull(2))
       val mediumBoxPercentage = BigDecimal(shippingStructureFull(3))
       val largeBoxPercentage = BigDecimal(shippingStructureFull(4))
+      val firstClassAvailable = !category.contains("Wristwatches")
 
-      ShipmentItemInfo(itemWeight, envelope == 0, smallBoxPercentage.toInt, mediumBoxPercentage.toInt, largeBoxPercentage.toInt)
+      ShipmentItemInfo(itemWeight, envelope == 0, smallBoxPercentage.toInt, mediumBoxPercentage.toInt, largeBoxPercentage.toInt, firstClassAvailable)
     }
   }
 
 
   def calculateShipment(cartItems: List[CartItem]): ShipmentTotalOption = {
+
     val cartShipmentOptions = cartItems.foldLeft(Nil: List[ShipmentItem]) {
       (sum, cartItem) =>
-        val item = persistence.Item.getItem(cartItem.itemId)
-        val itemShipmentOption = generateItemShipmentInfo(item)
-        val all = for (x <- 1 to cartItem.quantity) yield itemShipmentOption
-        all.toList ::: sum
+       persistence.Item.getItem(cartItem.itemId) match {
+         case Some(item) =>  {
+           val itemShipmentOption = generateItemShipmentInfo(item)
+           val all = for (x <- 1 to cartItem.quantity) yield itemShipmentOption
+           all.toList ::: sum
+         }
+         case None => sum
+       }
+
     }
 
     def convertToGrams(oz: String): BigDecimal = {
@@ -129,7 +123,7 @@ object Calculator {
       else true
     }
 
-    ShipmentTotalOption(totalWeight, envelopeFit, smallBoxFit, mediumBoxFit, largeBoxFit)
+    ShipmentTotalOption(totalWeight, envelopeFit, smallBoxFit, mediumBoxFit, largeBoxFit, nonEmptyShipmentOptions.filter(x => !x.firstClassAvailable).isEmpty)
   }
 
   def shippingCostPriorityMail(totalWeight: BigDecimal): Float = {

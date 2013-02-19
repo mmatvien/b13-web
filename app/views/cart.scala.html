@@ -24,11 +24,11 @@
                 <tr class="cart-row">
                     <td class="cart-item">
                         <a href="/collection/@item.collection/item/@item.itemId">
-                            <img src="@persistence.Item.getItem(item.itemId).mainPicture"/>
+                            <img src="@persistence.Item.getItem(item.itemId).get.mainPicture"/>
                         </a>
                     </td>
                     <td class="cart-detail">
-                        <h2><a href="/collection/@item.collection/item/@item.itemId">@util.Translator.translate(persistence.Item.getItem(item.itemId).title)</a>
+                        <h2><a href="/collection/@item.collection/item/@item.itemId">@util.Translator.translate(persistence.Item.getItem(item.itemId).get.title)</a>
                         </h2>
 
                         @for((variation, indexVariation) <- item.variations.zipWithIndex){
@@ -59,7 +59,7 @@
 
 
             <div id="cart-meta">
-                <div id="cart-subtotal"> итого <div id="subtotal" style="float:right; padding-left: 25px; font-size: 1.5em;">@cartItems.map(x => x.price * x.quantity).sum </div> </div>
+                <div id="cart-subtotal"> итого <div id="subtotal" style="float:right; padding-left: 25px; font-size: 1em;">@cartItems.map(x => x.price * x.quantity).sum </div> </div>
 
                 <div id="estimated-shipping">
 
@@ -86,8 +86,10 @@
                     </div>
                     <div id="insurancePrice" style="float:right;text-align: right;font-size: 1.5em; padding-top: 12px;"></div>
                 </div>
-<br><br><br>
-                <div id="grand-total" style="font-size: 1.5em; padding-bottom: 15px;"></div>
+
+                <br>
+
+                <div id="grand-total" style="font-size: 2em; padding-bottom: 15px;"></div>
                 <input id="checkout-button" class="styled-submit smooth" type="submit" name="update" value="оформить">
             </div>
             <!-- #cart-meta -->

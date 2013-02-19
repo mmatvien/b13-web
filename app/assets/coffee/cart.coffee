@@ -5,15 +5,20 @@ $ ->
     selectedValue = $('#' + this.id + ' option:selected').val()
     if(selectedValue == "")
       $('#shippingPrice').text("")
+      $('#insure').prop('checked', false)
+      $('#insurancePrice').text("")
       updateTotal()
     else
       $('#shippingPrice').text(selectedValue.split(":")[1])
       if(selectedValue.split(":")[0] == "priority" || selectedValue.split(":")[0] == "mediumBox" || selectedValue.split(":")[0] == "bigBox")
         $('#insuranceOption').css({visibility: 'visible'})
         $('#insure').prop('checked', false)
+        $('#insurancePrice').text("")
         updateTotal()
       else
         $('#insuranceOption').css({visibility: 'hidden'})
+        $('#insurancePrice').text("")
+        $('#insure').prop('checked', false)
         $('#insurancePrice').text("")
         updateTotal()
 
