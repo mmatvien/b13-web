@@ -40,7 +40,7 @@ object ShippingRef {
     ShippingPrice(1361, 1474, 33.40),
     ShippingPrice(1474, 1588, 35.25),
     ShippingPrice(1588, 1701, 37.10),
-    ShippingPrice(1701, 1814, 38.95)
+    ShippingPrice(1701, 1814.369, 38.95)
   )
 
   val priorityMail = List(
@@ -87,7 +87,7 @@ object ShippingRef {
     ShippingPrice(18144, 18597, 204.60),
     ShippingPrice(18597, 19051, 208.65),
     ShippingPrice(19051, 19504, 212.70),
-    ShippingPrice(19504, 19958, 216.75)
+    ShippingPrice(19504, 19958.049, 216.75)
   )
 
   val priorityInsurance = List(
