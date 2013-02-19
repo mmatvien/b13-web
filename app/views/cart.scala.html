@@ -72,9 +72,9 @@
                         </select>
 
                     </div>
-                    <div id="shippingPrice" style="float:right;text-align: right;font-size: 1.5em;"></div>
+                    <div id="shippingPrice" style="float:right;text-align: right;font-size: 1.5em; padding-top: 8px;"></div>
 
-                    <div id="insurance" style="padding-top: 10px; float:left;">
+                    <div id="insurance" style="padding-top: 10px; float:left; visibility: hidden;">
                         <select id="insuranceOption">
                             <option value=""> -- страховка -- </option>
                             @for(ins <- util.ShippingRef.priorityInsurance){
@@ -82,7 +82,7 @@
                             }
                          </select>
                     </div>
-                    <div id="insurancePrice" style="float:right;text-align: right;font-size: 1.5em;"></div>
+                    <div id="insurancePrice" style="float:right;text-align: right;font-size: 1.5em; padding-top: 12px;"></div>
                 </div>
 <br><br><br>
                 <input id="checkout-button" class="styled-submit smooth" type="submit" name="update" value="оформить">

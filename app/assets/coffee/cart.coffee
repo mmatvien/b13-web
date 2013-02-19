@@ -9,10 +9,12 @@ $ ->
         $('#insuranceOption').css({visibility: 'visible'})
       else
         $('#insuranceOption').css({visibility: 'hidden'})
+        $('#insurancePrice').text("")
 
   $('#insuranceOption').change ->
     selectedValue = $('#' + this.id + ' option:selected').val()
     if(selectedValue == "")
       $('#insurancePrice').text("")
+      $('#insurancePrice').text("")
     else
-      $('#insurancePrice').text(selectedValue)
+      $('#insurancePrice').text(parseFloat(selectedValue).toFixed(2))
