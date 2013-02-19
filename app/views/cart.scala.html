@@ -78,7 +78,7 @@
                         <select id="insuranceOption">
                             <option value=""> -- страховка -- </option>
                             @for(ins <- util.ShippingRef.priorityInsurance){
-                                <option value="@ins.price"> @ins.ins </option>
+                                <option value="@(ins.price * util.Calculator.KURS_DOLLARA)"> @(ins.ins* util.Calculator.KURS_DOLLARA) </option>
                             }
                          </select>
                     </div>
