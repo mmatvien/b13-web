@@ -88,11 +88,11 @@ object Calculator {
     val cartShipmentOptions = cartItems.foldLeft(Nil: List[ShipmentItem]) {
       (sum, cartItem) =>
         val item = persistence.Item.getItem(cartItem.itemId)
-       val sh = for (x <- 0 to cartItem.quantity) yield {
-          generateItemShipmentInfo(item)
-        }
-        sh :: sum
+        val itemShipmentOption = generateItemShipmentInfo(item)
+        val all = for(x <- 0 to cartItem.quantity) yield itemShipmentOption
+        all.toList ::: sum
     }
+
     def convertToGrams(oz: String): BigDecimal = {
       val split = oz.split('.')
       val o = BigDecimal(split(0).toInt)
@@ -106,11 +106,7 @@ object Calculator {
 
     val nonEmptyShipmentOptions: List[ShipmentItemInfo] = for (si <- cartShipmentOptions if (si.isInstanceOf[ShipmentItemInfo])) yield si.asInstanceOf[ShipmentItemInfo]
 
-    val totalWeight = nonEmptyShipmentOptions.foldLeft(BigDecimal(0)) {
-      (c, i) =>
-        println(s" converting ${i.weight} = ${convertToGrams(i.weight.toString)}")
-        c + convertToGrams(i.weight.toString)
-    }
+    val totalWeight = nonEmptyShipmentOptions.foldLeft(BigDecimal(0))((c, i) => c + convertToGrams(i.weight.toString()))
     val envelopeFit = {
       if (cartShipmentOptions.size > 1) false
       else if (nonEmptyShipmentOptions(0).envelopeFit) true
@@ -134,19 +130,15 @@ object Calculator {
 
     val shipmentTotalOption = ShipmentTotalOption(totalWeight, envelopeFit, smallBoxFit, mediumBoxFit, largeBoxFit)
 
-    println(cartShipmentOptions)
-
-    println(shipmentTotalOption)
-
     shipmentTotalOption
   }
 
-  def shippingCostPriorityMail(totalWeight: BigDecimal): BigDecimal = {
-    (1 + util.ShippingRef.priorityMail.filter(x => (x.gramsFrom < totalWeight && x.gramsTo > totalWeight)).head.price) * KURS_DOLLARA
+  def shippingCostPriorityMail(totalWeight: BigDecimal): Float = {
+    ((1 + util.ShippingRef.priorityMail.filter(x => (x.gramsFrom < totalWeight && x.gramsTo > totalWeight)).head.price) * KURS_DOLLARA).toFloat
   }
 
-  def shippingCostFirstClassMail(totalWeight: BigDecimal): BigDecimal = {
-    (1 + util.ShippingRef.firstClass.filter(x => (x.gramsFrom < totalWeight && x.gramsTo > totalWeight)).head.price) * KURS_DOLLARA
+  def shippingCostFirstClassMail(totalWeight: BigDecimal): Float = {
+    ((1 + util.ShippingRef.firstClass.filter(x => (x.gramsFrom < totalWeight && x.gramsTo > totalWeight)).head.price) * KURS_DOLLARA).toFloat
   }
 
 }

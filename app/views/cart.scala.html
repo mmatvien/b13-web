@@ -59,19 +59,32 @@
 
 
             <div id="cart-meta">
-                <h3 id="cart-subtotal">итого <em>@cartItems.map(x => x.price * x.quantity).sum</em></h3>
+                <h3 id="cart-subtotal"> итого <em> @cartItems.map(x => x.price * x.quantity).sum </em> </h3>
 
-z
-                <select id="shippingOption">
-                    <option value=""> -- способ доставки -- </option>
-                    @for(shippingOption <- util.UI.generateShippingOptions(cartItems)) {
-                        <option value="@shippingOption._1"> @shippingOption._2 </option>
-                    }
-                </select>
+                <div id="estimated-shipping">
 
-                <h3 id="estimated-shipping">+ доставка</h3>
+                    <div style="float:left;">
+                        <select id="shippingOption">
+                            <option value=""> -- способ доставки -- </option>
+                            @for(shippingOption <- util.UI.generateShippingOptions(cartItems)) {
+                                <option value="@shippingOption._1"> @shippingOption._2 </option>
+                            }
+                        </select>
 
+                    </div>
+                    <div id="shippingPrice" style="float:right;text-align: right;font-size: 1.5em;"></div>
 
+                    <div id="insurance" style="padding-top: 10px; float:left;">
+                        <select id="insuranceOption">
+                            <option value=""> -- страховка -- </option>
+                            @for(ins <- util.ShippingRef.priorityInsurance){
+                                <option value="@ins.price"> @ins.ins </option>
+                            }
+                         </select>
+                    </div>
+                    <div id="insurancePrice" style="float:right;text-align: right;font-size: 1.5em;"></div>
+                </div>
+<br><br><br>
                 <input id="checkout-button" class="styled-submit smooth" type="submit" name="update" value="оформить">
             </div>
             <!-- #cart-meta -->
@@ -94,5 +107,5 @@ z
     </div>
 </div>
 
-
+    <script type="text/javascript" src="/assets/coffee/cart.js"></script>
 }

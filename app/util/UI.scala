@@ -96,16 +96,16 @@ object UI {
   def generateShippingOptions(cartItems: List[persistence.CartItem]): List[(String, String)] = {
     val so = Calculator.calculateShipment(cartItems)
     var options: List[(String, String)] = Nil
-    if (so.envelopeFit) options = ("envelope", "конверт - " + (24.95 * Calculator.KURS_DOLLARA)) :: options
-    else if (so.smallBoxFit) options = ("smallBox", "маленький бокс - " + (24.95 * Calculator.KURS_DOLLARA)) :: options
-    else if (so.mediumBoxFit) options = ("smallBox", "средний бокс - " + (60.95 * Calculator.KURS_DOLLARA)) :: options
-    else if (so.largeBoxFit) options = ("smallBox", "средний бокс - " + (78.95 * Calculator.KURS_DOLLARA)) :: options
+    if (so.envelopeFit) options = (f"envelope:${(24.95 * Calculator.KURS_DOLLARA)}%9.2f", "конверт") :: options
+    else if (so.smallBoxFit) options = (f"smallBox:${(24.95 * Calculator.KURS_DOLLARA)}%9.2f", "маленький бокс") :: options
+    else if (so.mediumBoxFit) options = (f"smallBox:${(60.95 * Calculator.KURS_DOLLARA)}%9.2f", "средний бокс") :: options
+    else if (so.largeBoxFit) options = (f"smallBox:${(78.95 * Calculator.KURS_DOLLARA)}%9.2f", "средний бокс") :: options
 
     val weight = Calculator.calculateShipment(cartItems).totalWeight
     if (weight < 1814)
-      options = ("firstClass", "first class mail - " + Calculator.shippingCostFirstClassMail(weight)) :: options
+      options = (f"firstClass:${Calculator.shippingCostFirstClassMail(weight)}%9.2f", "first class mail") :: options
     if (weight < 19958)
-      options = ("priority", "priority mail - " + Calculator.shippingCostPriorityMail(weight)) :: options
+      options = (f"priority:${Calculator.shippingCostPriorityMail(weight)}%9.2f", "priority mail") :: options
 
 
     options
