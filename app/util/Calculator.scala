@@ -141,7 +141,8 @@ object Calculator {
   }
 
 
-  def calculateInsurance(cost: BigDecimal): List[PriorityInsurance] = {
-    util.ShippingRef.priorityInsurance.filter(x => x.ins < cost)
+  def calculateInsurance(cost: BigDecimal): Float = {
+    val fileted = util.ShippingRef.priorityInsurance.filter(x => x.ins * KURS_DOLLARA < cost)
+    (fileted.head.price * KURS_DOLLARA ).toFloat
   }
 }
