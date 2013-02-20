@@ -43,3 +43,4 @@ GET   /admin/login   	                         controllers.Auth.login
 GET     /assets/*file                           controllers.Assets.at(path="/public", file)
 GET     /*file                                  controllers.Assets.at(path="/public", file)
 
+

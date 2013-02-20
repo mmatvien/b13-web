@@ -34,12 +34,18 @@
 
                     <input type="hidden" id="variations[@index].value_n" value="@util.Translator.translate(spec)">
 
-                    <select name="variations[@index].value" id="variations[@index].value" class="optionSelector@index custSel" style="height:30px; margin-bottom: 8px;">
+
+                    <select name="variations[@index].value" id="variations[@index].value" class="optionSelector@index custSel below" style="height:30px; margin-bottom: 8px; ">
                     <option value="---">---</option>
                         @for(value <- util.UI.constructVariationDropdowns(item.variations.specifics)(spec)) {
                             <option value = "@value">@util.Translator.translate(value)</option>
                         }
                     </select>
+
+                        @if(spec.contains("Size")) {
+                            @statics.sizes_general()
+                            <div style="float:right; width: 90px; padding-left: 10px; text-align: right; padding-right: 35px;"><a href="#myModal" data-toggle="modal"> <i class="icon-list-alt"></i>  таблица размеров </a> </div>
+                        }
 
                     <input type="hidden" id="variations[@index].name" name="variations[@index].name" value="@spec">
                     </li>
@@ -52,7 +58,7 @@
                 <input type="hidden" name="itemId" value="@item.itemId">
 
 
-                <li id="product-add">
+                <li id="product-add" class="below">
                     <div id="product-add-wrap">
                         <div id="product-add-medallion" class=""></div> <!-- #product-add-medallion -->
                         <input type="submit" name="add" id="add" value="в корзину" class="smooth">
@@ -98,8 +104,6 @@
                                 </a>
                             }
                         }
-
-
 
                     }
                 }
