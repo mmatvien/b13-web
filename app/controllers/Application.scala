@@ -47,7 +47,7 @@ object Application extends Controller with SessionHelper {
         val pagerSize = Item.findCategoryPagerSize(section, category, brand, filter, size)
         Ok(views.html.collection(section, items, brands, page, pagerSize)).withSession("uuid" -> sessionN(request))
       } else {
-        println("seller search " + br)
+        println("seller search " + section)
         val items = Item.findSellerItems(section, cat, filter, size, page)
         val pagerSize = Item.findSellerPagerSize(section, cat, filter, size)
         Ok(views.html.collection(section, items, brands, page, pagerSize)).withSession("uuid" -> sessionN(request))
@@ -199,7 +199,6 @@ object Application extends Controller with SessionHelper {
       questionForm.bindFromRequest.fold(
       errors => BadRequest, {
         case (question: Question) => {
-          println(" ---- questions")
           Question.save(Question(question.email, question.question, Some(DateTime.now), Some(0)))
           Ok.flashing("success" -> "спасибо за вопрос")
         }
