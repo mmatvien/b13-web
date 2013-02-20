@@ -127,12 +127,13 @@ object Calculator {
   }
 
   def shippingCostPriorityMail(totalWeight: BigDecimal): Float = {
-    ((1 + util.ShippingRef.priorityMail.filter(x => (x.gramsFrom < totalWeight && x.gramsTo > totalWeight)).head.price) * KURS_DOLLARA).toFloat
+    println(totalWeight)
+    ((1 + util.ShippingRef.priorityMail.filter(x => (x.gramsFrom <= totalWeight && x.gramsTo > totalWeight)).head.price) * KURS_DOLLARA).toFloat
   }
 
   def shippingCostFirstClassMail(totalWeight: BigDecimal): Float = {
     println(totalWeight)
-    ((1 + util.ShippingRef.firstClass.filter(x => (x.gramsFrom < totalWeight && x.gramsTo > totalWeight)).head.price) * KURS_DOLLARA).toFloat
+    ((1 + util.ShippingRef.firstClass.filter(x => (x.gramsFrom <= totalWeight && x.gramsTo > totalWeight)).head.price) * KURS_DOLLARA).toFloat
   }
 
 
