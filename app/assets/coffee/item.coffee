@@ -7,21 +7,11 @@ $ ->
   $('.custSel').change ->
     cunstructOptions(this.id)
     selectedValue = $('#' + jqSelector(this.id) + ' option:selected').val()
-    $('#' + selectedValue.replace(/\s/g, "_")).click()
+    $('#' + selectedValue.replace(/\s/g, "_").replace(/\//g,"_")).click()
 
   $('.product-photo-thumb').click ->
     if(!selectPictureOption(this.id))
       alert("option is missing")
-
-  $(".custSel").validate({
-    rules: {
-    name: "required",
-    email: {
-      required: true,
-      email: true
-    }
-    }
-  })
 
 
 selectPictureOption = (pictureId) ->
@@ -31,7 +21,7 @@ selectPictureOption = (pictureId) ->
       selector = 'variations[' + n + '].value'
       optionArray = $('#' + jqSelector(selector) + ' option')
       optionArray.each(->
-        if($(this).val().replace(/\s/g, "_") == pictureId)
+        if($(this).val().replace(/\s/g, "_").replace(/\//g,"_") == pictureId && !optionExists)
           optionExists = true
           $(this).attr("selected", "selected")
           cunstructOptions(selector)
@@ -52,7 +42,8 @@ cunstructOptions = (currentSelection) ->
   $('.custSel').each((x) ->
     selector = jqSelector('variations[' + x + '].value')
     currentS = $('#' + selector)
-    if (currentS.attr('id') != currentSelection)
+    currentSelectedVal = $('#' + selector + ' option:selected').val()
+    if (currentS.attr('id') != currentSelection && selectedValue != currentSelectedVal)
       selectorName =  $("#" + jqSelector(currentS.attr('id')) + "_n").val()
       revalidateSelector(currentS, selectorName, selectedName, selectedValue)
   )
@@ -83,7 +74,7 @@ selectOnlyOption = (selectorId) ->
       if(n == optionArray.length - 1)
         $(this).attr("selected", "selected")
         $('#' + jqSelector(selectorId)).val($(this).val())
-        $('#' + $(this).val().replace(/\s/g, "_")).click()
+        $('#' + $(this).val().replace(/\s/g, "_").replace(/\//g,"_")).click()
     )
 
 

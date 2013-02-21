@@ -72,11 +72,11 @@ object UI {
     def exists(spec: VariationSpecifics): List[Int] = {
       extractVariationSpecs(spec.specific.toList).map {
         x =>
-          if (x._2.replaceAll(" ", "_") == pic) 1
+          if (x._2.replaceAll(" ", "_").replaceAll("/","_") == pic) 1
           else 0
       }
     }
-    val x = sp.map(d => exists(d)).flatten
+    val x = sp.filter(d => d.quantity > 0).map(d => exists(d)).flatten
     x.contains(1)
   }
 
