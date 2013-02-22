@@ -36,7 +36,7 @@
 
                     <input type="hidden" id="variations[@index].value_n" value="@util.Translator.translate(spec)">
 
-                  
+
 
                     <select name="variations[@index].value" id="variations[@index].value" class="optionSelector@index custSel below validate select" style="height:30px; margin-bottom: 8px; ">
                     <option value="---">---</option>
@@ -143,15 +143,5 @@
     <script type="text/javascript" src="/assets/coffee/item.js"></script>
     <script type="text/javascript" src="/assets/coffee/validate.js"></script>
     <script src="@routes.Assets.at("javascripts/jquery.colorbox-min2.js")" type="text/javascript"></script>
-    <script type="text/javascript">
-            $(document).ready(function() {
-            errorMessages = [];
-            errorMessages[$('#variations\[0\].value').attr("id")] = "Last name is invalid.";
-            errorMessages[$('#firstname').attr("id")] = "First name is invalid.";
-            errorMessages[$('#city').attr("id")] = "City is invalid.";
-            errorMessages[$('#email').attr("id")] = "Email is invalid. ex.: info@@domain.ca";
-            errorMessages[$('#code').attr("id")] = "ex.: A1A 1A1";
-            errorMessages[$('#province').attr("id")] = "Select a province.";
-            });
-    </script>
+
 }
