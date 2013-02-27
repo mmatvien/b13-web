@@ -27,3 +27,9 @@
     margin-top: 20px;
     margin-left: 15px;
 }
+
+.error {
+    color: red;
+    float:left;
+
+}
