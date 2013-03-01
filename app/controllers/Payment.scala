@@ -170,8 +170,7 @@ object Payment extends Controller with SessionHelper {
         | <br><br>
         |
         |<i>С уважением, администрация BRAND13</i>
-        |
-        | <a href="http://brand13.com/"> <img src="http://brand13.com/assets/images/logo-265.png" style="width: 150px;"/> </a>
+        |<a href="http://brand13.com/"> <img src="http://brand13.com/assets/images/logo-265.png" style="width: 150px;"/> </a>
         |<br>
       """.stripMargin
 
