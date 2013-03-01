@@ -148,8 +148,6 @@ object Payment extends Controller with SessionHelper {
     val messageHtml =
       s"""
         |
-        | <a href="http://brand13.com/"> <img src="http://brand13.com/assets/images/logo-265.png" style="width: 150px;"/> </a>
-        |<br>
         |Спасибо за покупку в магазине BRAND13<br><br>
         |Номер вашего заказа <b>$orderId</b><br><br>
         |
@@ -160,8 +158,6 @@ object Payment extends Controller with SessionHelper {
         |
         |<br>
         |Итого к оплате: ${payment.total} <br> <br> <br>
-        |
-        |
         |
         |По факту отправки заказа из США вам будет отправлено электронное письмо с номером отслеживания.<br>
         |
@@ -175,6 +171,8 @@ object Payment extends Controller with SessionHelper {
         |
         |<i>С уважением, администрация BRAND13</i>
         |
+        | <a href="http://brand13.com/"> <img src="http://brand13.com/assets/images/logo-265.png" style="width: 150px;"/> </a>
+        |<br>
       """.stripMargin
 
 
@@ -184,7 +182,7 @@ object Payment extends Controller with SessionHelper {
       465,
       "smtp.gmail.com",
       "maxirullc@gmail.com",
-      "freed0M11"
+      "azoezihiukncjnfi"
     )
 
     val email = EmailMessage(
