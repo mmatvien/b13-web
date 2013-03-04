@@ -6,8 +6,7 @@ import persistence._
 import play.api.data.Form
 import play.api.data.Forms._
 import java.util.Date
-import scala.Some
-import services.{EmailService, EmailMessage, SmtpConfig}
+import services.EmailService
 import concurrent.duration._
 import persistence.CartItem
 import scala.Some
@@ -86,7 +85,6 @@ object Payment extends Controller with SessionHelper {
             )
           )
         )
-
         Cart.updateCartState(cart, 1)
         sendEmails(cart, payment, orderId)
         orderId
@@ -96,28 +94,35 @@ object Payment extends Controller with SessionHelper {
 
   }
 
+  def checkCartItems(sessionId: String): Boolean = {
+    val sessionCart: Option[Cart] = Cart.findSessionCart(sessionId)
+    sessionCart match {
+      case Some(cart) => services.EbayService.checkCartWithVendor(cart)
+      case None => false
+    }
+  }
+
   def payment = Action {
     implicit request =>
 
       paymentForm.bindFromRequest.fold(
       errors => BadRequest, {
         case (payment: PaymentInfo) => {
-          //TODO: implement ebay check on checkout
-          //val checkItemsOnEbay()
 
-          println("charging for amount: " + payment)
-          val charge: Charge = Charge.create(Map("amount" -> 100, "currency" -> "usd", "card" -> payment.stripeToken))
-          val token: Token = Token.retrieve(payment.stripeToken)
+          if (checkCartItems(sessionInfo.sessionId)) {
 
-          val orderId = createOrder(sessionInfo.sessionId, token.id, charge.id, payment)
+            println("charging for amount: " + payment)
+            val charge: Charge = Charge.create(Map("amount" -> 100, "currency" -> "usd", "card" -> payment.stripeToken))
+            val token: Token = Token.retrieve(payment.stripeToken)
 
-          Ok(views.html.thankyou(orderId)).withNewSession
+            val orderId = createOrder(sessionInfo.sessionId, token.id, charge.id, payment)
+            Ok(views.html.thankyou(orderId)).withNewSession
+          } else {
+            Ok(views.html.thankyou("MAKE NEW PAGE FRO THIS ERROR !!!!")).withNewSession
+          }
         }
-
       }
       )
-
-
   }
 
   def sendEmails(cart: Cart, payment: PaymentInfo, orderId: String) {
@@ -126,11 +131,21 @@ object Payment extends Controller with SessionHelper {
     def itemRow(item: CartItem): Elem = {
       val row =
         <tr>
-          <td style="width:150px;">{item.collection}</td>
-          <td style="width:70px;">{item.price}</td>
-          <td style="width:20px;">{item.quantity}</td>
-          <td style="width:200px;">{item.variations.map(vari =>  vari.variationName + ":" + vari.variationValue)}</td>
-          <td style="width:200px;">{persistence.Item.getItem(item.itemId).get.title}</td>
+          <td style="width:150px;">
+            {item.collection}
+          </td>
+          <td style="width:70px;">
+            {item.price}
+          </td>
+          <td style="width:20px;">
+            {item.quantity}
+          </td>
+          <td style="width:200px;">
+            {item.variations.map(vari => vari.variationName + ":" + vari.variationValue)}
+          </td>
+          <td style="width:200px;">
+            {persistence.Item.getItem(item.itemId).get.title}
+          </td>
         </tr>
 
       row
@@ -140,7 +155,9 @@ object Payment extends Controller with SessionHelper {
 
 
     val table =
-      <table class="table table-bordered"> {cart.cartItems.map(item => itemRow(item))} </table>
+      <table class="table table-bordered">
+        {cart.cartItems.map(item => itemRow(item))}
+      </table>
 
 
 

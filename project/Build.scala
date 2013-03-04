@@ -21,7 +21,8 @@ object Build extends Build {
     "net.liftweb" %% "lift-json" % "2.5-M4",
     "org.scalatest" % "scalatest_2.10" % "1.9.1" % "test",
     "javax.mail" % "mail" % "1.4.1",
-    "org.apache.commons" % "commons-email" % "1.2"
+    "org.apache.commons" % "commons-email" % "1.2",
+    "net.databinder.dispatch" %% "dispatch-core" % "0.9.4"
   )
 
   val main = play.Project(appName, appVersion, appDependencies).settings(
