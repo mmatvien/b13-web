@@ -63,7 +63,7 @@ object EbayService {
     val itemInfo = Http(itemInfoRequest OK as.xml.Elem)
     var itemOKToBuy = false
     for (itemXml <- itemInfo()) {
-      println(itemXml)
+      //println(itemXml)
       val status = (itemXml \ "Item" \ "SellingStatus" \ "ListingStatus").text
       val variations = (itemXml \ "Item" \ "Variations" \ "Variation")
 

@@ -240,18 +240,6 @@ object Payment extends Controller with SessionHelper {
       3
     )
 
-    EmailService.send(email)
-
-
-    val config2 = SmtpConfig(
-      tls = true,
-      ssl = true,
-      465,
-      "smtp.gmail.com",
-      "maxirullc@gmail.com",
-      "azoezihiukncjnfi"
-    )
-
     val email2 = EmailMessage(
       "brand 13 - Order placed",
       "maxirullc@gmail.com",
@@ -264,6 +252,7 @@ object Payment extends Controller with SessionHelper {
     )
 
     EmailService.send(email)
+    EmailService.send(email2)
 
   }
 }
