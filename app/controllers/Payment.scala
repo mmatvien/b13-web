@@ -190,16 +190,17 @@ object Payment extends Controller with SessionHelper {
         |Спасибо за покупку в магазине BRAND13<br><br>
         |Номер вашего заказа <b>$orderId</b><br><br>
         |
-        |Содержимое заказа:<br>
+        |Содержимое заказа:<br><br>
+        |<hr>
         |
         |$table
-        |
+        |<hr>
         |<br>
         |товары на сумму: ${payment.subtotal}<br>
         |доставка: ${payment.shipping}<br>
-        |страховка: ${payment.shipping}
+        |страховка: ${payment.insurance}<br><br>
         |
-        |Итого к оплате: ${payment.total} <br> <br> <br>
+        |Итого к оплате:<b> ${payment.total}</b> <br> <br> <br>
         |
         |По факту отправки заказа из США вам будет отправлено электронное письмо с номером отслеживания.<br>
         |
