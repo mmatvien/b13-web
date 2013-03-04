@@ -124,7 +124,7 @@
                 } else {
                     @for(pic <- item.variations.pictures) {
                         @if(pic.url.isEmpty){
-                            @pic.name
+                          
                                 <li class="product-photo-thumb" id="@pic.name.replaceAll(" ", "_").replaceAll("/","_")">
                                     <img src="@item.mainPicture" alt="@pic.name" style="margin-top: 0px; opacity: 1;">
                                 </li>
