@@ -136,12 +136,12 @@ object Payment extends Controller with SessionHelper {
             Ok(views.html.thankyou(orderId)).withNewSession
           } else {
             println(s" FAILED ITEMS : -------------------- $failedCartItems")
-            var message = ""
+            var message = "<b>следующие товары отсутсвуют на складе</b>:<br><br>"
             failedCartItems.foreach {
               cit =>
                 val item = Item.getItem(cit.itemId)
                 item match {
-                  case Some(it) => message += " -- " + it.title + "<br>"
+                  case Some(it) => message += " <i>-- " + it.title + "</i><br>"
                   case None => ""
                 }
                 Cart.removeItem(sessionInfo.sessionId, cit.toHash)
