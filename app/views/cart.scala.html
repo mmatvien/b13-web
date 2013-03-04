@@ -59,7 +59,7 @@
 
 
             <div id="cart-meta">
-                <div id="cart-subtotal"> итого <div id="subtotal" style="float:right; padding-left: 25px; font-size: 1em;">@cartItems.map(x => x.price * x.quantity).sum </div> </div>
+                <div id="cart-subtotal"> итого <div id="subtotal" style="float:right; padding-left: 25px; font-size: 1em;">@cartItems.map(x => x.price * x.quantity).sum </div>  <input type="hidden" id="subtotalPriceInput" name="subtotalPriceInput"> </div>
 
                 <div id="estimated-shipping">
 
@@ -73,6 +73,7 @@
 
                     </div>
                     <div id="shippingPrice" style="float:right;text-align: right;font-size: 1.5em; padding-top: 8px;"></div>
+                    <input type="hidden" id="shippingPriceInput" name="shippingPriceInput">
 
                     <div id="insurance" style="padding-top: 20px; float:left; visibility: hidden; width: 210px; ">
                         <div id="insuranceOption" style="width: 170px; border: 1;">
@@ -85,6 +86,7 @@
                         </div>
                     </div>
                     <div id="insurancePrice" style="float:right;text-align: right;font-size: 1.5em; padding-top: 12px;"></div>
+                    <input type="hidden" id="insurancePriceInput" name="insurancePriceInput">
                 </div>
 
                 <br>

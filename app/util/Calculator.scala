@@ -11,7 +11,7 @@ import persistence.{Item, CartItem}
 import util.ShippingRef.PriorityInsurance
 
 object Calculator {
-  var KURS_DOLLARA: BigDecimal = 31
+  val KURS_DOLLARA: BigDecimal = 31
 
 
   def calculateFinalPrice(original: BigDecimal): BigDecimal = {

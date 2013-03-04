@@ -44,4 +44,7 @@ updateTotal = () ->
   if (insurance == "")
     insurance = 0
   grandTotal = (parseFloat(subtotal) + parseFloat(shipping) + parseFloat(insurance)).toFixed(2)
+  $('#subtotalPriceInput').val(subtotal)
+  $('#insurancePriceInput').val(insurance)
+  $('#shippingPriceInput').val(shipping)
   $('#grand-total').text(grandTotal)

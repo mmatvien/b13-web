@@ -93,8 +93,10 @@ object Application extends Controller with SessionHelper {
         case (cartItemX: CartItemX) => {
           Cart.findSessionCart(sessionInfo.sessionId) match {
             case Some(currentCart: Cart) =>
-              Cart.addItemToCart(currentCart, CartItem(cartItemX.collection, cartItemX.itemId, 1, cartItemX.price.toDouble, cartItemX.variations.map(v => CartItemVariation(v.name, v.value))))
-            case None => Cart.createNewCart(sessionInfo.sessionId, CartItem(cartItemX.collection, cartItemX.itemId, 1, cartItemX.price.toDouble, cartItemX.variations.map(v => CartItemVariation(v.name, v.value))))
+              Cart.addItemToCart(currentCart, CartItem(cartItemX.collection, cartItemX.itemId, 1,
+                cartItemX.price.toDouble, cartItemX.variations.map(v => CartItemVariation(v.name, v.value))))
+            case None => Cart.createNewCart(sessionInfo.sessionId, CartItem(cartItemX.collection, cartItemX.itemId,
+              1, cartItemX.price.toDouble, cartItemX.variations.map(v => CartItemVariation(v.name, v.value))))
           }
         }
       }
@@ -103,7 +105,8 @@ object Application extends Controller with SessionHelper {
   }
 
 
-  def currentCartItems(implicit sessionInfo: SessionInfo): List[CartItem] = Cart.findSessionCart(sessionInfo.sessionId) match {
+  def currentCartItems(implicit sessionInfo: SessionInfo): List[CartItem] = Cart.findSessionCart(sessionInfo
+    .sessionId) match {
     case Some(cart) => cart.cartItems.filter {
       cartItem => {
         persistence.Item.getItem(cartItem.itemId) match {
@@ -146,17 +149,22 @@ object Application extends Controller with SessionHelper {
   def update = Action {
     implicit request =>
       val action = request.body.asFormUrlEncoded.get("update").head
+      val subtotal = request.body.asFormUrlEncoded.get("subtotalPriceInput").head
+      val shipping = request.body.asFormUrlEncoded.get("shippingPriceInput").head
+      val insurance = request.body.asFormUrlEncoded.get("insurancePriceInput").head
+      val total = subtotal.replaceAll("\\s+$", "").toDouble + shipping.replaceAll("\\s+$", "").toDouble + insurance.replaceAll("\\s+$", "").toDouble
 
       cartUpdateForm.bindFromRequest.fold(
       errors => BadRequest, {
         case (itemList: CartItemList) => {
           for (cartItem: CartItemZ <- itemList.items) {
-            if (cartItem.quantity.toInt > 0) Cart.updateCartItem(sessionInfo.sessionId, cartItem.itemId, cartItem.quantity.toInt, cartItem.variations.map(v => CartItemVariation(v.name, v.value)))
+            if (cartItem.quantity.toInt > 0) Cart.updateCartItem(sessionInfo.sessionId, cartItem.itemId,
+              cartItem.quantity.toInt, cartItem.variations.map(v => CartItemVariation(v.name, v.value)))
           }
         }
       }
       )
-      if (action == "оформить") Ok(views.html.payment(currentCartItems)).flashing("success" -> "cart item updated")
+      if (action == "оформить") Ok(views.html.payment(subtotal,shipping,insurance,total)(""))
       else Ok(views.html.cart(currentCartItems)).flashing("success" -> "cart item updated")
   }
 

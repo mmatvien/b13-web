@@ -1,0 +1,233 @@
+<GetItemResponse xmlns="urn:ebay:apis:eBLBaseComponents">
+    <Timestamp>2013-03-04T20:37:53.600Z</Timestamp>
+    <Ack>Success</Ack>
+    <Version>811</Version>
+    <Build>E811_CORE_API_15778055_R1</Build>
+    <Item>
+        <ApplicationData>98788343_40000412_M</ApplicationData>
+        <AutoPay>true</AutoPay>
+        <BuyerProtection>ItemIneligible</BuyerProtection>
+        <BuyItNowPrice currencyID="USD">0.0</BuyItNowPrice>
+        <Country>US</Country>
+        <Currency>USD</Currency>
+        <GiftIcon>0</GiftIcon>
+        <HitCounter>NoHitCounter</HitCounter>
+        <ItemID>190806699014</ItemID>
+        <ListingDetails>
+            <Adult>false</Adult>
+            <BindingAuction>false</BindingAuction>
+            <CheckoutEnabled>true</CheckoutEnabled>
+            <ConvertedBuyItNowPrice currencyID="USD">0.0</ConvertedBuyItNowPrice>
+            <ConvertedStartPrice currencyID="USD">36.0</ConvertedStartPrice>
+            <HasReservePrice>false</HasReservePrice>
+            <StartTime>2013-03-04T03:32:14.000Z</StartTime>
+            <EndTime>2013-04-03T03:32:14.000Z</EndTime>
+            <ViewItemURL>http://www.ebay.com/itm/Tommy-Hilfiger-Boys-TH-NY-ANCHOR-KNIT-/190806699014</ViewItemURL>
+            <HasUnansweredQuestions>false</HasUnansweredQuestions>
+            <HasPublicMessages>false</HasPublicMessages>
+            <ViewItemURLForNaturalSearch>http://www.ebay.com/itm/Tommy-Hilfiger-Boys-TH-NY-ANCHOR-KNIT-/190806699014
+            </ViewItemURLForNaturalSearch>
+        </ListingDetails>
+        <ListingDuration>GTC</ListingDuration>
+        <ListingType>FixedPriceItem</ListingType>
+        <Location>New York, New York</Location>
+        <PaymentMethods>PayPal</PaymentMethods>
+        <PrimaryCategory>
+            <CategoryID>51946</CategoryID>
+            <CategoryName>Clothing, Shoes &amp; Accessories:Kids' Clothing, Shoes &amp; Accs:Boys' Clothing (Sizes 4
+                &amp; Up):Sweaters
+            </CategoryName>
+        </PrimaryCategory>
+        <PrivateListing>false</PrivateListing>
+        <Quantity>6</Quantity>
+        <ReviseStatus>
+            <ItemRevised>true</ItemRevised>
+        </ReviseStatus>
+        <Seller>
+            <AboutMePage>false</AboutMePage>
+            <Email>Invalid Request</Email>
+            <FeedbackScore>2812</FeedbackScore>
+            <PositiveFeedbackPercent>96.3</PositiveFeedbackPercent>
+            <FeedbackPrivate>false</FeedbackPrivate>
+            <FeedbackRatingStar>Red</FeedbackRatingStar>
+            <IDVerified>true</IDVerified>
+            <eBayGoodStanding>true</eBayGoodStanding>
+            <NewUser>false</NewUser>
+            <RegistrationDate>2010-11-11T21:20:05.000Z</RegistrationDate>
+            <Site>US</Site>
+            <Status>Confirmed</Status>
+            <UserID>tommyhilfiger</UserID>
+            <UserIDChanged>false</UserIDChanged>
+            <UserIDLastChanged>2010-11-12T16:07:05.000Z</UserIDLastChanged>
+            <VATStatus>NoVATTax</VATStatus>
+            <SellerInfo>
+                <AllowPaymentEdit>true</AllowPaymentEdit>
+                <CheckoutEnabled>true</CheckoutEnabled>
+                <CIPBankAccountStored>false</CIPBankAccountStored>
+                <GoodStanding>true</GoodStanding>
+                <LiveAuctionAuthorized>false</LiveAuctionAuthorized>
+                <MerchandizingPref>OptIn</MerchandizingPref>
+                <QualifiesForB2BVAT>false</QualifiesForB2BVAT>
+                <StoreOwner>true</StoreOwner>
+                <StoreURL>http://www.stores.ebay.com/id=1034306470</StoreURL>
+                <SafePaymentExempt>false</SafePaymentExempt>
+            </SellerInfo>
+            <MotorsDealer>false</MotorsDealer>
+        </Seller>
+        <SellingStatus>
+            <BidCount>0</BidCount>
+            <BidIncrement currencyID="USD">0.0</BidIncrement>
+            <ConvertedCurrentPrice currencyID="USD">36.0</ConvertedCurrentPrice>
+            <CurrentPrice currencyID="USD">36.0</CurrentPrice>
+            <MinimumToBid currencyID="USD">36.0</MinimumToBid>
+            <QuantitySold>0</QuantitySold>
+            <ReserveMet>true</ReserveMet>
+            <SecondChanceEligible>false</SecondChanceEligible>
+            <ListingStatus>Active</ListingStatus>
+        </SellingStatus>
+        <ShippingDetails>
+            <ApplyShippingDiscount>false</ApplyShippingDiscount>
+            <PaymentInstructions>At this time we are unable to ship to PO Boxes, APO or FPO and all addresses outside of
+                the United States. All billing and shipping addresses must be a physical residential address located
+                within the United States. Please note that on occasion, such as during holiday rush and large sales
+                events, there may be a slight delay in processing time. Your business is important to us, and we make
+                every effort to process your order as quickly as we can.
+            </PaymentInstructions>
+            <SalesTax>
+                <SalesTaxPercent>0.0</SalesTaxPercent>
+                <ShippingIncludedInTax>false</ShippingIncludedInTax>
+            </SalesTax>
+            <ShippingServiceOptions>
+                <ShippingService>UPSGround</ShippingService>
+                <ShippingServiceCost currencyID="USD">0.0</ShippingServiceCost>
+                <ShippingServiceAdditionalCost currencyID="USD">0.0</ShippingServiceAdditionalCost>
+                <ShippingServicePriority>1</ShippingServicePriority>
+                <ExpeditedService>false</ExpeditedService>
+                <ShippingTimeMin>1</ShippingTimeMin>
+                <ShippingTimeMax>5</ShippingTimeMax>
+            </ShippingServiceOptions>
+            <ShippingServiceOptions>
+                <ShippingService>UPS2ndDay</ShippingService>
+                <ShippingServiceCost currencyID="USD">13.95</ShippingServiceCost>
+                <ShippingServiceAdditionalCost currencyID="USD">13.95</ShippingServiceAdditionalCost>
+                <ShippingServicePriority>2</ShippingServicePriority>
+                <ExpeditedService>false</ExpeditedService>
+                <ShippingTimeMin>2</ShippingTimeMin>
+                <ShippingTimeMax>2</ShippingTimeMax>
+            </ShippingServiceOptions>
+            <ShippingServiceOptions>
+                <ShippingService>UPSNextDayAir</ShippingService>
+                <ShippingServiceCost currencyID="USD">19.95</ShippingServiceCost>
+                <ShippingServiceAdditionalCost currencyID="USD">19.95</ShippingServiceAdditionalCost>
+                <ShippingServicePriority>3</ShippingServicePriority>
+                <ExpeditedService>true</ExpeditedService>
+                <ShippingTimeMin>1</ShippingTimeMin>
+                <ShippingTimeMax>1</ShippingTimeMax>
+            </ShippingServiceOptions>
+            <ShippingType>Flat</ShippingType>
+            <ThirdPartyCheckout>false</ThirdPartyCheckout>
+            <ShippingDiscountProfileID>0</ShippingDiscountProfileID>
+            <InternationalShippingDiscountProfileID>0</InternationalShippingDiscountProfileID>
+            <ExcludeShipToLocation>Alaska/Hawaii</ExcludeShipToLocation>
+            <ExcludeShipToLocation>US Protectorates</ExcludeShipToLocation>
+            <ExcludeShipToLocation>APO/FPO</ExcludeShipToLocation>
+            <ExcludeShipToLocation>Africa</ExcludeShipToLocation>
+            <ExcludeShipToLocation>Asia</ExcludeShipToLocation>
+            <ExcludeShipToLocation>Central America and Caribbean</ExcludeShipToLocation>
+            <ExcludeShipToLocation>Europe</ExcludeShipToLocation>
+            <ExcludeShipToLocation>Middle East</ExcludeShipToLocation>
+            <ExcludeShipToLocation>North America</ExcludeShipToLocation>
+            <ExcludeShipToLocation>Oceania</ExcludeShipToLocation>
+            <ExcludeShipToLocation>Southeast Asia</ExcludeShipToLocation>
+            <ExcludeShipToLocation>South America</ExcludeShipToLocation>
+            <ExcludeShipToLocation>PO Box</ExcludeShipToLocation>
+            <SellerExcludeShipToLocationsPreference>true</SellerExcludeShipToLocationsPreference>
+        </ShippingDetails>
+        <ShipToLocations>US</ShipToLocations>
+        <Site>US</Site>
+        <StartPrice currencyID="USD">36.0</StartPrice>
+        <Storefront>
+            <StoreCategoryID>2086920010</StoreCategoryID>
+            <StoreCategory2ID>0</StoreCategory2ID>
+            <StoreURL>http://www.stores.ebay.com/id=1034306470</StoreURL>
+        </Storefront>
+        <SubTitle>Tommy Hilfiger Direct On eBay Plus Free Ground Shipping</SubTitle>
+        <TimeLeft>P29DT6H54M21S</TimeLeft>
+        <Title>Tommy Hilfiger Boys TH NY ANCHOR KNIT</Title>
+        <UUID>AB4DCCA20D1D4F9CB090D6807654A6FB</UUID>
+        <HitCount>3</HitCount>
+        <LocationDefaulted>true</LocationDefaulted>
+        <GetItFast>false</GetItFast>
+        <SKU>439053900393</SKU>
+        <PostalCode>10017</PostalCode>
+        <PictureDetails>
+            <GalleryType>Gallery</GalleryType>
+            <GalleryURL>
+                http://i.ebayimg.com/00/s/MTAwMFgxMDAw/z/IpYAAMXQhuVRNDEK/$T2eC16J,!yEE9s5jDYfoBRNDEI!5yw~~60_12.JPG?set_id=880000500F
+            </GalleryURL>
+            <PhotoDisplay>PicturePack</PhotoDisplay>
+            <PictureURL>
+                http://i.ebayimg.com/00/s/MTAwMFgxMDAw/z/IpYAAMXQhuVRNDEK/$T2eC16J,!yEE9s5jDYfoBRNDEI!5yw~~60_12.JPG?set_id=880000500F
+            </PictureURL>
+        </PictureDetails>
+        <DispatchTimeMax>2</DispatchTimeMax>
+        <ProxyItem>false</ProxyItem>
+        <ItemSpecifics>
+            <NameValueList>
+                <Name>Size</Name>
+                <Value>S</Value>
+                <Source>ItemSpecific</Source>
+            </NameValueList>
+            <NameValueList>
+                <Name>Brand</Name>
+                <Value>Tommy Hilfiger</Value>
+                <Source>ItemSpecific</Source>
+            </NameValueList>
+            <NameValueList>
+                <Name>Style</Name>
+                <Value>Big Boy (4-12)</Value>
+                <Source>ItemSpecific</Source>
+            </NameValueList>
+            <NameValueList>
+                <Name>Color</Name>
+                <Value>Blues</Value>
+                <Source>ItemSpecific</Source>
+            </NameValueList>
+            <NameValueList>
+                <Name>Shade</Name>
+                <Value>OMBRE BLUE</Value>
+                <Source>ItemSpecific</Source>
+            </NameValueList>
+        </ItemSpecifics>
+        <BuyerGuaranteePrice currencyID="USD">20000.0</BuyerGuaranteePrice>
+        <BuyerRequirementDetails>
+            <LinkedPayPalAccount>true</LinkedPayPalAccount>
+        </BuyerRequirementDetails>
+        <IntangibleItem>false</IntangibleItem>
+        <ReturnPolicy>
+            <RefundOption>MoneyBack</RefundOption>
+            <Refund>Money Back</Refund>
+            <ReturnsWithinOption>Days_14</ReturnsWithinOption>
+            <ReturnsWithin>14 Days</ReturnsWithin>
+            <ReturnsAcceptedOption>ReturnsAccepted</ReturnsAcceptedOption>
+            <ReturnsAccepted>Returns Accepted</ReturnsAccepted>
+            <Description>The first return for each order number will have no cost. Subsequent returns for an individual
+                order may incur shipping &amp; handling charges of $5.95. Please see the item listing for additional
+                instructions and details on this policy.
+            </Description>
+            <ShippingCostPaidByOption>Buyer</ShippingCostPaidByOption>
+            <ShippingCostPaidBy>Buyer</ShippingCostPaidBy>
+        </ReturnPolicy>
+        <ConditionID>1000</ConditionID>
+        <ConditionDisplayName>New with tags</ConditionDisplayName>
+        <TaxCategory>Clothing</TaxCategory>
+        <PostCheckoutExperienceEnabled>false</PostCheckoutExperienceEnabled>
+        <DiscountPriceInfo>
+            <OriginalRetailPrice currencyID="USD">45.0</OriginalRetailPrice>
+            <PricingTreatment>STP</PricingTreatment>
+            <SoldOneBay>true</SoldOneBay>
+            <SoldOffeBay>false</SoldOffeBay>
+        </DiscountPriceInfo>
+        <HideFromSearch>false</HideFromSearch>
+    </Item>
+</GetItemResponse>

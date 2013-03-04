@@ -14,6 +14,12 @@ import services.SmtpConfig
 import services.EmailMessage
 import persistence.Buyer
 import xml.Elem
+import math.BigDecimal.RoundingMode._
+import persistence.CartItem
+import scala.Some
+import services.SmtpConfig
+import services.EmailMessage
+import persistence.Buyer
 
 
 /**
@@ -25,6 +31,9 @@ object Payment extends Controller with SessionHelper {
 
   case class PaymentInfo(
                           total: String,
+                          subtotal: String,
+                          shipping: String,
+                          insurance: String,
                           stripeToken: String,
                           firstName: String,
                           lastName: String,
@@ -43,6 +52,9 @@ object Payment extends Controller with SessionHelper {
   val paymentForm: Form[PaymentInfo] = Form(
     mapping(
       "total" -> nonEmptyText,
+      "subtotal" -> nonEmptyText,
+      "shipping" -> nonEmptyText,
+      "insurance" -> nonEmptyText,
       "stripeToken" -> nonEmptyText,
       "firstName" -> nonEmptyText,
       "lastName" -> nonEmptyText,
@@ -94,11 +106,11 @@ object Payment extends Controller with SessionHelper {
 
   }
 
-  def checkCartItems(sessionId: String): Boolean = {
+  def checkCartItems(sessionId: String): List[CartItem] = {
     val sessionCart: Option[Cart] = Cart.findSessionCart(sessionId)
     sessionCart match {
       case Some(cart) => services.EbayService.checkCartWithVendor(cart)
-      case None => false
+      case None => Nil
     }
   }
 
@@ -108,17 +120,34 @@ object Payment extends Controller with SessionHelper {
       paymentForm.bindFromRequest.fold(
       errors => BadRequest, {
         case (payment: PaymentInfo) => {
+          val failedCartItems = checkCartItems(sessionInfo.sessionId)
+          if (failedCartItems.isEmpty) {
+            val grandTotalDollars = (payment.total.toDouble / Calculator.KURS_DOLLARA).setScale(2, HALF_UP)
 
-          if (checkCartItems(sessionInfo.sessionId)) {
 
-            println("charging for amount: " + payment)
-            val charge: Charge = Charge.create(Map("amount" -> 100, "currency" -> "usd", "card" -> payment.stripeToken))
+            val cents =  BigDecimal((grandTotalDollars*100).toString).setScale(0, HALF_UP)
+            println(s"charging for amount: $payment.total = $cents")
+
+            val charge: Charge = Charge.create(Map("amount" -> cents, "currency" -> "usd",
+              "card" -> payment.stripeToken))
             val token: Token = Token.retrieve(payment.stripeToken)
 
             val orderId = createOrder(sessionInfo.sessionId, token.id, charge.id, payment)
             Ok(views.html.thankyou(orderId)).withNewSession
           } else {
-            Ok(views.html.thankyou("MAKE NEW PAGE FRO THIS ERROR !!!!")).withNewSession
+            println(s" FAILED ITEMS : -------------------- $failedCartItems")
+            var message = ""
+            failedCartItems.foreach {
+              cit =>
+                val item = Item.getItem(cit.itemId)
+                item match {
+                  case Some(it) => message += " -- " + it.title + "<br>"
+                  case None => ""
+                }
+                Cart.removeItem(sessionInfo.sessionId, cit.toHash)
+            }
+            Ok(views.html.payment(payment.subtotal, payment.shipping, payment.insurance,
+              payment.total.toDouble)(message))
           }
         }
       }
@@ -131,8 +160,11 @@ object Payment extends Controller with SessionHelper {
     def itemRow(item: CartItem): Elem = {
       val row =
         <tr>
-          <td style="width:150px;">
-            {item.collection}
+          <td style="width:200px;">
+            {persistence.Item.getItem(item.itemId).get.title}
+          </td>
+           <td style="width:200px;">
+            {item.variations.map(vari => vari.variationName + ":" + vari.variationValue)}
           </td>
           <td style="width:70px;">
             {item.price}
@@ -140,18 +172,9 @@ object Payment extends Controller with SessionHelper {
           <td style="width:20px;">
             {item.quantity}
           </td>
-          <td style="width:200px;">
-            {item.variations.map(vari => vari.variationName + ":" + vari.variationValue)}
-          </td>
-          <td style="width:200px;">
-            {persistence.Item.getItem(item.itemId).get.title}
-          </td>
         </tr>
-
       row
     }
-
-
 
 
     val table =
@@ -161,24 +184,27 @@ object Payment extends Controller with SessionHelper {
 
 
 
-
     val messageHtml =
       s"""
         |
         |Спасибо за покупку в магазине BRAND13<br><br>
         |Номер вашего заказа <b>$orderId</b><br><br>
         |
-        |
         |Содержимое заказа:<br>
         |
         |$table
         |
         |<br>
+        |товары на сумму: ${payment.subtotal}<br>
+        |доставка: ${payment.shipping}<br>
+        |страховка: ${payment.shipping}
+        |
         |Итого к оплате: ${payment.total} <br> <br> <br>
         |
         |По факту отправки заказа из США вам будет отправлено электронное письмо с номером отслеживания.<br>
         |
-        |По всем интересующим вас вопросам обращайтесь к нам через наш сайт, раздел Вопросы (не забудьте указать номер заказа).
+        |По всем интересующим вас вопросам обращайтесь к нам через наш сайт, раздел Вопросы (не забудьте указать
+        номер заказа).
         |
         |<br><br>
         |
@@ -187,7 +213,8 @@ object Payment extends Controller with SessionHelper {
         | <br><br>
         |
         |<i>С уважением, администрация BRAND13</i>
-        |<a href="http://brand13.com/"> <img src="http://brand13.com/assets/images/logo-265.png" style="width: 150px;"/> </a>
+        |<a href="http://brand13.com/"> <img src="http://brand13.com/assets/images/logo-265.png" style="width: 150px;
+        "/> </a>
         |<br>
       """.stripMargin
 
@@ -204,6 +231,29 @@ object Payment extends Controller with SessionHelper {
     val email = EmailMessage(
       "brand 13 - Спасибо за покупку",
       payment.email,
+      "sales@brand13.com",
+      "text",
+      messageHtml,
+      config,
+      10 seconds,
+      3
+    )
+
+    EmailService.send(email)
+
+
+    val config2 = SmtpConfig(
+      tls = true,
+      ssl = true,
+      465,
+      "smtp.gmail.com",
+      "maxirullc@gmail.com",
+      "azoezihiukncjnfi"
+    )
+
+    val email2 = EmailMessage(
+      "brand 13 - Order placed",
+      "maxirullc@gmail.com",
       "sales@brand13.com",
       "text",
       messageHtml,

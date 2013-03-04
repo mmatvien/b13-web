@@ -2,7 +2,7 @@ package services
 
 import com.ning.http.client.RequestBuilder
 import dispatch._
-import persistence.{CartItemVariation, Cart}
+import persistence.{CartItem, CartItemVariation, Cart}
 
 /**
  * User: max
@@ -58,32 +58,34 @@ object EbayService {
     "<?api version=\"1.0\" encoding=\"utf-8\"?>" + xml
   }
 
-  def checkLineItemWithVendor(itemId: String, cartVariations: List[CartItemVariation]): Boolean = {
+  def checkLineItemWithVendor(cartQuantity: Int, itemId: String, cartVariations: List[CartItemVariation]): Boolean = {
     val itemInfoRequest = createTradingHeaders("GetItem").setBody(getItemInfo(itemId))
     val itemInfo = Http(itemInfoRequest OK as.xml.Elem)
     var itemOKToBuy = false
-    for {itemXml <- itemInfo()} {
+    for (itemXml <- itemInfo()) {
+      println(itemXml)
       val status = (itemXml \ "Item" \ "SellingStatus" \ "ListingStatus").text
       val variations = (itemXml \ "Item" \ "Variations" \ "Variation")
-      variations.foreach {
-        variation =>
-          val q = (variation \ "Quantity").text.toInt
-          val namList = (variation \ "VariationSpecifics" \ "NameValueList")
-          val varSet = namList.map(nn => CartItemVariation((nn \ "Name").text, (nn \ "Value").text))
-          if (cartVariations == varSet && q > 0 && "Active" == status) itemOKToBuy = true
+
+      if (variations.isEmpty) {
+        val quantity = (itemXml \ "Item" \ "Quantity").text.toInt
+        if (quantity >= cartQuantity && "Active" == status) itemOKToBuy = true
+      } else {
+        variations.foreach {
+          variation =>
+            val q = (variation \ "Quantity").text.toInt
+            val namList = (variation \ "VariationSpecifics" \ "NameValueList")
+            val varSet = namList.map(nn => CartItemVariation((nn \ "Name").text, (nn \ "Value").text))
+            if (cartVariations == varSet && q >= cartQuantity && "Active" == status) itemOKToBuy = true
+        }
       }
     }
     itemOKToBuy
   }
 
 
-  def checkCartWithVendor(cart: Cart): Boolean = {
-    cart.cartItems.foreach {
-      cartItem =>
-        checkLineItemWithVendor(cartItem.itemId, cartItem.variations)
-    }
-    false
+  def checkCartWithVendor(cart: Cart): List[CartItem] = {
+    for (cartItem <- cart.cartItems if !checkLineItemWithVendor(cartItem.quantity, cartItem.itemId,
+      cartItem.variations)) yield cartItem
   }
-
-
 }
