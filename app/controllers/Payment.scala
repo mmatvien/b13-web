@@ -164,7 +164,7 @@ object Payment extends Controller with SessionHelper {
             {persistence.Item.getItem(item.itemId).get.title}
           </td>
            <td style="width:200px;">
-            {item.variations.map(vari => vari.variationName + ":" + vari.variationValue)}
+            {item.variations.map(vari => vari.variationName + ":" + vari.variationValue +"<br>")}
           </td>
           <td style="width:70px;">
             {item.price}

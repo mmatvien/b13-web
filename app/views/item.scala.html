@@ -37,7 +37,7 @@
 
                             <input type="hidden" id="variations[@index].value_n" value="@util.Translator.translate(spec)">
 
-                            <select name="variations[@index].value" id="variations[@index].value" class="optionSelector@index" style="height:30px; margin-bottom: 8px;float:left; margin-right:5px; ">
+                            <select name="variations[@index].value" id="variations[@index].value" class="optionSelector@index custSel" style="height:30px; margin-bottom: 8px;float:left; margin-right:5px; ">
                             <option value="---">---</option>
                                 @for(value <- util.UI.constructVariationDropdowns(item.variations.specifics)(spec)) {
                                     <option value = "@value">@util.Translator.translate(value)</option>
@@ -124,7 +124,7 @@
                 } else {
                     @for(pic <- item.variations.pictures) {
                         @if(pic.url.isEmpty){
-                          
+
                                 <li class="product-photo-thumb" id="@pic.name.replaceAll(" ", "_").replaceAll("/","_")">
                                     <img src="@item.mainPicture" alt="@pic.name" style="margin-top: 0px; opacity: 1;">
                                 </li>
