@@ -8,11 +8,6 @@ import play.api.data.Forms._
 import java.util.Date
 import services.EmailService
 import concurrent.duration._
-import persistence.CartItem
-import scala.Some
-import services.SmtpConfig
-import services.EmailMessage
-import persistence.Buyer
 import xml.Elem
 import math.BigDecimal.RoundingMode._
 import persistence.CartItem
@@ -106,7 +101,7 @@ object Payment extends Controller with SessionHelper {
 
   }
 
-  def checkCartItems(sessionId: String): List[CartItem] = {
+  def checkCartItems(sessionId: String): List[(CartItem, Int)] = {
     val sessionCart: Option[Cart] = Cart.findSessionCart(sessionId)
     sessionCart match {
       case Some(cart) => services.EbayService.checkCartWithVendor(cart)
@@ -124,8 +119,7 @@ object Payment extends Controller with SessionHelper {
           if (failedCartItems.isEmpty) {
             val grandTotalDollars = (payment.total.toDouble / Calculator.KURS_DOLLARA).setScale(2, HALF_UP)
 
-
-            val cents =  BigDecimal((grandTotalDollars*100).toString).setScale(0, HALF_UP)
+            val cents = BigDecimal((grandTotalDollars * 100).toString).setScale(0, HALF_UP)
             println(s"charging for amount: $payment.total = $cents")
 
             val charge: Charge = Charge.create(Map("amount" -> cents, "currency" -> "usd",
@@ -139,12 +133,19 @@ object Payment extends Controller with SessionHelper {
             var message = "<b>следующие товары отсутсвуют на складе</b>:<br><br>"
             failedCartItems.foreach {
               cit =>
-                val item = Item.getItem(cit.itemId)
+                val item = Item.getItem(cit._1.itemId)
                 item match {
-                  case Some(it) => message += " <i>-- " + it.title + "</i><br>"
+                  case Some(it) => {
+                    println(cit)
+                    if (cit._2 > 0) Cart.updateCartItem(sessionInfo.sessionId, cit._1.itemId, cit._2, cit._1.variations)
+                    else Cart.removeItem(sessionInfo.sessionId, cit._1.toHash)
+
+                    message += " <i>-- " + it.title + "</i><br>"
+                  }
                   case None => ""
                 }
-                Cart.removeItem(sessionInfo.sessionId, cit.toHash)
+
+
             }
             Ok(views.html.payment(payment.subtotal, payment.shipping, payment.insurance,
               payment.total.toDouble)(message))
@@ -164,7 +165,7 @@ object Payment extends Controller with SessionHelper {
             {persistence.Item.getItem(item.itemId).get.title}
           </td>
            <td style="width:200px;">
-            {item.variations.map(vari => vari.variationName + ":" + vari.variationValue +"<br>")}
+            {item.variations.map(vari => vari.variationName + ":" + vari.variationValue + "<br>")}
           </td>
           <td style="width:70px;">
             {item.price}

@@ -1,6 +1,10 @@
 $ ->
   updateTotal()
 
+  $('.cart-quantity').change ->
+#    alert("kk")
+    #$('#update-cart').click()
+
   $('#shippingOption').change ->
     selectedValue = $('#' + this.id + ' option:selected').val()
     if(selectedValue == "")

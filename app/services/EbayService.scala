@@ -58,34 +58,45 @@ object EbayService {
     "<?api version=\"1.0\" encoding=\"utf-8\"?>" + xml
   }
 
-  def checkLineItemWithVendor(cartQuantity: Int, itemId: String, cartVariations: List[CartItemVariation]): Boolean = {
+  def checkLineItemWithVendor(cartQuantity: Int, itemId: String, cartVariations: List[CartItemVariation]): (Boolean,
+    Int) = {
     val itemInfoRequest = createTradingHeaders("GetItem").setBody(getItemInfo(itemId))
     val itemInfo = Http(itemInfoRequest OK as.xml.Elem)
-    var itemOKToBuy = false
+    var itemOKToBuyQuantity = (false, 0)
+
+    def filterQuantity(quantity: Int): (Boolean, Int) = {
+      if (quantity >= cartQuantity) (true, cartQuantity)
+      else (false, quantity)
+    }
+
     for (itemXml <- itemInfo()) {
-      //println(itemXml)
       val status = (itemXml \ "Item" \ "SellingStatus" \ "ListingStatus").text
       val variations = (itemXml \ "Item" \ "Variations" \ "Variation")
 
       if (variations.isEmpty) {
         val quantity = (itemXml \ "Item" \ "Quantity").text.toInt
-        if (quantity >= cartQuantity && "Active" == status) itemOKToBuy = true
+        if ("Active" == status) itemOKToBuyQuantity = filterQuantity(quantity)
       } else {
         variations.foreach {
           variation =>
-            val q = (variation \ "Quantity").text.toInt
+            val quantity = (variation \ "Quantity").text.toInt
+            val quantitySold = (variation \ "SellingStatus" \ "QuantitySold").text.toInt
+
             val namList = (variation \ "VariationSpecifics" \ "NameValueList")
             val varSet = namList.map(nn => CartItemVariation((nn \ "Name").text, (nn \ "Value").text))
-            if (cartVariations == varSet && q >= cartQuantity && "Active" == status) itemOKToBuy = true
+            if (cartVariations == varSet && "Active" == status) itemOKToBuyQuantity =  filterQuantity(quantity - quantitySold)
         }
       }
     }
-    itemOKToBuy
+    itemOKToBuyQuantity
   }
 
 
-  def checkCartWithVendor(cart: Cart): List[CartItem] = {
-    for (cartItem <- cart.cartItems if !checkLineItemWithVendor(cartItem.quantity, cartItem.itemId,
-      cartItem.variations)) yield cartItem
+  def checkCartWithVendor(cart: Cart): List[(CartItem, Int)] = {
+    for {
+      cartItem <- cart.cartItems
+      c = checkLineItemWithVendor(cartItem.quantity, cartItem.itemId, cartItem.variations)
+      if (!c._1)
+    } yield (cartItem, c._2)
   }
 }

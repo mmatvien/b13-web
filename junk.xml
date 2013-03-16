@@ -1,67 +1,66 @@
 <GetItemResponse xmlns="urn:ebay:apis:eBLBaseComponents">
-    <Timestamp>2013-03-04T21:09:51.727Z</Timestamp>
+    <Timestamp>2013-03-16T20:04:23.341Z</Timestamp>
     <Ack>Success</Ack>
     <Version>811</Version>
     <Build>E811_CORE_API_15778055_R1</Build>
     <Item>
-        <ApplicationData>98782050_40000412_M</ApplicationData>
+        <ApplicationData>30840752_43000264_M_VARIATION</ApplicationData>
         <AutoPay>true</AutoPay>
-        <BuyerProtection>ItemIneligible</BuyerProtection>
+        <BuyerProtection>ItemEligible</BuyerProtection>
         <BuyItNowPrice currencyID="USD">0.0</BuyItNowPrice>
         <Country>US</Country>
         <Currency>USD</Currency>
         <GiftIcon>0</GiftIcon>
         <HitCounter>NoHitCounter</HitCounter>
-        <ItemID>190805719527</ItemID>
+        <ItemID>271172900325</ItemID>
         <ListingDetails>
             <Adult>false</Adult>
             <BindingAuction>false</BindingAuction>
             <CheckoutEnabled>true</CheckoutEnabled>
             <ConvertedBuyItNowPrice currencyID="USD">0.0</ConvertedBuyItNowPrice>
-            <ConvertedStartPrice currencyID="USD">55.6</ConvertedStartPrice>
+            <ConvertedStartPrice currencyID="USD">24.99</ConvertedStartPrice>
             <HasReservePrice>false</HasReservePrice>
-            <StartTime>2013-03-02T01:12:14.000Z</StartTime>
-            <EndTime>2013-04-01T01:12:14.000Z</EndTime>
-            <ViewItemURL>http://www.ebay.com/itm/Tommy-Hilfiger-Mens-LONG-SLEEVE-MILITARY-STYLE-SHIRT-/190805719527
-            </ViewItemURL>
+            <StartTime>2013-03-15T19:56:00.000Z</StartTime>
+            <EndTime>2013-04-14T19:56:00.000Z</EndTime>
+            <ViewItemURL>http://www.ebay.com/itm/Womens-Under-Armour-Tough-Mudder-T-Shirt-/271172900325</ViewItemURL>
             <HasUnansweredQuestions>false</HasUnansweredQuestions>
             <HasPublicMessages>false</HasPublicMessages>
             <ViewItemURLForNaturalSearch>
-                http://www.ebay.com/itm/Tommy-Hilfiger-Mens-LONG-SLEEVE-MILITARY-STYLE-SHIRT-/190805719527
+                http://www.ebay.com/itm/Womens-Under-Armour-Tough-Mudder-T-Shirt-/271172900325
             </ViewItemURLForNaturalSearch>
         </ListingDetails>
         <ListingDuration>GTC</ListingDuration>
         <ListingType>FixedPriceItem</ListingType>
-        <Location>New York, New York</Location>
+        <Location>Baltimore, Maryland</Location>
         <PaymentMethods>PayPal</PaymentMethods>
         <PrimaryCategory>
-            <CategoryID>57990</CategoryID>
-            <CategoryName>Clothing, Shoes &amp; Accessories:Men's Clothing:Casual Shirts</CategoryName>
+            <CategoryID>137085</CategoryID>
+            <CategoryName>Clothing, Shoes &amp; Accessories:Women's Clothing:Athletic Apparel</CategoryName>
         </PrimaryCategory>
         <PrivateListing>false</PrivateListing>
-        <Quantity>2</Quantity>
+        <Quantity>133</Quantity>
         <ReviseStatus>
             <ItemRevised>true</ItemRevised>
         </ReviseStatus>
         <Seller>
             <AboutMePage>false</AboutMePage>
             <Email>Invalid Request</Email>
-            <FeedbackScore>2812</FeedbackScore>
-            <PositiveFeedbackPercent>96.3</PositiveFeedbackPercent>
+            <FeedbackScore>62951</FeedbackScore>
+            <PositiveFeedbackPercent>99.7</PositiveFeedbackPercent>
             <FeedbackPrivate>false</FeedbackPrivate>
-            <FeedbackRatingStar>Red</FeedbackRatingStar>
-            <IDVerified>true</IDVerified>
+            <FeedbackRatingStar>PurpleShooting</FeedbackRatingStar>
+            <IDVerified>false</IDVerified>
             <eBayGoodStanding>true</eBayGoodStanding>
             <NewUser>false</NewUser>
-            <RegistrationDate>2010-11-11T21:20:05.000Z</RegistrationDate>
+            <RegistrationDate>2011-04-11T20:09:20.000Z</RegistrationDate>
             <Site>US</Site>
             <Status>Confirmed</Status>
-            <UserID>tommyhilfiger</UserID>
+            <UserID>underarmour</UserID>
             <UserIDChanged>false</UserIDChanged>
-            <UserIDLastChanged>2010-11-12T16:07:05.000Z</UserIDLastChanged>
+            <UserIDLastChanged>2011-04-11T20:57:40.000Z</UserIDLastChanged>
             <VATStatus>NoVATTax</VATStatus>
             <SellerInfo>
-                <AllowPaymentEdit>true</AllowPaymentEdit>
+                <AllowPaymentEdit>false</AllowPaymentEdit>
                 <CheckoutEnabled>true</CheckoutEnabled>
                 <CIPBankAccountStored>false</CIPBankAccountStored>
                 <GoodStanding>true</GoodStanding>
@@ -69,138 +68,120 @@
                 <MerchandizingPref>OptIn</MerchandizingPref>
                 <QualifiesForB2BVAT>false</QualifiesForB2BVAT>
                 <StoreOwner>true</StoreOwner>
-                <StoreURL>http://www.stores.ebay.com/id=1034306470</StoreURL>
+                <StoreURL>http://www.stores.ebay.com/id=1056320915</StoreURL>
                 <SafePaymentExempt>false</SafePaymentExempt>
+                <TopRatedSeller>true</TopRatedSeller>
             </SellerInfo>
             <MotorsDealer>false</MotorsDealer>
         </Seller>
         <SellingStatus>
             <BidCount>0</BidCount>
             <BidIncrement currencyID="USD">0.0</BidIncrement>
-            <ConvertedCurrentPrice currencyID="USD">55.6</ConvertedCurrentPrice>
-            <CurrentPrice currencyID="USD">55.6</CurrentPrice>
-            <MinimumToBid currencyID="USD">55.6</MinimumToBid>
+            <ConvertedCurrentPrice currencyID="USD">24.99</ConvertedCurrentPrice>
+            <CurrentPrice currencyID="USD">24.99</CurrentPrice>
+            <MinimumToBid currencyID="USD">24.99</MinimumToBid>
             <QuantitySold>0</QuantitySold>
             <ReserveMet>true</ReserveMet>
             <SecondChanceEligible>false</SecondChanceEligible>
             <ListingStatus>Active</ListingStatus>
         </SellingStatus>
         <ShippingDetails>
-            <ApplyShippingDiscount>false</ApplyShippingDiscount>
-            <PaymentInstructions>At this time we are unable to ship to PO Boxes, APO or FPO and all addresses outside of
-                the United States. All billing and shipping addresses must be a physical residential address located
-                within the United States. Please note that on occasion, such as during holiday rush and large sales
-                events, there may be a slight delay in processing time. Your business is important to us, and we make
-                every effort to process your order as quickly as we can.
+            <ApplyShippingDiscount>true</ApplyShippingDiscount>
+            <PaymentInstructions>Under Armour is required to collect all applicable sales tax when an order is shipped
+                to a state where Under Armour has a significant economic presence, or Nexus. Under Armour currently has
+                Nexus in the following states: AZ, CA, CO, CT, FL, HI, IL, IA, KS, MD, MA, MI, MN, MO, NY, OH, OK, PA,
+                SD, TX, VA, &amp; WA. See our FAQ for more details.
             </PaymentInstructions>
             <SalesTax>
                 <SalesTaxPercent>0.0</SalesTaxPercent>
                 <ShippingIncludedInTax>false</ShippingIncludedInTax>
             </SalesTax>
             <ShippingServiceOptions>
-                <ShippingService>UPSGround</ShippingService>
+                <ShippingService>Other</ShippingService>
                 <ShippingServiceCost currencyID="USD">0.0</ShippingServiceCost>
                 <ShippingServiceAdditionalCost currencyID="USD">0.0</ShippingServiceAdditionalCost>
                 <ShippingServicePriority>1</ShippingServicePriority>
                 <ExpeditedService>false</ExpeditedService>
                 <ShippingTimeMin>1</ShippingTimeMin>
+                <ShippingTimeMax>10</ShippingTimeMax>
+            </ShippingServiceOptions>
+            <ShippingServiceOptions>
+                <ShippingService>ShippingMethodStandard</ShippingService>
+                <ShippingServiceCost currencyID="USD">8.99</ShippingServiceCost>
+                <ShippingServiceAdditionalCost currencyID="USD">0.0</ShippingServiceAdditionalCost>
+                <ShippingServicePriority>2</ShippingServicePriority>
+                <ExpeditedService>false</ExpeditedService>
+                <ShippingTimeMin>1</ShippingTimeMin>
                 <ShippingTimeMax>5</ShippingTimeMax>
             </ShippingServiceOptions>
             <ShippingServiceOptions>
-                <ShippingService>UPS2ndDay</ShippingService>
-                <ShippingServiceCost currencyID="USD">13.95</ShippingServiceCost>
-                <ShippingServiceAdditionalCost currencyID="USD">13.95</ShippingServiceAdditionalCost>
-                <ShippingServicePriority>2</ShippingServicePriority>
-                <ExpeditedService>false</ExpeditedService>
-                <ShippingTimeMin>2</ShippingTimeMin>
-                <ShippingTimeMax>2</ShippingTimeMax>
-            </ShippingServiceOptions>
-            <ShippingServiceOptions>
-                <ShippingService>UPSNextDayAir</ShippingService>
-                <ShippingServiceCost currencyID="USD">19.95</ShippingServiceCost>
-                <ShippingServiceAdditionalCost currencyID="USD">19.95</ShippingServiceAdditionalCost>
+                <ShippingService>ShippingMethodExpress</ShippingService>
+                <ShippingServiceCost currencyID="USD">14.99</ShippingServiceCost>
+                <ShippingServiceAdditionalCost currencyID="USD">0.0</ShippingServiceAdditionalCost>
                 <ShippingServicePriority>3</ShippingServicePriority>
-                <ExpeditedService>true</ExpeditedService>
+                <ExpeditedService>false</ExpeditedService>
                 <ShippingTimeMin>1</ShippingTimeMin>
-                <ShippingTimeMax>1</ShippingTimeMax>
+                <ShippingTimeMax>3</ShippingTimeMax>
             </ShippingServiceOptions>
             <ShippingType>Flat</ShippingType>
             <ThirdPartyCheckout>false</ThirdPartyCheckout>
-            <ShippingDiscountProfileID>0</ShippingDiscountProfileID>
+            <ShippingDiscountProfileID>176958025</ShippingDiscountProfileID>
+            <FlatShippingDiscount>
+                <DiscountName>EachAdditionalAmount</DiscountName>
+                <DiscountProfile>
+                    <DiscountProfileID>176958025</DiscountProfileID>
+                    <EachAdditionalAmount currencyID="USD">0.0</EachAdditionalAmount>
+                </DiscountProfile>
+            </FlatShippingDiscount>
             <InternationalShippingDiscountProfileID>0</InternationalShippingDiscountProfileID>
-            <ExcludeShipToLocation>Alaska/Hawaii</ExcludeShipToLocation>
-            <ExcludeShipToLocation>US Protectorates</ExcludeShipToLocation>
-            <ExcludeShipToLocation>APO/FPO</ExcludeShipToLocation>
-            <ExcludeShipToLocation>Africa</ExcludeShipToLocation>
-            <ExcludeShipToLocation>Asia</ExcludeShipToLocation>
-            <ExcludeShipToLocation>Central America and Caribbean</ExcludeShipToLocation>
-            <ExcludeShipToLocation>Europe</ExcludeShipToLocation>
-            <ExcludeShipToLocation>Middle East</ExcludeShipToLocation>
-            <ExcludeShipToLocation>North America</ExcludeShipToLocation>
-            <ExcludeShipToLocation>Oceania</ExcludeShipToLocation>
-            <ExcludeShipToLocation>Southeast Asia</ExcludeShipToLocation>
-            <ExcludeShipToLocation>South America</ExcludeShipToLocation>
-            <ExcludeShipToLocation>PO Box</ExcludeShipToLocation>
-            <SellerExcludeShipToLocationsPreference>true</SellerExcludeShipToLocationsPreference>
+            <SellerExcludeShipToLocationsPreference>false</SellerExcludeShipToLocationsPreference>
         </ShippingDetails>
         <ShipToLocations>US</ShipToLocations>
         <Site>US</Site>
-        <StartPrice currencyID="USD">55.6</StartPrice>
+        <StartPrice currencyID="USD">24.99</StartPrice>
         <Storefront>
-            <StoreCategoryID>2073403010</StoreCategoryID>
+            <StoreCategoryID>2998255015</StoreCategoryID>
             <StoreCategory2ID>0</StoreCategory2ID>
-            <StoreURL>http://www.stores.ebay.com/id=1034306470</StoreURL>
+            <StoreURL>http://www.stores.ebay.com/id=1056320915</StoreURL>
         </Storefront>
-        <SubTitle>Tommy Hilfiger Direct On eBay Plus Free Ground Shipping</SubTitle>
-        <TimeLeft>P27DT4H2M23S</TimeLeft>
-        <Title>Tommy Hilfiger Men's LONG SLEEVE MILITARY STYLE SHIRT</Title>
-        <UUID>BBF14653BB4044A59F6989096861F657</UUID>
-        <HitCount>6</HitCount>
+        <SubTitle>Under Armour Direct On eBay Plus Free Ground Shipping</SubTitle>
+        <TimeLeft>P28DT23H51M37S</TimeLeft>
+        <Title>Women's Under Armour Tough Mudder T-Shirt</Title>
+        <UUID>6D238CD3861F4BD4BAD9E786E17BFEC2</UUID>
+        <HitCount>7</HitCount>
         <LocationDefaulted>true</LocationDefaulted>
         <GetItFast>false</GetItFast>
-        <SKU>448422200576</SKU>
-        <PostalCode>10017</PostalCode>
+        <SKU>1238214</SKU>
+        <PostalCode>21230</PostalCode>
         <PictureDetails>
             <GalleryType>Gallery</GalleryType>
             <GalleryURL>
-                http://i.ebayimg.com/00/s/MTAwMFgxMDAw/$T2eC16F,!)cE9s4PsNiSBQ)2sp6+s!~~60_12.JPG?set_id=880000500F
+                http://i.ebayimg.com/00/s/MTYwMFgxNjAw/z/3u4AAMXQMmJRQ4Qj/$T2eC16R,!)UE9s3wCMz2BRQ4QjKDiw~~60_12.JPG?set_id=880000500F
             </GalleryURL>
             <PhotoDisplay>PicturePack</PhotoDisplay>
             <PictureURL>
-                http://i.ebayimg.com/00/s/MTAwMFgxMDAw/$T2eC16F,!)cE9s4PsNiSBQ)2sp6+s!~~60_12.JPG?set_id=880000500F
+                http://i.ebayimg.com/00/s/MTYwMFgxNjAw/z/3u4AAMXQMmJRQ4Qj/$T2eC16R,!)UE9s3wCMz2BRQ4QjKDiw~~60_12.JPG?set_id=880000500F
+            </PictureURL>
+            <PictureURL>
+                http://i.ebayimg.com/00/s/MTYwMFgxNjAw/z/kOgAAMXQTghRQ4Qv/$T2eC16F,!yEE9s5jDWviBRQ4Qu)cy!~~60_12.JPG?set_id=880000500F
             </PictureURL>
         </PictureDetails>
-        <DispatchTimeMax>2</DispatchTimeMax>
+        <DispatchTimeMax>1</DispatchTimeMax>
         <ProxyItem>false</ProxyItem>
         <ItemSpecifics>
             <NameValueList>
                 <Name>Brand</Name>
-                <Value>Tommy Hilfiger</Value>
+                <Value>Under Armour</Value>
                 <Source>ItemSpecific</Source>
             </NameValueList>
             <NameValueList>
                 <Name>Style</Name>
-                <Value>Shirts</Value>
+                <Value>Shirt</Value>
                 <Source>ItemSpecific</Source>
             </NameValueList>
             <NameValueList>
                 <Name>Size Type</Name>
                 <Value>Regular</Value>
-                <Source>ItemSpecific</Source>
-            </NameValueList>
-            <NameValueList>
-                <Name>Size (Men's)</Name>
-                <Value>XXL</Value>
-                <Source>ItemSpecific</Source>
-            </NameValueList>
-            <NameValueList>
-                <Name>Color</Name>
-                <Value>Beiges</Value>
-                <Source>ItemSpecific</Source>
-            </NameValueList>
-            <NameValueList>
-                <Name>Shade</Name>
-                <Value>OATMEAL HEATHER</Value>
                 <Source>ItemSpecific</Source>
             </NameValueList>
         </ItemSpecifics>
@@ -212,531 +193,125 @@
         <ReturnPolicy>
             <RefundOption>MoneyBack</RefundOption>
             <Refund>Money Back</Refund>
-            <ReturnsWithinOption>Days_14</ReturnsWithinOption>
-            <ReturnsWithin>14 Days</ReturnsWithin>
+            <ReturnsWithinOption>Days_60</ReturnsWithinOption>
+            <ReturnsWithin>60 Days</ReturnsWithin>
             <ReturnsAcceptedOption>ReturnsAccepted</ReturnsAcceptedOption>
             <ReturnsAccepted>Returns Accepted</ReturnsAccepted>
-            <Description>The first return for each order number will have no cost. Subsequent returns for an individual
-                order may incur shipping &amp; handling charges of $5.95. Please see the item listing for additional
-                instructions and details on this policy.
+            <Description>Under Armour will accept returns within 60 days as long as merchandise is in salable condition
+                (unworn, unwashed and with hangtags attached). Returns are processed within 10-14 business days. Please
+                allow additional 3 to 5 business days for credit to be posted to your PayPal account.
+
+                If your merchandise is not as ordered or is defective, contact our Customer Service Team at
+                1.888.727.6687. Our hours of operation are Monday - Friday 9am-10pm ET; Saturday 9am-6pm ET; Closed on
+                Sunday.
+
+                Need to exchange an item? Return your item for a refund and place a new order on Ebay.com
             </Description>
             <ShippingCostPaidByOption>Buyer</ShippingCostPaidByOption>
             <ShippingCostPaidBy>Buyer</ShippingCostPaidBy>
         </ReturnPolicy>
+        <Variations>
+            <Variation>
+                <SKU>1238214-025-LG||9871590</SKU>
+                <StartPrice currencyID="USD">24.99</StartPrice>
+                <Quantity>50</Quantity>
+                <VariationSpecifics>
+                    <NameValueList>
+                        <Name>Size (Women's)</Name>
+                        <Value>L</Value>
+                    </NameValueList>
+                    <NameValueList>
+                        <Name>Color</Name>
+                        <Value>Grays</Value>
+                    </NameValueList>
+                    <NameValueList>
+                        <Name>Shade</Name>
+                        <Value>True Gray Heather/Black/Black</Value>
+                    </NameValueList>
+                </VariationSpecifics>
+                <SellingStatus>
+                    <QuantitySold>0</QuantitySold>
+                </SellingStatus>
+            </Variation>
+            <Variation>
+                <SKU>1238214-025-MD||9871591</SKU>
+                <StartPrice currencyID="USD">24.99</StartPrice>
+                <Quantity>50</Quantity>
+                <VariationSpecifics>
+                    <NameValueList>
+                        <Name>Size (Women's)</Name>
+                        <Value>M</Value>
+                    </NameValueList>
+                    <NameValueList>
+                        <Name>Color</Name>
+                        <Value>Grays</Value>
+                    </NameValueList>
+                    <NameValueList>
+                        <Name>Shade</Name>
+                        <Value>True Gray Heather/Black/Black</Value>
+                    </NameValueList>
+                </VariationSpecifics>
+                <SellingStatus>
+                    <QuantitySold>0</QuantitySold>
+                </SellingStatus>
+            </Variation>
+            <Variation>
+                <SKU>1238214-025-XL||9871593</SKU>
+                <StartPrice currencyID="USD">24.99</StartPrice>
+                <Quantity>33</Quantity>
+                <VariationSpecifics>
+                    <NameValueList>
+                        <Name>Size (Women's)</Name>
+                        <Value>XL</Value>
+                    </NameValueList>
+                    <NameValueList>
+                        <Name>Color</Name>
+                        <Value>Grays</Value>
+                    </NameValueList>
+                    <NameValueList>
+                        <Name>Shade</Name>
+                        <Value>True Gray Heather/Black/Black</Value>
+                    </NameValueList>
+                </VariationSpecifics>
+                <SellingStatus>
+                    <QuantitySold>0</QuantitySold>
+                </SellingStatus>
+            </Variation>
+            <Pictures>
+                <VariationSpecificName>Shade</VariationSpecificName>
+                <VariationSpecificPictureSet>
+                    <VariationSpecificValue>True Gray Heather/Black/Black</VariationSpecificValue>
+                    <PictureURL>
+                        http://i.ebayimg.com/00/s/MTYwMFgxNjAw/z/3u4AAMXQMmJRQ4Qj/$T2eC16R,!)UE9s3wCMz2BRQ4QjKDiw~~60_12.JPG?set_id=880000500F
+                    </PictureURL>
+                    <PictureURL>
+                        http://i.ebayimg.com/00/s/MTYwMFgxNjAw/z/kOgAAMXQTghRQ4Qv/$T2eC16F,!yEE9s5jDWviBRQ4Qu)cy!~~60_12.JPG?set_id=880000500F
+                    </PictureURL>
+                </VariationSpecificPictureSet>
+            </Pictures>
+            <VariationSpecificsSet>
+                <NameValueList>
+                    <Name>Size (Women's)</Name>
+                    <Value>M</Value>
+                    <Value>L</Value>
+                    <Value>XL</Value>
+                </NameValueList>
+                <NameValueList>
+                    <Name>Color</Name>
+                    <Value>Grays</Value>
+                </NameValueList>
+                <NameValueList>
+                    <Name>Shade</Name>
+                    <Value>True Gray Heather/Black/Black</Value>
+                </NameValueList>
+            </VariationSpecificsSet>
+        </Variations>
         <ConditionID>1000</ConditionID>
         <ConditionDisplayName>New with tags</ConditionDisplayName>
-        <TaxCategory>Clothing</TaxCategory>
+        <QuantityAvailableHint>MoreThan</QuantityAvailableHint>
+        <QuantityThreshold>10</QuantityThreshold>
         <PostCheckoutExperienceEnabled>false</PostCheckoutExperienceEnabled>
-        <DiscountPriceInfo>
-            <OriginalRetailPrice currencyID="USD">69.5</OriginalRetailPrice>
-            <PricingTreatment>STP</PricingTreatment>
-            <SoldOneBay>true</SoldOneBay>
-            <SoldOffeBay>false</SoldOffeBay>
-        </DiscountPriceInfo>
+        <TopRatedListing>true</TopRatedListing>
         <HideFromSearch>false</HideFromSearch>
     </Item>
-</GetItemResponse>
-<GetItemResponse xmlns="urn:ebay:apis:eBLBaseComponents">
-<Timestamp>2013-03-04T21:09:52.018Z</Timestamp>
-<Ack>Success</Ack>
-<Version>811</Version>
-<Build>E811_CORE_API_15778055_R1</Build>
-<Item>
-    <ApplicationData>75320549_82056674_M</ApplicationData>
-    <AutoPay>true</AutoPay>
-    <BuyerProtection>ItemEligible</BuyerProtection>
-    <BuyItNowPrice currencyID="USD">0.0</BuyItNowPrice>
-    <Country>US</Country>
-    <Currency>USD</Currency>
-    <GiftIcon>0</GiftIcon>
-    <HitCounter>NoHitCounter</HitCounter>
-    <ItemID>121060899234</ItemID>
-    <ListingDetails>
-        <Adult>false</Adult>
-        <BindingAuction>false</BindingAuction>
-        <CheckoutEnabled>true</CheckoutEnabled>
-        <ConvertedBuyItNowPrice currencyID="USD">0.0</ConvertedBuyItNowPrice>
-        <ConvertedStartPrice currencyID="USD">12.99</ConvertedStartPrice>
-        <HasReservePrice>false</HasReservePrice>
-        <StartTime>2013-02-01T23:29:18.000Z</StartTime>
-        <EndTime>2013-02-09T02:58:59.000Z</EndTime>
-        <ViewItemURL>http://www.ebay.com/itm/aeropostale-kids-ps-girls-candyland-skirt-/121060899234</ViewItemURL>
-        <HasUnansweredQuestions>false</HasUnansweredQuestions>
-        <HasPublicMessages>false</HasPublicMessages>
-        <ViewItemURLForNaturalSearch>http://www.ebay.com/itm/aeropostale-kids-ps-girls-candyland-skirt-/121060899234
-        </ViewItemURLForNaturalSearch>
-    </ListingDetails>
-    <ListingDuration>Days_30</ListingDuration>
-    <ListingType>FixedPriceItem</ListingType>
-    <Location>Walton, Kentucky</Location>
-    <PaymentMethods>PayPal</PaymentMethods>
-    <PrimaryCategory>
-        <CategoryID>51583</CategoryID>
-        <CategoryName>Clothing, Shoes &amp; Accessories:Kids' Clothing, Shoes &amp; Accs:Girls' Clothing (Sizes 4 &amp;
-            Up):Skirts
-        </CategoryName>
-    </PrimaryCategory>
-    <PrivateListing>false</PrivateListing>
-    <Quantity>2</Quantity>
-    <ReviseStatus>
-        <ItemRevised>true</ItemRevised>
-    </ReviseStatus>
-    <Seller>
-        <AboutMePage>false</AboutMePage>
-        <Email>Invalid Request</Email>
-        <FeedbackScore>18509</FeedbackScore>
-        <PositiveFeedbackPercent>99.2</PositiveFeedbackPercent>
-        <FeedbackPrivate>false</FeedbackPrivate>
-        <FeedbackRatingStar>YellowShooting</FeedbackRatingStar>
-        <IDVerified>false</IDVerified>
-        <eBayGoodStanding>true</eBayGoodStanding>
-        <NewUser>false</NewUser>
-        <RegistrationDate>2011-08-23T15:00:36.000Z</RegistrationDate>
-        <Site>US</Site>
-        <Status>Confirmed</Status>
-        <UserID>aeropostale</UserID>
-        <UserIDChanged>false</UserIDChanged>
-        <UserIDLastChanged>2011-09-29T15:52:26.000Z</UserIDLastChanged>
-        <VATStatus>NoVATTax</VATStatus>
-        <SellerInfo>
-            <AllowPaymentEdit>true</AllowPaymentEdit>
-            <CheckoutEnabled>true</CheckoutEnabled>
-            <CIPBankAccountStored>false</CIPBankAccountStored>
-            <GoodStanding>true</GoodStanding>
-            <LiveAuctionAuthorized>false</LiveAuctionAuthorized>
-            <MerchandizingPref>OptIn</MerchandizingPref>
-            <QualifiesForB2BVAT>false</QualifiesForB2BVAT>
-            <StoreOwner>true</StoreOwner>
-            <StoreURL>http://www.stores.ebay.com/id=1075117170</StoreURL>
-            <SafePaymentExempt>false</SafePaymentExempt>
-            <TopRatedSeller>true</TopRatedSeller>
-        </SellerInfo>
-        <MotorsDealer>false</MotorsDealer>
-    </Seller>
-    <SellingStatus>
-        <BidCount>0</BidCount>
-        <BidIncrement currencyID="USD">0.0</BidIncrement>
-        <ConvertedCurrentPrice currencyID="USD">12.99</ConvertedCurrentPrice>
-        <CurrentPrice currencyID="USD">12.99</CurrentPrice>
-        <MinimumToBid currencyID="USD">12.99</MinimumToBid>
-        <QuantitySold>0</QuantitySold>
-        <ReserveMet>true</ReserveMet>
-        <SecondChanceEligible>false</SecondChanceEligible>
-        <ListingStatus>Completed</ListingStatus>
-    </SellingStatus>
-    <ShippingDetails>
-        <ApplyShippingDiscount>true</ApplyShippingDiscount>
-        <PaymentInstructions>We only accept immediate payment through eBay's Immediate Pay system. We do not accept any
-            type of mail in payment, international credit cards or any other form of payment other than those listed
-            above.
-        </PaymentInstructions>
-        <SalesTax>
-            <SalesTaxPercent>0.0</SalesTaxPercent>
-            <ShippingIncludedInTax>false</ShippingIncludedInTax>
-        </SalesTax>
-        <ShippingServiceOptions>
-            <ShippingService>ShippingMethodStandard</ShippingService>
-            <ShippingServiceCost currencyID="USD">7.0</ShippingServiceCost>
-            <ShippingServiceAdditionalCost currencyID="USD">0.0</ShippingServiceAdditionalCost>
-            <ShippingServicePriority>1</ShippingServicePriority>
-            <ExpeditedService>false</ExpeditedService>
-            <ShippingTimeMin>1</ShippingTimeMin>
-            <ShippingTimeMax>5</ShippingTimeMax>
-        </ShippingServiceOptions>
-        <ShippingServiceOptions>
-            <ShippingService>ShippingMethodExpress</ShippingService>
-            <ShippingServiceCost currencyID="USD">13.0</ShippingServiceCost>
-            <ShippingServiceAdditionalCost currencyID="USD">0.0</ShippingServiceAdditionalCost>
-            <ShippingServicePriority>2</ShippingServicePriority>
-            <ExpeditedService>false</ExpeditedService>
-            <ShippingTimeMin>1</ShippingTimeMin>
-            <ShippingTimeMax>3</ShippingTimeMax>
-        </ShippingServiceOptions>
-        <ShippingServiceOptions>
-            <ShippingService>ShippingMethodOvernight</ShippingService>
-            <ShippingServiceCost currencyID="USD">19.0</ShippingServiceCost>
-            <ShippingServiceAdditionalCost currencyID="USD">0.0</ShippingServiceAdditionalCost>
-            <ShippingServicePriority>3</ShippingServicePriority>
-            <ExpeditedService>true</ExpeditedService>
-            <ShippingTimeMin>1</ShippingTimeMin>
-            <ShippingTimeMax>1</ShippingTimeMax>
-        </ShippingServiceOptions>
-        <ShippingType>Flat</ShippingType>
-        <ThirdPartyCheckout>false</ThirdPartyCheckout>
-        <ShippingDiscountProfileID>982230010</ShippingDiscountProfileID>
-        <FlatShippingDiscount>
-            <DiscountName>EachAdditionalAmount</DiscountName>
-            <DiscountProfile>
-                <DiscountProfileID>982230010</DiscountProfileID>
-                <DiscountProfileName>ADDZERO</DiscountProfileName>
-                <EachAdditionalAmount currencyID="USD">0.0</EachAdditionalAmount>
-            </DiscountProfile>
-        </FlatShippingDiscount>
-        <PromotionalShippingDiscount>true</PromotionalShippingDiscount>
-        <InternationalShippingDiscountProfileID>0</InternationalShippingDiscountProfileID>
-        <PromotionalShippingDiscountDetails>
-            <DiscountName>ShippingCostXForAmountY</DiscountName>
-            <ShippingCost currencyID="USD">0.0</ShippingCost>
-            <OrderAmount currencyID="USD">100.0</OrderAmount>
-            <ItemCount>1</ItemCount>
-        </PromotionalShippingDiscountDetails>
-        <ExcludeShipToLocation>US Protectorates</ExcludeShipToLocation>
-        <ExcludeShipToLocation>APO/FPO</ExcludeShipToLocation>
-        <ExcludeShipToLocation>Africa</ExcludeShipToLocation>
-        <ExcludeShipToLocation>Asia</ExcludeShipToLocation>
-        <ExcludeShipToLocation>Central America and Caribbean</ExcludeShipToLocation>
-        <ExcludeShipToLocation>Europe</ExcludeShipToLocation>
-        <ExcludeShipToLocation>Middle East</ExcludeShipToLocation>
-        <ExcludeShipToLocation>North America</ExcludeShipToLocation>
-        <ExcludeShipToLocation>Oceania</ExcludeShipToLocation>
-        <ExcludeShipToLocation>Southeast Asia</ExcludeShipToLocation>
-        <ExcludeShipToLocation>South America</ExcludeShipToLocation>
-        <SellerExcludeShipToLocationsPreference>true</SellerExcludeShipToLocationsPreference>
-    </ShippingDetails>
-    <ShipToLocations>US</ShipToLocations>
-    <Site>US</Site>
-    <StartPrice currencyID="USD">12.99</StartPrice>
-    <Storefront>
-        <StoreCategoryID>3573479010</StoreCategoryID>
-        <StoreCategory2ID>0</StoreCategory2ID>
-        <StoreURL>http://www.stores.ebay.com/id=1075117170</StoreURL>
-    </Storefront>
-    <SubTitle>buy direct from aeropostale: $7 shipping on all orders</SubTitle>
-    <TimeLeft>PT0S</TimeLeft>
-    <Title>aeropostale kids ps girls' candyland skirt</Title>
-    <UUID>7F8C25B1118D4B739947EBBB4A3C36B0</UUID>
-    <HitCount>9</HitCount>
-    <LocationDefaulted>true</LocationDefaulted>
-    <GetItFast>false</GetItFast>
-    <SKU>13381684</SKU>
-    <PostalCode>41094</PostalCode>
-    <PictureDetails>
-        <GalleryType>Gallery</GalleryType>
-        <GalleryURL>
-            http://i.ebayimg.com/00/s/MTAwMFg4NTg=/z/BMkAAMXQbBVRDE~S/$(KGrHqZ,!hgFDUS)GVBQBRDE+Ssnnw~~60_1.JPG?set_id=880000500F
-        </GalleryURL>
-        <PhotoDisplay>PicturePack</PhotoDisplay>
-        <PictureURL>
-            http://i.ebayimg.com/00/s/MTAwMFg4NTg=/z/BMkAAMXQbBVRDE~S/$(KGrHqZ,!hgFDUS)GVBQBRDE+Ssnnw~~60_1.JPG?set_id=880000500F
-        </PictureURL>
-    </PictureDetails>
-    <DispatchTimeMax>2</DispatchTimeMax>
-    <ProxyItem>false</ProxyItem>
-    <ItemSpecifics>
-        <NameValueList>
-            <Name>Size</Name>
-            <Value>14</Value>
-            <Source>ItemSpecific</Source>
-        </NameValueList>
-        <NameValueList>
-            <Name>Brand</Name>
-            <Value>Aeropostale</Value>
-            <Source>ItemSpecific</Source>
-        </NameValueList>
-        <NameValueList>
-            <Name>Color</Name>
-            <Value>Pinks</Value>
-            <Source>ItemSpecific</Source>
-        </NameValueList>
-        <NameValueList>
-            <Name>Shade</Name>
-            <Value>POPSTAR PINK</Value>
-            <Source>ItemSpecific</Source>
-        </NameValueList>
-    </ItemSpecifics>
-    <BuyerGuaranteePrice currencyID="USD">20000.0</BuyerGuaranteePrice>
-    <IntangibleItem>false</IntangibleItem>
-    <ReturnPolicy>
-        <RefundOption>MoneyBack</RefundOption>
-        <Refund>Money Back</Refund>
-        <ReturnsWithinOption>Days_30</ReturnsWithinOption>
-        <ReturnsWithin>30 Days</ReturnsWithin>
-        <ReturnsAcceptedOption>ReturnsAccepted</ReturnsAcceptedOption>
-        <ReturnsAccepted>Returns Accepted</ReturnsAccepted>
-        <Description>You can expect a refund in the same form of payment originally used for purchase within 30 days of
-            our receiving your returned product. You must include the return form or bottom portion of the original
-            packing slip. Be certain to save copies for your records. Shipping and handling costs, gift-wrap costs and
-            other charges are non-refundable. All Bulk Sales, defined as any single order containing 50 units or more,
-            are considered final sales and cannot be refunded.
-        </Description>
-        <ShippingCostPaidByOption>Buyer</ShippingCostPaidByOption>
-        <ShippingCostPaidBy>Buyer</ShippingCostPaidBy>
-    </ReturnPolicy>
-    <ConditionID>1000</ConditionID>
-    <ConditionDisplayName>New with tags</ConditionDisplayName>
-    <TaxCategory>61050</TaxCategory>
-    <PostCheckoutExperienceEnabled>false</PostCheckoutExperienceEnabled>
-    <DiscountPriceInfo>
-        <OriginalRetailPrice currencyID="USD">49.5</OriginalRetailPrice>
-        <PricingTreatment>STP</PricingTreatment>
-        <SoldOneBay>false</SoldOneBay>
-        <SoldOffeBay>false</SoldOffeBay>
-    </DiscountPriceInfo>
-    <HideFromSearch>false</HideFromSearch>
-</Item>
-</GetItemResponse>
-<GetItemResponse xmlns="urn:ebay:apis:eBLBaseComponents">
-<Timestamp>2013-03-04T21:09:52.508Z</Timestamp>
-<Ack>Success</Ack>
-<Version>811</Version>
-<Build>E811_CORE_API_15778055_R1</Build>
-<Item>
-    <ApplicationData>75516236_82056674_M</ApplicationData>
-    <AutoPay>true</AutoPay>
-    <BuyerProtection>ItemEligible</BuyerProtection>
-    <BuyItNowPrice currencyID="USD">0.0</BuyItNowPrice>
-    <Country>US</Country>
-    <Currency>USD</Currency>
-    <GiftIcon>0</GiftIcon>
-    <HitCounter>NoHitCounter</HitCounter>
-    <ItemID>400414138858</ItemID>
-    <ListingDetails>
-        <Adult>false</Adult>
-        <BindingAuction>false</BindingAuction>
-        <CheckoutEnabled>true</CheckoutEnabled>
-        <ConvertedBuyItNowPrice currencyID="USD">0.0</ConvertedBuyItNowPrice>
-        <ConvertedStartPrice currencyID="USD">9.99</ConvertedStartPrice>
-        <HasReservePrice>false</HasReservePrice>
-        <RelistedItemID>400424629462</RelistedItemID>
-        <StartTime>2013-02-15T15:34:14.000Z</StartTime>
-        <EndTime>2013-03-01T00:33:28.000Z</EndTime>
-        <ViewItemURL>http://www.ebay.com/itm/aeropostale-womens-cheetah-yoga-pants-/400414138858</ViewItemURL>
-        <HasUnansweredQuestions>false</HasUnansweredQuestions>
-        <HasPublicMessages>false</HasPublicMessages>
-        <ViewItemURLForNaturalSearch>http://www.ebay.com/itm/aeropostale-womens-cheetah-yoga-pants-/400414138858
-        </ViewItemURLForNaturalSearch>
-    </ListingDetails>
-    <ListingDuration>Days_30</ListingDuration>
-    <ListingType>FixedPriceItem</ListingType>
-    <Location>Walton, Kentucky</Location>
-    <PaymentMethods>PayPal</PaymentMethods>
-    <PrimaryCategory>
-        <CategoryID>137085</CategoryID>
-        <CategoryName>Clothing, Shoes &amp; Accessories:Women's Clothing:Athletic Apparel</CategoryName>
-    </PrimaryCategory>
-    <PrivateListing>false</PrivateListing>
-    <Quantity>2</Quantity>
-    <ReviseStatus>
-        <ItemRevised>false</ItemRevised>
-    </ReviseStatus>
-    <SecondaryCategory>
-        <CategoryID>63863</CategoryID>
-        <CategoryName>Clothing, Shoes &amp; Accessories:Women's Clothing:Pants</CategoryName>
-    </SecondaryCategory>
-    <Seller>
-        <AboutMePage>false</AboutMePage>
-        <Email>Invalid Request</Email>
-        <FeedbackScore>18509</FeedbackScore>
-        <PositiveFeedbackPercent>99.2</PositiveFeedbackPercent>
-        <FeedbackPrivate>false</FeedbackPrivate>
-        <FeedbackRatingStar>YellowShooting</FeedbackRatingStar>
-        <IDVerified>false</IDVerified>
-        <eBayGoodStanding>true</eBayGoodStanding>
-        <NewUser>false</NewUser>
-        <RegistrationDate>2011-08-23T15:00:36.000Z</RegistrationDate>
-        <Site>US</Site>
-        <Status>Confirmed</Status>
-        <UserID>aeropostale</UserID>
-        <UserIDChanged>false</UserIDChanged>
-        <UserIDLastChanged>2011-09-29T15:52:26.000Z</UserIDLastChanged>
-        <VATStatus>NoVATTax</VATStatus>
-        <SellerInfo>
-            <AllowPaymentEdit>true</AllowPaymentEdit>
-            <CheckoutEnabled>true</CheckoutEnabled>
-            <CIPBankAccountStored>false</CIPBankAccountStored>
-            <GoodStanding>true</GoodStanding>
-            <LiveAuctionAuthorized>false</LiveAuctionAuthorized>
-            <MerchandizingPref>OptIn</MerchandizingPref>
-            <QualifiesForB2BVAT>false</QualifiesForB2BVAT>
-            <StoreOwner>true</StoreOwner>
-            <StoreURL>http://www.stores.ebay.com/id=1075117170</StoreURL>
-            <SafePaymentExempt>false</SafePaymentExempt>
-            <TopRatedSeller>true</TopRatedSeller>
-        </SellerInfo>
-        <MotorsDealer>false</MotorsDealer>
-    </Seller>
-    <SellingStatus>
-        <BidCount>0</BidCount>
-        <BidIncrement currencyID="USD">0.0</BidIncrement>
-        <ConvertedCurrentPrice currencyID="USD">9.99</ConvertedCurrentPrice>
-        <CurrentPrice currencyID="USD">9.99</CurrentPrice>
-        <HighBidder>
-            <AboutMePage>false</AboutMePage>
-            <FeedbackScore>11</FeedbackScore>
-            <PositiveFeedbackPercent>100.0</PositiveFeedbackPercent>
-            <FeedbackRatingStar>Yellow</FeedbackRatingStar>
-            <IDVerified>false</IDVerified>
-            <eBayGoodStanding>true</eBayGoodStanding>
-            <NewUser>false</NewUser>
-            <Status>Confirmed</Status>
-            <UserID>a***a</UserID>
-            <VATStatus>NoVATTax</VATStatus>
-            <UserAnonymized>true</UserAnonymized>
-        </HighBidder>
-        <MinimumToBid currencyID="USD">9.99</MinimumToBid>
-        <QuantitySold>1</QuantitySold>
-        <ReserveMet>true</ReserveMet>
-        <SecondChanceEligible>false</SecondChanceEligible>
-        <ListingStatus>Completed</ListingStatus>
-    </SellingStatus>
-    <ShippingDetails>
-        <ApplyShippingDiscount>true</ApplyShippingDiscount>
-        <PaymentInstructions>We only accept immediate payment through eBay's Immediate Pay system. We do not accept any
-            type of mail in payment, international credit cards or any other form of payment other than those listed
-            above.
-        </PaymentInstructions>
-        <SalesTax>
-            <SalesTaxPercent>0.0</SalesTaxPercent>
-            <ShippingIncludedInTax>false</ShippingIncludedInTax>
-        </SalesTax>
-        <ShippingServiceOptions>
-            <ShippingService>ShippingMethodStandard</ShippingService>
-            <ShippingServiceCost currencyID="USD">7.0</ShippingServiceCost>
-            <ShippingServiceAdditionalCost currencyID="USD">0.0</ShippingServiceAdditionalCost>
-            <ShippingServicePriority>1</ShippingServicePriority>
-            <ExpeditedService>false</ExpeditedService>
-            <ShippingTimeMin>1</ShippingTimeMin>
-            <ShippingTimeMax>5</ShippingTimeMax>
-        </ShippingServiceOptions>
-        <ShippingServiceOptions>
-            <ShippingService>ShippingMethodExpress</ShippingService>
-            <ShippingServiceCost currencyID="USD">13.0</ShippingServiceCost>
-            <ShippingServiceAdditionalCost currencyID="USD">0.0</ShippingServiceAdditionalCost>
-            <ShippingServicePriority>2</ShippingServicePriority>
-            <ExpeditedService>false</ExpeditedService>
-            <ShippingTimeMin>1</ShippingTimeMin>
-            <ShippingTimeMax>3</ShippingTimeMax>
-        </ShippingServiceOptions>
-        <ShippingServiceOptions>
-            <ShippingService>ShippingMethodOvernight</ShippingService>
-            <ShippingServiceCost currencyID="USD">19.0</ShippingServiceCost>
-            <ShippingServiceAdditionalCost currencyID="USD">0.0</ShippingServiceAdditionalCost>
-            <ShippingServicePriority>3</ShippingServicePriority>
-            <ExpeditedService>true</ExpeditedService>
-            <ShippingTimeMin>1</ShippingTimeMin>
-            <ShippingTimeMax>1</ShippingTimeMax>
-        </ShippingServiceOptions>
-        <ShippingType>Flat</ShippingType>
-        <ThirdPartyCheckout>false</ThirdPartyCheckout>
-        <ShippingDiscountProfileID>982230010</ShippingDiscountProfileID>
-        <FlatShippingDiscount>
-            <DiscountName>EachAdditionalAmount</DiscountName>
-            <DiscountProfile>
-                <DiscountProfileID>982230010</DiscountProfileID>
-                <DiscountProfileName>ADDZERO</DiscountProfileName>
-                <EachAdditionalAmount currencyID="USD">0.0</EachAdditionalAmount>
-            </DiscountProfile>
-        </FlatShippingDiscount>
-        <PromotionalShippingDiscount>true</PromotionalShippingDiscount>
-        <InternationalShippingDiscountProfileID>0</InternationalShippingDiscountProfileID>
-        <PromotionalShippingDiscountDetails>
-            <DiscountName>ShippingCostXForAmountY</DiscountName>
-            <ShippingCost currencyID="USD">0.0</ShippingCost>
-            <OrderAmount currencyID="USD">100.0</OrderAmount>
-            <ItemCount>1</ItemCount>
-        </PromotionalShippingDiscountDetails>
-        <ExcludeShipToLocation>US Protectorates</ExcludeShipToLocation>
-        <ExcludeShipToLocation>APO/FPO</ExcludeShipToLocation>
-        <ExcludeShipToLocation>Africa</ExcludeShipToLocation>
-        <ExcludeShipToLocation>Asia</ExcludeShipToLocation>
-        <ExcludeShipToLocation>Central America and Caribbean</ExcludeShipToLocation>
-        <ExcludeShipToLocation>Europe</ExcludeShipToLocation>
-        <ExcludeShipToLocation>Middle East</ExcludeShipToLocation>
-        <ExcludeShipToLocation>North America</ExcludeShipToLocation>
-        <ExcludeShipToLocation>Oceania</ExcludeShipToLocation>
-        <ExcludeShipToLocation>Southeast Asia</ExcludeShipToLocation>
-        <ExcludeShipToLocation>South America</ExcludeShipToLocation>
-        <SellerExcludeShipToLocationsPreference>true</SellerExcludeShipToLocationsPreference>
-    </ShippingDetails>
-    <ShipToLocations>US</ShipToLocations>
-    <Site>US</Site>
-    <StartPrice currencyID="USD">9.99</StartPrice>
-    <Storefront>
-        <StoreCategoryID>3573522010</StoreCategoryID>
-        <StoreCategory2ID>0</StoreCategory2ID>
-        <StoreURL>http://www.stores.ebay.com/id=1075117170</StoreURL>
-    </Storefront>
-    <SubTitle>buy direct from aeropostale: $7 shipping on all orders</SubTitle>
-    <TimeLeft>PT0S</TimeLeft>
-    <Title>aeropostale womens cheetah yoga pants</Title>
-    <UUID>779FEE5847BB41F39BFE8FF1090B91D0</UUID>
-    <HitCount>118</HitCount>
-    <LocationDefaulted>true</LocationDefaulted>
-    <GetItFast>false</GetItFast>
-    <SKU>13327116</SKU>
-    <PostalCode>41094</PostalCode>
-    <PictureDetails>
-        <GalleryType>Gallery</GalleryType>
-        <GalleryURL>
-            http://i.ebayimg.com/00/s/MTAwMFg4NTg=/z/9ecAAMXQ97RRHlV7/$(KGrHqR,!lQFEG-(Vj-bBRHlV7U+Mg~~60_1.JPG?set_id=880000500F
-        </GalleryURL>
-        <PhotoDisplay>PicturePack</PhotoDisplay>
-        <PictureURL>
-            http://i.ebayimg.com/00/s/MTAwMFg4NTg=/z/9ecAAMXQ97RRHlV7/$(KGrHqR,!lQFEG-(Vj-bBRHlV7U+Mg~~60_1.JPG?set_id=880000500F
-        </PictureURL>
-    </PictureDetails>
-    <DispatchTimeMax>2</DispatchTimeMax>
-    <ProxyItem>false</ProxyItem>
-    <ItemSpecifics>
-        <NameValueList>
-            <Name>Brand</Name>
-            <Value>Aeropostale</Value>
-            <Source>ItemSpecific</Source>
-        </NameValueList>
-        <NameValueList>
-            <Name>Style</Name>
-            <Value>Pants, Tights, Leggings</Value>
-            <Source>ItemSpecific</Source>
-        </NameValueList>
-        <NameValueList>
-            <Name>Size Type</Name>
-            <Value>Regular</Value>
-            <Source>ItemSpecific</Source>
-        </NameValueList>
-        <NameValueList>
-            <Name>Size (Women's)</Name>
-            <Value>XS</Value>
-            <Source>ItemSpecific</Source>
-        </NameValueList>
-        <NameValueList>
-            <Name>Color</Name>
-            <Value>Grays</Value>
-            <Source>ItemSpecific</Source>
-        </NameValueList>
-        <NameValueList>
-            <Name>Shade</Name>
-            <Value>GREY 071</Value>
-            <Source>ItemSpecific</Source>
-        </NameValueList>
-    </ItemSpecifics>
-    <BuyerGuaranteePrice currencyID="USD">20000.0</BuyerGuaranteePrice>
-    <IntangibleItem>false</IntangibleItem>
-    <ReturnPolicy>
-        <RefundOption>MoneyBack</RefundOption>
-        <Refund>Money Back</Refund>
-        <ReturnsWithinOption>Days_30</ReturnsWithinOption>
-        <ReturnsWithin>30 Days</ReturnsWithin>
-        <ReturnsAcceptedOption>ReturnsAccepted</ReturnsAcceptedOption>
-        <ReturnsAccepted>Returns Accepted</ReturnsAccepted>
-        <Description>You can expect a refund in the same form of payment originally used for purchase within 30 days of
-            our receiving your returned product. You must include the return form or bottom portion of the original
-            packing slip. Be certain to save copies for your records. Shipping and handling costs, gift-wrap costs and
-            other charges are non-refundable. All Bulk Sales, defined as any single order containing 50 units or more,
-            are considered final sales and cannot be refunded.
-        </Description>
-        <ShippingCostPaidByOption>Buyer</ShippingCostPaidByOption>
-        <ShippingCostPaidBy>Buyer</ShippingCostPaidBy>
-    </ReturnPolicy>
-    <ConditionID>1000</ConditionID>
-    <ConditionDisplayName>New with tags</ConditionDisplayName>
-    <TaxCategory>61000</TaxCategory>
-    <PostCheckoutExperienceEnabled>false</PostCheckoutExperienceEnabled>
-    <DiscountPriceInfo>
-        <OriginalRetailPrice currencyID="USD">39.5</OriginalRetailPrice>
-        <PricingTreatment>STP</PricingTreatment>
-        <SoldOneBay>false</SoldOneBay>
-        <SoldOffeBay>false</SoldOffeBay>
-    </DiscountPriceInfo>
-    <HideFromSearch>false</HideFromSearch>
-</Item>
 </GetItemResponse>
