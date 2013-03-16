@@ -2,8 +2,8 @@ $ ->
   updateTotal()
 
   $('.cart-quantity').change ->
-#    alert("kk")
-    #$('#update-cart').click()
+    $("#shippingOption").rules("remove", "variationsvalue")
+    $('#update-cart').click()
 
   $('#shippingOption').change ->
     selectedValue = $('#' + this.id + ' option:selected').val()

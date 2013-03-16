@@ -46,8 +46,9 @@
 
                     <td class="cart-quantity"><input type="text" class="field styled-input"
                                                      name="items[@index].quantity" id="items[@index].quantity"
-                                                     value="@item.quantity">
-                        <input type="submit" id="update-cart" name="update" value="обновить"></td>
+                                                     value="@item.quantity" style="margin-bottom: -10px;">
+                        <input height="0" type="submit" id="update-cart" name="update" value="обновить" style="visibility: hidden;height: 0px; padding-bottom: -10px;">
+                    </td>
                     <td class="cart-total">@(item.price * item.quantity)</td>
                     <td class="cart-remove"><a href="/cart/remove/@item.toHash" class="remove-glyph" title="remove"></a>
                     </td>

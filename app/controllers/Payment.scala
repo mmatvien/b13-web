@@ -130,16 +130,17 @@ object Payment extends Controller with SessionHelper {
             Ok(views.html.thankyou(orderId)).withNewSession
           } else {
             println(s" FAILED ITEMS : -------------------- $failedCartItems")
-            var message = "<b>следующие товары отсутсвуют на складе</b>:<br><br>"
+            var message = "<b>следующие товары в наличие не имеются</b>:<br><br>"
             failedCartItems.foreach {
               cit =>
                 val item = Item.getItem(cit._1.itemId)
                 item match {
                   case Some(it) => {
-                    println(cit)
-                    if (cit._2 > 0) Cart.updateCartItem(sessionInfo.sessionId, cit._1.itemId, cit._2, cit._1.variations)
+                    if (cit._2 > 0) {
+                      Cart.updateCartItem(sessionInfo.sessionId, cit._1.itemId, cit._2, cit._1.variations)
+                      message += " <i>имеется только " + cit._2 + "</i><br>"
+                    }
                     else Cart.removeItem(sessionInfo.sessionId, cit._1.toHash)
-
                     message += " <i>-- " + it.title + "</i><br>"
                   }
                   case None => ""
