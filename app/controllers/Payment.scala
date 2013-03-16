@@ -229,7 +229,7 @@ object Payment extends Controller with SessionHelper {
       "azoezihiukncjnfi"
     )
 
-    val email = EmailMessage(
+    val email: EmailMessage = EmailMessage(
       "brand 13 - Спасибо за покупку",
       payment.email,
       "sales@brand13.com",
