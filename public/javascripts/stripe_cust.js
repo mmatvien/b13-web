@@ -5,9 +5,9 @@
 
 
 // this identifies your website in the createToken call below
-Stripe.setPublishableKey('pk_test_7yraNGHTgbJEYmBoeCAFfS0L');
+//Stripe.setPublishableKey('pk_test_7yraNGHTgbJEYmBoeCAFfS0L');
 
-//Stripe.setPublishableKey('pk_live_m1O7SFjZzn4KEGRNK02zH8sB');
+Stripe.setPublishableKey('pk_live_m1O7SFjZzn4KEGRNK02zH8sB');
 
 
 

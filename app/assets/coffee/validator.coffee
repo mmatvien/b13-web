@@ -34,13 +34,20 @@ $ ->
     rules:
       "shippingOption":
         variationsvalue: true
+      "agree":
+        terms: true
   )
 
 
 constructV = () ->
   $.validator.addMethod 'variationsvalue',  (value, element) ->
+    alert("asd  ")
     if(value == "---")
       return false
     else
       return true
   , "заполните"
+
+  $.validator.addMethod 'terms',  (value, element) ->
+    return $('#agree:checked')
+  , "согласитесь с условиями заказа"
