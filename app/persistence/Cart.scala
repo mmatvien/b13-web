@@ -43,7 +43,7 @@ object Cart extends ModelCompanion[Cart, ObjectId] {
   // -- Queries
 
   def findSessionCart(sessionId: String): Option[Cart] = {
-    println("++++++++++++++++++++++ fetching cart for session")
+    println("++++++++++++++++++++++ fetching cart for session " + sessionId)
     dao.find(MongoDBObject("sessionId" -> sessionId, "cartState" -> 0)).toList.headOption
   }
 
