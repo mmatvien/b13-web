@@ -18,10 +18,10 @@ class ItemValidationTest extends FunSuite {
       val variationsBad = List(CartItemVariation("Size (Women's)", "Z"), CartItemVariation("Color", "Pinks"),
         CartItemVariation("Shade", "PINK PULSE"))
 
-      val itemGood = services.EbayService.checkLineItemWithVendor("121061229672", variations)
-      val itemBad = services.EbayService.checkLineItemWithVendor("121061229672", variationsBad)
-      assert(itemGood)
-      assert(!itemBad)
+      val itemGood = services.EbayService.checkLineItemWithVendor(3,"121061229672", variations)
+      val itemBad = services.EbayService.checkLineItemWithVendor(2, "121061229672", variationsBad)
+      assert(itemGood._1)
+      assert(!itemBad._1)
     }
   }
 }
