@@ -49,7 +49,8 @@ abstract class APIResource {
   val classURL = "%s/%ss".format(ApiBase, className)
   def instanceURL(id: String) = "%s/%s".format(classURL, id)
   val singleInstanceURL = "%s/%s".format(ApiBase, className)
-  val apiKey = "sk_test_uzIxFVuUNO4KKpftw24KmqYa"
+  //val apiKey = "sk_test_uzIxFVuUNO4KKpftw24KmqYa"
+  val apiKey = "sk_live_toYXqOSa6xC3i0vS9SjpZaCO"
   var connectionManager: ClientConnectionManager = null
   /*
       We want POST vars of form:

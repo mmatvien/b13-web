@@ -120,7 +120,7 @@ object Payment extends Controller with SessionHelper {
             val grandTotalDollars = (payment.total.toDouble / Calculator.KURS_DOLLARA).setScale(2, HALF_UP)
 
             val cents = BigDecimal((grandTotalDollars * 100).toString).setScale(0, HALF_UP)
-            println(s"charging for amount: $payment.total = $cents")
+            println(s"charging for amount: $payment.total = $cents token=$payment.stripeToken")
 
             val charge: Charge = Charge.create(Map("amount" -> cents, "currency" -> "usd",
               "card" -> payment.stripeToken))
