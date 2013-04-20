@@ -31,7 +31,7 @@ case class Cart(
                  date: Date,
                  sessionId: String,
                  cartState: Int,
-                 cartItems: List[CartItem]
+                 cartItems: List[CartItem] = List[CartItem]
                  )
 
 object Cart extends ModelCompanion[Cart, ObjectId] {
