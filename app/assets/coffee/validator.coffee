@@ -41,7 +41,6 @@ $ ->
 
 constructV = () ->
   $.validator.addMethod 'variationsvalue',  (value, element) ->
-    alert("asd  ")
     if(value == "---")
       return false
     else
