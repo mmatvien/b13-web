@@ -16,17 +16,17 @@ object Application extends Controller with SessionHelper {
 
   def index = Action {
     implicit request =>
-      Ok(views.html.index("index.")).withSession("uuid" -> sessionN(request))
+      Ok(views.html.index("index.")).withSession("uuid" -> sessionInfo.sessionId)
   }
 
   def about = Action {
     implicit request =>
-      Ok(views.html.about("about.")).withSession("uuid" -> sessionN(request))
+      Ok(views.html.about("about.")).withSession("uuid" -> sessionInfo.sessionId)
   }
 
   def terms = Action {
     implicit request =>
-      Ok(views.html.terms("terms.")).withSession("uuid" -> sessionN(request))
+      Ok(views.html.terms("terms.")).withSession("uuid" -> sessionInfo.sessionId)
   }
 
 
@@ -45,12 +45,12 @@ object Application extends Controller with SessionHelper {
       if (util.Ref.topCategory.contains(section)) {
         val items = Item.findByCategory(section, category, brand, filter, size, page)
         val pagerSize = Item.findCategoryPagerSize(section, category, brand, filter, size)
-        Ok(views.html.collection(section, items, brands, page, pagerSize)).withSession("uuid" -> sessionN(request))
+        Ok(views.html.collection(section, items, brands, page, pagerSize)).withSession("uuid" -> sessionInfo.sessionId)
       } else {
         println("seller search " + section)
         val items = Item.findSellerItems(section, cat, filter, size, page)
         val pagerSize = Item.findSellerPagerSize(section, cat, filter, size)
-        Ok(views.html.collection(section, items, brands, page, pagerSize)).withSession("uuid" -> sessionN(request))
+        Ok(views.html.collection(section, items, brands, page, pagerSize)).withSession("uuid" -> sessionInfo.sessionId)
       }
 
 
@@ -60,7 +60,7 @@ object Application extends Controller with SessionHelper {
   def item(collection: String, itemId: String) = Action {
     implicit request =>
       Item.getItem(itemId) match {
-        case Some(item) => Ok(views.html.item(item)).withSession("uuid" -> sessionN(request))
+        case Some(item) => Ok(views.html.item(item)).withSession("uuid" -> sessionInfo.sessionId)
         case None => Redirect("/")
       }
   }

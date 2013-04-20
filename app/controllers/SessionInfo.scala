@@ -28,11 +28,6 @@ case class SessionInfo(
 trait SessionHelper {
 
 
-  def sessionN[A](request: Request[A]) =  request.session.get("uuid") match {
-    case Some(uuid) => uuid
-    case None => java.util.UUID.randomUUID().toString
-  }
-
   implicit def sessionInfo[A](implicit request: Request[A]): SessionInfo = {
     request.session.get("uuid") match {
       case Some(uuid) => getCartInfo(uuid)
