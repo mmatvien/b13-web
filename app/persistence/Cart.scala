@@ -20,7 +20,7 @@ case class CartItem(
                      itemId: String,
                      quantity: Int,
                      price: BigDecimal,
-                     variations: List[CartItemVariation]
+                     variations: List[CartItemVariation] = List(CartItemVariation("default","default"))
                      ) {
   def toHash: String = itemId + variations.toString().hashCode
 }
@@ -31,7 +31,7 @@ case class Cart(
                  date: Date,
                  sessionId: String,
                  cartState: Int,
-                 cartItems: List[CartItem] = List(CartItem("bogus","123",1,BigDecimal(2),Nil))
+                 cartItems: List[CartItem] = List(CartItem("default", "123", 1, BigDecimal(0), Nil))
                  )
 
 object Cart extends ModelCompanion[Cart, ObjectId] {
@@ -42,10 +42,9 @@ object Cart extends ModelCompanion[Cart, ObjectId] {
 
   // -- Queries
 
-  def findSessionCart(sessionId: String): Option[Cart] = {
-    println("++++++++++++++++++++++ fetching cart for session " + sessionId)
+  def findSessionCart(sessionId: String): Option[Cart] =
     dao.find(MongoDBObject("sessionId" -> sessionId, "cartState" -> 0)).toList.headOption
-  }
+
 
   def findOrderCart(sessionId: String): Cart =
     dao.find(MongoDBObject("sessionId" -> sessionId, "cartState" -> 1)).toList.headOption.get
@@ -56,7 +55,8 @@ object Cart extends ModelCompanion[Cart, ObjectId] {
         findCartItem(cart, itemId, variations) match {
           case Some(cartItemX) => {
             val updatedItem = cartItemX.copy(quantity = quantityA)
-            val restOfItems = cart.cartItems.filter(_.itemId != itemId) ::: cart.cartItems.filter(x => (x.itemId == itemId && x.variations != variations))
+            val restOfItems = cart.cartItems.filter(_.itemId != itemId) ::: cart.cartItems.filter(x => (x.itemId ==
+              itemId && x.variations != variations))
             val newList = updatedItem :: restOfItems
             dao.update(q = MongoDBObject("sessionId" -> cart.sessionId),
               t = cart.copy(cartItems = newList.reverse),
@@ -92,7 +92,8 @@ object Cart extends ModelCompanion[Cart, ObjectId] {
    */
   def addItemToCart(cart: Cart, cartItem: CartItem) {
     val itemList = findCartItem(cart, cartItem.itemId, cartItem.variations) match {
-      case Some(cartItemX) => cartItemX.copy(quantity = cartItemX.quantity + 1) :: cart.cartItems.filter(_.itemId != cartItem.itemId)
+      case Some(cartItemX) => cartItemX.copy(quantity = cartItemX.quantity + 1) :: cart.cartItems.filter(_.itemId !=
+        cartItem.itemId)
       case None => cartItem :: cart.cartItems
     }
 
