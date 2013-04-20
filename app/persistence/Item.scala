@@ -137,6 +137,7 @@ object Item extends ModelCompanion[Item, ObjectId] {
   }
 
   def getItem(itemId: String): Option[Item] = {
+    println("fetching " + itemId)
     dao.findOne(MongoDBObject("itemId" -> itemId))
   }
 
