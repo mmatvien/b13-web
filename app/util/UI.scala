@@ -106,7 +106,7 @@ object UI {
 
 
     if (weight < 1814.369 && so.firstClassAvailable)
-      options = (f"firstClass:${Calculator.shippingCostFirstClassMail(weight)}%9.2f", "First class mail (без отслеживания)") :: options
+//      options = (f"firstClass:${Calculator.shippingCostFirstClassMail(weight)}%9.2f", "First class mail (без отслеживания)") :: options
     if (weight < 19958.049)
       options = (f"priority:${Calculator.shippingCostPriorityMail(weight)}%9.2f", "Priority mail") :: options
 

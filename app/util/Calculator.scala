@@ -15,10 +15,11 @@ object Calculator {
 
 
   def calculateFinalPrice(original: BigDecimal): BigDecimal = {
+    val commissionShippingToB13 = 3
     val commissionPercent = calculateCommissionPercentage(original)
     val commissionDollars = (original / 100 * commissionPercent)
     val salesTax = original / 100 * 7
-    val result: BigDecimal = KURS_DOLLARA * (commissionDollars + original + salesTax)
+    val result: BigDecimal = KURS_DOLLARA * (commissionDollars + commissionShippingToB13 + original + salesTax)
     val merchantFee = result / 100 * 3
     val finalResult = result + merchantFee
 

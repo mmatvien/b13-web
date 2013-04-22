@@ -36,6 +36,13 @@ $ ->
       $('#insurancePrice').text("")
       updateTotal()
 
+  $('.agree').click ->
+    if(this.checked)
+      $('#checkout-button').removeClass("hidden")
+      $('#checkout-button-disabled').addClass("hidden")
+    else
+      $('#checkout-button').addClass("hidden")
+      $('#checkout-button-disabled').removeClass("hidden")
 
 updateTotal = () ->
   subtotal = $('#subtotal').text()

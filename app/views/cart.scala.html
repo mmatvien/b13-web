@@ -93,8 +93,13 @@
                 <br>
 
                 <div id="grand-total" style="font-size: 2em; padding-bottom: 15px;"></div>
-                  <input type = "checkbox" id="agree" /><label for="agree" style="text-align: left;"><a href="/terms">с условиями оформления заказа согласен</a></label>
-                <input id="checkout-button" class="styled-submit smooth" type="submit" name="update" value="оформить">
+                  <input type = "checkbox" id="agree" class="agree" /><label for="agree" style="text-align: left;">
+                    @statics.checkout_terms()
+                    <a href="#termsModal" data-toggle="modal">с условиями оформления заказа согласен </a>
+                </label>
+                <span id = "checkout-button-disabled" style="height:17px;cursor: pointer;" class="styled-submit smooth disabled" onclick="bootbox.alert('согласитесь с условиями оформления заказа')">оформить</span>
+                <input id="checkout-button" class="styled-submit smooth hidden" type="submit" name="update" value="оформить">
+
             </div>
             <!-- #cart-meta -->
 
