@@ -16,7 +16,6 @@ import com.novus.salat.dao._
 import java.util.Date
 import com.novus.salat.annotations.raw.Salat
 
-@Salat
 case class CartItem(
                      collection: String,
                      itemId: String,
@@ -27,10 +26,8 @@ case class CartItem(
   def toHash: String = itemId + variations.toString().hashCode
 }
 
-@Salat
 case class CartItemVariation(variationName: String, variationValue: String)
 
-@Salat
 case class Cart(
                  date: Date,
                  sessionId: String,
@@ -38,7 +35,6 @@ case class Cart(
                  cartItems: List[CartItem] = List(CartItem("default", "123", 1, BigDecimal(0), List(CartItemVariation("default","default"))))
                  )
 
-@Salat
 object Cart extends ModelCompanion[Cart, ObjectId] {
 
 
