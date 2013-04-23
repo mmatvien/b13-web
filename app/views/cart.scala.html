@@ -82,6 +82,7 @@
                                     застраховать
                             </div>
                             <div style="float:left; padding-left: 8px; height: 15px;">
+
                                 <input type="checkbox" id="insure" value="@util.Calculator.calculateInsurance(cartItems.map(x => x.price * x.quantity).sum)">
                             </div>
                         </div>
@@ -92,7 +93,7 @@
 
                 <br>
 
-                <div id="grand-total" style="font-size: 2em; padding-bottom: 15px;"></div>
+                  <div id="grand-total" style="font-size: 2em; padding-bottom: 15px;"></div>
                   <input type = "checkbox" id="agree" class="agree" /><label for="agree" style="text-align: left;">
                     @statics.checkout_terms()
                     <a href="#termsModal" data-toggle="modal">с условиями оформления заказа согласен </a>

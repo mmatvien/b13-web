@@ -558,7 +558,7 @@ input[type="checkbox"], input[type="radio"], .checkbox, .radio {
     outline:0;
     background-color:transparent;
     color:#333333;
-    padding:10px 9px;
+    /*padding:10px 9px;*/
     font-size:14px;
     -webkit-appearance:none;
     margin-bottom:14px;
@@ -630,7 +630,7 @@ select {
     line-height:36px;
     border:1px solid #BBB;
     font-size:14px;
-    padding:10px 0;
+    /*padding:10px 0;*/
 }
 
 .lt-ie9 .special-select, .lt-ie9 .single-option-selector, .lt-ie9 #currencies {

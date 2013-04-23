@@ -32,5 +32,6 @@ object Global extends GlobalSettings {
         permission = NormalUser
       ))
     }
+
   }
 }
