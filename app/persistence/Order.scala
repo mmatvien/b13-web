@@ -32,7 +32,7 @@ case class Order(
                   sessionId: String,
                   chargeId:String,
                   orderId: String,
-                  buyer: Buyer
+                  buyer: Buyer = Buyer("","","","","","","","","","","")
                   )
 
 object Order extends ModelCompanion[Order, ObjectId] {
