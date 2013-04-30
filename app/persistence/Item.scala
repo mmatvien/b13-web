@@ -117,20 +117,6 @@ object Item extends ModelCompanion[Item, ObjectId] {
     dao.count(categoryQuery(gender, cat, brand, filter)).toInt
   }
 
-
-  def changeState(itemId: String, state: Int) {
-    getItem(itemId) match {
-      case Some(item) => {
-        dao.update(q = MongoDBObject("itemId" -> itemId),
-          t = item.copy(state = state),
-          upsert = false, multi = false, wc = Item.dao.collection.writeConcern)
-      }
-      case None => // item not found
-    }
-
-  }
-
-
   def findBrandsByCategory(gender: String, cat: String, filter: String): List[String] = {
     val quer = categoryQuery(gender, cat, "", filter)
     dao.find(quer).map(it => it.specifics.get("Brand").getOrElse("")).toSet.toList.sorted

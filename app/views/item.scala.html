@@ -58,6 +58,9 @@
                 }
 
                 <input type="hidden" name="collection" value="@item.collection">
+                <input type="hidden" name="status" value="0">
+                <input type="hidden" name="title" value="@item.title">
+                <input type="hidden" name="url" value="@item.itemUrl">
                 <input type="hidden" name="price" value="@util.Calculator.calculateFinalPrice(item.price)">
                 <input type="hidden" name="itemId" value="@item.itemId">
 

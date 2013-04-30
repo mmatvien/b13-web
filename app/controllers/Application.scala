@@ -70,7 +70,8 @@ object Application extends Controller with SessionHelper {
    * cart Form definition.
    */
 
-  case class CartItemX(collection: String, itemId: String, price: String, variations: List[CartItemVariationX])
+  case class CartItemX(collection: String, itemId: String, price: String, title: String, url: String,
+                       variations: List[CartItemVariationX])
 
   case class CartItemVariationX(name: String, value: String)
 
@@ -79,6 +80,8 @@ object Application extends Controller with SessionHelper {
       "collection" -> nonEmptyText,
       "itemId" -> nonEmptyText,
       "price" -> nonEmptyText,
+      "title" -> nonEmptyText,
+      "url" -> nonEmptyText,
       "variations" -> list(mapping(
         "name" -> text,
         "value" -> text
@@ -94,9 +97,11 @@ object Application extends Controller with SessionHelper {
           Cart.findSessionCart(sessionInfo.sessionId) match {
             case Some(currentCart: Cart) =>
               Cart.addItemToCart(currentCart, CartItem(cartItemX.collection, cartItemX.itemId, 1,
-                cartItemX.price.toDouble, cartItemX.variations.map(v => CartItemVariation(v.name, v.value))))
+                cartItemX.price.toDouble, 0, cartItemX.title, cartItemX.url,
+                cartItemX.variations.map(v => CartItemVariation(v.name, v.value))))
             case None => Cart.createNewCart(sessionInfo.sessionId, CartItem(cartItemX.collection, cartItemX.itemId,
-              1, cartItemX.price.toDouble, cartItemX.variations.map(v => CartItemVariation(v.name, v.value))))
+              1, cartItemX.price.toDouble, 0, cartItemX.title, cartItemX.url,
+              cartItemX.variations.map(v => CartItemVariation(v.name, v.value))))
           }
         }
       }
@@ -152,7 +157,8 @@ object Application extends Controller with SessionHelper {
       val subtotal = request.body.asFormUrlEncoded.get("subtotalPriceInput").head
       val shipping = request.body.asFormUrlEncoded.get("shippingPriceInput").head
       val insurance = request.body.asFormUrlEncoded.get("insurancePriceInput").head
-      val total = subtotal.replaceAll("\\s+$", "").toDouble + shipping.replaceAll("\\s+$", "").toDouble + insurance.replaceAll("\\s+$", "").toDouble
+      val total = subtotal.replaceAll("\\s+$", "").toDouble + shipping.replaceAll("\\s+$",
+        "").toDouble + insurance.replaceAll("\\s+$", "").toDouble
 
       cartUpdateForm.bindFromRequest.fold(
       errors => BadRequest, {
@@ -164,7 +170,7 @@ object Application extends Controller with SessionHelper {
         }
       }
       )
-      if (action == "оформить") Ok(views.html.payment(subtotal,shipping,insurance,total)(""))
+      if (action == "оформить") Ok(views.html.payment(subtotal, shipping, insurance, total)(""))
       else Ok(views.html.cart(currentCartItems)).flashing("success" -> "cart item updated")
   }
 

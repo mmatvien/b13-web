@@ -14,38 +14,38 @@ package persistence
 import com.mongodb.casbah.Imports._
 import com.novus.salat.dao._
 import java.util.Date
-import com.novus.salat.annotations.raw.Salat
 
 case class CartItem(
                      collection: String,
                      itemId: String,
                      quantity: Int,
                      price: BigDecimal,
-                     variations: List[CartItemVariation] = List(CartItemVariation("default","default"))
+                     state: Int,
+                     title: String,
+                     url: String,
+                     variations: List[CartItemVariation] = List(CartItemVariation("default", "default"))
                      ) {
   def toHash: String = itemId + variations.toString().hashCode
 }
 
-case class CartItemVariation(variationName: String, variationValue: String)
+case class CartItemVariation(variationName: String = "variationName", variationValue: String = "variationValue")
 
 case class Cart(
                  date: Date,
                  sessionId: String,
                  cartState: Int,
-                 cartItems: List[CartItem] = List(CartItem("default", "123", 1, BigDecimal(0), List(CartItemVariation("default","default"))))
+                 cartItems: List[CartItem] = List(CartItem("default", "123", 1, BigDecimal(0), 0, "title",
+                   "http://item_url.com", List(CartItemVariation("default", "default"))))
                  )
 
 object Cart extends ModelCompanion[Cart, ObjectId] {
-
 
   val collection = MongoConnection()("b13_web")("cart")
   val dao = new SalatDAO[Cart, ObjectId](collection = collection) {}
 
   // -- Queries
-
   def findSessionCart(sessionId: String): Option[Cart] =
     dao.find(MongoDBObject("sessionId" -> sessionId, "cartState" -> 0)).toList.headOption
-
 
   def findOrderCart(sessionId: String): Cart =
     dao.find(MongoDBObject("sessionId" -> sessionId, "cartState" -> 1)).toList.headOption.get
@@ -77,6 +77,10 @@ object Cart extends ModelCompanion[Cart, ObjectId] {
   }
 
 
+  def findCartItemById(cart: Cart, itemId: String): Option[CartItem] = {
+    cart.cartItems.filter(_.itemId == itemId).headOption
+  }
+
   def findCartItem(cart: Cart, itemId: String, variations: List[CartItemVariation]): Option[CartItem] = {
     cart.cartItems.filter(_.itemId == itemId).filter(_.variations == variations).headOption
   }
@@ -85,6 +89,21 @@ object Cart extends ModelCompanion[Cart, ObjectId] {
     dao.update(q = MongoDBObject("sessionId" -> cart.sessionId, "cartState" -> 0),
       t = cart.copy(cartState = state),
       upsert = false, multi = false, wc = Cart.dao.collection.writeConcern)
+  }
+
+  def changeCartItemState(sessionId:String, itemId: String, state: Int) {
+    val cart = findOrderCart(sessionId)
+
+    findCartItemById(cart, itemId) match {
+      case Some(cartItem) => {
+        val cartItemsNew: List[CartItem] = cartItem.copy(state = state) :: cart.cartItems.filter(_.itemId != itemId)
+        dao.update(q = MongoDBObject("sessionId" -> sessionId),
+          t = cart.copy(cartItems = cartItemsNew),
+          upsert = false, multi = false, wc = Cart.dao.collection.writeConcern)
+      }
+      case None => // item not found
+    }
+
   }
 
   /**

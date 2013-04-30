@@ -3,44 +3,44 @@
 # ~~~~
 
 # Home page
-GET     /                                       controllers.Application.index
-GET     /about                                  controllers.Application.about
-GET     /terms                                  controllers.Application.terms
+GET     /                                               controllers.Application.index
+GET     /about                                          controllers.Application.about
+GET     /terms                                          controllers.Application.terms
 
 
-GET     /collection/:collection/:page           controllers.Application.collection(collection: String, page: Int)
-GET     /collection/:collection/item/:itemId    controllers.Application.item(collection:String,itemId: String)
-GET     /cart                                   controllers.Application.cart
-GET     /cart/remove/:itemHash                  controllers.Application.remove(itemHash: String)
+GET     /collection/:collection/:page                   controllers.Application.collection(collection: String, page: Int)
+GET     /collection/:collection/item/:itemId            controllers.Application.item(collection:String,itemId: String)
+GET     /cart                                           controllers.Application.cart
+GET     /cart/remove/:itemHash                          controllers.Application.remove(itemHash: String)
 
-POST    /cart/add                               controllers.Application.add
-POST    /cart                                   controllers.Application.update
+POST    /cart/add                                       controllers.Application.add
+POST    /cart                                           controllers.Application.update
 
-POST    /payment                                controllers.Payment.payment
-POST    /subscribe                              controllers.Application.subscribe
-POST    /question                               controllers.Application.question
+POST    /payment                                        controllers.Payment.payment
+POST    /subscribe                                      controllers.Application.subscribe
+POST    /question                                       controllers.Application.question
 
 
 # ROUTES for ADMIN area
-GET     /admin                                 controllers.Admin.index
+GET     /admin                                          controllers.Admin.index
 GET     /admin/orders                                   controllers.Admin.orders
-GET     /admin/orders/ordered/:collection/:itemId       controllers.Admin.ordered(collection:String,itemId: String)
-GET     /admin/orders/received/:collection/:itemId      controllers.Admin.received(collection:String,itemId: String)
+GET     /admin/orders/ordered/:sessionId/:itemId        controllers.Admin.ordered(sessionId:String, itemId: String)
+GET     /admin/orders/received/:sessionId/:itemId       controllers.Admin.received(sessionId:String, itemId: String)
 
-GET     /admin/inventory                         controllers.Admin.inventory
-GET     /admin/inventory/remove                  controllers.Admin.removeSeller(seller: String)
-POST    /admin/inventory/add                     controllers.Admin.addSeller
+GET     /admin/inventory                                controllers.Admin.inventory
+GET     /admin/inventory/remove/:seller                 controllers.Admin.removeSeller(seller: String)
+POST    /admin/inventory/add                            controllers.Admin.addSeller
 
-GET     /admin/questions                         controllers.Admin.questions
+GET     /admin/questions                                controllers.Admin.questions
 
-POST  /admin/login  	                         controllers.Auth.authenticate
-GET   /admin/logout   	                         controllers.Auth.logout
-GET   /admin/login   	                         controllers.Auth.login
+POST  /admin/login  	                                controllers.Auth.authenticate
+GET   /admin/logout   	                                controllers.Auth.logout
+GET   /admin/login   	                                controllers.Auth.login
 
 
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file                           controllers.Assets.at(path="/public", file)
-GET     /*file                                  controllers.Assets.at(path="/public", file)
+GET     /assets/*file                                   controllers.Assets.at(path="/public", file)
+GET     /*file                                          controllers.Assets.at(path="/public", file)
 
 

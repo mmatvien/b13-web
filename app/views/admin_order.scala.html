@@ -1,6 +1,9 @@
 @(order: persistence.Order)
 
-@if(persistence.Item.getItem(persistence.Cart.findOrderCart(order.sessionId).cartItems.minBy(x => persistence.Item.getItem(x.itemId).get.state).itemId).get.state == 0) {
+
+
+
+@if(persistence.Cart.findOrderCart(order.sessionId).cartItems.minBy(x => x.state).state == 0) {
 
     <table class="table-condensed error" style="width:100%;height:35px;">
         <tr class="error">
@@ -9,9 +12,9 @@
             <td></td>
         </tr>
     </table>
-
 }
-@if(persistence.Item.getItem(persistence.Cart.findOrderCart(order.sessionId).cartItems.minBy(x => persistence.Item.getItem(x.itemId).get.state).itemId).get.state == 1) {
+
+@if(persistence.Cart.findOrderCart(order.sessionId).cartItems.minBy(x => x.state).state == 1) {
     <table class="table-condensed" style="width:100%;height:35px;">
         <tr class="info">
             <td style="width:200px; vertical-align:middle;">@persistence.Util.formatDate(order.date)</td>
@@ -21,13 +24,14 @@
     </table>
 }
 
-@if(persistence.Item.getItem(persistence.Cart.findOrderCart(order.sessionId).cartItems.minBy(x => persistence.Item.getItem(x.itemId).get.state).itemId).get.state == 2) {
+@if(persistence.Cart.findOrderCart(order.sessionId).cartItems.minBy(x => x.state).state == 2) {
     <table class="table-condensed error" style="width:100%;height:35px;">
         <tr class="warning">
             <td style="width:200px;vertical-align:middle;">@persistence.Util.formatDate(order.date)</td>
             <td style="width:100px;vertical-align:middle;">@order.orderId</td>
             <td style="text-align:right;">
-                <button class="btn-small btn-warning" id="button3_ @order.orderId">print label</button>
+                <button class="btn-small btn-warning" id="button3_@order.orderId">print label</button>
+                <button class="btn-small btn-warning" id="button3_@order.orderId">print invoice</button>
                 <a class="invisible" id="link3_@order.orderId" href="/admin/shipped/@order.sessionId/@order.orderId"></a>
             </td>
         </tr>

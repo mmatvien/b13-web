@@ -16,25 +16,21 @@ object Admin extends Controller with Secured {
   }
 
 
-  def ordered(collection: String, cartItemId: String) = IsAuthenticated {
+  def ordered(sessionId: String, itemId: String) = IsAuthenticated {
     email => {
       implicit request =>
-
-        println("marking as ordered : " + cartItemId)
-        Item.changeState(cartItemId, 1)
-
+        println("marking as ordered : " + itemId)
+        Cart.changeCartItemState(sessionId, itemId, 1)
         Ok(views.html.admin_orders(Order.findAll().toList, email, "orders"))
     }
   }
 
 
-  def received(collection: String, cartItemId: String) = IsAuthenticated {
+  def received(sessionId: String, itemId: String) = IsAuthenticated {
     email => {
       implicit request =>
-
-        println("marking as received : " + cartItemId)
-        Item.changeState(cartItemId, 2)
-
+        println("marking as received : " + itemId)
+        Cart.changeCartItemState(sessionId, itemId, 2)
         Ok(views.html.admin_orders(Order.findAll().toList, email, "orders"))
     }
   }
